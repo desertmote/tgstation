@@ -39,6 +39,10 @@
 	var/alternate_worn_layer
 	///The config type to use for greyscaled worn sprites. Both this and greyscale_colors must be assigned to work.
 	var/greyscale_config_worn
+	///
+	var/list/greyscale_config_worn_bodyshapes
+	///
+	var/greyscale_config_assoc_bodyshape
 	///The config type to use for greyscaled left inhand sprites. Both this and greyscale_colors must be assigned to work.
 	var/greyscale_config_inhand_left
 	///The config type to use for greyscaled right inhand sprites. Both this and greyscale_colors must be assigned to work.
@@ -169,7 +173,12 @@
 	///list() of species types, if a species cannot put items in a certain slot, but species type is in list, it will be able to wear that item
 	var/list/species_exception = null
 	///This is a bitfield that defines what variations exist for bodyparts like Digi legs. See: code\_DEFINES\inventory.dm
-	var/supports_variations_flags = NONE
+	var/bodyshape_mask = CLOTHING_MASK_NONE
+	///
+	var/list/bodyshape_flags
+	///
+	var/list/bodyshape_icons
+
 
 	///Items can by default thrown up to 10 tiles by TK users
 	tk_throw_range = 10
@@ -419,7 +428,11 @@
 	. = ..()
 	if(!greyscale_colors)
 		return
-	if(greyscale_config_worn)
+	if(LAZYACCESS(greyscale_config_worn_bodyshapes, greyscale_config_assoc_bodyshape))
+		greyscale_config_worn = greyscale_config_worn_bodyshapes[greyscale_config_assoc_bodyshape]
+		bodyshape_icons["[greyscale_config_assoc_bodyshape]"] = SSgreyscale.GetColoredIconByType(greyscale_config_worn, greyscale_colors)
+		worn_icon = bodyshape_icons["[greyscale_config_assoc_bodyshape]"]
+	else if(greyscale_config_worn)
 		worn_icon = SSgreyscale.GetColoredIconByType(greyscale_config_worn, greyscale_colors)
 	if(greyscale_config_inhand_left)
 		lefthand_file = SSgreyscale.GetColoredIconByType(greyscale_config_inhand_left, greyscale_colors)
@@ -785,6 +798,18 @@
 	return TRUE
 
 /**
+ *
+ *
+ */
+/obj/item/proc/associate_bodyshape(mob/living/carbon/human/user)
+	if(isnull(user) || !ishuman(user))
+		return
+	for(var/shape in bodyshape_flags)
+		if(user.bodyshape & shape)
+			greyscale_config_assoc_bodyshape = "[shape]"
+	update_greyscale()
+
+/**
  * To be overwritten to only perform visual tasks;
  * this is directly called instead of `equipped` on visual-only features like human dummies equipping outfits.
  *
@@ -819,6 +844,7 @@
 	RegisterSignals(src, list(SIGNAL_ADDTRAIT(TRAIT_NO_WORN_ICON), SIGNAL_REMOVETRAIT(TRAIT_NO_WORN_ICON)), PROC_REF(update_slot_icon), override = TRUE)
 
 	user.update_equipment(src)
+	associate_bodyshape(user)
 
 	if(!initial && (slot_flags & slot) && (play_equip_sound()))
 		return

@@ -15,7 +15,7 @@
 	inhand_icon_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	bodyshape_mask = CLOTHING_MASK_NONE
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 
 /obj/item/clothing/under/rank/cargo/tech
@@ -30,7 +30,9 @@
 	icon_state = "cargotech_alt"
 	inhand_icon_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION
+	bodyshape_flags = list(BODYSHAPE_DIGITIGRADE)
+	bodyshape_icons = list(BODYSHAPE_DIGITIGRADE_T = DIGITIGRADE_UNIFORM_FILE)
+	bodyshape_mask = CLOTHING_MASK_NONE
 
 /obj/item/clothing/under/rank/cargo/tech/skirt
 	name = "cargo technician's skirt"
@@ -38,7 +40,7 @@
 	icon_state = "cargo_skirt"
 	inhand_icon_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	bodyshape_mask = CLOTHING_MASK_NONE
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 

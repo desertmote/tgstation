@@ -22,7 +22,7 @@
 	inhand_icon_state = "bl_suit"
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	dying_key = DYE_REGISTRY_JUMPSKIRT
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	bodyshape_mask = CLOTHING_MASK_NONE
 
 /obj/item/clothing/under/syndicate/bloodred
 	name = "blood-red sneaksuit"
@@ -32,7 +32,7 @@
 	armor_type = /datum/armor/clothing_under/syndicate_bloodred
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	can_adjust = FALSE
-	supports_variations_flags = NONE
+	bodyshape_mask = CLOTHING_MASK_NONE
 
 /obj/item/clothing/under/syndicate/bloodred/Initialize(mapload)
 	. = ..()
@@ -96,7 +96,7 @@
 	inhand_icon_state = "bl_suit"
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	dying_key = DYE_REGISTRY_JUMPSKIRT
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	bodyshape_mask = CLOTHING_MASK_NONE
 
 /obj/item/clothing/under/syndicate/sniper
 	name = "tactical turtleneck suit"
@@ -104,7 +104,7 @@
 	icon_state = "tactical_suit"
 	inhand_icon_state = "bl_suit"
 	can_adjust = FALSE
-	supports_variations_flags = NONE
+	bodyshape_mask = CLOTHING_MASK_NONE
 
 /obj/item/clothing/under/syndicate/camo
 	name = "camouflage fatigues"
@@ -112,7 +112,7 @@
 	icon_state = "camogreen"
 	inhand_icon_state = "g_suit"
 	can_adjust = FALSE
-	supports_variations_flags = NONE
+	bodyshape_mask = CLOTHING_MASK_NONE
 
 /obj/item/clothing/under/syndicate/floortilecamo
 	name = "floortile camouflage fatigues"
@@ -121,7 +121,7 @@
 	icon_state = "camofloortile"
 	inhand_icon_state = "gy_suit"
 	can_adjust = FALSE
-	supports_variations_flags = NONE
+	bodyshape_mask = CLOTHING_MASK_NONE
 
 /obj/item/clothing/under/syndicate/floortilecamo/Initialize(mapload)
 	. = ..()
@@ -132,7 +132,7 @@
 	desc = "Badly translated labels tell you to clean this in Vodka. Great for squatting in."
 	icon_state = "trackpants"
 	can_adjust = FALSE
-	supports_variations_flags = NONE
+	bodyshape_mask = CLOTHING_MASK_NONE
 	armor_type = /datum/armor/clothing_under/syndicate_soviet
 	resistance_flags = NONE
 
@@ -144,14 +144,14 @@
 	desc = "With a suit lined with this many pockets, you are ready to operate."
 	icon_state = "syndicate_combat"
 	can_adjust = FALSE
-	supports_variations_flags = NONE
+	bodyshape_mask = CLOTHING_MASK_NONE
 
 /obj/item/clothing/under/syndicate/rus_army
 	name = "advanced military tracksuit"
 	desc = "Military grade tracksuits for frontline squatting."
 	icon_state = "rus_under"
 	can_adjust = FALSE
-	supports_variations_flags = NONE
+	bodyshape_mask = CLOTHING_MASK_NONE
 	armor_type = /datum/armor/clothing_under/syndicate_rus_army
 	resistance_flags = NONE
 
@@ -165,7 +165,7 @@
 	worn_icon = 'icons/mob/clothing/under/medical.dmi'
 	icon_state = "scrubswine"
 	can_adjust = FALSE
-	supports_variations_flags = NONE
+	bodyshape_mask = CLOTHING_MASK_NONE
 	armor_type = /datum/armor/clothing_under/syndicate_scrubs
 
 /obj/item/clothing/under/syndicate/scrubs/Initialize(mapload)
