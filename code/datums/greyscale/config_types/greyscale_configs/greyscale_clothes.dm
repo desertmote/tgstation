@@ -408,6 +408,10 @@
 	name = "Shorts (Worn)"
 	icon_file = 'icons/mob/clothing/under/shorts_pants_shirts.dmi'
 
+/datum/greyscale_config/shorts/worn/digitigrade
+	name = "Shorts (Worn) (Digitigrade)"
+	icon_file = DIGITIGRADE_UNIFORM_FILE
+
 /datum/greyscale_config/jeans
 	name = "Jeans"
 	icon_file = 'icons/obj/clothing/under/shorts_pants_shirts.dmi'

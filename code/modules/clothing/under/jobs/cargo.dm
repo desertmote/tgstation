@@ -31,8 +31,11 @@
 	inhand_icon_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	bodyshape_flags = list(BODYSHAPE_DIGITIGRADE)
-	bodyshape_icons = list(BODYSHAPE_DIGITIGRADE_T = DIGITIGRADE_UNIFORM_FILE)
 	clothing_variations = CLOTHING_VARIATION_NONE
+
+/obj/item/clothing/under/rank/cargo/tech/alt/Initialize(mapload)
+	. = ..()
+	LAZYADDASSOC(bodyshape_icons, "[BODYSHAPE_DIGITIGRADE]", DIGITIGRADE_UNIFORM_FILE)
 
 /obj/item/clothing/under/rank/cargo/tech/skirt
 	name = "cargo technician's skirt"

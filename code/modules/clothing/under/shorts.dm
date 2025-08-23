@@ -11,9 +11,16 @@
 	body_parts_covered = GROIN
 	female_sprite_flags = NO_FEMALE_UNIFORM
 	clothing_variations = CLOTHING_VARIATION_NONE
+	bodyshape_flags = list(BODYSHAPE_DIGITIGRADE)
 	can_adjust = FALSE
 	species_exception = list(/datum/species/golem)
 	flags_1 = IS_PLAYER_COLORABLE_1
+
+/obj/item/clothing/under/shorts/Initialize(mapload)
+	. = ..()
+	LAZYADDASSOC(bodyshape_icons, "[BODYSHAPE_DIGITIGRADE]", DIGITIGRADE_UNIFORM_FILE)
+	LAZYADDASSOC(greyscale_config_bodyshapes, "[BODYSHAPE_DIGITIGRADE]", /datum/greyscale_config/shorts/worn/digitigrade)
+	set_greyscale(colors = greyscale_colors)
 
 /obj/item/clothing/under/shorts/jeanshorts
 	name = "jean shorts"

@@ -40,7 +40,7 @@
 	///The config type to use for greyscaled worn sprites. Both this and greyscale_colors must be assigned to work.
 	var/greyscale_config_worn
 	///
-	var/list/greyscale_config_worn_bodyshapes
+	var/list/greyscale_config_bodyshapes
 	///
 	var/greyscale_config_assoc_bodyshape
 	///The config type to use for greyscaled left inhand sprites. Both this and greyscale_colors must be assigned to work.
@@ -427,12 +427,15 @@
 	. = ..()
 	if(!greyscale_colors)
 		return
-	if(LAZYACCESS(greyscale_config_worn_bodyshapes, greyscale_config_assoc_bodyshape))
-		greyscale_config_worn = greyscale_config_worn_bodyshapes[greyscale_config_assoc_bodyshape]
+
+	if(LAZYACCESS(greyscale_config_bodyshapes, greyscale_config_assoc_bodyshape))
+		greyscale_config_worn = greyscale_config_bodyshapes[greyscale_config_assoc_bodyshape]
 		bodyshape_icons["[greyscale_config_assoc_bodyshape]"] = SSgreyscale.GetColoredIconByType(greyscale_config_worn, greyscale_colors)
 		worn_icon = bodyshape_icons["[greyscale_config_assoc_bodyshape]"]
+
 	else if(greyscale_config_worn)
 		worn_icon = SSgreyscale.GetColoredIconByType(greyscale_config_worn, greyscale_colors)
+
 	if(greyscale_config_inhand_left)
 		lefthand_file = SSgreyscale.GetColoredIconByType(greyscale_config_inhand_left, greyscale_colors)
 	if(greyscale_config_inhand_right)
@@ -803,9 +806,14 @@
 /obj/item/proc/associate_bodyshape(mob/living/carbon/human/user)
 	if(isnull(user) || !ishuman(user))
 		return
+
 	for(var/shape in bodyshape_flags)
 		if(user.bodyshape & shape)
 			greyscale_config_assoc_bodyshape = "[shape]"
+			break
+		else
+			greyscale_config_assoc_bodyshape = initial(greyscale_config_assoc_bodyshape)
+
 	update_greyscale()
 
 /**
@@ -843,9 +851,9 @@
 	RegisterSignals(src, list(SIGNAL_ADDTRAIT(TRAIT_NO_WORN_ICON), SIGNAL_REMOVETRAIT(TRAIT_NO_WORN_ICON)), PROC_REF(update_slot_icon), override = TRUE)
 
 	user.update_equipment(src)
-	associate_bodyshape(user)
 
 	if(!initial && (slot_flags & slot) && (play_equip_sound()))
+		associate_bodyshape(user)
 		return
 
 	if(slot & ITEM_SLOT_HANDS)
