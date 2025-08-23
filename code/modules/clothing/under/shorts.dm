@@ -32,6 +32,11 @@
 	greyscale_config_worn = /datum/greyscale_config/jeanshorts/worn
 	greyscale_colors = "#787878#723E0E#4D7EAC"
 
+/obj/item/clothing/under/shorts/jeanshorts/Initialize(mapload)
+	. = ..()
+	LAZYSET(greyscale_config_bodyshapes, "[BODYSHAPE_DIGITIGRADE]", /datum/greyscale_config/jeanshorts/worn/digitigrade)
+	set_greyscale(colors = greyscale_colors)
+
 /obj/item/clothing/under/shorts/red
 	name = "athletic shorts"
 	desc = "95% Polyester, 5% Spandex!"

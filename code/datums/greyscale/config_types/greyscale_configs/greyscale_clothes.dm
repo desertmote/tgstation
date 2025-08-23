@@ -430,6 +430,10 @@
 	name = "Jean Shorts (Worn)"
 	icon_file = 'icons/mob/clothing/under/shorts_pants_shirts.dmi'
 
+/datum/greyscale_config/jeanshorts/worn/digitigrade
+	name = "Jean Shorts (Worn) (Digitigrade)"
+	icon_file = DIGITIGRADE_UNIFORM_FILE
+
 /datum/greyscale_config/buttondown_slacks
 	name = "Buttondown with Slacks"
 	icon_file = 'icons/obj/clothing/under/shorts_pants_shirts.dmi'
