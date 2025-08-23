@@ -434,6 +434,7 @@
 		worn_icon = bodyshape_icons["[greyscale_config_assoc_bodyshape]"]
 
 	else if(greyscale_config_worn)
+		greyscale_config_worn = initial(greyscale_config_worn)
 		worn_icon = SSgreyscale.GetColoredIconByType(greyscale_config_worn, greyscale_colors)
 
 	if(greyscale_config_inhand_left)

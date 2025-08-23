@@ -816,6 +816,13 @@ generate/load female uniform sprites matching all previously decided variables
 	override_state = null,
 	override_file = null,
 )
+	///
+	var/mob/living/carbon/wearer = loc
+	//
+	for(var/shape in bodyshape_flags)
+		if(wearer.bodyshape & shape)
+			worn_icon = bodyshape_icons["[shape]"]
+			break
 
 	//Find a valid icon_state from variables+arguments
 	var/t_state = override_state || (isinhands ? inhand_icon_state : worn_icon_state) || icon_state
@@ -824,13 +831,8 @@ generate/load female uniform sprites matching all previously decided variables
 	//Find a valid layer from variables+arguments
 	var/layer2use = alternate_worn_layer || default_layer
 
-	var/mob/living/carbon/wearer = loc
+	///
 	var/is_digi = istype(wearer) && (wearer.bodyshape & BODYSHAPE_DIGITIGRADE) && !wearer.is_digitigrade_squished()
-
-	for(var/shape in bodyshape_flags)
-		if(wearer.bodyshape & shape)
-			file2use = bodyshape_icons["[shape]"]
-			break
 
 	var/mutable_appearance/draw_target // MA of the item itself, not the final result
 	var/icon/building_icon // used to construct an icon across multiple procs before converting it to MA
