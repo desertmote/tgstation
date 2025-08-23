@@ -811,18 +811,16 @@ generate/load female uniform sprites matching all previously decided variables
 	var/layer2use = alternate_worn_layer || default_layer
 
 	var/mob/living/carbon/wearer = loc
-	var/is_digi = FALSE
+	var/is_digi = istype(wearer) && (wearer.bodyshape & BODYSHAPE_DIGITIGRADE) && !wearer.is_digitigrade_squished()
 
 	for(var/shape in bodyshape_flags)
 		if(wearer.bodyshape & shape)
 			file2use = bodyshape_icons["[shape]"]
-			if(shape == BODYSHAPE_DIGITIGRADE && !wearer.is_digitigrade_squished())
-				is_digi = TRUE
 			break
 
 	var/mutable_appearance/draw_target // MA of the item itself, not the final result
 	var/icon/building_icon // used to construct an icon across multiple procs before converting it to MA
-	if(!isinhands && is_digi && (bodyshape_mask & CLOTHING_MASK_DIGITIGRADE))
+	if(!isinhands && is_digi && (clothing_variations & CLOTHING_VARIATION_DIGITIGRADE))
 		building_icon = wear_digi_version(
 			base_icon = building_icon || icon(file2use, t_state),
 			item = src,

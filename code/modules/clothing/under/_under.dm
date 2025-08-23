@@ -8,7 +8,7 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	interaction_flags_click = NEED_DEXTERITY
 	armor_type = /datum/armor/clothing_under
-	bodyshape_mask = CLOTHING_MASK_DIGITIGRADE
+	clothing_variations = CLOTHING_VARIATION_DIGITIGRADE
 	equip_sound = 'sound/items/equip/jumpsuit_equip.ogg'
 	drop_sound = 'sound/items/handling/cloth/cloth_drop1.ogg'
 	pickup_sound = 'sound/items/handling/cloth/cloth_pickup1.ogg'

@@ -161,11 +161,11 @@ DEFINE_BITFIELD(no_equip_flags, list(
 #define ALT_STYLE 1
 #define DIGITIGRADE_STYLE 2
 
-//Flags for /obj/item/var/bodyshape_mask
+//Flags for /obj/item/var/clothing_variations
 /// No alternative sprites or handling based on bodytype
-#define CLOTHING_MASK_NONE (1<<0)
+#define CLOTHING_VARIATION_NONE (1<<0)
 /// Auto-generates the leg portion of the sprite with GAGS
-#define CLOTHING_MASK_DIGITIGRADE (1<<1)
+#define CLOTHING_VARIATION_DIGITIGRADE (1<<1)
 
 //flags for covering body parts
 #define GLASSESCOVERSEYES (1<<0)

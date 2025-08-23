@@ -62,16 +62,16 @@
 	var/obj/item/clothing/under/worn_uniform = w_uniform
 
 	var/uniform_compatible = isnull(worn_uniform) \
-		|| (worn_uniform.bodyshape_flags & BODYSHAPE_DIGITIGRADE) \
+		|| (worn_uniform.clothing_variations & CLOTHING_VARIATION_DIGITIGRADE) \
 		|| !(worn_uniform.body_parts_covered & LEGS) \
 		|| (worn_suit?.flags_inv & HIDEJUMPSUIT) // If suit hides our jumpsuit, it doesn't matter if it squishes
 
 	var/suit_compatible = isnull(worn_suit) \
-		|| (worn_suit.bodyshape_flags & BODYSHAPE_DIGITIGRADE) \
+		|| (worn_suit.clothing_variations & CLOTHING_VARIATION_DIGITIGRADE) \
 		|| !(worn_suit.body_parts_covered & LEGS)
 
 	var/shoes_compatible = isnull(worn_shoes) \
-		|| (worn_shoes.bodyshape_flags & BODYSHAPE_DIGITIGRADE)
+		|| (worn_shoes.clothing_variations & CLOTHING_VARIATION_DIGITIGRADE)
 
 	return !uniform_compatible || !suit_compatible || !shoes_compatible
 

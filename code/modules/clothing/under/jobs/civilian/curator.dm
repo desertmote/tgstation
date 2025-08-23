@@ -18,7 +18,7 @@
 	can_adjust = FALSE
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
-	bodyshape_mask = CLOTHING_MASK_NONE
+	clothing_variations = CLOTHING_VARIATION_NONE
 
 /obj/item/clothing/under/rank/civilian/curator/treasure_hunter
 	name = "treasure hunter uniform"

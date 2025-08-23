@@ -6,7 +6,7 @@
 	icon = 'icons/obj/clothing/suits/utility.dmi'
 	worn_icon = 'icons/mob/clothing/suits/utility.dmi'
 	inhand_icon_state = null
-	bodyshape_mask = CLOTHING_MASK_DIGITIGRADE
+	clothing_variations = CLOTHING_VARIATION_DIGITIGRADE
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
@@ -114,7 +114,7 @@
 	icon_state = "goliath_cloak"
 	alternate_worn_layer = NECK_LAYER
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	bodyshape_mask = CLOTHING_MASK_NONE
+	clothing_variations = CLOTHING_VARIATION_NONE
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|ARMS

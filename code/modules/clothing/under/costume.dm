@@ -104,7 +104,7 @@
 	inhand_icon_state = null
 	body_parts_covered = CHEST|GROIN|ARMS
 	female_sprite_flags = NO_FEMALE_UNIFORM
-	bodyshape_mask = CLOTHING_MASK_NONE
+	clothing_variations = CLOTHING_VARIATION_NONE
 	can_adjust = FALSE
 	resistance_flags = NONE
 
@@ -127,7 +127,7 @@
 	flags_1 = IS_PLAYER_COLORABLE_1
 	body_parts_covered = CHEST|GROIN
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
-	bodyshape_mask = CLOTHING_MASK_NONE
+	clothing_variations = CLOTHING_VARIATION_NONE
 	alternate_worn_layer = UNDER_SUIT_LAYER
 	can_adjust = FALSE
 
@@ -144,7 +144,7 @@
 	icon_state = "yukata1"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	bodyshape_mask = CLOTHING_MASK_NONE
+	clothing_variations = CLOTHING_VARIATION_NONE
 
 /obj/item/clothing/under/costume/yukata/green
 	name = "green yukata"
@@ -163,7 +163,7 @@
 	inhand_icon_state = "yukata1"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
-	bodyshape_mask = CLOTHING_MASK_NONE
+	clothing_variations = CLOTHING_VARIATION_NONE
 
 /obj/item/clothing/under/costume/kimono/red
 	name = "red kimono"
@@ -355,7 +355,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	flags_1 = IS_PLAYER_COLORABLE_1
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
-	bodyshape_mask = CLOTHING_MASK_NONE
+	clothing_variations = CLOTHING_VARIATION_NONE
 
 /obj/item/clothing/under/costume/buttondown/skirt/service //preset one to be a formal white shirt and black skirt
 	icon_state = "/obj/item/clothing/under/costume/buttondown/skirt/service"
