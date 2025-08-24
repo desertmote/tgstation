@@ -5,6 +5,12 @@
 #define DEFAULT_SHOES_FILE 'icons/mob/clothing/feet.dmi'
 ///The dmi for humanoid oversuits
 #define DEFAULT_SUIT_FILE 'icons/mob/clothing/suits/default.dmi'
+///The dmi for unsnouted masks
+#define DEFAULT_MASKS_FILE 'icons/mob/clothing/mask.dmi'
+
+//SNOUTED PATHS
+///The dmi for masks that conform to snouts
+#define SNOUTED_MASKS_FILE 'icons/mob/human/species/misc/snouted.dmi'
 
 //DIGITIGRADE PATHS
 ///The dmi containing digitigrade uniforms

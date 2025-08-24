@@ -11,6 +11,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	name = "gas mask"
 	desc = "A face-covering mask that can be connected to an air supply. Good for concealing your identity and with a filter slot to help remove those toxins." //More accurate
 	icon_state = "gas_alt"
+	bodyshape_flags = list(BODYSHAPE_DIGITIGRADE)
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS | GAS_FILTERING
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
 	w_class = WEIGHT_CLASS_NORMAL
@@ -39,6 +40,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 
 /obj/item/clothing/mask/gas/Initialize(mapload)
 	. = ..()
+	LAZYADDASSOC(bodyshape_icons, "[BODYSHAPE_SNOUTED]", SNOUTED_MASKS_FILE)
 
 	if((flags_cover & PEPPERPROOF) && pepper_tint)
 		AddComponent(/datum/component/clothing_dirt, dirt_state)
@@ -264,6 +266,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	name = "plague doctor mask"
 	desc = "A modernised version of the classic design, this mask will not only protect you from exposure to the Pestilence but it can also be connected to an air supply."
 	icon_state = "plaguedoctor"
+	bodyshape_flags = NONE
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDESNOUT|HIDEHAIR
 	inhand_icon_state = "gas_mask"
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT|MASKINTERNALS
@@ -288,6 +291,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	inhand_icon_state = "clown_hat"
 	lefthand_file = 'icons/mob/inhands/clothing/hats_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing/hats_righthand.dmi'
+	bodyshape_flags = NONE
 	dye_color = DYE_CLOWN
 	w_class = WEIGHT_CLASS_SMALL
 	flags_cover = MASKCOVERSEYES
@@ -337,6 +341,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	inhand_icon_state = "sexyclown_hat"
 	lefthand_file = 'icons/mob/inhands/clothing/hats_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing/hats_righthand.dmi'
+	bodyshape_flags = NONE
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
 	fishing_modifier = 0
@@ -345,6 +350,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	name = "gamer's wig and mask"
 	desc = "But I am a gamer, and no man; A reproach of men, and despised by the people."
 	clothing_flags = MASKINTERNALS
+	bodyshape_flags = NONE
 	icon_state = "jonkler"
 	inhand_icon_state = null
 	flags_cover = MASKCOVERSEYES
@@ -354,6 +360,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	name = "mime mask"
 	desc = "The traditional mime's mask. It has an eerie facial posture."
 	clothing_flags = MASKINTERNALS
+	bodyshape_flags = NONE
 	icon_state = "mime"
 	inhand_icon_state = null
 	w_class = WEIGHT_CLASS_SMALL
@@ -401,6 +408,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	name = "monkey mask"
 	desc = "A mask used when acting as a monkey."
 	clothing_flags = MASKINTERNALS
+	bodyshape_flags = NONE
 	icon_state = "monkeymask"
 	inhand_icon_state = "owl_mask"
 	flags_cover = MASKCOVERSEYES
@@ -411,6 +419,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	name = "sexy mime mask"
 	desc = "A traditional female mime's mask."
 	clothing_flags = MASKINTERNALS
+	bodyshape_flags = NONE
 	icon_state = "sexymime"
 	inhand_icon_state = null
 	flags_cover = MASKCOVERSEYES
@@ -422,6 +431,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	name = "cyborg visor"
 	desc = "Beep boop."
 	icon_state = "death"
+	bodyshape_flags = NONE
 	resistance_flags = FLAMMABLE
 	flags_cover = MASKCOVERSEYES
 	fishing_modifier = 0
@@ -431,6 +441,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	desc = "Twoooo!"
 	icon_state = "owl"
 	inhand_icon_state = "owl_mask"
+	bodyshape_flags = NONE
 	clothing_flags = MASKINTERNALS
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
@@ -441,6 +452,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	desc = "Gnash gnash."
 	icon_state = "carp_mask"
 	inhand_icon_state = null
+	bodyshape_flags = NONE
 	flags_cover = MASKCOVERSEYES
 	fishing_modifier = -4
 
@@ -451,6 +463,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	inhand_icon_state = null
 	custom_materials = list(/datum/material/wood = SHEET_MATERIAL_AMOUNT * 1.25)
 	resistance_flags = FLAMMABLE
+	bodyshape_flags = NONE
 	flags_cover = MASKCOVERSEYES
 	max_integrity = 100
 	actions_types = list(/datum/action/item_action/adjust_style)
@@ -525,6 +538,7 @@ GLOBAL_LIST_INIT(clown_mask_options, list(
 	name = "driscoll mask"
 	desc = "Great for train hijackings. Works like a normal full face gas mask, but won't conceal your identity."
 	icon_state = "driscoll_mask"
+	bodyshape_flags = NONE
 	flags_inv = HIDEFACIALHAIR
 	flags_cover = MASKCOVERSMOUTH
 	w_class = WEIGHT_CLASS_NORMAL

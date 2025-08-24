@@ -4,6 +4,7 @@
 	icon_state = "breath"
 	inhand_icon_state = "m_mask"
 	body_parts_covered = 0
+	bodyshape_flags = list(BODYSHAPE_DIGITIGRADE)
 	clothing_flags = MASKINTERNALS
 	visor_flags = MASKINTERNALS
 	w_class = WEIGHT_CLASS_SMALL
@@ -16,6 +17,10 @@
 
 /datum/armor/mask_breath
 	bio = 50
+
+/obj/item/clothing/mask/breath/Initialize(mapload)
+	. = ..()
+	LAZYADDASSOC(bodyshape_icons, "[BODYSHAPE_SNOUTED]", SNOUTED_MASKS_FILE)
 
 /obj/item/clothing/mask/breath/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] is wrapping \the [src]'s tube around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!"))

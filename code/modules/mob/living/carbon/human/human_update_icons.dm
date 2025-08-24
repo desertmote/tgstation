@@ -98,7 +98,6 @@ There are several things that need to be remembered:
 		if(uniform.adjusted == ALT_STYLE)
 			target_overlay = "[target_overlay]_d"
 
-		var/mutable_appearance/uniform_overlay
 		//This is how non-humanoid clothing works. You check if the mob has the right bodyflag, and the clothing has the corresponding clothing flag.
 		//handled_by_bodyshape is used to track whether or not we successfully used an alternate sprite. It's set to TRUE to ease up on copy-paste.
 		//icon_file MUST be set to null by default, or it causes issues.
@@ -121,7 +120,7 @@ There are several things that need to be remembered:
 			icon_file = DEFAULT_UNIFORM_FILE
 			handled_by_bodyshape = FALSE
 
-		uniform_overlay = uniform.build_worn_icon(
+		var/mutable_appearance/uniform_overlay = w_uniform.build_worn_icon(
 			default_layer = UNIFORM_LAYER,
 			default_icon_file = icon_file,
 			isinhands = FALSE,
@@ -515,9 +514,25 @@ There are several things that need to be remembered:
 		if(HAS_TRAIT(worn_item, TRAIT_NO_WORN_ICON) || (check_obscured_slots() & ITEM_SLOT_MASK))
 			return
 
-		var/icon_file = 'icons/mob/clothing/mask.dmi'
+		var/handled_by_bodyshape = TRUE
+		var/icon_file
 
-		var/mutable_appearance/mask_overlay = wear_mask.build_worn_icon(default_layer = FACEMASK_LAYER, default_icon_file = icon_file)
+		for(var/shape in worn_item.bodyshape_flags)
+			if(bodyshape & shape)
+				icon_file = worn_item.bodyshape_icons["[shape]"]
+
+		if((bodyshape & BODYSHAPE_SNOUTED) && (worn_item.bodyshape_flags & BODYSHAPE_SNOUTED))
+			icon_file = SNOUTED_MASKS_FILE
+
+		if(!icon_exists(icon_file, RESOLVE_ICON_STATE(worn_item)))
+			icon_file = DEFAULT_MASKS_FILE
+			handled_by_bodyshape = FALSE
+
+		var/mutable_appearance/mask_overlay = wear_mask.build_worn_icon(
+			default_layer = FACEMASK_LAYER,
+			default_icon_file = icon_file,
+			override_file = handled_by_bodyshape ? icon_file : null,
+			)
 		my_head.worn_mask_offset?.apply_offset(mask_overlay)
 		overlays_standing[FACEMASK_LAYER] = mask_overlay
 
@@ -619,7 +634,7 @@ There are several things that need to be remembered:
 	return icon(resulting_icon)
 
 /// Modifies a sprite to replace the legs with a new version
-/proc/replace_icon_legs(icon/base_icon, icon/new_legs)
+/proc/replace_icon_legs(icon/base_icon, icon/new_legs, replace = TRUE)
 	var/static/icon/leg_mask
 	if(!leg_mask)
 		leg_mask = icon('icons/mob/clothing/under/masking_helpers.dmi', "digi_leg_mask")
@@ -627,7 +642,8 @@ There are several things that need to be remembered:
 	// cuts the legs off
 	base_icon.Blend(leg_mask, ICON_SUBTRACT)
 	// staples the new legs on
-	base_icon.Blend(new_legs, ICON_OVERLAY)
+	if(replace)
+		base_icon.Blend(new_legs, ICON_OVERLAY)
 	return base_icon
 
 /**
