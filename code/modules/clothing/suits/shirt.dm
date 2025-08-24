@@ -9,6 +9,7 @@
 	greyscale_config_worn = /datum/greyscale_config/wellworn_shirt/worn
 	greyscale_colors = COLOR_WHITE
 	species_exception = list(/datum/species/golem)
+	supports_variations_flags = CLOTHING_NO_VARIATION
 	flags_1 = IS_PLAYER_COLORABLE_1
 	///How many times has this shirt been washed? (In an ideal world this is just the determinant of the transform matrix.)
 	var/wash_count = 0

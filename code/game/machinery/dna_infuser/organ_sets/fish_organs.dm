@@ -92,6 +92,8 @@
 	if (new_value >= FISH_INFUSION_ALL_ORGANS)
 		if (!color_active)
 			for(var/obj/item/bodypart/limb as anything in carbon_owner.bodyparts)
+				if(limb.bodytype & BODYTYPE_ROBOTIC)
+					continue
 				limb.add_color_override(carbon_owner.dna.features[FEATURE_TAIL_FISH_COLOR], LIMB_COLOR_FISH_INFUSION)
 			color_active = TRUE
 		return
