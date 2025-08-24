@@ -5,12 +5,14 @@
 	inhand_icon_state = "blindfold"
 	lefthand_file = 'icons/mob/inhands/clothing/glasses_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing/glasses_righthand.dmi'
+	bodyshape_flags = list(BODYSHAPE_SNOUTED)
 	flags_cover = MASKCOVERSMOUTH
 	w_class = WEIGHT_CLASS_SMALL
 	equip_delay_other = 2 SECONDS
 
 /obj/item/clothing/mask/muzzle/Initialize(mapload)
 	. = ..()
+	LAZYADDASSOC(bodyshape_icons, "[BODYSHAPE_SNOUTED]", SNOUTED_MASKS_FILE)
 	AddElement(/datum/element/muffles_speech)
 
 /obj/item/clothing/mask/muzzle/attack_paw(mob/user, list/modifiers)

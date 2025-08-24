@@ -622,7 +622,7 @@ There are several things that need to be remembered:
 		greyscale_colors = item.get_general_color(base_icon)
 
 	var/index = "[key]-[item.type]-[greyscale_colors]"
-	var/static/list/digitigrade_clothing_cache = list()
+	var/list/digitigrade_clothing_cache = list()
 	var/icon/resulting_icon = digitigrade_clothing_cache[index]
 	if(!resulting_icon)
 		resulting_icon = item.generate_digitigrade_icons(base_icon, greyscale_colors)
@@ -852,18 +852,18 @@ generate/load female uniform sprites matching all previously decided variables
 
 	var/mutable_appearance/draw_target // MA of the item itself, not the final result
 	var/icon/building_icon // used to construct an icon across multiple procs before converting it to MA
-	if(!isinhands && is_digi && (clothing_variations & CLOTHING_VARIATION_DIGITIGRADE))
-		building_icon = wear_digi_version(
-			base_icon = building_icon || icon(file2use, t_state),
-			item = src,
-			key = "[t_state]-[file2use]-[female_uniform]",
-			greyscale_colors = greyscale_colors,
-		)
 	if(female_uniform)
 		building_icon = wear_female_version(
 			icon_state = t_state,
 			icon = file2use,
 			type = female_uniform,
+			greyscale_colors = greyscale_colors,
+		)
+	if(!isinhands && is_digi && (clothing_variations & CLOTHING_VARIATION_DIGITIGRADE))
+		building_icon = wear_digi_version(
+			base_icon = building_icon || icon(file2use, t_state),
+			item = src,
+			key = "[t_state]-[file2use]-[female_uniform]",
 			greyscale_colors = greyscale_colors,
 		)
 	if(building_icon)

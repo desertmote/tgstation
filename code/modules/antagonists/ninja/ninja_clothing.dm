@@ -11,7 +11,6 @@
 	desc = "A close-fitting nano-enhanced mask that acts both as an air filter and a post-modern fashion statement."
 	icon_state = "ninja"
 	inhand_icon_state = "sechailer"
-	bodyshape_flags = NONE
 	strip_delay = 12 SECONDS
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	flags_inv = HIDEFACIALHAIR | HIDEFACE | HIDESNOUT

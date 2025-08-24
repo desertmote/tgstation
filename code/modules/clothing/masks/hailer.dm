@@ -48,8 +48,9 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	actions_types = list(/datum/action/item_action/halt, /datum/action/item_action/adjust)
 	icon_state = "sechailer"
 	inhand_icon_state = "sechailer"
+	bodyshape_flags = list(BODYSHAPE_SNOUTED)
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS | GAS_FILTERING
-	flags_inv = HIDEFACIALHAIR | HIDEFACE | HIDESNOUT
+	flags_inv = HIDEFACIALHAIR | HIDEFACE
 	w_class = WEIGHT_CLASS_SMALL
 	visor_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS
 	visor_flags_inv = HIDEFACIALHAIR | HIDEFACE
@@ -72,6 +73,10 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	voice_filter = @{"[0:a] asetrate=%SAMPLE_RATE%*0.7,aresample=16000,atempo=1/0.7,lowshelf=g=-20:f=500,highpass=f=500,aphaser=in_gain=1:out_gain=1:delay=3.0:decay=0.4:speed=0.5:type=t [out]; [out]atempo=1.2,volume=15dB [final]; anoisesrc=a=0.01:d=60 [noise]; [final][noise] amix=duration=shortest"}
 	use_radio_beeps_tts = TRUE
 
+/obj/item/clothing/mask/gas/sechailer/Initialize(mapload)
+	. = ..()
+	LAZYADDASSOC(bodyshape_icons, "[BODYSHAPE_SNOUTED]", SNOUTED_MASKS_FILE)
+
 /obj/item/clothing/mask/gas/sechailer/plasmaman
 	starting_filter_type = /obj/item/gas_filter/plasmaman
 
@@ -81,6 +86,7 @@ GLOBAL_LIST_INIT(hailer_phrases, list(
 	actions_types = list(/datum/action/item_action/halt)
 	icon_state = "swat"
 	inhand_icon_state = "swat"
+	bodyshape_flags = NONE
 	aggressiveness = AGGR_SHIT_COP
 	flags_inv = HIDEFACIALHAIR | HIDEFACE | HIDEEYES | HIDEEARS | HIDEHAIR | HIDESNOUT
 	visor_flags_inv = 0

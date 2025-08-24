@@ -4,7 +4,7 @@
 	icon_state = "breath"
 	inhand_icon_state = "m_mask"
 	body_parts_covered = 0
-	bodyshape_flags = list(BODYSHAPE_DIGITIGRADE)
+	bodyshape_flags = list(BODYSHAPE_SNOUTED)
 	clothing_flags = MASKINTERNALS
 	visor_flags = MASKINTERNALS
 	w_class = WEIGHT_CLASS_SMALL
