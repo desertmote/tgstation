@@ -10,7 +10,7 @@
 	morphing_human.dna.features[FEATURE_LEGS] = DIGITIGRADE_LEGS //you WILL have digitigrade legs
 
 	var/obj/item/human_shoes = morphing_human.get_item_by_slot(ITEM_SLOT_FEET)
-	human_shoes.bodyshape_flags = NONE //do not fit lizards at all costs.
+	human_shoes.clothing_variations = CLOTHING_VARIATION_NONE //do not fit lizards at all costs.
 	morphing_human.set_species(/datum/species/lizard)
 	var/obj/item/lizard_shoes = morphing_human.get_item_by_slot(ITEM_SLOT_FEET)
 
