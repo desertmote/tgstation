@@ -1,6 +1,6 @@
 GLOBAL_LIST_INIT(lung_choices, list(
 	"Oxygen" = /obj/item/organ/lungs,
-	"Water vapor" = /obj/item/organ/lungs/fish/mermaid,
+	"Water vapor" = /obj/item/organ/lungs/fish,
 	))
 
 /datum/preference/choiced/lungs_choice

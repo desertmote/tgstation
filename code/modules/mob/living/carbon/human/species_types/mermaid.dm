@@ -3,8 +3,8 @@
 	plural_form = "Mermaids"
 	id = SPECIES_MERMAID
 	mutant_organs = list(/obj/item/organ/tail/fish/mermaid)
-	mutantstomach = /obj/item/organ/stomach/fish/mermaid
-	mutantliver = /obj/item/organ/liver/fish/mermaid
+	mutantstomach = /obj/item/organ/stomach/fish
+	mutantliver = /obj/item/organ/liver/fish
 	bodypart_overrides = list(
 		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left,
 		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right,
@@ -83,17 +83,12 @@
 		indirect_action = TRUE,
 	)
 
-#define MERMAID_ORGAN_COLOR "#6d5287"
-#define MERMAID_SCLERA_COLOR COLOR_WHITE
-#define MERMAID_PUPIL_COLOR COLOR_BLUE
-#define MERMAID_COLORS MERMAID_ORGAN_COLOR + MERMAID_SCLERA_COLOR + MERMAID_PUPIL_COLOR
-
+///
 /obj/item/organ/tail/fish/mermaid
 	name = "large fish tail"
 //	desc = ""
 	fillet_amount = 12
 	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/mermaid
-	greyscale_colors = MERMAID_ORGAN_COLOR
 	external_bodyshapes = BODYSHAPE_MERMAID
 	restyle_flags = NONE
 	organ_traits = list(
@@ -117,6 +112,7 @@
 	owner.adjustBruteLoss(rand(35, 45))
 	if (owner.blood_volume)
 		owner.blood_volume -= (BLOOD_VOLUME_NORMAL / 3)
+		owner.add_splatter_floor()
 		owner.spray_blood(REVERSE_DIR(owner.dir))
 		owner.visible_message(span_warning("[src] detaches, spilling out liters of [LOWER_TEXT(owner.get_bloodtype()?.get_blood_name())]!"))
 		playsound(src, 'sound/effects/cartoon_sfx/cartoon_splat.ogg', 50, TRUE)
@@ -145,22 +141,3 @@
 
 /datum/bodypart_overlay/mutant/tail/fish/mermaid/can_draw_on_bodypart(obj/item/bodypart/limb)
 	return TRUE //always draw
-
-/obj/item/organ/lungs/fish/mermaid
-//	name = ""
-//	desc = ""
-
-/obj/item/organ/stomach/fish/mermaid
-//	name = ""
-//	desc = ""
-	greyscale_colors = MERMAID_COLORS
-
-/obj/item/organ/liver/fish/mermaid
-//	name = ""
-//	desc = ""
-	greyscale_colors = MERMAID_COLORS
-
-#undef MERMAID_ORGAN_COLOR
-#undef MERMAID_SCLERA_COLOR
-#undef MERMAID_PUPIL_COLOR
-#undef MERMAID_COLORS

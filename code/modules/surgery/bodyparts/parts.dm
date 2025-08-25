@@ -444,7 +444,7 @@
 
 /// This limb can't be attached to any humanoid with a mermaid tail!
 /obj/item/bodypart/leg/can_attach_limb(mob/living/carbon/owner, special)
-	if(owner.get_organ_by_type(/obj/item/organ/tail/fish/mermaid))
+	if(!special && owner.get_organ_by_type(/obj/item/organ/tail/fish/mermaid))
 		return FALSE
 	else
 		return ..()
