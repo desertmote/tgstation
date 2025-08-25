@@ -432,14 +432,13 @@ class ChatRenderer {
 
           const reactRoot = createRoot(childNode);
 
-          // biome-ignore-start lint/security/noDangerouslySetInnerHtml: ignore
+          /* eslint-disable react/no-danger */
           reactRoot.render(
             <Element {...outputProps}>
               <span dangerouslySetInnerHTML={oldHtml} />
             </Element>,
             childNode,
           );
-          // biome-ignore-end lint/security/noDangerouslySetInnerHtml: ignore
         }
 
         // Highlight text
