@@ -107,14 +107,14 @@
 
 /obj/item/organ/tail/fish/mermaid/on_mob_remove(mob/living/carbon/owner)
 	. = ..()
-	if (QDELING(owner))
+	if (QDELING(owner) || QDELING(src))
 		return
 	owner.adjustBruteLoss(rand(35, 45))
 	if (owner.blood_volume)
 		owner.blood_volume -= (BLOOD_VOLUME_NORMAL / 3)
 		owner.add_splatter_floor()
 		owner.spray_blood(REVERSE_DIR(owner.dir))
-		owner.visible_message(span_warning("[src] detaches, spilling out liters of [LOWER_TEXT(owner.get_bloodtype()?.get_blood_name())]!"))
+		owner.visible_message(span_warning("[src] detaches from [owner], spilling out liters of [LOWER_TEXT(owner.get_bloodtype()?.get_blood_name())]!"))
 		playsound(src, 'sound/effects/cartoon_sfx/cartoon_splat.ogg', 50, TRUE)
 
 /obj/item/organ/tail/fish/mermaid/mutate_feature(features, mob/living/carbon/human/human)
