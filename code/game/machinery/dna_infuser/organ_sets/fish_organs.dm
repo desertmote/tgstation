@@ -4,7 +4,7 @@
 #define FISH_COLORS FISH_ORGAN_COLOR + FISH_SCLERA_COLOR + FISH_PUPIL_COLOR
 /// How many fishy organs can you have at once, requirement to get the tail color
 /// Currently liver, stomach, lungs and tail plus tongue
-#define FISH_INFUSION_ALL_ORGANS 4
+#define FISH_INFUSION_ALL_ORGANS 5
 
 ///bonus of the observing gondola: you can ignore environmental hazards
 /datum/status_effect/organ_set_bonus/fish
@@ -85,10 +85,6 @@
 	if (!iscarbon(owner))
 		return
 	var/mob/living/carbon/carbon_owner = owner
-	// We need to snowflake the tongue because it doesn't count towards the set bonus
-	if (carbon_owner.get_organ_by_type(/obj/item/organ/tongue/inky))
-		new_value += 1
-
 	if (new_value >= FISH_INFUSION_ALL_ORGANS)
 		if (!color_active)
 			for(var/obj/item/bodypart/limb as anything in carbon_owner.bodyparts)
@@ -176,10 +172,6 @@
 
 /datum/status_effect/organ_set_bonus/fish/proc/check_tail(mob/living/carbon/source, obj/item/organ/organ, special)
 	SIGNAL_HANDLER
-	// We need to snowflake the tongue because it doesn't count towards the set bonus
-	if (istype(organ, /obj/item/organ/tongue/inky))
-		set_organs(organs)
-		return
 	if(!HAS_TRAIT(owner, TRAIT_IS_WET) || !istype(organ, /obj/item/organ/tail/fish))
 		return
 	var/obj/item/organ/tail = owner.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
@@ -467,29 +459,42 @@
 	AddElement(/datum/element/organ_set_bonus, /datum/status_effect/organ_set_bonus/fish)
 
 
-///Organ from fish with the ink production trait. Doesn't count toward the organ set bonus but is buffed once it's active.
-/obj/item/organ/tongue/inky
+///A fishy tongue!
+/obj/item/organ/tongue/fish
+	name = "mutated fish-tongue"
+//	desc = ""
+	say_mod = "blubs"
+	organ_traits = list(TRAIT_CARPOTOXIN_IMMUNE)
+	liked_foodtypes = JUNKFOOD | FRIED | SEAFOOD
+	// Seafood instead of meat, because it's a fish organ
+	foodtype_flags = RAW | SEAFOOD | GORE
+	languages_native = list(/datum/language/carptongue)
+
+
+/obj/item/organ/tongue/fish/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/organ_set_bonus, /datum/status_effect/organ_set_bonus/fish)
+
+/obj/item/organ/tongue/fish/get_possible_languages()
+	. = ..()
+	. += /datum/language/carptongue
+
+///Organ from fish with the ink production trait.
+/obj/item/organ/tongue/fish/inky
 	name = "ink-secreting tongue"
 	desc = "A black tongue linked to two swollen black sacs underneath the palate."
 	icon = 'icons/obj/medical/organs/infuser_organs.dmi'
 	icon_state = "inky_tongue"
 	actions_types = list(/datum/action/cooldown/ink_spit)
-
-	// Seafood instead of meat, because it's a fish organ
-	foodtype_flags = RAW | SEAFOOD | GORE
 	// Squid with a hint of the sea (from the ink)
 	food_tastes = list(
 		"squid" = 1,
 		"the sea" = 0.2,
 	)
 
-/obj/item/organ/tongue/inky/Initialize(mapload)
+/obj/item/organ/tongue/fish/inky/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/noticable_organ, "Slick black ink seldom rivulets from %PRONOUN_their mouth.", BODY_ZONE_PRECISE_MOUTH)
-
-/obj/item/organ/tongue/inky/get_possible_languages()
-	. = ..()
-	. += /datum/language/carptongue
 
 ///Organ from fish with the toxic trait. Allows the user to use tetrodotoxin as a healing chem instead of a toxin.
 /obj/item/organ/liver/fish

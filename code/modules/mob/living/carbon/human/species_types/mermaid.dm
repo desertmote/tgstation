@@ -3,6 +3,7 @@
 	plural_form = "Mermaids"
 	id = SPECIES_MERMAID
 	mutant_organs = list(/obj/item/organ/tail/fish/mermaid)
+	mutanttongue = /obj/item/organ/tongue/fish
 	mutantstomach = /obj/item/organ/stomach/fish
 	mutantliver = /obj/item/organ/liver/fish
 	bodypart_overrides = list(
@@ -14,7 +15,7 @@
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_AQUATIC
 
 	species_cookie = /obj/item/food/chips/shrimp
-//	inert_mutation =
+	inert_mutation = /datum/mutation/tongue_spike/chem
 	payday_modifier = 0.9
 //	family_heirlooms = list(
 //		,

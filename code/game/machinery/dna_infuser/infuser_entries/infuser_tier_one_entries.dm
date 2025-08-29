@@ -172,7 +172,7 @@
 		"spit ink to blind foes",
 	)
 	output_organs = list(
-		/obj/item/organ/tongue/inky
+		/obj/item/organ/tongue/fish/inky
 	)
 	tier = DNA_MUTANT_TIER_ONE
 
