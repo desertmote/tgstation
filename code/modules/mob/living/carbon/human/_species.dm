@@ -2046,14 +2046,13 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		new_bodypart_overrides[BODY_ZONE_R_LEG] = /obj/item/bodypart/leg/right/digitigrade
 		new_bodypart_overrides[BODY_ZONE_L_LEG] = /obj/item/bodypart/leg/left/digitigrade
 
-	var/obj/item/bodypart/new_part
 	for(var/obj/item/bodypart/old_part as anything in target.bodyparts)
 		if((old_part.change_exempt_flags & BP_BLOCK_CHANGE_SPECIES) || (old_part.bodypart_flags & BODYPART_IMPLANTED))
 			continue
 		// update all our existing limbs
 		var/path = new_bodypart_overrides?[old_part.body_zone]
 		if(path)
-			new_part = new path()
+			var/obj/item/bodypart/new_part = new path()
 			new_part.replace_limb(target, TRUE)
 			new_part.update_limb(is_creating = TRUE)
 			new_part.set_initial_damage(old_part.brute_dam, old_part.burn_dam)
@@ -2068,10 +2067,12 @@ GLOBAL_LIST_EMPTY(features_by_species)
 		if(new_bodypart_overrides.Find(zone) && old_bodypart_overrides.Find(zone))
 			continue
 		var/path = new_bodypart_overrides[zone]
-		if(path)
-			new_part = new path()
-			new_part.replace_limb(target, TRUE)
-			new_part.update_limb(is_creating = TRUE)
+		if(!path)
+			return
+
+		var/obj/item/bodypart/new_part = new path()
+		new_part.replace_limb(target, TRUE)
+		new_part.update_limb(is_creating = TRUE)
 
 /// Creates body parts for the target completely from scratch based on the species
 /datum/species/proc/create_fresh_body(mob/living/carbon/target)
