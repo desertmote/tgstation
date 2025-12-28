@@ -275,15 +275,15 @@
 	color_source = ORGAN_COLOR_OVERRIDE
 
 /datum/bodypart_overlay/mutant/tail/fish/get_global_feature_list()
-	return SSaccessories.tails_list_fish
+	return SSaccessories.feature_list[feature_key]
 
 /datum/bodypart_overlay/mutant/tail/fish/on_mob_insert(obj/item/organ/parent, mob/living/carbon/receiver)
 	if(imprint_on_next_insertion)
 		if(istype(parent, /obj/item/organ/tail/fish/mermaid))
-			receiver.dna.features[FEATURE_TAIL_FISH] = /datum/sprite_accessory/tails/fish/mermaid::name
+			receiver.dna.features[feature_key] = /datum/sprite_accessory/tails/fish/mermaid::name
 		else
-			receiver.dna.features[FEATURE_TAIL_FISH] = get_random_appearance().name // this proc not only returns a random accessory from our pool, it also excludes locked ones. wow!
-		receiver.dna.update_uf_block(/datum/dna_block/feature/tail_fish)
+			receiver.dna.features[feature_key] = get_random_appearance().name // this proc not only returns a random accessory from our pool, it also excludes locked ones. wow!
+		receiver.dna.update_uf_block(/datum/dna_block/feature/accessory/tail_fish)
 	return ..()
 
 /datum/bodypart_overlay/mutant/tail/fish/added_to_limb(obj/item/bodypart/limb)

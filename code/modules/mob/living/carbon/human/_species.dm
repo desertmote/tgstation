@@ -1982,6 +1982,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 			continue
 		// update all our existing limbs
 		var/path = new_bodypart_overrides?[old_part.body_zone]
+		var/obj/item/bodypart/new_part
 		if(path)
 			new_part = new path()
 			new_part.replace_limb(target)
