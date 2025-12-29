@@ -458,7 +458,6 @@
 	. = ..()
 	AddElement(/datum/element/organ_set_bonus, /datum/status_effect/organ_set_bonus/fish)
 
-
 ///A fishy tongue!
 /obj/item/organ/tongue/fish
 	name = "mutated fish-tongue"
@@ -469,7 +468,6 @@
 	// Seafood instead of meat, because it's a fish organ
 	foodtype_flags = RAW | SEAFOOD | GORE
 	languages_native = list(/datum/language/carptongue)
-
 
 /obj/item/organ/tongue/fish/Initialize(mapload)
 	. = ..()

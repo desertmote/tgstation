@@ -368,11 +368,10 @@
 		qdel(src)
 		return
 	// handle the droplets particle effect
-	var/has_vfx = owner?.has_shared_particles(/particles/droplets)
-	if(!has_vfx && stacks >= WETSTACKS_MINIMUM_VFX)
-		owner?.add_shared_particles(/particles/droplets)
-	if(has_vfx && stacks <= WETSTACKS_MINIMUM_VFX)
-		owner?.remove_shared_particles(/particles/droplets)
+	if(stacks >= WETSTACKS_MINIMUM_VFX)
+		owner.add_shared_particles(/particles/droplets)
+	if(stacks <= WETSTACKS_MINIMUM_VFX)
+		owner.remove_shared_particles(/particles/droplets)
 
 /datum/status_effect/fire_handler/wet_stacks/check_basic_mob_immunity(mob/living/basic/basic_owner)
 	return !(basic_owner.basic_mob_flags & IMMUNE_TO_GETTING_WET)
