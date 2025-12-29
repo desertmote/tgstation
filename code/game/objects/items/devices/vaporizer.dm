@@ -1,66 +1,84 @@
+#define MIN_WET_STACKS 1
+#define MAX_WET_STACKS 4
+
 /obj/item/clothing/accessory/vaporizer
 	name = "hydro-vaporizer"
-//	desc = ""
+	desc = ""
 	icon_state = "vaporizer"
 	base_icon_state = "vaporizer"
+	///
+	var/datum/component/wet_stacks_granter/wet_stacks_component
 
 /obj/item/clothing/accessory/vaporizer/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/hydrating)
+	wet_stacks_component = AddComponent(/datum/component/wet_stacks_granter)
 
 /obj/item/clothing/accessory/vaporizer/Destroy()
 	. = ..()
-	qdel(GetComponent(/datum/component/hydrating))
+	QDEL_NULL(wet_stacks_component)
 
 /obj/item/clothing/accessory/vaporizer/add_context(atom/source, list/context, obj/item/held_item, mob/user)
 	. = ..()
-	context[SCREENTIP_CONTEXT_CTRL_LMB] = "Toggle hiding"
+	context[SCREENTIP_CONTEXT_ALT_LMB] = "Dial down"
+	context[SCREENTIP_CONTEXT_ALT_RMB] = "Dial up"
 
 /obj/item/clothing/accessory/vaporizer/examine(mob/user)
 	. = ..()
-	. += "It can be hidden. Ctrl + left-click to toggle."
+	. += "It has a dial. Alt + Left-click / Right-click to turn down or up."
+	. += "Its dial is currently set to [wet_stacks_component?.stacks_to_add]."
 
-/obj/item/clothing/accessory/vaporizer/item_ctrl_click(mob/user)
+/obj/item/clothing/accessory/vaporizer/can_use(mob/user)
+	if(!wet_stacks_component)
+		return FALSE
+	if(!user.can_perform_action(src))
+		return FALSE
+	return ..()
+
+/obj/item/clothing/accessory/vaporizer/click_alt(mob/user)
 	. = ..()
-	if(!ishuman(user))
+	if(!can_use(user))
 		return CLICK_ACTION_BLOCKING
-	var/mob/living/carbon/human/wearer = user
-	if(wearer.get_active_held_item() != src)
-		to_chat(wearer, span_warning("You must hold the [src] in your hand to do this!"))
+	if(wet_stacks_component.stacks_to_add <= MIN_WET_STACKS)
 		return CLICK_ACTION_BLOCKING
-	if(icon_state == "[base_icon_state]")
-		icon_state = "[base_icon_state]_hidden"
-		worn_icon_state = "[base_icon_state]_hidden"
-		balloon_alert(wearer, "hidden")
-	else
-		icon_state = "[base_icon_state]"
-		worn_icon_state = "[base_icon_state]"
-		balloon_alert(wearer, "shown")
-	update_icon()
+	wet_stacks_component.stacks_to_add--
+	balloon_alert(user, "dialed down")
+	return CLICK_ACTION_SUCCESS
+
+/obj/item/clothing/accessory/vaporizer/click_alt_secondary(mob/user)
+	. = ..()
+	if(!can_use(user))
+		return CLICK_ACTION_BLOCKING
+	if(wet_stacks_component.stacks_to_add >= MAX_WET_STACKS)
+		return CLICK_ACTION_BLOCKING
+	wet_stacks_component.stacks_to_add++
+	balloon_alert(user, "dialed up")
 	return CLICK_ACTION_SUCCESS
 
 /mob/living/carbon/human/emp_act(severity)
 	. = ..()
 	var/obj/item/clothing/under/worn_uniform = w_uniform
-	if(w_uniform)
-		var/obj/item/clothing/accessory/vaporizer/vaporizer = locate() in worn_uniform.attached_accessories
-		vaporizer?.on_emp()
+	var/obj/item/clothing/accessory/vaporizer/vaporizer = locate() in worn_uniform?.attached_accessories
+	vaporizer?.on_emp()
 
 /obj/item/clothing/accessory/vaporizer/emp_act(severity)
 	. = ..()
 	var/turf/open/tile = get_turf(src)
-	var/list/nearby_mobs = get_hearers_in_view(4, tile)
-	if(istype(tile))
-		tile.atmos_spawn_air("[GAS_WATER_VAPOR]=50;[TURF_TEMPERATURE(1000)]")
-	tile.balloon_alert_to_viewers("overloaded!")
-	to_chat(tile, span_warning("[src] overloads, exploding in a cloud of hot steam!"))
-	playsound(tile, 'sound/effects/spray.ogg', 80)
-	for(var/mob/living/victim in nearby_mobs)
+	var/list/nearby_mobs = oviewers(4, get_turf(src))
+	for(var/mob/living/victim as anything in nearby_mobs)
 		victim.set_jitter_if_lower(15 SECONDS)
 		victim.set_eye_blur_if_lower(5 SECONDS)
+	if (tile)
+		tile.atmos_spawn_air("[GAS_WATER_VAPOR]=50;[TURF_TEMPERATURE(1000)]")
+		new /obj/effect/decal/cleanable/plastic(tile)
+	balloon_alert_to_viewers("overloaded!")
+	to_chat(src, span_warning("[src] overloads, exploding in a cloud of hot steam!"))
+	playsound(src, 'sound/effects/spray.ogg', 80)
 	qdel(src)
 
 /obj/item/clothing/accessory/vaporizer/proc/on_emp()
 	var/obj/item/clothing/under/attached_to = loc
 	detach(attached_to) // safely remove the status effect
-	emp_act(EMP_LIGHT)
+	emp_act()
+
+#undef MIN_WET_STACKS
+#undef MAX_WET_STACKS

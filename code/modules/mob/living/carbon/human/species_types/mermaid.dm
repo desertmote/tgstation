@@ -53,8 +53,6 @@
 		return
 	if (human_being.has_gravity())
 		human_being.set_resting(TRUE, silent = TRUE, instant = TRUE)
-	//
-	human_being.apply_status_effect(/datum/status_effect/fire_handler/wet_stacks, 1, FALSE)
 
 ///
 /datum/species/human/mermaid/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/equipping, visuals_only)
@@ -68,14 +66,13 @@
 		return
 	// have gill?
 	var/obj/item/organ/lungs/lungs = equipping.get_organ_slot(ORGAN_SLOT_LUNGS)
-	if (!(/datum/gas/water_vapor in lungs.breathe_always))
+	if (!(/datum/gas/water_vapor in lungs?.breathe_always))
 		return
 	// try to attach to uniform
 	var/obj/item/clothing/under/uniform = equipping.w_uniform
-	if (uniform)
-		var/attached = uniform.attach_accessory(SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer, equipping))
-		if (attached)
-			return
+	var/attached = uniform?.attach_accessory(SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer, equipping))
+	if (attached)
+		return
 	// try anything else
 	equipping.equip_in_one_of_slots(
 		equipping = SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer, equipping),
@@ -87,7 +84,7 @@
 ///
 /obj/item/organ/tail/fish/mermaid
 	name = "large fish tail"
-//	desc = ""
+	desc = ""
 	fillet_amount = 12
 	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/mermaid
 	external_bodyshapes = BODYSHAPE_MERMAID
@@ -110,7 +107,8 @@
 	. = ..()
 	if (QDELING(owner) || QDELING(src))
 		return
-	owner.adjust_brute_loss(rand(35, 45))
+
+	owner.apply_damage(rand(35, 45), def_zone = BODY_ZONE_CHEST, wound_bonus = CANT_WOUND)
 	if (owner.blood_volume)
 		owner.blood_volume -= (BLOOD_VOLUME_NORMAL / 3)
 		owner.add_splatter_floor()
@@ -125,10 +123,8 @@
 /obj/item/organ/tail/fish/mermaid/proc/get_your_sealegs(mob/living/carbon/owner)
 	var/obj/item/bodypart/right_leg = owner.get_bodypart(BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/left_leg = owner.get_bodypart(BODY_ZONE_L_LEG)
-	if (right_leg)
-		right_leg.dismember()
-	if (left_leg)
-		left_leg.dismember()
+	right_leg?.dismember()
+	left_leg?.dismember()
 
 /// The bodypart overlay
 /datum/bodypart_overlay/mutant/tail/fish/mermaid

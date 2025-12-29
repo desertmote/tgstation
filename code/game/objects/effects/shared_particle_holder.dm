@@ -96,17 +96,16 @@ GLOBAL_LIST_EMPTY(shared_particles)
 /area/remove_shared_particles(particle_key, delete_on_empty = TRUE)
 	CRASH("remove_shared_particles was called on an area [src] ([type]) trying to remove [particle_key]! Only turfs and movables support shared particles.")
 
-/*
- */
+// Checks if a shared particle effect exists on an atom, and returns it if so
 /atom/proc/has_shared_particles(particle_key)
 	if (!particle_key)
-		return
+		return FALSE
 
 	if (ispath(particle_key))
 		particle_key = "[particle_key]"
 
 	if (!GLOB.shared_particles[particle_key])
-		return
+		return FALSE
 
 	var/atom/movable/play_pretend = src
 	var/list/type_holders = GLOB.shared_particles[particle_key][SHARED_PARTICLE_HOLDER_INDEX]
@@ -114,6 +113,7 @@ GLOBAL_LIST_EMPTY(shared_particles)
 		if (!(particle_holder in play_pretend.vis_contents))
 			continue
 		return particle_holder
+	return FALSE
 
 /area/has_shared_particles(particle_key)
 	CRASH("has_shared_particles was called on an area [src] ([type]) checking for [particle_key]! Only turfs and movables support shared particles.")
