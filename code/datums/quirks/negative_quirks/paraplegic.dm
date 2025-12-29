@@ -14,7 +14,7 @@
 	customization_options = list(/datum/preference/choiced/paraplegic)
 
 /datum/quirk/paraplegic/add_unique(client/client_source)
-	put_in_wheelchair(quirk_holder)
+	quirk_holder.put_in_wheelchair()
 	// During the spawning process, they may have dropped what they were holding, due to the paralysis
 	// So put the things back in their hands.
 	for(var/obj/item/dropped_item in get_turf(quirk_holder))
@@ -45,21 +45,21 @@
 	return ..()
 
 /// Put a mob in a wheelchair, simple as
-/proc/put_in_wheelchair(mob/living/being)
+/mob/living/proc/put_in_wheelchair()
 	// more than 5k score? you unlock the gamer wheelchair.
 	var/gold = FALSE
-	if(being.client?.get_award_status(/datum/award/score/hardcore_random) >= 5000)
+	if(client?.get_award_status(/datum/award/score/hardcore_random) >= 5000)
 		gold = TRUE
 
 	// early return for if we spawn inside a closet. its more likely than you think
-	if(istype(being.loc, /obj/structure/closet))
+	if(istype(loc, /obj/structure/closet))
 		if(gold)
-			new /obj/item/wheelchair/gold(being.loc)
+			new /obj/item/wheelchair/gold(loc)
 		else
-			new /obj/item/wheelchair(being.loc)
+			new /obj/item/wheelchair(loc)
 		return
 
-	var/turf/turf = get_turf(being)
+	var/turf/turf = get_turf(src)
 	var/obj/structure/chair/chair_in_turf = locate() in turf
 	var/obj/vehicle/ridden/wheelchair/wheelchair
 	if(gold)
@@ -71,8 +71,8 @@
 	if(chair_in_turf  && chair_in_turf != wheelchair)
 		wheelchair.setDir(chair_in_turf.dir)
 		// unbuckle from the chair that already exists
-		if(length(chair_in_turf.buckled_mobs) && locate(being) in chair_in_turf.buckled_mobs)
-			chair_in_turf.unbuckle_mob(being)
+		if(length(chair_in_turf.buckled_mobs) && locate(src) in chair_in_turf.buckled_mobs)
+			chair_in_turf.unbuckle_mob(src)
 
 	// buckle to the wheelchair!
-	wheelchair.buckle_mob(being)
+	wheelchair.buckle_mob(src)

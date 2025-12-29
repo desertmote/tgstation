@@ -30,6 +30,7 @@
 		"mod_welding",
 		"mod_longfall",
 		"mod_thermal_regulator",
+		"mod_humidity_regulator",
 		"mod_sign_radio",
 		"mod_storage_expanded",
 	)

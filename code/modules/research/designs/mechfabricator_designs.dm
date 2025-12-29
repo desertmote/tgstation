@@ -2351,6 +2351,15 @@
 	)
 	build_path = /obj/item/mod/module/thermal_regulator
 
+/datum/design/module/mod_humidity_regulator
+	name = "Humidity Regulator Module"
+	id = "mod_humidity_regulator"
+	materials = list(
+		/datum/material/iron =SMALL_MATERIAL_AMOUNT*5,
+		/datum/material/glass =HALF_SHEET_MATERIAL_AMOUNT,
+	)
+	build_path = /obj/item/mod/module/humidity_regulator
+
 /datum/design/module/mod_injector
 	name = "Injector Module"
 	id = "mod_injector"

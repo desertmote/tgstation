@@ -58,7 +58,7 @@
 /datum/species/human/mermaid/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/equipping, visuals_only)
 	if (visuals_only)
 		return
-	put_in_wheelchair(equipping)
+	equipping.put_in_wheelchair()
 
 /// gives a 'necessary for life' device to mermaids with gills
 /datum/species/human/mermaid/post_equip_species_outfit(mob/living/carbon/human/equipping, visuals_only)

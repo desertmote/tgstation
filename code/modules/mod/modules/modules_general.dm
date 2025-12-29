@@ -1043,3 +1043,36 @@
 	var/datum/effect_system/lightning_spread/sparks = new /datum/effect_system/lightning_spread
 	sparks.set_up(number = 5, cardinals_only = TRUE, location = mod.wearer.loc)
 	sparks.start()
+
+/obj/item/mod/module/humidity_regulator
+	name = "MOD humidity regulator module"
+	desc = ""
+	icon_state = "regulator"
+	module_type = MODULE_TOGGLE
+	complexity = 1
+	active_power_cost = DEFAULT_CHARGE_DRAIN * 0.3
+	incompatible_modules = list(/obj/item/mod/module/humidity_regulator)
+	required_slots = list(ITEM_SLOT_BACK|ITEM_SLOT_BELT)
+	///
+	var/stacks_to_add = 2
+	///
+	var/min_wet_stacks = 1
+	///
+	var/max_wet_stacks = 4
+	///
+	var/datum/component/wet_stacks_granter/wet_stacks_component
+
+/obj/item/mod/module/humidity_regulator/get_configuration()
+	. = ..()
+	.["humidity_setting"] = add_ui_configuration("Humidity setting", "number", stacks_to_add)
+
+/obj/item/mod/module/humidity_regulator/configure_edit(key, value)
+	switch(key)
+		if("humidity_setting")
+			stacks_to_add = clamp(value, min_wet_stacks, max_wet_stacks)
+
+/obj/item/mod/module/humidity_regulator/on_activation(activator)
+	mod.wearer.apply_status_effect(/datum/status_effect/grouped/artificial_hydration, mod, NONE, stacks_to_add, FALSE)
+
+/obj/item/mod/module/humidity_regulator/on_deactivation(mob/activator, display_message, deleting)
+	mod.wearer.remove_status_effect(/datum/status_effect/grouped/artificial_hydration, mod)

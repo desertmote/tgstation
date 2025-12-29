@@ -7,10 +7,15 @@
 	icon_state = "vaporizer"
 	base_icon_state = "vaporizer"
 	///
+	var/obj/item/stock_parts/power_store/cell/cell
+	///
+	var/datum/progressbar/charge_bar
+	///
 	var/datum/component/wet_stacks_granter/wet_stacks_component
 
 /obj/item/clothing/accessory/vaporizer/Initialize(mapload)
 	. = ..()
+	cell = new(src)
 	wet_stacks_component = AddComponent(/datum/component/wet_stacks_granter)
 
 /obj/item/clothing/accessory/vaporizer/Destroy()
@@ -26,6 +31,22 @@
 	. = ..()
 	. += "It has a dial. Alt + Left-click / Right-click to turn down or up."
 	. += "Its dial is currently set to [wet_stacks_component?.stacks_to_add]."
+
+/obj/item/clothing/accessory/vaporizer/equipped(mob/user, slot, initial)
+	. = ..()
+	if(!cell || charge_bar)
+		return
+	if(istype(loc, /obj/item/clothing))
+		charge_bar = new(user, cell.maxcharge, loc, cell.charge)
+		charge_bar.offset_y = -4
+	else
+		charge_bar = new(user, cell.maxcharge, src, cell.charge)
+
+/obj/item/clothing/accessory/vaporizer/dropped(mob/user, silent)
+	. = ..()
+	if(!charge_bar)
+		return
+	QDEL_NULL(charge_bar)
 
 /obj/item/clothing/accessory/vaporizer/can_use(mob/user)
 	if(!wet_stacks_component)
