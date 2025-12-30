@@ -1,22 +1,25 @@
 ///
 /datum/component/wet_stacks_clothing
+	/// how many wet stacks it will add
+	var/stacks_to_add = 3
+	/// will it remove fire stacks
+	var/dousing = FALSE
+	///
+	var/must_be_worn = TRUE
 	///
 	var/mob/living/carbon/wearer
 	///
 	var/datum/callback/use_cell
 	///
 	var/power_cost
-	/// how many wet stacks it will add
-	var/stacks_to_add = 3
-	/// will it remove fire stacks
-	var/dousing = FALSE
 	///
-	var/cooldown = 5 //seconds
+	COOLDOWN_DECLARE(tick_cooldown)
 
-/datum/component/wet_stacks_clothing/Initialize(power_cost, datum/callback/use_cell)
+/datum/component/wet_stacks_clothing/Initialize(power_cost, datum/callback/use_cell, must_be_worn)
 	. = ..()
 	src.power_cost = power_cost
 	src.use_cell = use_cell
+	src.must_be_worn = must_be_worn
 
 ///
 /datum/component/wet_stacks_clothing/RegisterWithParent()
@@ -35,6 +38,8 @@
 ///
 /datum/component/wet_stacks_clothing/proc/start_processing(obj/item/source, mob/living/user, slot)
 	SIGNAL_HANDLER
+	if(must_be_worn && (slot & ITEM_SLOT_HANDS))
+		return
 	START_PROCESSING(SSobj, src)
 	wearer = user
 
@@ -45,16 +50,16 @@
 	wearer = null
 
 /datum/component/wet_stacks_clothing/process(seconds_per_tick)
-	if (cooldown > 0)
-		cooldown -= seconds_per_tick
+	if(!COOLDOWN_FINISHED(src, tick_cooldown))
 		return
-	cooldown = initial(cooldown)
+	COOLDOWN_START(src, tick_cooldown, rand(10 SECONDS, 30 SECONDS))
 	//
-	var/datum/status_effect/fire_handler/wet_stacks/wet_stacks = wearer?.has_status_effect(/datum/status_effect/fire_handler/wet_stacks)
+	var/datum/status_effect/fire_handler/wet_stacks/wet_stacks = wearer.has_status_effect(/datum/status_effect/fire_handler/wet_stacks)
 	if(wet_stacks && wet_stacks?.stacks > stacks_to_add)
 		return
 	//
 	if(power_cost)
 		if(!use_cell?.Invoke())
 			return
-	wearer?.set_wet_stacks(stacks = stacks_to_add, remove_fire_stacks = dousing)
+	playsound(wearer, 'sound/effects/droplet.ogg', rand(15, 35), TRUE, falloff_exponent = 5)
+	wearer.set_wet_stacks(stacks = stacks_to_add, remove_fire_stacks = dousing)
