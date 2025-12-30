@@ -1353,7 +1353,7 @@
 #include "code\datums\components\wearertargeting.dm"
 #include "code\datums\components\weatherannouncer.dm"
 #include "code\datums\components\wet_floor.dm"
-#include "code\datums\components\wet_stacks_granter.dm"
+#include "code\datums\components\wet_stacks_clothing.dm"
 #include "code\datums\components\wormborn.dm"
 #include "code\datums\components\container_item\container_item.dm"
 #include "code\datums\components\container_item\tank_holder.dm"

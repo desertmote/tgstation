@@ -368,7 +368,7 @@
 		qdel(src)
 		return
 	// handle the droplets particle effect
-	if(stacks >= WETSTACKS_MINIMUM_VFX)
+	if(stacks > WETSTACKS_MINIMUM_VFX)
 		owner.add_shared_particles(/particles/droplets)
 	if(stacks <= WETSTACKS_MINIMUM_VFX)
 		owner.remove_shared_particles(/particles/droplets)
