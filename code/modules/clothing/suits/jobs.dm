@@ -28,7 +28,7 @@
 		/obj/item/storage/bag/plants,
 		/obj/item/tank/internals/emergency_oxygen,
 	)
-	supports_variations_flags = CLOTHING_NO_VARIATION
+	supports_variations_flags = NONE
 	species_exception = list(/datum/species/golem)
 	armor_type = /datum/armor/suit_apron
 
@@ -257,7 +257,7 @@
 	icon_state = "qm_coat"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	supports_variations_flags = CLOTHING_NO_VARIATION
+	supports_variations_flags = NONE
 
 /obj/item/clothing/suit/jacket/quartermaster/Initialize(mapload)
 	. = ..()

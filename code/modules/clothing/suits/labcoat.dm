@@ -32,7 +32,7 @@
 	)
 	armor_type = /datum/armor/toggle_labcoat
 	species_exception = list(/datum/species/golem)
-	supports_variations_flags = CLOTHING_NO_VARIATION
+	supports_variations_flags = NONE
 
 /obj/item/clothing/suit/toggle/labcoat/cmo
 	name = "chief medical officer's labcoat"
@@ -176,7 +176,7 @@
 	icon_state = "labcoat_rd"
 	armor_type = /datum/armor/jacket_research_director
 	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations_flags = CLOTHING_NO_VARIATION
+	supports_variations_flags = NONE
 
 /datum/armor/jacket_research_director
 	bio = 75

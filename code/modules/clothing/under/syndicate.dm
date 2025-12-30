@@ -121,7 +121,7 @@
 	icon_state = "camofloortile"
 	inhand_icon_state = "gy_suit"
 	can_adjust = FALSE
-	supports_variations_flags = CLOTHING_NO_VARIATION
+	supports_variations_flags = NONE
 
 /obj/item/clothing/under/syndicate/floortilecamo/Initialize(mapload)
 	. = ..()
