@@ -1,6 +1,6 @@
 /obj/item/clothing/accessory/vaporizer
 	name = "hydro-vaporizer"
-	desc = ""
+//	desc = ""
 	icon_state = "vaporizer"
 	base_icon_state = "vaporizer"
 	pickup_sound = SFX_GENERIC_DEVICE_PICKUP

@@ -449,12 +449,11 @@
 	QDEL_NULL(worn_foot_offset)
 	return ..()
 
-/// This limb can't be attached to any humanoid with a mermaid tail!
+/// block attachment of legs if the owner has the related trait (mermaids)
 /obj/item/bodypart/leg/can_attach_limb(mob/living/carbon/owner, special)
-	if(!special && owner.get_organ_by_type(/obj/item/organ/tail/fish/mermaid))
+	if(!special && HAS_TRAIT(owner, TRAIT_BLOCK_LEGS))
 		return FALSE
-	else
-		return ..()
+	return ..()
 
 /obj/item/bodypart/leg/left
 	name = "left leg"

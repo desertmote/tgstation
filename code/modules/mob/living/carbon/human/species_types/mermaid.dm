@@ -15,7 +15,7 @@
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_AQUATIC
 
 	species_cookie = /obj/item/food/chips/shrimp
-	inert_mutation = /datum/mutation/tongue_spike/chem
+//	inert_mutation =
 	payday_modifier = 0.9
 //	family_heirlooms = list(
 //		,
@@ -53,15 +53,16 @@
 		return
 	if (human_being.has_gravity())
 		human_being.set_resting(TRUE, silent = TRUE, instant = TRUE)
-	//
+	// apply a free wet stack to prevent the choking screen alert to appear for a few seconds on mob creation
 	human_being.apply_status_effect(/datum/status_effect/fire_handler/wet_stacks, 1, FALSE)
 
-///
+/// good guy nanotrasen provides a wheelchair to their employees
 /datum/species/human/mermaid/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/equipping, visuals_only)
 	if (visuals_only)
 		return
+	if (!istype(job))
+		return
 	equipping.put_in_wheelchair()
-
 
 /// gives a 'necessary for life' device to mermaids with gills
 /datum/species/human/mermaid/post_equip_species_outfit(mob/living/carbon/human/equipping, visuals_only)
@@ -84,10 +85,10 @@
 		indirect_action = TRUE,
 	)
 
-///
+/// the tail which makes the species, without this you're basically just a fishy human. without legs.
 /obj/item/organ/tail/fish/mermaid
 	name = "large fish tail"
-	desc = ""
+//	desc = ""
 	fillet_amount = 12
 	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/mermaid
 	external_bodyshapes = BODYSHAPE_MERMAID
@@ -96,6 +97,7 @@
 		TRAIT_FREE_FLOAT_MOVEMENT,
 		TRAIT_FLOPPING,
 		TRAIT_SWIMMER,
+		TRAIT_BLOCK_LEGS,
 	)
 
 /obj/item/organ/tail/fish/mermaid/Initialize(mapload)
@@ -110,7 +112,7 @@
 	. = ..()
 	if (QDELING(owner) || QDELING(src))
 		return
-
+	// losing half your bodymass is going to be bad
 	owner.apply_damage(rand(35, 45), def_zone = BODY_ZONE_CHEST, wound_bonus = CANT_WOUND)
 	if (owner.blood_volume)
 		owner.blood_volume -= (BLOOD_VOLUME_NORMAL / 3)

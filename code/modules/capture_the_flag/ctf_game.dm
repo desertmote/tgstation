@@ -150,7 +150,7 @@
 	var/mob/living/carbon/human/player_mob = new(spawn_point)
 	new_team_member.prefs.safe_transfer_prefs_to(player_mob, is_antag = TRUE)
 	if(isplasmaman(player_mob))
-		player_mob.set_species(/datum/species/human)
+		player_mob.set_species(/datum/species/human) //no plasma outfits for ctf :(
 	else
 		player_mob.dna.species.give_important_for_life(player_mob)
 

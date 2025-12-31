@@ -465,7 +465,6 @@
 	say_mod = "blubs"
 	organ_traits = list(TRAIT_CARPOTOXIN_IMMUNE)
 	liked_foodtypes = JUNKFOOD | FRIED | SEAFOOD
-	// Seafood instead of meat, because it's a fish organ
 	foodtype_flags = RAW | SEAFOOD | GORE
 	languages_native = list(/datum/language/carptongue)
 
