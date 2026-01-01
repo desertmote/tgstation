@@ -1933,7 +1933,6 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 	center = TRUE
 	dimension_x = 36
 
-//Mermaid tails for the species
 /datum/sprite_accessory/tails/fish/mermaid
 	name = "Mermaid"
 	icon = 'icons/mob/human/species/mermaid_tail.dmi'

@@ -139,7 +139,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
 	build_path = /obj/item/organ/tail/fish
-	category = list(SPECIES_MERMAID)
+	category = list(SPECIES_CERULEAN)
 
 /datum/design/fish_tail_large
 	name = /obj/item/organ/tail/fish/mermaid::name
@@ -147,7 +147,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
 	build_path = /obj/item/organ/tail/fish/mermaid
-	category = list(SPECIES_MERMAID)
+	category = list(SPECIES_CERULEAN)
 
 /datum/design/cat_ears
 	name = "Cat Ears"
@@ -179,7 +179,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
 	build_path = /obj/item/organ/lungs/fish
-	category = list(SPECIES_MERMAID)
+	category = list(SPECIES_CERULEAN)
 
 /datum/design/plasmaman_tongue
 	name = "Plasma Bone Tongue"
@@ -203,7 +203,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
 	build_path = /obj/item/organ/liver/fish
-	category = list(SPECIES_MERMAID)
+	category = list(SPECIES_CERULEAN)
 
 /datum/design/plasmaman_stomach
 	name = "Digestive Crystal"
@@ -227,7 +227,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
 	build_path = /obj/item/organ/stomach/fish
-	category = list(SPECIES_MERMAID)
+	category = list(SPECIES_CERULEAN)
 
 /datum/design/ethereal_tongue
 	name = "Electrical Discharger"

@@ -178,7 +178,7 @@ GLOBAL_VAR(basketball_game)
 
 		var/mob/living/carbon/human/baller = new(get_turf(spawn_landmark))
 
-		if(ismermaid(baller))
+		if(iscerulean(baller))
 			baller.put_in_wheelchair() //they don't get this in other minigames, but for basketball its just plain cool
 		baller.dna.species.give_important_for_life(baller)
 

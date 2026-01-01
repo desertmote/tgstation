@@ -1,7 +1,7 @@
-/datum/species/human/mermaid
-	name = "\improper Mermaid"
-	plural_form = "Mermaids"
-	id = SPECIES_MERMAID
+/datum/species/human/cerulean
+	name = "\improper Cerulean"
+	plural_form = "Cerulean"
+	id = SPECIES_CERULEAN
 	mutant_organs = list(/obj/item/organ/tail/fish/mermaid)
 	mutanttongue = /obj/item/organ/tongue/fish
 	mutantstomach = /obj/item/organ/stomach/fish
@@ -21,15 +21,15 @@
 //		,
 //	)
 
-/datum/species/human/mermaid/get_species_description()
+/datum/species/human/cerulean/get_species_description()
 	return "Nothing yet."
 
-/datum/species/human/mermaid/get_species_lore()
+/datum/species/human/cerulean/get_species_lore()
 	return list(
 		"Nothing yet.",
 	)
 
-/datum/species/human/mermaid/prepare_human_for_preview(mob/living/carbon/human/preview_human)
+/datum/species/human/cerulean/prepare_human_for_preview(mob/living/carbon/human/preview_human)
 	preview_human.set_haircolor("#a54ea1", update = FALSE)
 	preview_human.set_hairstyle("Ponytail (Country)", update = TRUE)
 	preview_human.dna.features[TRAIT_USES_SKINTONES] = "asian1"
@@ -37,17 +37,17 @@
 	regenerate_organs(preview_human)
 	preview_human.update_body(is_creating = TRUE)
 
-/datum/species/human/mermaid/get_features()
+/datum/species/human/cerulean/get_features()
 	var/list/features = ..()
 	LAZYOR(features, "feature_lungs_choice")
 	return features
 
-/datum/species/human/mermaid/randomize_features()
+/datum/species/human/cerulean/randomize_features()
 	var/list/features = ..()
 	LAZYSET(features, FEATURE_TAIL_FISH_COLOR, pick(GLOB.carp_colors - COLOR_CARP_SILVER))
 	return features
 
-/datum/species/human/mermaid/on_species_gain(mob/living/carbon/human/human_being, datum/species/old_species, pref_load, regenerate_icons)
+/datum/species/human/cerulean/on_species_gain(mob/living/carbon/human/human_being, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 	if (isdummy(human_being))
 		return
@@ -57,7 +57,7 @@
 	human_being.apply_status_effect(/datum/status_effect/fire_handler/wet_stacks, 1, FALSE)
 
 /// good guy nanotrasen provides a wheelchair to their employees
-/datum/species/human/mermaid/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/equipping, visuals_only)
+/datum/species/human/cerulean/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/equipping, visuals_only)
 	if (visuals_only)
 		return
 	if (!istype(job))
@@ -65,7 +65,7 @@
 	equipping.put_in_wheelchair()
 
 /// gives a 'necessary for life' device to mermaids with gills
-/datum/species/human/mermaid/post_equip_species_outfit(mob/living/carbon/human/equipping, visuals_only)
+/datum/species/human/cerulean/post_equip_species_outfit(mob/living/carbon/human/equipping, visuals_only)
 	if (visuals_only)
 		return
 	// have gill?

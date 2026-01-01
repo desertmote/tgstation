@@ -10,6 +10,6 @@
 ///The dmi containing digitigrade uniforms
 #define DIGITIGRADE_UNIFORM_FILE 'icons/mob/human/species/misc/digitigrade.dmi'
 
-//MERMAID PATHS
+//MERMAID TAIL PATHS
 ///The dmi which has the mermaid modsuits
 #define MERMAID_SUIT_FILE 'icons/mob/human/species/misc/mermaid_suits.dmi'

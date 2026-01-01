@@ -578,7 +578,7 @@ There are several things that need to be remembered:
 
 	return icon(resulting_icon)
 
-/// Modifies the sprite of clothing to have no legs! most specifically for pants, which mermaids can't wear
+/// Modifies the sprite of clothing to have no legs! For pants, which mermaids canonically can't wear
 /proc/wear_mermaid_version(icon/base_icon, obj/item/item, key, greyscale_colors)
 	var/index = "[key]-[item.type]-[greyscale_colors]"
 	var/static/list/mermaid_clothing_icons = list()
@@ -594,7 +594,7 @@ There are several things that need to be remembered:
 
 	return icon(mermaid_clothing_icon)
 
-/// Removes pixels that often appear between the legs on suits, for mermaids who dont have legs
+/// Removes pixels that often appear between the legs on suits, for the above proc
 /proc/cut_coat(icon/base_icon)
 	var/static/icon/coat_mask
 	if(!coat_mask)
@@ -603,7 +603,7 @@ There are several things that need to be remembered:
 	base_icon.Blend(coat_mask, ICON_SUBTRACT)
 	return base_icon
 
-/// Modifies a sprite to replace the legs with a new version
+/// Modifies a sprite to replace the legs with a new version or nothing
 /proc/replace_icon_legs(icon/base_icon, icon/new_legs, replace = TRUE)
 	var/static/icon/leg_mask
 	if(!leg_mask)
