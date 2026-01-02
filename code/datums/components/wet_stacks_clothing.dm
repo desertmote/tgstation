@@ -16,7 +16,7 @@
 /datum/component/wet_stacks_clothing/Initialize(datum/callback/use_cell, must_be_worn)
 	. = ..()
 	if(!isobj(parent))
-		stack_trace("[src] component was applied to something other than an object. ([parent])")
+		stack_trace("[src] component was applied to something other than an object, [parent] ([parent.type].)")
 	src.use_cell = use_cell
 	src.must_be_worn = must_be_worn
 
