@@ -356,7 +356,7 @@
 /datum/status_effect/fire_handler/wet_stacks/get_examine_text()
 	if(stacks <= WETSTACKS_DAMP)
 		return "[owner.p_Their()] skin seem[owner.p_s()] lightly damp."
-	if(stacks <= WETSTACKS_DRIPPING)
+	if(stacks <= WETSTACKS_DRIPPING && stacks > WETSTACKS_DAMP)
 		return "[owner.p_They()] appear[owner.p_s()] to be dripping wet."
 	if(stacks >= WETSTACKS_SOAKED)
 		return "[owner.p_They()] is completely soaked."

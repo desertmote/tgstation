@@ -38,7 +38,7 @@
 
 /datum/species/human/cerulean/get_features()
 	var/list/features = ..()
-	LAZYOR(features, "feature_cerulean_lungs")
+	LAZYOR(features, "feature_cerulean_respiration")
 	return features
 
 /datum/species/human/cerulean/randomize_features()
