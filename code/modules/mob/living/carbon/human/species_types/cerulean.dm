@@ -124,22 +124,25 @@
 /obj/item/organ/tail/fish/mermaid/mutate_feature(features, mob/living/carbon/human/owner)
 	return //no mutation
 
-/// Remove legs on insertion, if we had any
+///
 /obj/item/organ/tail/fish/mermaid/proc/get_your_sealegs(mob/living/carbon/owner)
 	var/obj/item/bodypart/right_leg = owner.get_bodypart(BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/left_leg = owner.get_bodypart(BODY_ZONE_L_LEG)
 	right_leg?.dismember()
 	left_leg?.dismember()
 
-/// The bodypart overlay
+/// the tail has a fixed appearance for the modsuit overlays
 /datum/bodypart_overlay/mutant/tail/fish/mermaid
 	layers = EXTERNAL_BEHIND|EXTERNAL_ADJACENT
 
 /datum/bodypart_overlay/mutant/tail/fish/mermaid/randomize_appearance()
 	set_appearance(/datum/sprite_accessory/tails/fish/mermaid)
 
+/datum/bodypart_overlay/mutant/tail/fish/mermaid/get_random_appearance()
+	return /datum/sprite_accessory/tails/fish/mermaid
+
 /datum/bodypart_overlay/mutant/tail/fish/mermaid/override_color(obj/item/bodypart/limb)
 	return limb.owner.dna.features[FEATURE_TAIL_FISH_COLOR]
 
 /datum/bodypart_overlay/mutant/tail/fish/mermaid/can_draw_on_bodypart(obj/item/bodypart/limb)
-	return TRUE //always draw
+	return TRUE

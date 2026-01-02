@@ -60,7 +60,7 @@
 		CRASH("wardrobe_removal was called by SSwardrobe without a /mob/living/carbon to check for. Received [loc] ([loc.type]).")
 	var/obj/item/mask = locate(mask_type) in src
 	var/obj/item/internals = locate(internal_type) in src
-	var/obj/item/medipen = locate(medipen_type) in src
+//	var/obj/item/medipen = locate(medipen_type) in src
 	switch(wearer.dna.species.id)
 		if(SPECIES_PLASMAMAN)
 			qdel(internals)

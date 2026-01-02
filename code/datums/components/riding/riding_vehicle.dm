@@ -466,7 +466,7 @@
 
 /datum/component/riding/vehicle/wheelchair/hand
 	/// Magic number used in calculating the speed of the wheelchair
-	var/delay_multiplier = 6.7
+	var/delay_multiplier = 6.2
 
 /datum/component/riding/vehicle/wheelchair/hand/driver_move(obj/vehicle/vehicle_parent, mob/living/user, direction)
 	vehicle_move_delay = round(CONFIG_GET(number/movedelay/run_delay) * delay_multiplier) / clamp(user.usable_hands, 1, 2)
