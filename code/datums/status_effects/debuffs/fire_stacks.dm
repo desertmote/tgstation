@@ -310,10 +310,10 @@
 
 	overlays |= created_overlay
 
-#define WETSTACKS_MINIMUM_VFX 3
-#define WETSTACKS_DAMP 1
-#define WETSTACKS_DRIPPING 7.5
-#define WETSTACKS_SOAKED 15
+#define WET_STACKS_MINIMUM_VFX 3
+#define WET_STACKS_DAMP 1
+#define WET_STACKS_DRIPPING 7.5
+#define WET_STACKS_SOAKED 15
 
 /datum/status_effect/fire_handler/wet_stacks
 	id = "wet_stacks"
@@ -354,12 +354,12 @@
 	REMOVE_TRAIT(owner, TRAIT_NO_SLIP_WATER, TRAIT_STATUS_EFFECT(id))
 
 /datum/status_effect/fire_handler/wet_stacks/get_examine_text()
-	if(stacks <= WETSTACKS_DAMP)
+	if(stacks <= WET_STACKS_DAMP)
 		return "[owner.p_Their()] skin seem[owner.p_s()] lightly damp."
-	if(stacks <= WETSTACKS_DRIPPING && stacks > WETSTACKS_DAMP)
-		return "[owner.p_They()] appear[owner.p_s()] to be dripping wet."
-	if(stacks >= WETSTACKS_SOAKED)
+	if(stacks >= WET_STACKS_SOAKED)
 		return "[owner.p_They()] is completely soaked."
+	if(stacks <= WET_STACKS_DRIPPING && stacks > WET_STACKS_DAMP)
+		return "[owner.p_They()] appear[owner.p_s()] to be dripping wet."
 
 /datum/status_effect/fire_handler/wet_stacks/tick(seconds_between_ticks)
 	var/decay = HAS_TRAIT(owner, TRAIT_WET_FOR_LONGER) ? -0.035 : -0.5
@@ -368,15 +368,15 @@
 		qdel(src)
 		return
 	// handle the droplets particle effect
-	if(stacks > WETSTACKS_MINIMUM_VFX)
+	if(stacks > WET_STACKS_MINIMUM_VFX)
 		owner.add_shared_particles(/particles/droplets)
-	if(stacks <= WETSTACKS_MINIMUM_VFX)
+	if(stacks <= WET_STACKS_MINIMUM_VFX)
 		owner.remove_shared_particles(/particles/droplets)
 
 /datum/status_effect/fire_handler/wet_stacks/check_basic_mob_immunity(mob/living/basic/basic_owner)
 	return !(basic_owner.basic_mob_flags & IMMUNE_TO_GETTING_WET)
 
-#undef WETSTACKS_MINIMUM_VFX
-#undef WETSTACKS_DAMP
-#undef WETSTACKS_DRIPPING
-#undef WETSTACKS_SOAKED
+#undef WET_STACKS_MINIMUM_VFX
+#undef WET_STACKS_DAMP
+#undef WET_STACKS_DRIPPING
+#undef WET_STACKS_SOAKED
