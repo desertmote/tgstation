@@ -1,6 +1,5 @@
 /datum/species/human/cerulean
 	name = "\improper Cerulean"
-	plural_form = "Cerulean"
 	id = SPECIES_CERULEAN
 	mutant_organs = list(/obj/item/organ/tail/fish/mermaid)
 	mutanttongue = /obj/item/organ/tongue/fish
@@ -53,7 +52,7 @@
 		return
 	if (human_being.has_gravity())
 		human_being.set_resting(TRUE, silent = TRUE, instant = TRUE)
-	// apply a free wet stack to prevent the choking screen alert to appear for a few seconds on mob creation
+	// apply a free wet stack to prevent the choking screen alert to appear for a second on mob creation
 	human_being.apply_status_effect(/datum/status_effect/fire_handler/wet_stacks, 1, FALSE)
 
 /// good guy nanotrasen provides a wheelchair to their employees
@@ -87,12 +86,13 @@
 
 /// the tail which makes the species, without this you're basically just a fishy human. without legs.
 /obj/item/organ/tail/fish/mermaid
-	name = "large fish tail"
+	name = "huge fish tail"
 //	desc = ""
 	fillet_amount = 12
 	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/mermaid
 	external_bodyshapes = BODYSHAPE_MERMAID
 	restyle_flags = NONE
+	w_class = WEIGHT_CLASS_BULKY
 	organ_traits = list(
 		TRAIT_FREE_FLOAT_MOVEMENT,
 		TRAIT_FLOPPING,

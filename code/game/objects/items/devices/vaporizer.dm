@@ -33,11 +33,7 @@
 /obj/item/clothing/accessory/vaporizer/proc/create_charge_bar(mob/living/user)
 	if(!cell || charge_bar)
 		return
-	if(istype(loc, /obj/item/clothing))
-		charge_bar = new(user, cell.maxcharge, loc, cell.charge)
-		charge_bar.offset_y = -4 //why does this do nothing
-	else
-		charge_bar = new(user, cell.maxcharge, src, cell.charge)
+	charge_bar = new(user, cell.maxcharge, src, cell.charge)
 
 /obj/item/clothing/accessory/vaporizer/proc/destroy_charge_bar()
 	if(!charge_bar)
