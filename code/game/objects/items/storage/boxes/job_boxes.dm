@@ -7,11 +7,11 @@
 	icon_state = "internals"
 	illustration = "emergencytank"
 	/// What type of mask are we going to use for this box?
-	var/mask_type = /obj/item/clothing/mask/breath
+	var/obj/item/mask_type = /obj/item/clothing/mask/breath
 	/// Which internals tank are we going to use for this box?
-	var/internal_type = /obj/item/tank/internals/emergency_oxygen
+	var/obj/item/internal_type = /obj/item/tank/internals/emergency_oxygen
 	/// What medipen should be present in this box?
-	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
+	var/obj/item/medipen_type = /obj/item/reagent_containers/hypospray/medipen
 	/// Are we crafted?
 	var/crafted = FALSE
 	/// Should we contain an escape hook on maps with z-levels?
@@ -32,13 +32,13 @@
 	if(crafted)
 		return
 	if(!isnull(mask_type))
-		new mask_type(src)
+		mask_type = new mask_type(src)
 
 	if(!isnull(internal_type))
-		new internal_type(src)
+		internal_type = new internal_type(src)
 
 	if(!isnull(medipen_type))
-		new medipen_type(src)
+		medipen_type = new medipen_type(src)
 
 	if(give_premium_goods && HAS_TRAIT(SSstation, STATION_TRAIT_PREMIUM_INTERNALS))
 		new /obj/item/flashlight/flare(src)
@@ -55,13 +55,20 @@
 	new /obj/item/radio/off(src)
 
 /obj/item/storage/box/survival/proc/wardrobe_removal()
-	if(!isplasmaman(loc)) //We need to specially fill the box with plasmaman gear, since it's intended for one
-		return
-	var/obj/item/mask = locate(mask_type) in src
-	var/obj/item/internals = locate(internal_type) in src
-	new /obj/item/tank/internals/plasmaman/belt(src)
-	qdel(mask) // Get rid of the items that shouldn't be
-	qdel(internals)
+	var/mob/living/carbon/wearer = loc
+	if(!wearer)
+		CRASH("wardrobe_removal was called by SSwardrobe without a /mob/living/carbon to check for. Received [loc] ([loc.type]).")
+	switch(wearer.dna.species.id)
+		if(SPECIES_PLASMAMAN)
+			qdel(internal_type)
+			qdel(mask_type)
+			mask_type = new /obj/item/tank/internals/plasmaman/belt(src)
+		if(SPECIES_CERULEAN)
+			if(wearer.dna.species.mutantlungs != /obj/item/organ/lungs/fish::type)
+				return
+			qdel(mask_type)
+			qdel(internal_type)
+			internal_type = new /obj/item/reagent_containers/cup/glass/waterbottle(src)
 
 // Prisoners don't get an escape hook
 /obj/item/storage/box/survival/prisoner
