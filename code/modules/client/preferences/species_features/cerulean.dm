@@ -1,10 +1,10 @@
-GLOBAL_LIST_INIT(lung_choices, list(
+GLOBAL_LIST_INIT(cerulean_lungs, list(
 	"Oxygen" = /obj/item/organ/lungs,
 	"Water vapor" = /obj/item/organ/lungs/fish,
 	))
 
 /datum/preference/choiced/lungs_choice
-	savefile_key = "feature_lungs_choice"
+	savefile_key = "feature_cerulean_lungs"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	priority = PREFERENCE_PRIORITY_BODYPARTS
@@ -17,12 +17,12 @@ GLOBAL_LIST_INIT(lung_choices, list(
 /datum/preference/choiced/lungs_choice/apply_to_human(mob/living/carbon/human/target, value)
 	if(value == "None")
 		return
-	target.dna.species.mutantlungs = GLOB.lung_choices[value]
-	var/obj/item/organ/lungs/new_organ = SSwardrobe.provide_type(GLOB.lung_choices[value])
+	target.dna.species.mutantlungs = GLOB.cerulean_lungs[value]
+	var/obj/item/organ/lungs/new_organ = SSwardrobe.provide_type(GLOB.cerulean_lungs[value])
 	new_organ.Insert(target, TRUE, DELETE_IF_REPLACED)
 
 /datum/preference/choiced/lungs_choice/init_possible_values()
-	return GLOB.lung_choices
+	return GLOB.cerulean_lungs
 
 /datum/preference/choiced/lungs_choice/is_valid(value)
 	if(value == "None")
@@ -34,7 +34,7 @@ GLOBAL_LIST_INIT(lung_choices, list(
 
 /datum/preference/choiced/lungs_choice/create_informed_default_value(datum/preferences/preferences)
 	if(has_relevant_feature(preferences))
-		return "Oxygen"
+	return "Oxygen"
 	return ..()
 
 /datum/preference/choiced/lungs_choice/deserialize(value, datum/preferences/preferences)

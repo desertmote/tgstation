@@ -39,7 +39,7 @@
 
 /datum/species/human/cerulean/get_features()
 	var/list/features = ..()
-	LAZYOR(features, "feature_lungs_choice")
+	LAZYOR(features, "feature_cerulean_lungs")
 	return features
 
 /datum/species/human/cerulean/randomize_features()
@@ -116,12 +116,12 @@
 	owner.apply_damage(rand(35, 45), def_zone = BODY_ZONE_CHEST, wound_bonus = CANT_WOUND)
 	if (owner.blood_volume)
 		owner.blood_volume -= (BLOOD_VOLUME_NORMAL / 3)
-		owner.add_splatter_floor()
+		owner.add_splatter_floor(get_turf(src))
 		owner.spray_blood(REVERSE_DIR(owner.dir))
 		owner.visible_message(span_warning("[src] detaches from [owner], spilling out liters of [LOWER_TEXT(owner.get_bloodtype()?.get_blood_name())]!"))
 		playsound(src, 'sound/effects/cartoon_sfx/cartoon_splat.ogg', rand(50, 75), TRUE)
 
-/obj/item/organ/tail/fish/mermaid/mutate_feature(features, mob/living/carbon/human/human)
+/obj/item/organ/tail/fish/mermaid/mutate_feature(features, mob/living/carbon/human/owner)
 	return //no mutation
 
 /// Remove legs on insertion, if we had any
