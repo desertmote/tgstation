@@ -586,7 +586,7 @@ There are several things that need to be remembered:
 	if(!mermaid_clothing_icon)
 		if(item.slot_flags & ITEM_SLOT_ICLOTHING)
 			mermaid_clothing_icon = replace_icon_legs(base_icon, replace = FALSE)
-		else if(item.slot_flags & ITEM_SLOT_OCLOTHING)
+		else if((item.slot_flags & ITEM_SLOT_OCLOTHING) || (item.slot_flags & ITEM_SLOT_NECK))
 			mermaid_clothing_icon = cut_coat(base_icon)
 		if(!mermaid_clothing_icon)
 			return base_icon
