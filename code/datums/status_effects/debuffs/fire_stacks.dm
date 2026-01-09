@@ -311,7 +311,7 @@
 	overlays |= created_overlay
 
 #define WET_STACKS_MINIMUM_VFX 3
-#define WET_STACKS_DAMP 1
+#define WET_STACKS_DAMP 3
 #define WET_STACKS_DRIPPING 7.5
 #define WET_STACKS_SOAKED 15
 
@@ -356,9 +356,9 @@
 /datum/status_effect/fire_handler/wet_stacks/get_examine_text()
 	if(stacks <= WET_STACKS_DAMP)
 		return "[owner.p_Their()] skin seem[owner.p_s()] lightly damp."
-	if(stacks >= WET_STACKS_SOAKED)
+	else if(stacks >= WET_STACKS_SOAKED)
 		return "[owner.p_They()] is completely soaked."
-	if(stacks <= WET_STACKS_DRIPPING && stacks > WET_STACKS_DAMP)
+	else
 		return "[owner.p_They()] appear[owner.p_s()] to be dripping wet."
 
 /datum/status_effect/fire_handler/wet_stacks/tick(seconds_between_ticks)
@@ -367,7 +367,6 @@
 	if(stacks <= 0)
 		qdel(src)
 		return
-	// handle the droplets particle effect
 	if(stacks > WET_STACKS_MINIMUM_VFX)
 		owner.add_shared_particles(/particles/droplets)
 	if(stacks <= WET_STACKS_MINIMUM_VFX)

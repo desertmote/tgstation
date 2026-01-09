@@ -67,6 +67,9 @@
 /datum/species/human/cerulean/post_equip_species_outfit(mob/living/carbon/human/equipping, visuals_only)
 	if (visuals_only)
 		return
+	var/obj/item/organ/lungs/lungs = equipping.get_organ_slot(ORGAN_SLOT_LUNGS)
+	if (!(/datum/gas/water_vapor in lungs?.breathe_always))
+		return
 	// try to attach to uniform
 	var/obj/item/clothing/under/uniform = equipping.w_uniform
 	var/attached = uniform?.attach_accessory(SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer, equipping))
@@ -93,7 +96,7 @@
 		TRAIT_FREE_FLOAT_MOVEMENT,
 		TRAIT_FLOPPING,
 		TRAIT_SWIMMER,
-		TRAIT_BLOCK_LEGS,
+		TRAIT_BLOCK_ATTACHING_LEGS,
 	)
 
 /obj/item/organ/tail/fish/mermaid/Initialize(mapload)

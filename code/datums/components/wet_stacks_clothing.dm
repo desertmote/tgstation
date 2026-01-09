@@ -52,11 +52,10 @@
 	COOLDOWN_START(src, tick_cooldown, rand(10 SECONDS, 30 SECONDS))
 	// don't set stacks if a higher amount has already been applied to wearer
 	var/datum/status_effect/fire_handler/wet_stacks/wet_stacks = wearer.has_status_effect(/datum/status_effect/fire_handler/wet_stacks)
-	if(wet_stacks && wet_stacks?.stacks > stacks_to_add)
+	if(wet_stacks?.stacks > stacks_to_add)
 		return
 	// try to drain a cell if provided
-	if(!isnull(use_cell))
-		if(!use_cell.Invoke())
-			return
+	if(!use_cell?.Invoke())
+		return
 	playsound(wearer, 'sound/effects/droplet.ogg', rand(15, 35), TRUE, falloff_exponent = 5)
 	wearer.set_wet_stacks(stacks = stacks_to_add, remove_fire_stacks = dousing)

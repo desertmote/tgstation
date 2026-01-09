@@ -33,7 +33,8 @@
 /obj/item/clothing/accessory/vaporizer/proc/create_charge_bar(mob/living/user)
 	if(!cell || charge_bar)
 		return
-	charge_bar = new(user, cell.maxcharge, src, cell.charge)
+	var/charge_bar_target = loc == user ? src : loc
+	charge_bar = new(user, cell.maxcharge, charge_bar_target, cell.charge)
 
 /obj/item/clothing/accessory/vaporizer/proc/destroy_charge_bar()
 	if(!charge_bar)

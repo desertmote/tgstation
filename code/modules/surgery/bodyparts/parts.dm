@@ -460,7 +460,7 @@
 
 /// block attachment of legs if the owner has the related trait
 /obj/item/bodypart/leg/can_attach_limb(mob/living/carbon/owner, special)
-	if(!special && HAS_TRAIT(owner, TRAIT_BLOCK_LEGS))
+	if(!special && HAS_TRAIT(owner, TRAIT_BLOCK_ATTACHING_LEGS))
 		return FALSE
 	return ..()
 

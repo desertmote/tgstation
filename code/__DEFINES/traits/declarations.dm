@@ -251,7 +251,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// The mob is not harmed by tetrodotoxin. Instead, it heals them like omnizine
 #define TRAIT_TETRODOTOXIN_HEALING "tetrodotoxin_healing"
 /// Do not allow legs to be attached to a mob with this trait
-#define TRAIT_BLOCK_LEGS "block_legs"
+#define TRAIT_BLOCK_ATTACHING_LEGS "block_attaching_legs"
 #define TRAIT_EASYDISMEMBER "easy_dismember"
 #define TRAIT_LIMBATTACHMENT "limb_attach"
 #define TRAIT_NOLIMBDISABLE "no_limb_disable"
