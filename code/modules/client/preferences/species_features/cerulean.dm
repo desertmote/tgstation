@@ -15,7 +15,7 @@ GLOBAL_LIST_INIT(cerulean_respiration, list(
 	return current_species_has_savekey(preferences)
 
 /datum/preference/choiced/lungs_choice/apply_to_human(mob/living/carbon/human/target, value)
-	if(!iscerulean(target))
+	if(!(savefile_key in target.dna?.species?.get_features()))
 		return
 	target.dna.species.mutantlungs = GLOB.cerulean_respiration[value]
 	var/obj/item/organ/lungs/new_organ = SSwardrobe.provide_type(GLOB.cerulean_respiration[value])
@@ -37,7 +37,6 @@ GLOBAL_LIST_INIT(cerulean_respiration, list(
 	savefile_key = "feature_fish_tail_color"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
-	relevant_organ = /obj/item/organ/tail/fish
 
 /datum/preference/color/fish_tail_color/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features[FEATURE_TAIL_FISH_COLOR] = value

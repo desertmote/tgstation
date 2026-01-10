@@ -39,6 +39,7 @@
 /datum/species/human/cerulean/get_features()
 	var/list/features = ..()
 	LAZYOR(features, "feature_cerulean_respiration")
+	LAZYOR(features, "feature_fish_tail_color")
 	return features
 
 /datum/species/human/cerulean/randomize_features()
@@ -85,7 +86,7 @@
 
 /// the tail which makes the species, without this you're basically just a fishy human. without legs.
 /obj/item/organ/tail/fish/mermaid
-	name = "huge fish tail"
+	name = "mermaid tail"
 //	desc = ""
 	fillet_amount = 12
 	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/mermaid
@@ -123,7 +124,7 @@
 /obj/item/organ/tail/fish/mermaid/mutate_feature(features, mob/living/carbon/human/owner)
 	return //no mutation
 
-///
+/// Remove legs on insertion, if we had any
 /obj/item/organ/tail/fish/mermaid/proc/get_your_sealegs(mob/living/carbon/owner)
 	var/obj/item/bodypart/right_leg = owner.get_bodypart(BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/left_leg = owner.get_bodypart(BODY_ZONE_L_LEG)
@@ -134,14 +135,8 @@
 /datum/bodypart_overlay/mutant/tail/fish/mermaid
 	layers = EXTERNAL_BEHIND|EXTERNAL_ADJACENT
 
-/datum/bodypart_overlay/mutant/tail/fish/mermaid/randomize_appearance()
-	set_appearance(/datum/sprite_accessory/tails/fish/mermaid)
-
 /datum/bodypart_overlay/mutant/tail/fish/mermaid/get_random_appearance()
 	return /datum/sprite_accessory/tails/fish/mermaid
-
-/datum/bodypart_overlay/mutant/tail/fish/mermaid/override_color(obj/item/bodypart/limb)
-	return limb.owner.dna.features[FEATURE_TAIL_FISH_COLOR]
 
 /datum/bodypart_overlay/mutant/tail/fish/mermaid/can_draw_on_bodypart(obj/item/bodypart/limb)
 	return TRUE

@@ -280,7 +280,7 @@
 /datum/bodypart_overlay/mutant/tail/fish/on_mob_insert(obj/item/organ/parent, mob/living/carbon/receiver)
 	//Initialize the related dna feature block if we don't have any so it doesn't error out.
 	//This isn't tied to any species, but I kinda want it to be mutable instead of having a fixed sprite accessory.
-	if(imprint_on_next_insertion && !receiver.dna.features[feature_key])
+	if(imprint_on_next_insertion || !receiver.dna.features[feature_key])
 		receiver.dna.features[feature_key] = get_random_appearance().name // this proc not only returns a random accessory from our pool, it also excludes locked ones. wow!
 		receiver.dna.update_uf_block(/datum/dna_block/feature/accessory/tail_fish)
 	return ..()
