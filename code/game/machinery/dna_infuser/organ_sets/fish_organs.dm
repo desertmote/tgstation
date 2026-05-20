@@ -234,7 +234,7 @@
 	var/time_to_fillet = fillet_amount * 0.5 SECONDS
 	AddElement(/datum/element/processable, TOOL_KNIFE, fillet_type, fillet_amount, time_to_fillet, screentip_verb = "Cut")
 
-/obj/item/organ/tail/fish/on_mob_insert(mob/living/carbon/owner)
+/obj/item/organ/tail/fish/on_mob_insert(mob/living/carbon/owner, special, movement_flags)
 	. = ..()
 	owner.AddElementTrait(TRAIT_WADDLING, type, /datum/element/waddling)
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(check_location))

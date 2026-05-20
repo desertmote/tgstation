@@ -106,7 +106,7 @@
 
 /obj/item/organ/tail/fish/mermaid/on_mob_insert(mob/living/carbon/owner, special, movement_flags)
 	. = ..()
-	get_your_sealegs(owner)
+	get_your_sealegs(owner, special)
 
 /obj/item/organ/tail/fish/mermaid/on_mob_remove(mob/living/carbon/owner)
 	. = ..()
@@ -125,11 +125,15 @@
 	return //no mutation
 
 /// Remove legs on insertion, if we had any
-/obj/item/organ/tail/fish/mermaid/proc/get_your_sealegs(mob/living/carbon/owner)
+/obj/item/organ/tail/fish/mermaid/proc/get_your_sealegs(mob/living/carbon/owner, special)
 	var/obj/item/bodypart/right_leg = owner.get_bodypart(BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/left_leg = owner.get_bodypart(BODY_ZONE_L_LEG)
-	right_leg?.dismember()
-	left_leg?.dismember()
+	if (special)
+		right_leg?.drop_limb(special, FALSE, FALSE)
+		left_leg?.drop_limb(special, FALSE, FALSE)
+	else
+		right_leg?.dismember()
+		left_leg?.dismember()
 
 /// the tail has a fixed appearance for the modsuit overlays
 /datum/bodypart_overlay/mutant/tail/fish/mermaid
