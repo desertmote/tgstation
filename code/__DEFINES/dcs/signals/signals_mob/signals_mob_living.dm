@@ -70,13 +70,6 @@
 ///from base of element/bane/activate(): (item/weapon, mob/user)
 #define COMSIG_LIVING_BANED "living_baned"
 
-///from base of element/bane/activate(): (item/weapon, mob/user)
-#define COMSIG_OBJECT_PRE_BANING "obj_pre_baning"
-	#define COMPONENT_CANCEL_BANING (1<<0)
-
-///from base of element/bane/activate(): (item/weapon, mob/user)
-#define COMSIG_OBJECT_ON_BANING "obj_on_baning"
-
 // adjust_x_loss messages sent from /mob/living/proc/adjust[x]Loss
 /// Returned from all the following messages if you actually aren't going to apply any change
 #define COMPONENT_IGNORE_CHANGE (1<<0)
@@ -255,6 +248,9 @@
 /// From /obj/structure/geyser/attackby() : (obj/structure/geyser/geyser)
 #define COMSIG_LIVING_DISCOVERED_GEYSER "living_discovered_geyser"
 
+/// From /obj/structure/ore_vent/proc/initiate_wave_win() : (obj/structure/ore_vent/vent)
+#define COMSIG_LIVING_ON_VENT_WIN "living_on_vent_win"
+
 /// From /datum/ai/behavior/climb_tree/perform() : (mob/living/basic/living_pawn)
 #define COMSIG_LIVING_CLIMB_TREE "living_climb_tree"
 
@@ -370,6 +366,9 @@
 /// From /mob/living/proc/mob_pickup() : (mob/living/user, obj/item/mob_holder/holder)
 #define COMSIG_LIVING_SCOOPED_UP "living_scooped_up"
 
+/// From /mob/living/proc/update_blood_status(), sent when the return value of /mob/living/proc/can_have_blood() changes, but before the new blood status is applied : (had_blood, has_blood, old_blood_volume)
+#define COMSIG_LIVING_PRE_UPDATE_BLOOD_STATUS "living_pre_update_blood_status"
+
 /// From /mob/living/proc/update_blood_status(), sent when the return value of /mob/living/proc/can_have_blood() changes : (had_blood, has_blood, old_blood_volume, new_blood_volume)
 #define COMSIG_LIVING_UPDATE_BLOOD_STATUS "living_update_blood_status"
 
@@ -378,3 +377,12 @@
 
 /// Sent to a mob when one of their bodypart's surgery state changes, OR sent from the basic_surgery_state holder when its surgery state changes (old_state, new_state, changed_states)
 #define COMSIG_LIVING_UPDATING_SURGERY_STATE "carbon_updating_surgery_state"
+
+/// Sent to a mob when its player DNRs
+#define COMSIG_LIVING_DNR "living_dnr"
+
+/// From /mob/living/on_looking_z_level_change() : (turf/old_turf, turf/new_turf)
+#define COMSIG_LIVING_LOOK_Z_CHANGE "living_look_z_change"
+
+/// From /mob/living/proc/refresh_gravity() : (new_gravity, old_gravity)
+#define COMSIG_LIVING_GRAVITY_CHANGED "living_gravity_changed"

@@ -307,7 +307,7 @@
 	if(!iscarbon(owner))
 		return
 	var/mob/living/carbon/carbon_eater = owner
-	for(var/obj/item/bodypart/wounded_limb as anything in carbon_eater.bodyparts)
+	for(var/obj/item/bodypart/wounded_limb as anything in carbon_eater.get_bodyparts())
 		for(var/datum/wound/to_cure as anything in wounded_limb.wounds)
 			to_cure.remove_wound()
 			break
@@ -500,8 +500,7 @@
 /datum/status_effect/heretic_passive/rust/proc/on_move(mob/source, atom/old_loc, dir, forced, list/old_locs)
 	SIGNAL_HANDLER
 
-	var/turf/mover_turf = get_turf(source)
-	if(HAS_TRAIT(mover_turf, TRAIT_RUSTY))
+	if(source.is_touching_rust())
 		ADD_TRAIT(source, TRAIT_BATON_RESISTANCE, REF(src))
 	else
 		REMOVE_TRAIT(source, TRAIT_BATON_RESISTANCE, REF(src))
@@ -515,8 +514,7 @@
 /datum/status_effect/heretic_passive/rust/proc/on_life(mob/living/source, seconds_per_tick)
 	SIGNAL_HANDLER
 
-	var/turf/our_turf = get_turf(source)
-	if(!HAS_TRAIT(our_turf, TRAIT_RUSTY))
+	if(!source.is_touching_rust())
 		return
 
 	// Heals all damage + Stamina
@@ -545,7 +543,7 @@
 	var/mob/living/carbon/carbon_owner = source
 	if(passive_level < HERETIC_LEVEL_UPGRADE)
 		return
-	for(var/obj/item/bodypart/wounded_limb as anything in carbon_owner.bodyparts)
+	for(var/obj/item/bodypart/wounded_limb as anything in carbon_owner.get_bodyparts())
 		for(var/datum/wound/to_cure as anything in wounded_limb.wounds)
 			to_cure.remove_wound()
 	for(var/obj/item/organ/internal as anything in carbon_owner.organs)

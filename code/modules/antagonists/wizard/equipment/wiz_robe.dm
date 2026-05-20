@@ -119,7 +119,7 @@
 	inhand_icon_state = "wizrobe"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	armor_type = /datum/armor/suit_wizrobe
-	allowed = list(/obj/item/teleportation_scroll, /obj/item/highfrequencyblade/wizard)
+	allowed = list(/obj/item/highfrequencyblade/wizard, /obj/item/storage/belt/wand_bandolier, /obj/item/teleportation_scroll)
 	flags_inv = HIDEJUMPSUIT
 	strip_delay = 5 SECONDS
 	equip_delay_other = 5 SECONDS
@@ -300,7 +300,6 @@
 	playsound(src, 'sound/effects/magic/summon_magic.ogg', 50, TRUE, TRUE)
 
 	var/mob/living/stickman = new /mob/living/basic/stickman/lesser(get_turf(summoner))
-
-	stickman.faction |= summoner.faction - FACTION_NEUTRAL //These bad boys shouldn't inherit the neutral faction from the crew
+	stickman.remove_faction(FACTION_NEUTRAL) //These bad boys shouldn't inherit the neutral faction from the crew
 
 	COOLDOWN_START(src, summoning_cooldown, 3 SECONDS)

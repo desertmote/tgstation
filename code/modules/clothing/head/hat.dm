@@ -244,7 +244,19 @@
 /obj/item/clothing/head/costume/lizard
 	name = "lizardskin cloche hat"
 	desc = "How many lizards died to make this hat? Not enough."
-	icon_state = "lizard"
+	icon = 'icons/map_icons/clothing/head/_head.dmi'
+	icon_state = "/obj/item/clothing/head/costume/lizard"
+	post_init_icon_state = "lizard_hat"
+	greyscale_config = /datum/greyscale_config/lizard_hat
+	greyscale_config_worn = /datum/greyscale_config/lizard_hat/worn
+	greyscale_colors = "#859333"
+
+/obj/item/clothing/head/costume/lizard/on_craft_completion(list/components, datum/crafting_recipe/current_recipe, atom/crafter)
+	var/obj/item/stack/sheet/animalhide/carbon/lizard/skin = locate() in components
+	if (isnull(skin) || !length(skin.skin_color)) // what
+		return ..()
+	set_greyscale(skin.skin_color)
+	return ..()
 
 /obj/item/clothing/head/costume/scarecrow_hat
 	name = "scarecrow hat"
@@ -392,3 +404,9 @@
 	worn_icon_state = "paper"
 	dog_fashion = /datum/dog_fashion/head
 	custom_materials = list(/datum/material/paper = HALF_SHEET_MATERIAL_AMOUNT / 2)
+
+/obj/item/clothing/head/costume/paper_hat/savior
+	name = "ancient paper hat"
+	desc = "An ancient hat made of paper. \"Savior of the Universe\" is spelled out on the rim in orange marker. "
+	icon_state = "paper_savior"
+	worn_icon_state = "paper_savior"

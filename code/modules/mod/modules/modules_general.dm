@@ -9,26 +9,19 @@
 	complexity = 1
 	incompatible_modules = list(/obj/item/mod/module/storage, /obj/item/mod/module/plate_compression)
 	required_slots = list(ITEM_SLOT_BACK)
-	/// Max weight class of items in the storage.
-	var/max_w_class = WEIGHT_CLASS_NORMAL
-	/// Max combined weight of all items in the storage.
-	var/max_combined_w_class = 15
-	/// Max amount of items in the storage.
-	var/max_items = 7
-	/// Is nesting same-size storage items allowed?
-	var/big_nesting = FALSE
+	/// The storage type to create for the module
+	var/datum/storage/storage_type = /datum/storage/mod_storage
 
 /obj/item/mod/module/storage/Initialize(mapload)
 	. = ..()
-	create_storage(max_specific_storage = max_w_class, max_total_storage = max_combined_w_class, max_slots = max_items)
-	atom_storage.allow_big_nesting = TRUE
-	atom_storage.set_locked(STORAGE_FULLY_LOCKED)
+	if(storage_type)
+		create_storage(storage_type = storage_type)
+		atom_storage.set_locked(STORAGE_FULLY_LOCKED)
 
 /obj/item/mod/module/storage/on_install()
 	. = ..()
-	var/datum/storage/modstorage = mod.create_storage(max_specific_storage = max_w_class, max_total_storage = max_combined_w_class, max_slots = max_items)
+	var/datum/storage/modstorage = mod.create_storage(storage_type = storage_type)
 	modstorage.set_real_location(src)
-	modstorage.allow_big_nesting = big_nesting
 	atom_storage.set_locked(STORAGE_NOT_LOCKED)
 	var/obj/item/clothing/suit = mod.get_part_from_slot(ITEM_SLOT_OCLOTHING)
 	if(istype(suit))
@@ -61,18 +54,16 @@
 		whether smuggling, or simply hauling."
 	complexity = 3
 	icon_state = "storage_large"
-	max_combined_w_class = 21
-	max_items = 14
+	storage_type = /datum/storage/mod_storage/expanded
 
 /obj/item/mod/module/storage/syndicate
 	name = "MOD syndicate storage module"
 	desc = "A storage system using nanotechnology developed by Cybersun Industries, these compartments use \
 		esoteric technology to compress the physical matter of items put inside of them, \
 		essentially shrinking items for much easier and more portable storage."
-	icon_state = "storage_syndi"
 	complexity = 3
-	max_combined_w_class = 30
-	max_items = 21
+	icon_state = "storage_syndi"
+	storage_type = /datum/storage/mod_storage/syndicate
 
 /obj/item/mod/module/storage/belt
 	name = "MOD case storage module"
@@ -81,10 +72,8 @@
 		If you find this equipped to a standard modular suit, then someone has almost certainly shortchanged you on a proper storage module."
 	icon_state = "storage_case"
 	complexity = 0
-	max_w_class = WEIGHT_CLASS_SMALL
-	max_combined_w_class = 21
-	max_items = 7
 	required_slots = list(ITEM_SLOT_BELT)
+	storage_type = /datum/storage/mod_storage/belt
 
 /obj/item/mod/module/storage/bluespace
 	name = "MOD bluespace storage module"
@@ -92,10 +81,7 @@
 		miniaturized bluespace pockets for the ultimate in storage technology; regardless of the weight of objects put inside."
 	complexity = 3
 	icon_state = "storage_large"
-	max_w_class = WEIGHT_CLASS_GIGANTIC
-	max_combined_w_class = 60
-	max_items = 21
-	big_nesting = TRUE
+	storage_type = /datum/storage/mod_storage/bluespace
 
 ///Ion Jetpack - Lets the user fly freely through space using battery charge.
 /obj/item/mod/module/jetpack
@@ -118,8 +104,6 @@
 	var/thrust_callback
 	/// How much force this module can apply per tick
 	var/drift_force = 1.5 NEWTONS
-	/// How much force this module's stabilizier can put out
-	var/stabilizer_force = 1.2 NEWTONS
 
 /obj/item/mod/module/jetpack/Initialize(mapload)
 	. = ..()
@@ -143,7 +127,6 @@
 		/datum/component/jetpack, \
 		src.stabilize, \
 		drift_force, \
-		stabilizer_force, \
 		COMSIG_MODULE_TRIGGERED, \
 		COMSIG_MODULE_DEACTIVATED, \
 		MOD_ABORT_USE, \
@@ -191,7 +174,6 @@
 	overlay_state_inactive = "module_jetpackadv"
 	overlay_state_active = "module_jetpackadv_on"
 	drift_force = 2 NEWTONS
-	stabilizer_force = 2 NEWTONS
 
 /// Cooldown to use if we didn't actually launch a jump jet
 #define FAILED_ACTIVATION_COOLDOWN 3 SECONDS
@@ -262,7 +244,7 @@
 /obj/item/mod/module/status_readout/add_ui_data()
 	. = ..()
 	.["display_time"] = display_time
-	.["shift_time"] = station_time_timestamp()
+	.["shift_time"] = round_timestamp()
 	.["shift_id"] = GLOB.round_id
 	.["health"] = mod.wearer?.health || 0
 	.["health_max"] = mod.wearer?.getMaxHealth() || 0
@@ -836,7 +818,7 @@
 	. = ..()
 
 	if(!length(accepted_mats))
-		accepted_mats = SSmaterials.materials_by_category[MAT_CATEGORY_SILO]
+		accepted_mats = SSmaterials.get_materials_by_flag(MATERIAL_SILO_STORED)
 
 	container = new ( \
 		src, \
@@ -1040,6 +1022,4 @@
 /obj/item/mod/module/shock_absorber/proc/mob_batoned(datum/source)
 	SIGNAL_HANDLER
 	drain_power(use_energy_cost)
-	var/datum/effect_system/lightning_spread/sparks = new /datum/effect_system/lightning_spread
-	sparks.set_up(number = 5, cardinals_only = TRUE, location = mod.wearer.loc)
-	sparks.start()
+	do_sparks(5, TRUE, mod.wearer.loc)

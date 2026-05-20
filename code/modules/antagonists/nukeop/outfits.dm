@@ -62,7 +62,7 @@
 	weapons_implant.implant(nukie)
 	var/obj/item/implant/explosive/explosive_implant = new/obj/item/implant/explosive(nukie)
 	explosive_implant.implant(nukie)
-	nukie.faction |= ROLE_SYNDICATE
+	nukie.add_faction(ROLE_SYNDICATE)
 	nukie.update_icons()
 
 /datum/outfit/syndicate/full
@@ -144,11 +144,10 @@
 
 /datum/outfit/syndicate/reinforcement/cybersun
 	name = "Syndicate Operative - Cybersun Reinforcement"
-	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/jacket/oversized
-	gloves = /obj/item/clothing/gloves/fingerless
-	glasses = /obj/item/clothing/glasses/sunglasses
-	mask = /obj/item/cigarette/cigar
+	uniform = /obj/item/clothing/under/syndicate/cybersun
+	gloves = /obj/item/clothing/gloves/combat
+	shoes = /obj/item/clothing/shoes/laceup
+	mask = /obj/item/clothing/mask/gas/syndicate/cybersun
 	faction = "Cybersun Industries"
 
 /datum/outfit/syndicate/reinforcement/donk

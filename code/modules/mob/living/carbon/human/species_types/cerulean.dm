@@ -139,4 +139,5 @@
 	return /datum/sprite_accessory/tails/fish/mermaid
 
 /datum/bodypart_overlay/mutant/tail/fish/mermaid/can_draw_on_bodypart(obj/item/bodypart/limb)
+	. = ..()
 	return TRUE
