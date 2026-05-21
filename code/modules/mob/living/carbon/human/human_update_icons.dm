@@ -578,7 +578,9 @@ There are several things that need to be remembered:
 
 	return icon(resulting_icon)
 
-/// Modifies the sprite of clothing to have no legs! For pants, which mermaids canonically can't wear
+/*
+	Modifies the sprite of clothing to have no legs! For pants, which mermaids canonically can't wear
+*/
 /proc/wear_mermaid_version(icon/base_icon, obj/item/item, key, greyscale_colors)
 	var/index = "[key]-[item.type]-[greyscale_colors]"
 	var/static/list/mermaid_clothing_icons = list()
@@ -587,12 +589,58 @@ There are several things that need to be remembered:
 		if(item.slot_flags & ITEM_SLOT_ICLOTHING)
 			mermaid_clothing_icon = replace_icon_legs(base_icon, replace = FALSE)
 		else if((item.slot_flags & ITEM_SLOT_OCLOTHING) || (item.slot_flags & ITEM_SLOT_NECK))
-			mermaid_clothing_icon = cut_coat(base_icon)
+			if(istype(item, /obj/item/clothing/suit/mod))
+				mermaid_clothing_icon = handle_mermaid_modsuit(base_icon, item, key)
+			else
+				mermaid_clothing_icon = cut_coat(base_icon)
 		if(!mermaid_clothing_icon)
 			return base_icon
 		mermaid_clothing_icons[index] = fcopy_rsc(mermaid_clothing_icon)
 
 	return icon(mermaid_clothing_icon)
+
+/*
+
+*/
+/proc/handle_mermaid_modsuit(icon/base_icon, obj/item/clothing/chestpiece, key)
+	var/icon/mermaid_modsuit = base_icon
+	/// the entry in GLOB.mermaid_modsuit_themes
+	var/theme = "undefined"
+	// check a list of preset combinations for modsuit icon generation
+	for(var/theme_entry in GLOB.mermaid_modsuit_themes)
+		if(findtext(key, theme_entry))
+			theme = theme_entry
+
+	var/sealed = findtext(key, "sealed") ? TRUE : FALSE
+	var/gender = copytext_char(key, length(key))
+
+	if(theme == "undefined")
+		var/icon_state_string = "[gender]-[chestpiece.icon_state]"
+		if(icon_exists(MERMAID_SUIT_FILE, icon_state_string))
+			var/icon/drawn_mermaid_part = icon(MERMAID_SUIT_FILE, icon_state_string)
+			mermaid_modsuit.Blend(drawn_mermaid_part, ICON_OVERLAY)
+			// we have a pre-drawn modsuit, yay
+			return mermaid_modsuit
+		else
+			// we have no drawn sprite and no entry in the preset combinations alist. one little neglected modsuit sprite :(
+			// lets generate a barebones colored icon
+			var/icon/generated_mermaid_part = icon(MERMAID_SUIT_FILE, "undefined[sealed ? "-sealed" : ""]")
+			generated_mermaid_part.Blend(chestpiece.get_general_color(base_icon), ICON_ADD)
+			mermaid_modsuit.Blend(generated_mermaid_part, ICON_OVERLAY)
+	else
+		// add a colored icon for each modular part, according to the theme fetched from GLOB.mermaid_modsuit_themes
+		var/list/chosen_parts = GLOB.mermaid_modsuit_themes[theme]
+		for(var/i in 1 to length(chosen_parts))
+			var/icon/generated_mermaid_part = icon(MERMAID_SUIT_FILE, "[GLOB.mermaid_modsuit_themes[theme][i]][sealed ? "-sealed" : ""]")
+			generated_mermaid_part.Blend(GLOB.mermaid_modsuit_themes[theme][GLOB.mermaid_modsuit_themes[theme][i]], ICON_ADD)
+			mermaid_modsuit.Blend(generated_mermaid_part, ICON_OVERLAY)
+	// apply a flipper icon if we are sealed and have a female physique. ideally we color after the theme fetched from GLOB.mermaid_modsuit_themes_flippers
+	if(gender == "f" && sealed)
+		var/icon/femflippers = icon(MERMAID_SUIT_FILE, "flipper_overlay")
+		femflippers.Blend(theme != "undefined" ? GLOB.mermaid_modsuit_themes_flippers[theme] : chestpiece.get_general_color(base_icon), ICON_ADD)
+		mermaid_modsuit.Blend(femflippers, ICON_OVERLAY)
+
+	return mermaid_modsuit
 
 /// Removes pixels that often appear between the legs on suits, for the above proc
 /proc/cut_coat(icon/base_icon)
@@ -832,10 +880,11 @@ generate/load female uniform sprites matching all previously decided variables
 
 	var/is_mermaid = istype(wearer) && (wearer.bodyshape & BODYSHAPE_MERMAID)
 	if(!isinhands && is_mermaid && (supports_variations_flags & CLOTHING_MERMAID_MASK))
+		var/mob/living/carbon/human/mermaid = wearer
 		building_icon = wear_mermaid_version(
 			base_icon = building_icon || icon(file2use, t_state),
 			item = src,
-			key = "[t_state]-[file2use]-[female_uniform]",
+			key = "[t_state]-[file2use]-[female_uniform]-[mermaid.physique == FEMALE ? "f" : "m"]",
 			greyscale_colors = greyscale_colors,
 		)
 

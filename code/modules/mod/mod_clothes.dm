@@ -23,7 +23,7 @@
 	icon_state = "standard-chestplate"
 	base_icon_state = "chestplate"
 	worn_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
-	supports_variations_flags = CLOTHING_MERMAID_VARIATION
+	supports_variations_flags = CLOTHING_MERMAID_MASK
 	blood_overlay_type = "armor"
 	allowed = list(
 		/obj/item/tank/internals,
