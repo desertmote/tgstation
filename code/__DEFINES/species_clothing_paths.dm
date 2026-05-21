@@ -12,8 +12,8 @@
 
 //MERMAID TAIL PATHS
 ///The dmi which has sprites for mermaids and their suits
-#define MERMAID_SUIT_FILE 'icons/mob/human/species/misc/mermaid_suits.dmi'
+#define MERMAID_SUIT_FILE 'icons/mob/human/species/misc/mermaid_suit.dmi'
 ///The dmi which has the mermaid modsuits
-#define MERMAID_MODSUIT_FILE 'icons/mob/human/species/misc/mermaid_suits.dmi'
+#define MERMAID_MODSUIT_FILE 'icons/mob/human/species/misc/mermaid_modsuit.dmi'
 ///The dmi which has modular modsuit parts to assemble in handle_mermaid_modsuit(...)
-#define MERMAID_MODSUIT_GEN_FILE 'icons/mob/human/species/misc/mermaid_suits.dmi'
+#define MERMAID_MODSUIT_GEN_FILE 'icons/mob/human/species/misc/mermaid_modsuit_gen.dmi'

@@ -18,7 +18,7 @@ GLOBAL_LIST_INIT(mermaid_modsuit_themes, list(
 
 /**
  *	Like above but slightly less alisty. The color given are just for the flippers
- *	ceruleans with a female physique have, and when the modsuit is sealed.
+ *	ceruleans with a female physique have, when the modsuit is sealed.
  */
 GLOBAL_LIST_INIT(mermaid_modsuit_themes_flippers, list(
 	"advanced" = "#FFFFFF",
