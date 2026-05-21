@@ -11,5 +11,9 @@
 #define DIGITIGRADE_UNIFORM_FILE 'icons/mob/human/species/misc/digitigrade.dmi'
 
 //MERMAID TAIL PATHS
-///The dmi which has the mermaid modsuits
+///The dmi which has sprites for mermaids and their suits
 #define MERMAID_SUIT_FILE 'icons/mob/human/species/misc/mermaid_suits.dmi'
+///The dmi which has the mermaid modsuits
+#define MERMAID_MODSUIT_FILE 'icons/mob/human/species/misc/mermaid_suits.dmi'
+///The dmi which has modular modsuit parts to assemble in handle_mermaid_modsuit(...)
+#define MERMAID_MODSUIT_GEN_FILE 'icons/mob/human/species/misc/mermaid_suits.dmi'

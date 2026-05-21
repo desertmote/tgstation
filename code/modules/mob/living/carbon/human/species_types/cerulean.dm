@@ -84,9 +84,9 @@
 		indirect_action = TRUE,
 	)
 
-/// the tail which makes the species, without this you're basically just a fishy human. without legs.
+/// the tail which makes the species, without this you're basically just a fishy, legless human.
 /obj/item/organ/tail/fish/mermaid
-	name = "mermaid tail"
+	name = "large fish tail"
 //	desc = ""
 	fillet_amount = 12
 	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/mermaid
@@ -112,7 +112,7 @@
 	. = ..()
 	if (QDELING(owner) || QDELING(src))
 		return
-	// losing half your bodymass is going to be bad
+	// losing half your bodymass is going to be bad 💦
 	owner.apply_damage(rand(35, 45), def_zone = BODY_ZONE_CHEST, wound_bonus = CANT_WOUND)
 	if (owner.blood_volume)
 		owner.blood_volume -= (BLOOD_VOLUME_NORMAL / 3)

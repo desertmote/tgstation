@@ -3,7 +3,7 @@ GLOBAL_LIST_INIT(cerulean_respiration, list(
 	"Water vapor" = /obj/item/organ/lungs/fish, //but this gets the idea across better
 	))
 
-/// wether or not a cerulean has air-breathing lungs, or water-breathing gills.
+/// wether or not a cerulean has air-breathing lungs, or water-breathing gills
 /datum/preference/choiced/lungs_choice
 	savefile_key = "feature_cerulean_respiration"
 	savefile_identifier = PREFERENCE_CHARACTER
