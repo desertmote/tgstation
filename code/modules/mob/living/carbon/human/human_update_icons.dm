@@ -551,7 +551,7 @@ There are several things that need to be remembered:
 	var/icon/female_clothing_icon = female_clothing_icons[index]
 	if(!female_clothing_icon) //Create standing/laying icons if they don't exist
 		var/female_icon_state = "female[type == FEMALE_UNIFORM_FULL ? "_full" : ((!type || type & FEMALE_UNIFORM_TOP_ONLY) ? "_top" : "")][type & FEMALE_UNIFORM_NO_BREASTS ? "_no_breasts" : ""]"
-		var/icon/female_cropping_mask = icon('icons/mob/clothing/under/masking_helpers.dmi', female_icon_state)
+		var/icon/female_cropping_mask = icon(MASKING_HELPERS_PATH, female_icon_state)
 		female_clothing_icon = icon(icon, icon_state)
 		female_clothing_icon.Blend(female_cropping_mask, ICON_MULTIPLY)
 		female_clothing_icon = fcopy_rsc(female_clothing_icon)
@@ -577,19 +577,6 @@ There are several things that need to be remembered:
 		digitigrade_clothing_cache[index] = fcopy_rsc(resulting_icon)
 
 	return icon(resulting_icon)
-
-/// Modifies a sprite to replace the legs with a new version or nothing
-/proc/replace_icon_legs(icon/base_icon, icon/new_legs, replace = TRUE)
-	var/static/icon/leg_mask
-	if(!leg_mask)
-		leg_mask = icon('icons/mob/clothing/under/masking_helpers.dmi', "digi_leg_mask")
-
-	// cuts the legs off
-	base_icon.Blend(leg_mask, ICON_SUBTRACT)
-	// staples the new legs on
-	if(replace)
-		base_icon.Blend(new_legs, ICON_OVERLAY)
-	return base_icon
 
 /**
  * Generates a digitigrade version of this item's worn icon

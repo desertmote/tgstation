@@ -1294,7 +1294,7 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 			created = wear_female_version(icon_state_to_use, icon, female_sprite_flags_to_use)
 		if(use_digi)
 			var/icon/replacement = icon(SSgreyscale.GetColoredIconByType(/datum/greyscale_config/digitigrade_underwear, greyscale_colors), digi_icon_state)
-			created = replace_icon_legs(created, replacement)
+			created = mask_icon(created, LEGS_MASK, replacement)
 
 		cached_icons[key] = fcopy_rsc(created)
 		result = mutable_appearance(created)

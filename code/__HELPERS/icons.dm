@@ -628,6 +628,22 @@ world
 	mask_icon.MapColors(0,0,0,0, 0,0,0,0, 0,0,0,0, 255,255,255,-255, 1,1,1,1)
 	return mask_icon
 
+/**
+ * Modifies a sprite to replace the legs with a new version or nothing
+ * Arguments:
+ * *
+ * *
+ * *
+ */
+/proc/mask_icon(icon/base_icon, mask_to_use, icon/replacement)
+	if(isnull(mask_to_use))
+		return
+	//
+	var/icon/mask = icon(MASKING_HELPERS_PATH, mask_to_use)
+	base_icon.Blend(mask, ICON_SUBTRACT)
+	if(!isnull(replacement))
+		base_icon.Blend(replacement, ICON_OVERLAY)
+	return base_icon
 
 /mob/proc/AddCamoOverlay(atom/A)//A is the atom which we are using as the overlay.
 	var/icon/opacity_icon = new(A.icon, A.icon_state)//Don't really care for overlays/underlays.

@@ -20,10 +20,10 @@ GLOBAL_ALIST_INIT(mermaid_mod_theme, list(
 
 /**
  *	Like above but slightly less alisty. The color given are just for the flippers
- *	ceruleans with a female physique have, when the modsuit is sealed.
+ *	Ceruleans with a female physique have, when the modsuit is sealed.
  *	If you use this, make sure there is also an entry in the above alist
  */
 GLOBAL_ALIST_INIT(mod_theme_to_flipper_color, list(
 	/datum/mod_theme/debug::default_skin = "#2faff5",
-	/datum/mod_theme/loader::default_skin = "no_flippers",
+	/datum/mod_theme/loader::default_skin = NO_FLIPPERS,
 ))

@@ -8,6 +8,23 @@
 		}
 	],
 
+	"undefined": [
+		{
+			"type": "icon_state",
+			"icon_state": "undefined",
+			"blend_mode": "overlay",
+			"color_ids": [1]
+		}
+	],
+	"undefined-sealed": [
+		{
+			"type": "icon_state",
+			"icon_state": "undefined-sealed",
+			"blend_mode": "overlay",
+			"color_ids": [1]
+		}
+	],
+
 	"rubber": [
 		{
 			"type": "icon_state",

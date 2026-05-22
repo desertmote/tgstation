@@ -213,8 +213,8 @@
 			update_appearance()
 
 /obj/item/clothing/under/generate_digitigrade_icons(icon/base_icon, greyscale_colors)
-	var/icon/legs = icon(SSgreyscale.GetColoredIconByType(/datum/greyscale_config/digitigrade, greyscale_colors), "jumpsuit_worn")
-	return replace_icon_legs(base_icon, legs)
+	var/icon/new_legs = icon(SSgreyscale.GetColoredIconByType(/datum/greyscale_config/digitigrade, greyscale_colors), "jumpsuit_worn")
+	return mask_icon(base_icon, LEGS_MASK, new_legs)
 
 /obj/item/clothing/under/equipped(mob/living/user, slot)
 	..()

@@ -365,6 +365,10 @@
 #define CRYSTALIZE_STAGE_ENCROACHING 300 //In switches
 #define CRYSTALIZE_STAGE_SMALL 600 //Because they're not static
 
+// Strings used by modsuit mob sprite generation for Ceruleans/mobs with a mermaid tail
+#define FLIPPERS "flippers"
+#define NO_FLIPPERS "no_flippers"
+
 //Slime evolution threshold. Controls how fast slimes can split/grow
 #define SLIME_EVOLUTION_THRESHOLD 10
 

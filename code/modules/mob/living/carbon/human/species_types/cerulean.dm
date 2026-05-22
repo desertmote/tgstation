@@ -128,12 +128,12 @@
 /obj/item/organ/tail/fish/mermaid/proc/get_your_sealegs(mob/living/carbon/owner, special)
 	var/obj/item/bodypart/right_leg = owner.get_bodypart(BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/left_leg = owner.get_bodypart(BODY_ZONE_L_LEG)
-	if(special)
+	if (special)
 		right_leg?.drop_limb(special, FALSE, FALSE)
 		left_leg?.drop_limb(special, FALSE, FALSE)
-	else
-		right_leg?.dismember()
-		left_leg?.dismember()
+		return
+	right_leg?.dismember()
+	left_leg?.dismember()
 
 /// the tail has a fixed appearance for the modsuit overlays
 /datum/bodypart_overlay/mutant/tail/fish/mermaid
