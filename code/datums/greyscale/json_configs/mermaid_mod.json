@@ -1,0 +1,27 @@
+{
+	"flippers": [
+		{
+			"type": "icon_state",
+			"icon_state": "flippers",
+			"blend_mode": "overlay",
+			"color_ids": [1]
+		}
+	],
+
+	"rubber": [
+		{
+			"type": "icon_state",
+			"icon_state": "rubber",
+			"blend_mode": "overlay",
+			"color_ids": [1]
+		}
+	],
+	"rubber-sealed": [
+		{
+			"type": "icon_state",
+			"icon_state": "rubber-sealed",
+			"blend_mode": "overlay",
+			"color_ids": [1]
+		}
+	]
+}

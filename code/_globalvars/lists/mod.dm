@@ -8,18 +8,22 @@ GLOBAL_LIST_EMPTY(mod_link_ids)
  *	When an entry exists here, and there isn't a drawn modsuit sprite to use,
  *	handle_mermaid_modsuit(...) will generate a modsuit sprite with the supplied parts.
  *	Check MERMAID_MODSUIT_GEN_FILE for existing parts to pick from.
- *	Sprites at the top of the list load first.
+ *	Sprites at the top of the list load first
  */
-GLOBAL_LIST_INIT(mermaid_modsuit_themes, list(
-	"advanced" = list(
-		"shape_1" = "#FFFFFF",
+GLOBAL_ALIST_INIT(mermaid_mod_theme, list(
+	/datum/mod_theme/debug::default_skin = list(
+		"rubber" = "#343442",
+//		"metal" = "#00289f",
 	),
+	/datum/mod_theme/loader::default_skin = list(),
 ))
 
 /**
  *	Like above but slightly less alisty. The color given are just for the flippers
  *	ceruleans with a female physique have, when the modsuit is sealed.
+ *	If you use this, make sure there is also an entry in the above alist
  */
-GLOBAL_LIST_INIT(mermaid_modsuit_themes_flippers, list(
-	"advanced" = "#FFFFFF",
+GLOBAL_ALIST_INIT(mod_theme_to_flipper_color, list(
+	/datum/mod_theme/debug::default_skin = "#2faff5",
+	/datum/mod_theme/loader::default_skin = "no_flippers",
 ))

@@ -32,54 +32,76 @@
 	base_icon.Blend(coat_mask, ICON_SUBTRACT)
 	return base_icon
 
-/// in reference to GLOB.mermaid_modsuit_themes and its entries. if (un)defined, the following proc generates accordingly
+/// in reference to GLOB.mermaid_mod_theme and its entries. if (un)defined, the following proc generates accordingly
 #define NO_THEME_ENTRY "undefined"
 #define FEM_FLIPPER "f" //lady physique ceruleans have extra fins, to keep her eggs close. we'll cover these up if the modsuit is sealed
 
 /**
  *	This proc handles icon building for ceruleans wearing modsuits.
- *	If a drawn sprite exists, we prioritize it. If it doesn't, we'll look for an entry in GLOB.mermaid_modsuit_themes
+ *	If a drawn sprite exists, we prioritize it. If it doesn't, we'll look for an entry in GLOB.mermaid_mod_theme
  *	If that doesn't, we'll generate a basic modsuit icon for the cerulean.
  */
 /proc/handle_mermaid_modsuit(icon/base_icon, obj/item/clothing/chestpiece, key)
 	var/icon/mermaid_modsuit = base_icon
-	/// the entry in GLOB.mermaid_modsuit_themes
+	/// the entry in GLOB.mermaid_mod_theme
 	var/theme = NO_THEME_ENTRY
+	/// the color of the icon we're helping render. we fetch this on init because in most cases we mask away where it samples from
+	var/general_color = chestpiece.get_general_color(base_icon)
+	/// whether the modsuit is sealed or open, we read this from our lovely key
+	var/sealed = findtext(key, "sealed") ? TRUE : FALSE
+	/// whether our wearer has boy or girl physique, read from the last symbol of our key
+	var/physique = copytext_char(key, length(key))
+
+	/// our full icon state string, lets find a pre-drawn modsuit!
+	var/icon_state_string = "[physique == FEM_FLIPPER ? "f-" : ""][chestpiece.icon_state]"
+	if(icon_exists(MERMAID_MODSUIT_FILE, icon_state_string))
+		// we have a pre-drawn modsuit, yay
+		return icon(MERMAID_MODSUIT_FILE, icon_state_string)
+
+	// lets cut away the legs first, we really don't need them
+	replace_icon_legs(mermaid_modsuit, replace = FALSE)
 	// check a list of preset combinations for modsuit icon generation
-	for(var/theme_entry in GLOB.mermaid_modsuit_themes)
+	for(var/theme_entry in GLOB.mermaid_mod_theme)
 		if(findtext(key, theme_entry))
 			theme = theme_entry
 			continue
-
-	var/sealed = findtext(key, "sealed") ? TRUE : FALSE
-	var/physique = copytext_char(key, length(key))
-
-	if(theme == NO_THEME_ENTRY)
-		var/icon_state_string = "[physique == FEM_FLIPPER ? "f-" : ""][chestpiece.icon_state]"
-		if(icon_exists(MERMAID_MODSUIT_FILE, icon_state_string))
-			var/icon/drawn_mermaid_part = icon(MERMAID_MODSUIT_FILE, icon_state_string)
-			mermaid_modsuit.Blend(drawn_mermaid_part, ICON_OVERLAY)
-			// we have a pre-drawn modsuit, yay
-			return mermaid_modsuit
-		else
-			// we have no drawn sprite and no entry in the preset combinations alist. one little neglected modsuit :(
-			// lets generate a barebones colored icon
-			var/icon/generated_mermaid_part = icon(MERMAID_MODSUIT_GEN_FILE, "[NO_THEME_ENTRY][sealed ? "-sealed" : ""]")
-			generated_mermaid_part.Blend(chestpiece.get_general_color(base_icon), ICON_MULTIPLY)
+	// lets run through generating according to what our variables are set to
+	if(theme != NO_THEME_ENTRY)
+		// add a colored icon for each modular part, according to the theme fetched from GLOB.mermaid_mod_theme
+		var/list/modular_part_list = GLOB.mermaid_mod_theme[theme]
+		for(var/index in 1 to length(modular_part_list))
+			var/icon/generated_mermaid_part = icon(
+				SSgreyscale.GetColoredIconByType(
+					/datum/greyscale_config/modular_mod_parts_mermaid,
+					modular_part_list[modular_part_list[index]],
+					),
+				"[modular_part_list[index]][sealed ? "-sealed" : ""]",
+			)
 			mermaid_modsuit.Blend(generated_mermaid_part, ICON_OVERLAY)
 	else
-		// add a colored icon for each modular part, according to the theme fetched from GLOB.mermaid_modsuit_themes
-		var/list/modular_part_list = GLOB.mermaid_modsuit_themes[theme]
-		for(var/index in 1 to length(modular_part_list))
-			var/icon/generated_mermaid_part = icon(MERMAID_MODSUIT_GEN_FILE, "[GLOB.mermaid_modsuit_themes[theme][index]][sealed ? "-sealed" : ""]")
-			generated_mermaid_part.Blend(GLOB.mermaid_modsuit_themes[theme][GLOB.mermaid_modsuit_themes[theme][index]], ICON_MULTIPLY)
-			mermaid_modsuit.Blend(generated_mermaid_part, ICON_OVERLAY)
-	// apply a flipper icon if we are sealed and have a female physique. ideally we color after the theme fetched from GLOB.mermaid_modsuit_themes_flippers
-	if(physique == FEM_FLIPPER && sealed)
-		var/icon/generated_mermaid_part = icon(MERMAID_MODSUIT_GEN_FILE, "flippers")
-		generated_mermaid_part.Blend(theme == NO_THEME_ENTRY ? chestpiece.get_general_color(base_icon) : GLOB.mermaid_modsuit_themes_flippers[theme] , ICON_MULTIPLY)
+		// we have no drawn sprite and no entry in the preset combinations alist. one little neglected modsuit :(
+		// lets generate a barebones colored icon
+		var/icon/generated_mermaid_part = icon(
+			SSgreyscale.GetColoredIconByType(
+				/datum/greyscale_config/modular_mod_parts_mermaid,
+				general_color,
+				),
+			"[NO_THEME_ENTRY][sealed ? "-sealed" : ""]",
+		)
+		mermaid_modsuit.Blend(generated_mermaid_part, ICON_OVERLAY)
+	// apply a flipper icon if we are sealed and have a female physique.
+	// ideally we color after the theme fetched from GLOB.mod_theme_to_flipper_color
+	if(physique == FEM_FLIPPER && sealed && GLOB.mod_theme_to_flipper_color[theme] != "no_flippers")
+		var/icon/generated_mermaid_part = icon(
+			SSgreyscale.GetColoredIconByType(
+				/datum/greyscale_config/modular_mod_parts_mermaid,
+				theme == NO_THEME_ENTRY ? general_color : GLOB.mod_theme_to_flipper_color[theme],
+				),
+			"flippers",
+		)
 		mermaid_modsuit.Blend(generated_mermaid_part, ICON_OVERLAY)
 
+	// 🪸🐟
 	return mermaid_modsuit
 
 #undef NO_THEME_ENTRY
