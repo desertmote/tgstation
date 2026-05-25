@@ -14,7 +14,7 @@
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_AQUATIC
 
 	species_cookie = /obj/item/food/chips/shrimp
-//	inert_mutation =
+	inert_mutation = /datum/mutation/echolocation
 	payday_modifier = 0.9
 //	family_heirlooms = list(
 //		,
