@@ -631,14 +631,13 @@ world
 /**
  * Modifies a sprite to replace the legs with a new version or nothing
  * Arguments:
- * *
- * *
- * *
+ * * base_icon - the icon which the proc will apply the mask on
+ * * mask_to_use - the mask to use from code\__DEFINES\icon_masks.dm
+ * * replacement - an icon to overlay after the masking
  */
 /proc/mask_icon(icon/base_icon, mask_to_use, icon/replacement)
 	if(isnull(mask_to_use))
 		return
-	//
 	var/icon/mask = icon(MASKING_HELPERS_PATH, mask_to_use)
 	base_icon.Blend(mask, ICON_SUBTRACT)
 	if(!isnull(replacement))
