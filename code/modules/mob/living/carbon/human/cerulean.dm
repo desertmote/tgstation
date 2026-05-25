@@ -57,8 +57,10 @@
 	var/theme = NO_THEME_ENTRY
 	/// whether the modsuit is sealed or open, we read this from our lovely key
 	var/sealed = findtext(key, SEALED) ? TRUE : FALSE
+	/// niche case where a suit item has gendered icons. lets solve this by just fetching loc
+	var/mob/living/carbon/human/wearer = chestpiece.loc
 	/// whether our wearer has boy or girl physique, read from the last symbol of our key
-	var/physique = copytext_char(key, length(key))
+	var/physique = wearer?.physique == FEMALE ? FEM_FLIPPER : NONE
 
 	/// our full icon state string, lets find a pre-drawn modsuit!
 	var/icon_state_string = "[physique == FEM_FLIPPER ? "[FEM_FLIPPER]-" : ""][chestpiece.icon_state]"
