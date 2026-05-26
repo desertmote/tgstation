@@ -53,12 +53,12 @@
  *	If that doesn't, we'll generate a basic modsuit icon for the Cerulean.
  */
 /proc/handle_mermaid_modsuit(icon/base_icon, obj/item/clothing/chestpiece, key, greyscale_colors)
-	/// the entry in GLOB.mermaid_mod_theme
-	var/theme = NO_THEME_ENTRY
 	/// whether the modsuit is sealed or open, we read this from our lovely key
 	var/sealed = findtext(key, SEALED) ? TRUE : FALSE
 	/// whether our wearer has boy or girl physique, read from the last symbol of our key
 	var/physique = copytext_char(key, length(key))
+	/// the entry in GLOB.mermaid_mod_theme
+	var/theme = return_mermaid_mod_theme_from_key(key)
 
 	/// our full icon state string, lets find a pre-drawn modsuit!
 	var/icon_state_string = "[physique == FEM_FLIPPER ? "[FEM_FLIPPER]-" : ""][chestpiece.icon_state]"
@@ -68,13 +68,8 @@
 
 	// lets cut away the legs first, we really don't need them
 	mask_icon(base_icon, LEGS_MASK)
-	// check a list of preset combinations for modsuit icon generation
-	for(var/theme_entry in GLOB.mermaid_mod_theme)
-		if(findtext(key, theme_entry))
-			theme = theme_entry
-			continue
 	// lets run through generating according to what our variables are set to
-	if(theme != NO_THEME_ENTRY)
+	if(!isnull(GLOB.mermaid_mod_theme[theme]) && theme != NO_THEME_ENTRY)
 		// add a colored icon for each modular part, according to the theme fetched from GLOB.mermaid_mod_theme
 		var/list/modular_part_list = GLOB.mermaid_mod_theme[theme]
 		for(var/index in 1 to length(modular_part_list))
@@ -90,7 +85,7 @@
 			)
 	else
 		// we have no drawn sprite and no entry in the preset combinations alist. one little neglected modsuit :(
-		// lets generate a barebones colored icon
+		// lets generate from our broadstroke preset
 		base_icon.Blend(
 			icon(
 				SSgreyscale.GetColoredIconByType(
@@ -104,7 +99,6 @@
 	// apply a flipper icon if we are sealed and have a female physique.
 	// ideally we color after the theme fetched from GLOB.mod_theme_to_flipper_color
 	if(physique == FEM_FLIPPER && sealed && GLOB.mod_theme_to_flipper_color[theme] != NO_FLIPPERS)
-
 		base_icon.Blend(
 			icon(
 				SSgreyscale.GetColoredIconByType(
@@ -119,6 +113,18 @@
 	// 🪸🐟
 	return base_icon
 
-#undef NO_THEME_ENTRY
+
 #undef FEM_FLIPPER
 #undef SEALED
+
+/// Simple proc to search through some lists to return what the above proc is looking for
+/proc/return_mermaid_mod_theme_from_key(key)
+	var/theme = NO_THEME_ENTRY
+	var/static/list/all_theme_entries = (GLOB.mermaid_mod_theme + GLOB.mod_theme_to_flipper_color)
+	for(var/theme_entry in all_theme_entries)
+		if(findtext(key, theme_entry))
+			theme = theme_entry
+			continue
+	return theme
+
+#undef NO_THEME_ENTRY

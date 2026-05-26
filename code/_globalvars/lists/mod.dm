@@ -14,15 +14,15 @@ GLOBAL_ALIST_INIT(mermaid_mod_theme, list(
 	/datum/mod_theme/debug::default_skin = list(
 		"security" = list("#00289f", "#343442", "#0050d5"),
 	),
-	/datum/mod_theme/loader::default_skin = list(),
+	/datum/mod_theme/loader::default_skin = list(/* sorry nothing */),
 ))
 
 /**
- *	Like above but slightly less alisty. The color given are just for the flippers
- *	Ceruleans with a female physique have, when the modsuit is sealed.
- *	If you use this, make sure there is also an entry in the above alist
+ *	Like above but slightly less alisty. The color given is for the flippers
+ *	Ceruleans with a female physique have, when the modsuit is sealed
  */
 GLOBAL_ALIST_INIT(mod_theme_to_flipper_color, list(
 	/datum/mod_theme/debug::default_skin = "#001775",
+	/datum/mod_theme/ninja::default_skin = "#21a52e",
 	/datum/mod_theme/loader::default_skin = NO_FLIPPERS,
 ))
