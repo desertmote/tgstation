@@ -1,44 +1,42 @@
 {
-	"flippers": [
+	"basic_full": [
 		{
 			"type": "icon_state",
-			"icon_state": "flippers",
+			"icon_state": "basic_full",
 			"blend_mode": "overlay",
 			"color_ids": [1]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "basic_trim",
+			"blend_mode": "overlay",
+			"color_ids": [2]
+		},
+		{
+			"type": "icon_state",
+			"icon_state": "basic_highlight",
+			"blend_mode": "overlay",
+			"color_ids": [3]
 		}
 	],
-
-	"undefined": [
+	"basic_full-sealed": [
 		{
 			"type": "icon_state",
-			"icon_state": "undefined",
+			"icon_state": "basic_full-sealed",
 			"blend_mode": "overlay",
 			"color_ids": [1]
-		}
-	],
-	"undefined-sealed": [
+		},
 		{
 			"type": "icon_state",
-			"icon_state": "undefined-sealed",
+			"icon_state": "basic_trim-sealed",
 			"blend_mode": "overlay",
-			"color_ids": [1]
-		}
-	],
-
-	"rubber": [
+			"color_ids": [2]
+		},
 		{
 			"type": "icon_state",
-			"icon_state": "rubber",
+			"icon_state": "basic_highlight-sealed",
 			"blend_mode": "overlay",
-			"color_ids": [1]
-		}
-	],
-	"rubber-sealed": [
-		{
-			"type": "icon_state",
-			"icon_state": "rubber-sealed",
-			"blend_mode": "overlay",
-			"color_ids": [1]
+			"color_ids": [3]
 		}
 	]
 }
