@@ -2,7 +2,7 @@
 
 /**
  *	Modifies the sprite of clothing to have no legs! For pants, which mermaids canonically can't wear.
- *	What we generate will be saved in a cache, how nice! Our keys look slightly different than the sister proc wear_digi_version(...)
+ *	What we generate will be saved in a cache, how nice! Our index look slightly different than the sister proc wear_digi_version(...)
  *	we also assign physique into the end of the key, and read this in handle_mermaid_modsuit(...)
  */
 /proc/wear_mermaid_version(icon/base_icon, obj/item/item, key, greyscale_colors)
@@ -14,7 +14,7 @@
 	var/mob/living/carbon/human/wearer = item.loc
 	var/physique = wearer?.physique == FEMALE ? "f" : "m"
 
-	///
+	/// the clothing cache
 	var/static/list/mermaid_clothing_icons = list()
 	/// our way to find what we generate in the cache
 	var/index = "[key]-[item.type]-[greyscale_colors]-[physique]"
@@ -50,7 +50,7 @@
 /**
  *	This proc handles icon building for Ceruleans wearing modsuits.
  *	If a drawn sprite exists, we prioritize it. If it doesn't, we'll look for an entry in GLOB.mermaid_mod_theme
- *	If that doesn't, we'll generate a basic modsuit icon for the cerulean.
+ *	If that doesn't, we'll generate a basic modsuit icon for the Cerulean.
  */
 /proc/handle_mermaid_modsuit(icon/base_icon, obj/item/clothing/chestpiece, key, greyscale_colors)
 	/// the entry in GLOB.mermaid_mod_theme
@@ -104,6 +104,7 @@
 	// apply a flipper icon if we are sealed and have a female physique.
 	// ideally we color after the theme fetched from GLOB.mod_theme_to_flipper_color
 	if(physique == FEM_FLIPPER && sealed && GLOB.mod_theme_to_flipper_color[theme] != NO_FLIPPERS)
+
 		base_icon.Blend(
 			icon(
 				SSgreyscale.GetColoredIconByType(

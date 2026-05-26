@@ -1,40 +1,40 @@
 {
-	"basic_full": [
+	"security": [
 		{
 			"type": "icon_state",
-			"icon_state": "basic_full",
+			"icon_state": "security_basic",
 			"blend_mode": "overlay",
 			"color_ids": [1]
 		},
 		{
 			"type": "icon_state",
-			"icon_state": "basic_trim",
+			"icon_state": "security_trim",
 			"blend_mode": "overlay",
 			"color_ids": [2]
 		},
 		{
 			"type": "icon_state",
-			"icon_state": "basic_highlight",
+			"icon_state": "security_highlight",
 			"blend_mode": "overlay",
 			"color_ids": [3]
 		}
 	],
-	"basic_full-sealed": [
+	"security-sealed": [
 		{
 			"type": "icon_state",
-			"icon_state": "basic_full-sealed",
+			"icon_state": "security_basic-sealed",
 			"blend_mode": "overlay",
 			"color_ids": [1]
 		},
 		{
 			"type": "icon_state",
-			"icon_state": "basic_trim-sealed",
+			"icon_state": "security_trim-sealed",
 			"blend_mode": "overlay",
 			"color_ids": [2]
 		},
 		{
 			"type": "icon_state",
-			"icon_state": "basic_highlight-sealed",
+			"icon_state": "security_highlight-sealed",
 			"blend_mode": "overlay",
 			"color_ids": [3]
 		}
