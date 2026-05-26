@@ -58,7 +58,7 @@
 	/// whether our wearer has boy or girl physique, read from the last symbol of our key
 	var/physique = copytext_char(key, length(key))
 	/// the entry in GLOB.mermaid_mod_theme
-	var/theme = return_mermaid_mod_theme_from_key(key)
+	var/datum/mod_theme/theme = return_mermaid_mod_theme_from_key(key)
 
 	/// our full icon state string, lets find a pre-drawn modsuit!
 	var/icon_state_string = "[physique == FEM_FLIPPER ? "[FEM_FLIPPER]-" : ""][chestpiece.icon_state]"
@@ -119,12 +119,10 @@
 
 /// Simple proc to search through some lists to return what the above proc is looking for
 /proc/return_mermaid_mod_theme_from_key(key)
-	var/theme = NO_THEME_ENTRY
 	var/static/list/all_theme_entries = (GLOB.mermaid_mod_theme + GLOB.mod_theme_to_flipper_color)
-	for(var/theme_entry in all_theme_entries)
-		if(findtext(key, theme_entry))
-			theme = theme_entry
-			continue
-	return theme
+	for(var/datum/mod_theme/theme_entry as anything in all_theme_entries)
+		if(findtext(key, theme_entry.name))
+			return theme_entry
+	return NO_THEME_ENTRY
 
 #undef NO_THEME_ENTRY

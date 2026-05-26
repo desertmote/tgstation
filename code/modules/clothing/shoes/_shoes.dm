@@ -337,8 +337,10 @@
 		return ..()
 
 /// allows Ceruleans to wear shoes as a hat. this is never going to get in, but i think it should because its funny
-/obj/item/clothing/shoes/proc/oh_what_a_neat_hat(obj/item, mob/user)
-	if (iscerulean(user))
+/obj/item/clothing/shoes/proc/oh_what_a_neat_hat(obj/item, mob/living/carbon/user)
+	if (isnull(user))
+		return
+	if (user.bodyshape & BODYSHAPE_MERMAID)
 		slot_flags = ITEM_SLOT_HEAD
 		worn_y_offset = 28
 		return
