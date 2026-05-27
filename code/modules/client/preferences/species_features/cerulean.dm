@@ -17,6 +17,9 @@ GLOBAL_LIST_INIT(cerulean_respiration, list(
 /datum/preference/choiced/lungs_choice/apply_to_human(mob/living/carbon/human/target, value)
 	if(!(savefile_key in target.dna?.species?.get_features()))
 		return
+	if(isdummy(target)) // makes sure the dummy in the character preview is visually accurate
+		var/datum/status_effect/organ_set_bonus/fish_bonus = target.has_status_effect(/datum/status_effect/organ_set_bonus/fish)
+		fish_bonus?.organs = 4
 	target.dna.species.mutantlungs = GLOB.cerulean_respiration[value]
 	var/obj/item/organ/lungs/new_organ = SSwardrobe.provide_type(GLOB.cerulean_respiration[value])
 	new_organ.Insert(target, TRUE, DELETE_IF_REPLACED)
