@@ -1,6 +1,11 @@
 // File of procs for human_update_icons.dm specifically to render cerulean clothing appropriately. so it doesn't get any more lines than it already has...
 
-/**
+/**	            sSSs,
+ *	         V, \_SSSS,
+ *	          \\/((`\Ss
+ *	    ._     \/)_|\\Ss
+ *	    \ `-.-""'  ///SS
+ *	    /_.-'`-==-' ' '
  *	Modifies the sprite of clothing to have no legs! For pants, which mermaids canonically can't wear.
  *	What we generate will be saved in a cache, how nice! Our index look slightly different than the sister proc wear_digi_version(...)
  *	we also assign physique into the end of the key, and read this in handle_mermaid_modsuit(...)
@@ -103,7 +108,7 @@
 			icon(
 				SSgreyscale.GetColoredIconByType(
 					/datum/greyscale_config/modular_mod_parts_mermaid/basic,
-					theme == NO_THEME_ENTRY ? greyscale_colors : GLOB.mod_theme_to_flipper_color[theme],
+					GLOB.mod_theme_to_flipper_color[theme] ? GLOB.mod_theme_to_flipper_color[theme] : greyscale_colors,
 				),
 				"[FLIPPERS]",
 			),
