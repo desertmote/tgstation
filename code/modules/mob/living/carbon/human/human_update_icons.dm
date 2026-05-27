@@ -411,7 +411,7 @@ There are several things that need to be remembered:
 		if(HAS_TRAIT(worn_item, TRAIT_NO_WORN_ICON))
 			return
 
-		var/icon_file
+		var/icon_file = DEFAULT_SUIT_FILE
 
 		if((bodyshape & BODYSHAPE_MERMAID) && (worn_item.supports_variations_flags & CLOTHING_MERMAID_VARIATION))
 			icon_file = MERMAID_SUIT_FILE
