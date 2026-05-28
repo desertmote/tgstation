@@ -1,7 +1,13 @@
 /obj/item/clothing/accessory/vaporizer
 	name = "hydro-vaporizer"
-//	desc = ""
+	desc = "An ingenious little device manufactured for supporting a alternative method of respiration. \
+	Relying on a removable cell, the coil mechanism synthesizes a hydrogen oxygen mixture, \
+	which can then be used to moisturize the wearer's gills. \n\n\
+	<i>A label on its back warns about the potential dangers of electro-magnetic pulses.</i> \n\
+	<b>ctrl-click</b> in-hand to hide the device while worn. \n\
+	Can also be worn inside of a pocket."
 	icon_state = "vaporizer"
+	worn_icon_state = "vaporizer"
 	base_icon_state = "vaporizer"
 	pickup_sound = SFX_GENERIC_DEVICE_PICKUP
 	drop_sound = SFX_GENERIC_DEVICE_DROP

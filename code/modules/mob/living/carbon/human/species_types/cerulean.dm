@@ -16,9 +16,7 @@
 	species_cookie = /obj/item/food/chips/shrimp
 	inert_mutation = /datum/mutation/echolocation
 	payday_modifier = 0.9
-//	family_heirlooms = list(
-//		,
-//	)
+	family_heirlooms = list(/obj/item/ammo_casing/harpoon)
 
 /datum/species/human/cerulean/get_species_description()
 	return "Nothing yet."
@@ -86,8 +84,8 @@
 
 /// the tail which makes the species, without this you're basically just a fishy, legless human.
 /obj/item/organ/tail/fish/mermaid
-	name = "large fish tail"
-//	desc = ""
+	name = "oversized fish tail"
+	desc = "A hugely sized and scaled fish tail, clearly severed from something much larger than a mere space carp."
 	fillet_amount = 12
 	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/mermaid
 	external_bodyshapes = BODYSHAPE_MERMAID

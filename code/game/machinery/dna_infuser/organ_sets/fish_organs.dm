@@ -458,13 +458,12 @@
 	. = ..()
 	AddElement(/datum/element/organ_set_bonus, /datum/status_effect/organ_set_bonus/fish)
 
-///A fishy tongue!
 /obj/item/organ/tongue/fish
 	name = "mutated fish-tongue"
-//	desc = ""
+	desc = "Interestingly, a fish-tongue isn't much unlike the humanoid variety."
 	say_mod = "blubs"
 	organ_traits = list(TRAIT_CARPOTOXIN_IMMUNE)
-	liked_foodtypes = JUNKFOOD | FRIED | SEAFOOD
+	liked_foodtypes = MEAT | EGG | SEAFOOD
 	foodtype_flags = RAW | SEAFOOD | GORE
 	languages_native = list(/datum/language/carptongue)
 

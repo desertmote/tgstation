@@ -7,14 +7,16 @@
 	text_gain_indication = span_danger("You can't seem to hear anything.")
 	mutation_traits = list(TRAIT_DEAF)
 
-//
+// Advanced sense for soundwaves grants sight with hearing
 /datum/mutation/echolocation
 	name = "Echolocation"
-	desc = "N/A."
-	instability = NEGATIVE_STABILITY_MODERATE
-	quality = NEGATIVE
-	text_gain_indication = span_danger("N/A.")
-	///
+	desc = "A mutation which enhances hearing, as alternative method of 'sight'."
+	instability = POSITIVE_INSTABILITY_MINOR
+	quality = MINOR_NEGATIVE
+	locked = TRUE // abyssal Cerulean type thing
+	text_gain_indication = span_danger("Your vision dims, yet vibrations in the air are suddenly trivial to pinpoint.")
+	text_lose_indication = span_notice("Your eyes sting as light suddenly overwhelms. In contrast, everything sounds dull to your ears.")
+	/// holder for the component that drives the mutation
 	var/datum/weakref/echolocation_component
 
 /datum/mutation/echolocation/on_acquiring(mob/living/carbon/human/acquirer)
