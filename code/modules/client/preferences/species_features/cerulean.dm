@@ -1,9 +1,9 @@
 GLOBAL_LIST_INIT(cerulean_respiration, list(
-	"Oxygen" = /obj/item/organ/lungs, //i know fish also breathe oxygen
-	"Water vapor" = /obj/item/organ/lungs/fish, //but this gets the idea across better
+	"Oxygen" = /obj/item/organ/lungs, // i know fish also breathe oxygen
+	"Water vapor" = /obj/item/organ/lungs/fish, // but this gets the idea across better
 	))
 
-/// wether or not a Cerulean has air-breathing lungs, or water-breathing gills
+/// Whether or not a Cerulean has air-breathing lungs or water-breathing gills
 /datum/preference/choiced/lungs_choice
 	savefile_key = "feature_cerulean_respiration"
 	savefile_identifier = PREFERENCE_CHARACTER
@@ -35,7 +35,7 @@ GLOBAL_LIST_INIT(cerulean_respiration, list(
 		return ..(create_default_value(), preferences)
 	return ..(value, preferences)
 
-/// the color given to people with a fish tail, not exclusive to Ceruleans
+/// The color given to people with a fish tail, not exclusive to Ceruleans
 /datum/preference/color/fish_tail_color
 	savefile_key = "feature_fish_tail_color"
 	savefile_identifier = PREFERENCE_CHARACTER

@@ -16,7 +16,10 @@
 	species_cookie = /obj/item/food/chips/shrimp
 	inert_mutation = /datum/mutation/echolocation
 	payday_modifier = 0.9
-	family_heirlooms = list(/obj/item/ammo_casing/harpoon)
+	family_heirlooms = list(
+		/obj/item/ammo_casing/harpoon,
+		/obj/item/toy/seashell,
+	)
 
 /datum/species/human/cerulean/get_species_description()
 	return "Nothing yet."
@@ -71,12 +74,12 @@
 		return
 	// try to attach to uniform
 	var/obj/item/clothing/under/uniform = equipping.w_uniform
-	var/attached = uniform?.attach_accessory(SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer, equipping))
+	var/attached = uniform?.attach_accessory(SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer/with_cell, equipping))
 	if (attached)
 		return
 	// try anything else
 	equipping.equip_in_one_of_slots(
-		equipping = SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer, equipping),
+		equipping = SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer/with_cell, equipping),
 		slots = list(LOCATION_LPOCKET, LOCATION_RPOCKET, LOCATION_HANDS, LOCATION_BACKPACK),
 		qdel_on_fail = FALSE,
 		indirect_action = TRUE,

@@ -1,11 +1,9 @@
 /obj/item/clothing/accessory/vaporizer
 	name = "hydro-vaporizer"
 	desc = "An ingenious little device manufactured for supporting a alternative method of respiration. \
-	Relying on a removable cell, the coil mechanism synthesizes a hydrogen oxygen mixture, \
-	which can then be used to moisturize the wearer's gills. \n\n\
-	<i>A label on its back warns about the potential dangers of electro-magnetic pulses.</i> \n\
-	<b>ctrl-click</b> in-hand to hide the device while worn. \n\
-	Can also be worn inside of a pocket."
+			Relying on a removable cell, the coil mechanism synthesizes a hydrogen oxygen mixture, \
+			which can then be used to moisturize the wearer's gills. \n\n\
+			<i>A label on its back warns about the potential dangers of electro-magnetic pulses.</i>"
 	icon_state = "vaporizer"
 	worn_icon_state = "vaporizer"
 	base_icon_state = "vaporizer"
@@ -18,13 +16,33 @@
 	/// how much will be drawn from the cell every time it applies wet stacks
 	var/power_cost = 45 JOULES
 
+/obj/item/clothing/accessory/vaporizer/add_context(atom/source, list/context, obj/item/held_item, mob/user)
+	. = ..()
+	if(held_item?.tool_behaviour == TOOL_SCREWDRIVER && !isnull(cell))
+		context[SCREENTIP_CONTEXT_LMB] = "Remove [cell.name]"
+	return CONTEXTUAL_SCREENTIP_SET
+
+/obj/item/clothing/accessory/vaporizer/examine(mob/user)
+	. = ..()
+	if(isnull(cell))
+		return
+	if(!in_range(src, user) && !isobserver(user))
+		. += span_notice("If you want any more information you'll need to get closer.")
+		return
+	. += span_notice("The LED display reads its [cell.percent()]% charged.")
+
+
 /obj/item/clothing/accessory/vaporizer/Initialize(mapload)
 	. = ..()
-	cell = new(src)
 	AddComponent(/datum/component/wet_stacks_clothing, CALLBACK(src, PROC_REF(use_cell)), must_be_worn = FALSE)
+
+/obj/item/clothing/accessory/vaporizer/with_cell/Initialize(mapload)
+	. = ..()
+	cell = new (src)
 
 /obj/item/clothing/accessory/vaporizer/Destroy()
 	. = ..()
+	QDEL_NULL(cell)
 	qdel(GetComponent(/datum/component/wet_stacks_clothing))
 
 /obj/item/clothing/accessory/vaporizer/equipped(mob/living/user, slot)
@@ -40,7 +58,7 @@
 	if(!cell || charge_bar)
 		return
 	var/charge_bar_target = loc == user ? src : loc
-	charge_bar = new(user, cell.maxcharge, charge_bar_target, cell.charge)
+	charge_bar = new(user, 100/*%*/, charge_bar_target, cell.percent())
 
 /obj/item/clothing/accessory/vaporizer/proc/destroy_charge_bar()
 	if(!charge_bar)
@@ -74,23 +92,33 @@
 
 /// proc we forward to the callback the wet stack component uses every time it ticks
 /obj/item/clothing/accessory/vaporizer/proc/use_cell()
-	if(!cell || !cell.use(power_cost, TRUE))
+	if(!cell || !cell?.use(power_cost, TRUE))
 		return FALSE
-	charge_bar?.update(cell.charge())
+	charge_bar?.update(cell.percent())
 	return TRUE
 
 /// overload and spew hot steam on EMP
 /obj/item/clothing/accessory/vaporizer/emp_act(severity)
 	. = ..()
+	if(!(. & EMP_PROTECT_CONTENTS))
+		cell?.emp_act(severity)
+	if(. & EMP_PROTECT_SELF)
+		return
 	var/turf/tile = get_turf(src)
-	var/list/nearby_mobs = oviewers(4, get_turf(src))
-	for(var/mob/living/victim as anything in nearby_mobs)
-		victim.set_jitter_if_lower(rand(5 SECONDS, 15 SECONDS))
-		victim.set_eye_blur_if_lower(rand(3 SECONDS, 7 SECONDS))
-	if(!isclosedturf(tile))
-		tile.atmos_spawn_air("[GAS_WATER_VAPOR]=[rand(50, 65)];[TURF_TEMPERATURE(1000)]")
-		new /obj/effect/decal/cleanable/plastic(tile)
-	balloon_alert_to_viewers("overloaded!")
-	to_chat(src, span_warning("[src] overloads, exploding in a cloud of hot steam!"))
+	if(isclosedturf(tile))
+		return
+	to_chat(src, span_warning("[src] overloads, spewing out a cloud of hot steam!"))
 	playsound(src, 'sound/effects/spray.ogg', rand(50, 80), TRUE)
-	qdel(src)
+	tile.atmos_spawn_air("[GAS_WATER_VAPOR]=[clamp(cell.maxcharge * 0.1, 1, 100)];[TURF_TEMPERATURE(1000)]")
+	for(var/mob/living/nearby_mob in range(4, tile))
+		nearby_mob.set_jitter_if_lower(rand(5 SECONDS, 15 SECONDS))
+		nearby_mob.set_eye_blur_if_lower(rand(3 SECONDS, 7 SECONDS))
+	forceMove(drop_location())
+	particles = new /particles/smoke/steam
+	addtimer(CALLBACK(src, PROC_REF(remove_particles)), 10 SECONDS, TIMER_DELETE_ME)
+
+/obj/item/clothing/accessory/vaporizer/proc/remove_particles()
+	if(isnull(particles))
+		return
+	particles.spawning = 0
+	QDEL_IN(particles, 3 SECONDS)
