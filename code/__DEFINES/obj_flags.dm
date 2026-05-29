@@ -58,8 +58,6 @@
 #define HAND_ITEM (1<<14) // If an item is just your hand (circled hand, slapper) and shouldn't block things like riding
 #define XENOMORPH_HOLDABLE (1<<15) // A Xenomorph can hold this item.
 #define NO_PIXEL_RANDOM_DROP (1<<16) //if dropped, it wont have a randomized pixel_x/pixel_y
-///Can be equipped on digitigrade legs.
-#define IGNORE_DIGITIGRADE (1<<17)
 /// Has contextual screentips when HOVERING OVER OTHER objects
 #define ITEM_HAS_CONTEXTUAL_SCREENTIPS (1 << 18)
 /// No blood overlay is allowed to appear on this item, and it cannot gain blood DNA forensics

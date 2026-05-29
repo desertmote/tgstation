@@ -23,7 +23,7 @@
 	icon_state = "standard-chestplate"
 	base_icon_state = "chestplate"
 	worn_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
-	supports_variations_flags = CLOTHING_MERMAID_MASK
+	supports_variations_flags = CLOTHING_LEGS_MASKING
 	blood_overlay_type = "armor"
 	allowed = list(
 		/obj/item/tank/internals,
@@ -70,7 +70,6 @@
 	body_parts_covered = FEET|LEGS
 	heat_protection = FEET|LEGS
 	cold_protection = FEET|LEGS
-	item_flags = IGNORE_DIGITIGRADE
 	fastening_type = SHOES_SLIPON
 	equip_sound = null
 

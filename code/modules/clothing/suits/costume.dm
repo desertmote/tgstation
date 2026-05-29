@@ -171,7 +171,7 @@
 	desc = "A plush white cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive your captives mad."
 	icon_state = "griffin_wings"
 	inhand_icon_state = null
-	supports_variations_flags = CLOTHING_MERMAID_MASK
+	supports_variations_flags = CLOTHING_LEGS_MASKING
 
 /obj/item/clothing/suit/costume/cardborg
 	name = "cardborg suit"
@@ -661,7 +661,7 @@
 	icon_state = "decker_suit"
 	inhand_icon_state = null
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
 
 /obj/item/clothing/suit/costume/soviet
 	name = "soviet armored coat"
@@ -683,7 +683,7 @@
 	icon_state = "tmc_suit"
 	inhand_icon_state = null
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
 
 /obj/item/clothing/suit/costume/pg
 	name = "powder ganger jacket"
@@ -691,7 +691,7 @@
 	icon_state = "pg_suit"
 	inhand_icon_state = null
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
 
 /obj/item/clothing/suit/costume/irs
 	name = "internal revenue service jacket"
@@ -699,7 +699,7 @@
 	icon_state = "irs_suit"
 	inhand_icon_state = null
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
 
 /obj/item/clothing/suit/costume/bear_suit
 	name = "bear suit"
