@@ -1,8 +1,13 @@
+/*
+ *	Device to let water breathers breathe. TRAIT_WET_FOR_LONGER is required for it to actually function
+ *	Because this is a Cerulean device, after all, intended to be used on fish scales
+*/
 /obj/item/clothing/accessory/vaporizer
 	name = "hydro-vaporizer"
-	desc = "An ingenious little device manufactured for supporting a alternative method of respiration. \
+	desc = "An ingenious little device manufactured for supporting an alternative method for respiration. \
 			Relying on a removable cell, the coil mechanism synthesizes a hydrogen oxygen mixture, \
-			which can then be used to moisturize the wearer's gills. \n\n\
+			which can then be used to moisturize the wearer's gills. \n\
+			The rate at which liquid is applied seems to be intended for skin which exceeds at retaining moisture. \n\n\
 			<i>A label on its back warns about the potential dangers of electro-magnetic pulses.</i>"
 	icon_state = "vaporizer"
 	worn_icon_state = "vaporizer"
@@ -30,7 +35,6 @@
 		. += span_notice("If you want any more information you'll need to get closer.")
 		return
 	. += span_notice("The LED display reads its [cell.percent()]% charged.")
-
 
 /obj/item/clothing/accessory/vaporizer/Initialize(mapload)
 	. = ..()
@@ -115,7 +119,7 @@
 		nearby_mob.set_eye_blur_if_lower(rand(3 SECONDS, 7 SECONDS))
 	forceMove(drop_location())
 	particles = new /particles/smoke/steam
-	addtimer(CALLBACK(src, PROC_REF(remove_particles)), 10 SECONDS, TIMER_DELETE_ME)
+	addtimer(CALLBACK(src, PROC_REF(remove_particles)), 5 SECONDS, TIMER_DELETE_ME)
 
 /obj/item/clothing/accessory/vaporizer/proc/remove_particles()
 	if(isnull(particles))
