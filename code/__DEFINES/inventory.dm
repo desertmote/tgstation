@@ -163,18 +163,18 @@ DEFINE_BITFIELD(no_equip_flags, list(
 #define DIGITIGRADE_STYLE 2
 
 //Flags (actual flags, fucker ^) for /obj/item/var/supports_variations_flags
-/// Flag for defining that no variation is necessary for this item to look good on all bodyshapes
-#define CLOTHING_NO_VARIATION_NEEDED (1<<0)
-/// Clothing item has no sprite and masking wouldn't look good, we must squish it \datums\components\digitigrade_linb.dm
-#define CLOTHING_DIGITIGRADE_SQUISH (1<<1)
-/// Has a sprite for digitigrade legs specifically
-#define CLOTHING_DIGITIGRADE_VARIATION (1<<2)
-/// The clothing flag to declare an item has Cerulean fish tail compatible sprites, only supports external suits
-#define CLOTHING_CERULEAN_VARIATION (1<<3)
-/// This flag will mask away the bottom half of a sprite and generate a replacement if necessary
-#define CLOTHING_LEGS_MASKING (1<<4)
-/// This flag will mask away any pixels of a sprite between the legs
-#define CLOTHING_BETWEEN_LEGS_MASKING (1<<5)
+/// Has a sprite for digitigrade legs specifically.
+#define CLOTHING_DIGITIGRADE_VARIATION (1<<0)
+/// The sprite works fine for digitigrade legs as-is.
+#define CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON (1<<1)
+/// Auto-generates the leg portion of the sprite with GAGS
+#define CLOTHING_DIGITIGRADE_MASK (1<<2)
+/// All variation flags which render "correctly" on a digitigrade leg setup
+#define DIGITIGRADE_VARIATIONS (CLOTHING_DIGITIGRADE_VARIATION|CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON|CLOTHING_DIGITIGRADE_MASK)
+/// The clothing flag to declare an item has mermaid sprites, only supports external suits
+#define CLOTHING_MERMAID_VARIATION (1<<3)
+/// The clothing flag which cuts away the legs of uniforms, or cuts the extra pixels of external suits (between the legs)
+#define CLOTHING_MERMAID_MASK (1<<4)
 
 //flags for covering body parts
 #define GLASSESCOVERSEYES (1<<0)

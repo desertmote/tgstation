@@ -9,7 +9,7 @@
 	body_parts_covered = CHEST
 	allowed = list (/obj/item/gun/energy/laser/bluetag)
 	resistance_flags = NONE
-	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/bluetag/equipped(mob/equipper, slot)
 	. = ..()
@@ -33,7 +33,7 @@
 	body_parts_covered = CHEST
 	allowed = list (/obj/item/gun/energy/laser/redtag)
 	resistance_flags = NONE
-	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 
 /obj/item/clothing/suit/redtag/equipped(mob/equipper, slot)

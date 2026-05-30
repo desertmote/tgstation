@@ -16,27 +16,28 @@
 	if(isnull(greyscale_colors) || length(SSgreyscale.ParseColorString(greyscale_colors)) > 1)
 		greyscale_colors = item.get_general_color(base_icon)
 
-	var/static/list/mermaid_clothing_icons = list()
-	var/index = "[key]-[item.type]-[greyscale_colors]"
-	var/icon/mermaid_clothing_icon = mermaid_clothing_icons[index]
+	var/mob/living/carbon/human/wearer = item.loc
+	var/physique = wearer?.physique == FEMALE ? "f" : "m"
 
+	/// the clothing cache
+	var/static/list/mermaid_clothing_icons = list()
+	/// our way to find what we generate in the cache
+	var/index = "[key]-[item.type]-[greyscale_colors]-[physique]"
+
+	var/icon/mermaid_clothing_icon = mermaid_clothing_icons[index]
 	if(mermaid_clothing_icon)
 		return icon(mermaid_clothing_icon)
 
 	if(istype(item, /obj/item/clothing/suit/mod))
-		var/mob/living/carbon/human/wearer = item.loc
-		var/physique = wearer?.physique == FEMALE ? "f" : "m"
-		index = "[key]-[item.type]-[greyscale_colors]-[physique]"
-		mermaid_clothing_icon = mermaid_clothing_icons[index]
-		if(mermaid_clothing_icon)
-			return icon(mermaid_clothing_icon)
 		// if we are generating for modsuits, we need to run through a bespoke proc!
 		mermaid_clothing_icon = handle_mermaid_modsuit(base_icon, item, "[key]-[physique]", greyscale_colors)
 
 	else
-		if(item.supports_variations_flags & CLOTHING_LEGS_MASKING)
+		// uniforms, we are just cutting the pant
+		if(item.slot_flags & ITEM_SLOT_ICLOTHING)
 			mermaid_clothing_icon = mask_icon(base_icon, LEGS_MASK)
-		if(item.supports_variations_flags & CLOTHING_BETWEEN_LEGS_MASKING)
+		// suit or neck items, we want to remove any pixels that typically appear between the legs
+		else if((item.slot_flags & ITEM_SLOT_OCLOTHING) || (item.slot_flags & ITEM_SLOT_NECK))
 			mermaid_clothing_icon = mask_icon(base_icon, BACK_COAT_MASK)
 
 	if(!mermaid_clothing_icon)

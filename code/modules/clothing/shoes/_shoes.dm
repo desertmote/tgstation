@@ -12,7 +12,6 @@
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	body_parts_covered = FEET
 	slot_flags = ITEM_SLOT_FEET
-	supports_variations_flags = CLOTHING_DIGITIGRADE_SQUISH
 	armor_type = /datum/armor/clothing_shoes
 	slowdown = SHOES_SLOWDOWN
 	strip_delay = 1 SECONDS
