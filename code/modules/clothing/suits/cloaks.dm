@@ -10,7 +10,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDESUITSTORAGE
-	compatibility_flags = CLOTHING_BETWEEN_LEGS_MASKING
+	supports_variations_flags = CLOTHING_BETWEEN_LEGS_MASKING
 
 /obj/item/clothing/neck/cloak/Initialize(mapload)
 	. = ..()

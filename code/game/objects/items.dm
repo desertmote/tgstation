@@ -170,8 +170,8 @@
 	var/list/attack_verb_simple
 	///list() of species types, if a species cannot put items in a certain slot, but species type is in list, it will be able to wear that item
 	var/list/species_exception = null
-	/// Bitfield for bodyshape compatibility, like digitigrade legs, in (clothing) items, see: code\_DEFINES\inventory.dm
-	var/compatibility_flags = NONE
+	///This is a bitfield that defines what variations exist for bodyparts like Digi legs. See: code\_DEFINES\inventory.dm
+	var/supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
 
 	///Items can by default thrown up to 10 tiles by TK users
 	tk_throw_range = 10

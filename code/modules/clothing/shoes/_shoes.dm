@@ -12,7 +12,7 @@
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	body_parts_covered = FEET
 	slot_flags = ITEM_SLOT_FEET
-	compatibility_flags = CLOTHING_DIGITIGRADE_SQUISH
+	supports_variations_flags = CLOTHING_DIGITIGRADE_SQUISH
 	armor_type = /datum/armor/clothing_shoes
 	slowdown = SHOES_SLOWDOWN
 	strip_delay = 1 SECONDS
@@ -341,7 +341,7 @@
 /obj/item/clothing/shoes/proc/oh_what_a_neat_hat(obj/item, mob/living/carbon/user)
 	if (isnull(user))
 		return
-	if (user.bodyshape & BODYSHAPE_CERULEAN)
+	if (user.bodyshape & BODYSHAPE_MERMAID)
 		slot_flags = ITEM_SLOT_HEAD
 		worn_y_offset = 28
 		return

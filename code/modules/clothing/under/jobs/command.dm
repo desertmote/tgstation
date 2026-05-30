@@ -20,7 +20,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
-	compatibility_flags = NONE
+	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
 
 /obj/item/clothing/under/rank/captain/parade
 	name = "captain's parade uniform"

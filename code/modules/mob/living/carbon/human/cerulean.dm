@@ -8,79 +8,79 @@
  *	    /_.-'`-==-' ' '
  *	Modifies the sprite of clothing to have no legs! For pants, which mermaids canonically can't wear.
  *	What we generate will be saved in a cache, how nice! Our index look slightly different than the sister proc wear_digi_version(...)
- *	we also assign physique into the end of the key, and read this in handle_cerulean_modsuit(...)
+ *	we also assign physique into the end of the key, and read this in handle_mermaid_modsuit(...)
  */
-/proc/wear_cerulean_version(icon/base_icon, obj/item/item, key, greyscale_colors)
-	ASSERT(istype(item), "wear_cerulean_version: no item passed")
-	ASSERT(istext(key), "wear_cerulean_version: no key passed")
+/proc/wear_mermaid_version(icon/base_icon, obj/item/item, key, greyscale_colors)
+	ASSERT(istype(item), "wear_mermaid_version: no item passed")
+	ASSERT(istext(key), "wear_mermaid_version: no key passed")
 	if(isnull(greyscale_colors) || length(SSgreyscale.ParseColorString(greyscale_colors)) > 1)
 		greyscale_colors = item.get_general_color(base_icon)
 
-	var/static/list/cerulean_clothing_icons = list()
+	var/static/list/mermaid_clothing_icons = list()
 	var/index = "[key]-[item.type]-[greyscale_colors]"
-	var/icon/cerulean_clothing_icon = cerulean_clothing_icons[index]
+	var/icon/mermaid_clothing_icon = mermaid_clothing_icons[index]
 
-	if(cerulean_clothing_icon)
-		return icon(cerulean_clothing_icon)
+	if(mermaid_clothing_icon)
+		return icon(mermaid_clothing_icon)
 
 	if(istype(item, /obj/item/clothing/suit/mod))
 		var/mob/living/carbon/human/wearer = item.loc
 		var/physique = wearer?.physique == FEMALE ? "f" : "m"
 		index = "[key]-[item.type]-[greyscale_colors]-[physique]"
-		cerulean_clothing_icon = cerulean_clothing_icons[index]
-		if(cerulean_clothing_icon)
-			return icon(cerulean_clothing_icon)
+		mermaid_clothing_icon = mermaid_clothing_icons[index]
+		if(mermaid_clothing_icon)
+			return icon(mermaid_clothing_icon)
 		// if we are generating for modsuits, we need to run through a bespoke proc!
-		cerulean_clothing_icon = handle_cerulean_modsuit(base_icon, item, "[key]-[physique]", greyscale_colors)
+		mermaid_clothing_icon = handle_mermaid_modsuit(base_icon, item, "[key]-[physique]", greyscale_colors)
 
 	else
-		if(item.compatibility_flags & CLOTHING_LEGS_MASKING)
-			cerulean_clothing_icon = mask_icon(base_icon, LEGS_MASK)
-		if(item.compatibility_flags & CLOTHING_BETWEEN_LEGS_MASKING)
-			cerulean_clothing_icon = mask_icon(base_icon, BACK_COAT_MASK)
+		if(item.supports_variations_flags & CLOTHING_LEGS_MASKING)
+			mermaid_clothing_icon = mask_icon(base_icon, LEGS_MASK)
+		if(item.supports_variations_flags & CLOTHING_BETWEEN_LEGS_MASKING)
+			mermaid_clothing_icon = mask_icon(base_icon, BACK_COAT_MASK)
 
-	if(!cerulean_clothing_icon)
-		stack_trace("[item.type] was set to generate a Cerulean fish-tail compatible clothing icon, but there was no result.")
+	if(!mermaid_clothing_icon)
+		stack_trace("[item.type] was set to generate a mermaid tail clothing icon, but there was no result.")
 		return base_icon
 
-	cerulean_clothing_icons[index] = fcopy_rsc(cerulean_clothing_icon)
-	return icon(cerulean_clothing_icon)
+	mermaid_clothing_icons[index] = fcopy_rsc(mermaid_clothing_icon)
+	return icon(mermaid_clothing_icon)
 
-/// in reference to GLOB.cerulean_mod_theme and its entries. if (un)defined, the following proc generates accordingly
+/// in reference to GLOB.mermaid_mod_theme and its entries. if (un)defined, the following proc generates accordingly
 #define NO_THEME_ENTRY "undefined"
 #define FEM_FLIPPER "f" //lady physique Ceruleans have extra fins, to keep her eggs close. we'll cover these up if the modsuit is sealed
 #define SEALED "sealed"
 
 /**
  *	This proc handles icon building for Ceruleans wearing modsuits.
- *	If a drawn sprite exists, we prioritize it. If it doesn't, we'll look for an entry in GLOB.cerulean_mod_theme
+ *	If a drawn sprite exists, we prioritize it. If it doesn't, we'll look for an entry in GLOB.mermaid_mod_theme
  *	If that doesn't, we'll generate a basic modsuit icon for the Cerulean.
  */
-/proc/handle_cerulean_modsuit(icon/base_icon, obj/item/clothing/chestpiece, key, greyscale_colors)
+/proc/handle_mermaid_modsuit(icon/base_icon, obj/item/clothing/chestpiece, key, greyscale_colors)
 	/// whether the modsuit is sealed or open, we read this from our lovely key
 	var/sealed = findtext(key, SEALED) ? TRUE : FALSE
 	/// whether our wearer has boy or girl physique, read from the last symbol of our key
 	var/physique = copytext_char(key, length(key))
-	/// the entry in GLOB.cerulean_mod_theme
-	var/datum/mod_theme/theme = return_cerulean_mod_theme_from_key(key)
+	/// the entry in GLOB.mermaid_mod_theme
+	var/datum/mod_theme/theme = return_mermaid_mod_theme_from_key(key)
 
 	/// our full icon state string, lets find a pre-drawn modsuit!
 	var/icon_state_string = "[physique == FEM_FLIPPER ? "[FEM_FLIPPER]-" : ""][chestpiece.icon_state]"
-	if(icon_exists(CERULEAN_MODSUIT_FILE, icon_state_string))
+	if(icon_exists(MERMAID_MODSUIT_FILE, icon_state_string))
 		// we have a pre-drawn modsuit, yay
-		return icon(CERULEAN_MODSUIT_FILE, icon_state_string)
+		return icon(MERMAID_MODSUIT_FILE, icon_state_string)
 
 	// lets cut away the legs first, we really don't need them
 	mask_icon(base_icon, LEGS_MASK)
 	// lets run through generating according to what our variables are set to
-	if(!isnull(GLOB.cerulean_mod_theme[theme]) && theme != NO_THEME_ENTRY)
-		// add a colored icon for each modular part, according to the theme fetched from GLOB.cerulean_mod_theme
-		var/list/modular_part_list = GLOB.cerulean_mod_theme[theme]
+	if(!isnull(GLOB.mermaid_mod_theme[theme]) && theme != NO_THEME_ENTRY)
+		// add a colored icon for each modular part, according to the theme fetched from GLOB.mermaid_mod_theme
+		var/list/modular_part_list = GLOB.mermaid_mod_theme[theme]
 		for(var/index in 1 to length(modular_part_list))
 			base_icon.Blend(
 				icon(
 					SSgreyscale.GetColoredIconByType(
-						/datum/greyscale_config/modular_mod_parts_cerulean,
+						/datum/greyscale_config/modular_mod_parts_mermaid,
 						modular_part_list[modular_part_list[index]],
 					),
 					"[modular_part_list[index]][sealed ? "-[SEALED]" : ""]",
@@ -93,7 +93,7 @@
 		base_icon.Blend(
 			icon(
 				SSgreyscale.GetColoredIconByType(
-					/datum/greyscale_config/modular_mod_parts_cerulean/basic,
+					/datum/greyscale_config/modular_mod_parts_mermaid/basic,
 					greyscale_colors,
 				),
 				"[NO_THEME_ENTRY][sealed ? "-[SEALED]" : ""]",
@@ -106,7 +106,7 @@
 		base_icon.Blend(
 			icon(
 				SSgreyscale.GetColoredIconByType(
-					/datum/greyscale_config/modular_mod_parts_cerulean/basic,
+					/datum/greyscale_config/modular_mod_parts_mermaid/basic,
 					GLOB.mod_theme_to_flipper_color[theme] ? GLOB.mod_theme_to_flipper_color[theme] : greyscale_colors,
 				),
 				"[FLIPPERS]",
@@ -122,8 +122,8 @@
 #undef SEALED
 
 /// Simple proc to search through some lists to return what the above proc is looking for
-/proc/return_cerulean_mod_theme_from_key(key)
-	var/static/list/all_theme_entries = (GLOB.cerulean_mod_theme + GLOB.mod_theme_to_flipper_color)
+/proc/return_mermaid_mod_theme_from_key(key)
+	var/static/list/all_theme_entries = (GLOB.mermaid_mod_theme + GLOB.mod_theme_to_flipper_color)
 	for(var/datum/mod_theme/theme_entry as anything in all_theme_entries)
 		if(findtext(key, theme_entry.name))
 			return theme_entry

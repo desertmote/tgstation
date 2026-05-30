@@ -13,7 +13,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
-	compatibility_flags = NONE
+	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
 
 /obj/item/clothing/under/rank/civilian/mime/sexy
 	name = "sexy mime outfit"
@@ -31,7 +31,7 @@
 	inhand_icon_state = "clown"
 	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
 	can_adjust = FALSE
-	compatibility_flags = NONE
+	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
 
 /obj/item/clothing/under/rank/civilian/clown/Initialize(mapload)
 	. = ..()

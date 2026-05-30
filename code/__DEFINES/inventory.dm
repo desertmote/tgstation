@@ -162,24 +162,19 @@ DEFINE_BITFIELD(no_equip_flags, list(
 #define ALT_STYLE 1
 #define DIGITIGRADE_STYLE 2
 
-// Bitfield for bodyshape compatibility in (clothing) items: /obj/item/var/compatibility_flags
-/**
- * Default setting for shoes, functional on uniforms
- * handled by /datums/components/digitigrade_linb.dm
- */
-#define CLOTHING_DIGITIGRADE_SQUISH (1<<0)
-/// A sprite exists for this item in DIGITIGRADE_UNIFORM_FILE
-#define CLOTHING_DIGITIGRADE_VARIATION (1<<1)
-/// A sprite exists for this item in CERULEAN_SUIT_FILE
-#define CLOTHING_CERULEAN_VARIATION (1<<2)
-//	Default setting for suits and uniforms
-//	If necessary, cuts LEGS_MASK out of this item's sprite, then runs through
-//	wear_digi_version(...) for digitigrade bodyshapes
-///	wear_cerulean_version(...) for Cerulean bodyshapes
-#define CLOTHING_LEGS_MASKING (1<<3)
-//	If necessary, cuts BACK_COAT_MASK out of this item's sprite, then runs through
-///	wear_cerulean_version(...) for Cerulean bodyshapes
-#define CLOTHING_BETWEEN_LEGS_MASKING (1<<4)
+//Flags (actual flags, fucker ^) for /obj/item/var/supports_variations_flags
+/// Flag for defining that no variation is necessary for this item to look good on all bodyshapes
+#define CLOTHING_NO_VARIATION_NEEDED (1<<0)
+/// Clothing item has no sprite and masking wouldn't look good, we must squish it \datums\components\digitigrade_linb.dm
+#define CLOTHING_DIGITIGRADE_SQUISH (1<<1)
+/// Has a sprite for digitigrade legs specifically
+#define CLOTHING_DIGITIGRADE_VARIATION (1<<2)
+/// The clothing flag to declare an item has Cerulean fish tail compatible sprites, only supports external suits
+#define CLOTHING_CERULEAN_VARIATION (1<<3)
+/// This flag will mask away the bottom half of a sprite and generate a replacement if necessary
+#define CLOTHING_LEGS_MASKING (1<<4)
+/// This flag will mask away any pixels of a sprite between the legs
+#define CLOTHING_BETWEEN_LEGS_MASKING (1<<5)
 
 //flags for covering body parts
 #define GLASSESCOVERSEYES (1<<0)

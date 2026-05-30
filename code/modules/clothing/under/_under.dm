@@ -9,7 +9,7 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	interaction_flags_click = NEED_DEXTERITY|ALLOW_RESTING
 	armor_type = /datum/armor/clothing_under
-	compatibility_flags = CLOTHING_LEGS_MASKING
+	supports_variations_flags = CLOTHING_LEGS_MASKING
 	equip_sound = 'sound/items/equip/jumpsuit_equip.ogg'
 	drop_sound = 'sound/items/handling/cloth/cloth_drop1.ogg'
 	pickup_sound = 'sound/items/handling/cloth/cloth_pickup1.ogg'
@@ -206,7 +206,7 @@
 	if(adjusted == ALT_STYLE)
 		adjust_to_normal()
 
-	if((compatibility_flags & CLOTHING_DIGITIGRADE_VARIATION) && ishuman(user))
+	if((supports_variations_flags & CLOTHING_DIGITIGRADE_VARIATION) && ishuman(user))
 		var/mob/living/carbon/human/wearer = user
 		if(wearer.bodyshape & BODYSHAPE_DIGITIGRADE)
 			adjusted = DIGITIGRADE_STYLE

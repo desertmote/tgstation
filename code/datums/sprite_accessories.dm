@@ -2023,9 +2023,9 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 	center = TRUE
 	dimension_x = 36
 
-/datum/sprite_accessory/tails/fish/cerulean // large fish tail which removes legs
-	name = "Cerulean"
-	icon_state = "cerulean"
+/datum/sprite_accessory/tails/fish/mermaid // Cerulean tail base
+	name = "Mermaid"
+	icon_state = "mermaid"
 	gender_specific = TRUE
 	locked = TRUE
 
