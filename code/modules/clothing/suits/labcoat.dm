@@ -32,7 +32,7 @@
 	)
 	armor_type = /datum/armor/toggle_labcoat
 	species_exception = list(/datum/species/golem)
-	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
+	compatibility_flags = NONE
 
 /obj/item/clothing/suit/toggle/labcoat/cmo
 	name = "chief medical officer's labcoat"

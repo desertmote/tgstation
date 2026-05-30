@@ -10,7 +10,7 @@
 	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT|HIDEBELT|HIDEJUMPSUIT
 	alternate_worn_layer = UNDER_HEAD_LAYER
 	species_exception = list(/datum/species/golem)
-	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
+	compatibility_flags = NONE
 
 /obj/item/clothing/suit/costume/ghost_sheet/Initialize(mapload)
 	. = ..()
@@ -37,5 +37,5 @@
 	w_class = WEIGHT_CLASS_TINY
 	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT|HIDEBELT|HIDEJUMPSUIT
 	species_exception = list(/datum/species/golem)
-	supports_variations_flags = CLOTHING_NO_VARIATION_NEEDED
+	compatibility_flags = NONE
 	alternate_worn_layer = ABOVE_BODY_FRONT_LAYER //so the bedsheet goes over everything but fire

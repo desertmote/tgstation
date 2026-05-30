@@ -102,7 +102,7 @@ There are several things that need to be remembered:
 		var/icon_file
 		var/woman
 		//BEGIN SPECIES HANDLING
-		if((bodyshape & BODYSHAPE_DIGITIGRADE) && (uniform.supports_variations_flags & CLOTHING_DIGITIGRADE_VARIATION))
+		if((bodyshape & BODYSHAPE_DIGITIGRADE) && (uniform.compatibility_flags & CLOTHING_DIGITIGRADE_VARIATION))
 			icon_file = DIGITIGRADE_UNIFORM_FILE
 		//Female sprites have lower priority than digitigrade sprites
 		else if(dna.species.sexes && (bodyshape & BODYSHAPE_HUMANOID) && physique == FEMALE && !(uniform.female_sprite_flags & NO_FEMALE_UNIFORM)) //Agggggggghhhhh
@@ -413,8 +413,8 @@ There are several things that need to be remembered:
 
 		var/icon_file = DEFAULT_SUIT_FILE
 
-		if((bodyshape & BODYSHAPE_MERMAID) && (worn_item.supports_variations_flags & CLOTHING_CERULEAN_VARIATION))
-			icon_file = MERMAID_SUIT_FILE
+		if((bodyshape & BODYSHAPE_CERULEAN) && (worn_item.compatibility_flags & CLOTHING_CERULEAN_VARIATION))
+			icon_file = CERULEAN_SUIT_FILE
 
 		var/mutable_appearance/suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = icon_file, bodyshape = bodyshape)
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
@@ -766,8 +766,8 @@ generate/load female uniform sprites matching all previously decided variables
 			greyscale_colors = greyscale_colors,
 		)
 	if(!isinhands && (bodyshape & BODYSHAPE_DIGITIGRADE) \
-		&& (supports_variations_flags & CLOTHING_LEGS_MASKING) \
-		&& !(supports_variations_flags & (CLOTHING_DIGITIGRADE_VARIATION|CLOTHING_DIGITIGRADE_SQUISH|CLOTHING_NO_VARIATION_NEEDED)) \
+		&& (compatibility_flags & CLOTHING_LEGS_MASKING) \
+		&& !(compatibility_flags & (CLOTHING_DIGITIGRADE_VARIATION|CLOTHING_DIGITIGRADE_SQUISH)) \
 		)
 		building_icon = wear_digi_version(
 			base_icon = building_icon || icon(file2use, t_state),
@@ -775,11 +775,11 @@ generate/load female uniform sprites matching all previously decided variables
 			key = "[t_state]-[file2use]-[female_uniform]",
 			greyscale_colors = greyscale_colors,
 		)
-	if(!isinhands && (bodyshape & BODYSHAPE_MERMAID) \
-		&& (supports_variations_flags & (CLOTHING_LEGS_MASKING|CLOTHING_BETWEEN_LEGS_MASKING)) \
-		&& !(supports_variations_flags & (CLOTHING_CERULEAN_VARIATION|CLOTHING_NO_VARIATION_NEEDED)) \
+	if(!isinhands && (bodyshape & BODYSHAPE_CERULEAN) \
+		&& (compatibility_flags & (CLOTHING_LEGS_MASKING|CLOTHING_BETWEEN_LEGS_MASKING)) \
+		&& !(compatibility_flags & (CLOTHING_CERULEAN_VARIATION)) \
 		)
-		building_icon = wear_mermaid_version(
+		building_icon = wear_cerulean_version(
 			base_icon = building_icon || icon(file2use, t_state),
 			item = src,
 			key = "[t_state]-[file2use]-[female_uniform]",

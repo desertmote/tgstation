@@ -186,8 +186,8 @@
 #define BODYSHAPE_SNOUTED (1<<3)
 /// Golem's wacky rocky limbs
 #define BODYSHAPE_GOLEM (1<<4)
-///The limb has a mermaid tail
-#define BODYSHAPE_MERMAID (1<<5)
+///The limb has a Cerulean/mermaid tail
+#define BODYSHAPE_CERULEAN (1<<5)
 
 /// List of body part flags that can not be bioscrambled
 #define BODYTYPE_BIOSCRAMBLE_INCOMPATIBLE (BODYTYPE_ROBOTIC | BODYTYPE_LARVA_PLACEHOLDER | BODYTYPE_GOLEM | BODYTYPE_PEG)

@@ -142,11 +142,11 @@
 	category = list(SPECIES_HUMAN)
 
 /datum/design/fish_tail_large
-	name = /obj/item/organ/tail/fish/mermaid::name
+	name = /obj/item/organ/tail/fish/cerulean::name
 	id = "fishtaillarge"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
-	build_path = /obj/item/organ/tail/fish/mermaid
+	build_path = /obj/item/organ/tail/fish/cerulean
 	category = list(SPECIES_CERULEAN)
 
 /datum/design/cat_ears

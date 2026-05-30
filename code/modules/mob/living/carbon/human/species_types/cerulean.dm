@@ -1,7 +1,7 @@
 /datum/species/human/cerulean
 	name = "\improper Cerulean"
 	id = SPECIES_CERULEAN
-	mutant_organs = list(/obj/item/organ/tail/fish/mermaid)
+	mutant_organs = list(/obj/item/organ/tail/fish/cerulean)
 	mutanttongue = /obj/item/organ/tongue/fish
 	mutantstomach = /obj/item/organ/stomach/fish
 	mutantliver = /obj/item/organ/liver/fish
@@ -65,7 +65,7 @@
 		return
 	equipping.put_in_wheelchair()
 
-/// gives a 'necessary for life' device to mermaids with gills
+/// gives a 'necessary for life' device to Ceruleans with gills
 /datum/species/human/cerulean/post_equip_species_outfit(mob/living/carbon/human/equipping, visuals_only)
 	if (visuals_only)
 		return
@@ -86,12 +86,12 @@
 	)
 
 /// the tail which makes the species, without this you're basically just a fishy, legless human.
-/obj/item/organ/tail/fish/mermaid
+/obj/item/organ/tail/fish/cerulean
 	name = "oversized fish tail"
 	desc = "A hugely sized and scaled fish tail, clearly severed from something much larger than a mere space carp."
 	fillet_amount = 12
-	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/mermaid
-	external_bodyshapes = BODYSHAPE_MERMAID
+	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/cerulean
+	external_bodyshapes = BODYSHAPE_CERULEAN
 	restyle_flags = NONE
 	w_class = WEIGHT_CLASS_BULKY
 	organ_traits = list(
@@ -101,15 +101,15 @@
 		TRAIT_BLOCK_ATTACHING_LEGS,
 	)
 
-/obj/item/organ/tail/fish/mermaid/Initialize(mapload)
+/obj/item/organ/tail/fish/cerulean/Initialize(mapload)
 	. = ..()
 	set_greyscale(pick(GLOB.carp_colors - COLOR_CARP_SILVER))
 
-/obj/item/organ/tail/fish/mermaid/on_mob_insert(mob/living/carbon/owner, special, movement_flags)
+/obj/item/organ/tail/fish/cerulean/on_mob_insert(mob/living/carbon/owner, special, movement_flags)
 	. = ..()
 	get_your_sealegs(owner, special)
 
-/obj/item/organ/tail/fish/mermaid/on_mob_remove(mob/living/carbon/owner)
+/obj/item/organ/tail/fish/cerulean/on_mob_remove(mob/living/carbon/owner)
 	. = ..()
 	if (QDELING(owner) || QDELING(src))
 		return
@@ -122,11 +122,11 @@
 		owner.visible_message(span_warning("[src] detaches from [owner], spilling out liters of [LOWER_TEXT(owner.get_bloodtype()?.get_blood_name())]!"))
 		playsound(src, 'sound/effects/cartoon_sfx/cartoon_splat.ogg', rand(50, 75), TRUE)
 
-/obj/item/organ/tail/fish/mermaid/mutate_feature(features, mob/living/carbon/human/owner)
+/obj/item/organ/tail/fish/cerulean/mutate_feature(features, mob/living/carbon/human/owner)
 	return //no mutation
 
 /// Remove legs on insertion, if we had any
-/obj/item/organ/tail/fish/mermaid/proc/get_your_sealegs(mob/living/carbon/owner, special)
+/obj/item/organ/tail/fish/cerulean/proc/get_your_sealegs(mob/living/carbon/owner, special)
 	var/obj/item/bodypart/right_leg = owner.get_bodypart(BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/left_leg = owner.get_bodypart(BODY_ZONE_L_LEG)
 	if (special)
@@ -137,12 +137,12 @@
 	left_leg?.dismember()
 
 /// the tail has a fixed appearance for the modsuit overlays
-/datum/bodypart_overlay/mutant/tail/fish/mermaid
+/datum/bodypart_overlay/mutant/tail/fish/cerulean
 	layers = EXTERNAL_BEHIND|EXTERNAL_ADJACENT
 
-/datum/bodypart_overlay/mutant/tail/fish/mermaid/get_random_appearance()
-	return /datum/sprite_accessory/tails/fish/mermaid
+/datum/bodypart_overlay/mutant/tail/fish/cerulean/get_random_appearance()
+	return /datum/sprite_accessory/tails/fish/cerulean
 
-/datum/bodypart_overlay/mutant/tail/fish/mermaid/can_draw_on_bodypart(obj/item/bodypart/limb)
+/datum/bodypart_overlay/mutant/tail/fish/cerulean/can_draw_on_bodypart(obj/item/bodypart/limb)
 	. = ..()
 	return TRUE

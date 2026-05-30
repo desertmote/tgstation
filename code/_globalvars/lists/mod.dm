@@ -6,11 +6,11 @@ GLOBAL_LIST_EMPTY(mod_link_ids)
 /**
  *	A global associated list with entries named after modsuit themes.
  *	When an entry exists here, and there isn't a drawn modsuit sprite to use,
- *	handle_mermaid_modsuit(...) will generate a modsuit sprite with the supplied parts.
- *	Check MERMAID_MODSUIT_GEN_FILE for existing parts to pick from.
+ *	handle_cerulean_modsuit(...) will generate a modsuit sprite with the supplied parts.
+ *	Check CERULEAN_MODSUIT_GEN_FILE for existing parts to pick from.
  *	Sprites at the top of the list load first
  */
-GLOBAL_ALIST_INIT(mermaid_mod_theme, list(
+GLOBAL_ALIST_INIT(cerulean_mod_theme, list(
 	/datum/mod_theme/debug = list(
 		"security" = list("#00289f", "#343442", "#0050d5"),
 	),

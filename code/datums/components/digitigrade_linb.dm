@@ -98,9 +98,9 @@
 
 	switch(equipper.get_slot_by_item(equipped_item))
 		if(ITEM_SLOT_FEET, ITEM_SLOT_OCLOTHING)
-			return (equipped_item.supports_variations_flags & CLOTHING_DIGITIGRADE_SQUISH)
+			return (equipped_item.compatibility_flags & CLOTHING_DIGITIGRADE_SQUISH)
 		if(ITEM_SLOT_ICLOTHING) // If the jumpsuit is obscured, it shouldn't contribute to squishing
-			return (equipped_item.supports_variations_flags & CLOTHING_DIGITIGRADE_SQUISH) && !(equipper.obscured_slots & HIDEJUMPSUIT)
+			return (equipped_item.compatibility_flags & CLOTHING_DIGITIGRADE_SQUISH) && !(equipper.obscured_slots & HIDEJUMPSUIT)
 
 	return FALSE
 
@@ -136,7 +136,7 @@
 
 	// Ensures any items that with a variation are updated
 	for(var/obj/item/thing as anything in limb.owner.get_equipped_items(INCLUDE_PROSTHETICS|INCLUDE_ABSTRACT))
-		if(thing.supports_variations_flags & CLOTHING_DIGITIGRADE_SQUISH)
+		if(thing.compatibility_flags & CLOTHING_DIGITIGRADE_SQUISH)
 			thing.update_slot_icon()
 	// Updates underwear and mob sprites
 	limb.owner.update_body()
