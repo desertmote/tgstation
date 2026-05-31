@@ -144,6 +144,7 @@
 	desc = "A hard-boiled private investigator's dark trenchcoat."
 	icon_state = "noir_trenchcoat"
 	inhand_icon_state = null
+	supports_variations_flags = CLOTHING_CERULEAN_MASK_INBETWEEN
 
 /obj/item/clothing/suit/jacket/det_suit
 	name = "brown blazer jacket"

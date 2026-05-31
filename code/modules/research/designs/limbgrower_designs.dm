@@ -141,12 +141,12 @@
 	build_path = /obj/item/organ/tail/fish
 	category = list(SPECIES_HUMAN)
 
-/datum/design/fish_tail_large
-	name = /obj/item/organ/tail/fish/mermaid::name
-	id = "fishtaillarge"
+/datum/design/oversized_fish_tail
+	name = /obj/item/organ/tail/fish/cerulean::name
+	id = "oversizedfishtail"
 	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
-	build_path = /obj/item/organ/tail/fish/mermaid
+	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 20)
+	build_path = /obj/item/organ/tail/fish/cerulean
 	category = list(SPECIES_CERULEAN)
 
 /datum/design/cat_ears
@@ -328,7 +328,7 @@
 
 /obj/item/disk/design_disk/limbs/cerulean
 	name = "Cerulean Organ Design Disk"
-	limb_designs = list(/datum/design/fish_stomach, /datum/design/fish_liver, /datum/design/fish_lungs, /datum/design/fish_tail, /datum/design/fish_tail_large)
+	limb_designs = list(/datum/design/fish_stomach, /datum/design/fish_liver, /datum/design/fish_lungs, /datum/design/fish_tail, /datum/design/oversized_fish_tail)
 
 /datum/design/limb_disk/cerulean
 	name = "Cerulean Organ Design Disk"

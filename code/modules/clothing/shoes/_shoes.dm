@@ -340,7 +340,7 @@
 /obj/item/clothing/shoes/proc/oh_what_a_neat_hat(obj/item, mob/living/carbon/user)
 	if (isnull(user))
 		return
-	if (user.bodyshape & BODYSHAPE_MERMAID)
+	if (user.bodyshape & BODYSHAPE_CERULEAN)
 		slot_flags = ITEM_SLOT_HEAD
 		worn_y_offset = 28
 		return

@@ -413,8 +413,8 @@ There are several things that need to be remembered:
 
 		var/icon_file = DEFAULT_SUIT_FILE
 
-		if((bodyshape & BODYSHAPE_MERMAID) && (worn_item.supports_variations_flags & CLOTHING_MERMAID_VARIATION))
-			icon_file = MERMAID_SUIT_FILE
+		if((bodyshape & BODYSHAPE_CERULEAN) && (worn_item.supports_variations_flags & CLOTHING_CERULEAN_VARIATION))
+			icon_file = CERULEAN_SUIT_FILE
 
 		var/mutable_appearance/suit_overlay = wear_suit.build_worn_icon(default_layer = SUIT_LAYER, default_icon_file = icon_file, bodyshape = bodyshape)
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
@@ -773,8 +773,8 @@ generate/load female uniform sprites matching all previously decided variables
 			greyscale_colors = greyscale_colors,
 		)
 
-	if(!isinhands && (bodyshape & BODYSHAPE_MERMAID) && (supports_variations_flags & CLOTHING_MERMAID_MASK))
-		building_icon = wear_mermaid_version(
+	if(!isinhands && (bodyshape & BODYSHAPE_CERULEAN) && (supports_variations_flags & (CLOTHING_CERULEAN_MASK_LEGS|CLOTHING_CERULEAN_MASK_INBETWEEN)))
+		building_icon = wear_cerulean_version(
 			base_icon = building_icon || icon(file2use, t_state),
 			item = src,
 			key = "[t_state]-[file2use]-[female_uniform]",
