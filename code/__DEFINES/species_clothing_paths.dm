@@ -17,5 +17,5 @@
 #define CERULEAN_UNDER_FILE 'icons/mob/human/species/misc/cerulean_under.dmi'
 ///The dmi which has the Ceruleans modsuits
 #define CERULEAN_MODSUIT_FILE 'icons/mob/human/species/misc/cerulean_modsuit.dmi'
-///The dmi which has modular modsuit parts to assemble in handle_cerulean_modsuit(...)
+///The dmi which has modular modsuit parts to assemble in handle_cerulean_modsuit()
 #define CERULEAN_MODSUIT_GEN_FILE 'icons/mob/human/species/misc/cerulean_modsuit_gen.dmi'

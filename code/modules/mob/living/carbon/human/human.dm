@@ -1126,11 +1126,11 @@
 /mob/living/carbon/human/species/cerulean
 	race = /datum/species/human/cerulean
 
-/mob/living/carbon/human/species/cerulean/gilled/set_species(datum/species/mrace, icon_update, pref_load, replace_missing)
-	. = ..()
-	dna.species.mutantlungs = /obj/item/organ/lungs/fish
-	var/obj/item/organ/lungs/fish/gills = SSwardrobe.provide_type(dna.species.mutantlungs)
-	gills.Insert(src, TRUE, DELETE_IF_REPLACED)
+/mob/living/carbon/human/species/cerulean/ancestral
+	race = /datum/species/human/cerulean/ancestral
+
+/mob/living/carbon/human/species/cerulean/abyssal
+	race = /datum/species/human/cerulean/ancestral/abyssal
 
 /mob/living/carbon/human/species/moth
 	race = /datum/species/moth

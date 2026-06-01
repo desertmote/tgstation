@@ -99,7 +99,7 @@ There are several things that need to be remembered:
 		//BEGIN SPECIES HANDLING
 		if((bodyshape & BODYSHAPE_DIGITIGRADE) && (uniform.supports_variations_flags & CLOTHING_DIGITIGRADE_VARIATION))
 			icon_file = DIGITIGRADE_UNIFORM_FILE
-		if((bodyshape & BODYSHAPE_CERULEAN) && (worn_item.supports_variations_flags & CLOTHING_CERULEAN_VARIATION))
+		if((bodyshape & BODYSHAPE_CERULEAN) && (uniform.supports_variations_flags & CLOTHING_CERULEAN_VARIATION))
 			icon_file = CERULEAN_UNDER_FILE
 		//Female sprites have lower priority than digitigrade sprites
 		else if(dna.species.sexes && (bodyshape & BODYSHAPE_HUMANOID) && physique == FEMALE && !(uniform.female_sprite_flags & NO_FEMALE_UNIFORM)) //Agggggggghhhhh

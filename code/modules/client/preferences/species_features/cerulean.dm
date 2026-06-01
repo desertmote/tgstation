@@ -1,6 +1,6 @@
 GLOBAL_LIST_INIT(cerulean_respiration, list(
-	"Oxygen" = /obj/item/organ/lungs, // i know fish also breathe oxygen
-	"Water vapor" = /obj/item/organ/lungs/fish, // but this gets the idea across better
+	"Oxygen" = /datum/species/human/cerulean, // i know fish also breathe oxygen
+	"Water vapor" = /datum/species/human/cerulean/ancestral, // but this gets the idea across better
 	))
 
 /// Whether or not a Cerulean has air-breathing lungs or water-breathing gills
@@ -8,7 +8,7 @@ GLOBAL_LIST_INIT(cerulean_respiration, list(
 	savefile_key = "feature_cerulean_respiration"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
-	priority = PREFERENCE_PRIORITY_BODYPARTS
+	priority = PREFERENCE_PRIORITY_SPECIES
 	randomize_by_default = FALSE
 
 /datum/preference/choiced/lungs_choice/has_relevant_feature(datum/preferences/preferences)
@@ -17,12 +17,7 @@ GLOBAL_LIST_INIT(cerulean_respiration, list(
 /datum/preference/choiced/lungs_choice/apply_to_human(mob/living/carbon/human/target, value)
 	if(!(savefile_key in target.dna?.species?.get_features()))
 		return
-	if(isdummy(target)) // makes sure the dummy in the character preview is visually accurate
-		var/datum/status_effect/organ_set_bonus/fish_bonus = target.has_status_effect(/datum/status_effect/organ_set_bonus/fish)
-		fish_bonus?.organs = 4
-	target.dna.species.mutantlungs = GLOB.cerulean_respiration[value]
-	var/obj/item/organ/lungs/new_organ = SSwardrobe.provide_type(GLOB.cerulean_respiration[value])
-	new_organ.Insert(target, TRUE, DELETE_IF_REPLACED)
+	target.set_species(GLOB.cerulean_respiration[value], icon_update = TRUE, pref_load = FALSE)
 
 /datum/preference/choiced/lungs_choice/init_possible_values()
 	return GLOB.cerulean_respiration
@@ -39,7 +34,11 @@ GLOBAL_LIST_INIT(cerulean_respiration, list(
 /datum/preference/color/fish_tail_color
 	savefile_key = "feature_fish_tail_color"
 	savefile_identifier = PREFERENCE_CHARACTER
+	priority = PREFERENCE_PRIORITY_BODYPARTS
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+
+/datum/preference/choiced/fish_tail_color/has_relevant_feature(datum/preferences/preferences)
+	return current_species_has_savekey(preferences)
 
 /datum/preference/color/fish_tail_color/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features[FEATURE_TAIL_FISH_COLOR] = value

@@ -1,7 +1,7 @@
 /datum/species/human/cerulean
 	name = "\improper Cerulean"
 	id = SPECIES_CERULEAN
-	mutant_organs = list(/obj/item/organ/tail/fish/cerulean)
+	mutant_organs = list(/obj/item/organ/tail/fish/cerulean = /datum/sprite_accessory/tails/fish/oversized::name)
 	mutanttongue = /obj/item/organ/tongue/fish
 	mutantstomach = /obj/item/organ/stomach/fish
 	mutantliver = /obj/item/organ/liver/fish
@@ -39,18 +39,14 @@
 
 /datum/species/human/cerulean/get_features()
 	var/list/features = ..()
-	LAZYOR(features, "feature_cerulean_respiration")
-	LAZYOR(features, "feature_fish_tail_color")
-	return features
-
-/datum/species/human/cerulean/randomize_features()
-	var/list/features = ..()
-	LAZYSET(features, FEATURE_TAIL_FISH_COLOR, pick(GLOB.carp_colors - COLOR_CARP_SILVER))
+	features |= /datum/preference/choiced/lungs_choice::savefile_key
+	features |= /datum/preference/color/fish_tail_color::savefile_key
 	return features
 
 /datum/species/human/cerulean/on_species_gain(mob/living/carbon/human/human_being, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
 	if (isdummy(human_being))
+		human_being.visual_only_organs = FALSE //sorry but we need them all for the organ set bonus
 		return
 	if (human_being.has_gravity())
 		human_being.set_resting(TRUE, silent = TRUE, instant = TRUE)
@@ -85,6 +81,25 @@
 		indirect_action = TRUE,
 	)
 
+/datum/species/human/cerulean/ancestral
+	name = "\improper Ancestral Cerulean"
+	id = SPECIES_CERULEAN_ANCESTRAL
+	mutantlungs = /obj/item/organ/lungs/fish
+
+/datum/species/human/cerulean/ancestral/abyssal
+	name = "\improper Abyssal Cerulean"
+	id = SPECIES_CERULEAN_ABYSSAL
+	mutant_organs = list(
+		/obj/item/organ/tail/fish/cerulean = /datum/sprite_accessory/tails/fish/oversized::name,
+		/obj/item/organ/horns = /datum/sprite_accessory/horns/angler::name,
+	)
+
+/datum/species/human/cerulean/ancestral/abyssal/on_species_gain(mob/living/carbon/human/human_being, datum/species/old_species, pref_load, regenerate_icons)
+	. = ..()
+	var/datum/mutation/echolocation/abyssal_sight = locate() in human_being.dna.mutation_index
+	human_being.dna.activate_mutation(abyssal_sight)
+
+
 /// the tail which makes the species, without this you're basically just a fishy, legless human.
 /obj/item/organ/tail/fish/cerulean
 	name = "oversized fish tail"
@@ -100,10 +115,6 @@
 		TRAIT_SWIMMER,
 		TRAIT_BLOCK_ATTACHING_LEGS,
 	)
-
-/obj/item/organ/tail/fish/cerulean/Initialize(mapload)
-	. = ..()
-	set_greyscale(pick(GLOB.carp_colors - COLOR_CARP_SILVER))
 
 /obj/item/organ/tail/fish/cerulean/on_mob_insert(mob/living/carbon/owner, special, movement_flags)
 	. = ..()
