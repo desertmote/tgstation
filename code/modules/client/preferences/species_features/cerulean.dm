@@ -34,7 +34,7 @@ GLOBAL_LIST_INIT(cerulean_respiration, list(
 /datum/preference/color/fish_tail_color
 	savefile_key = "feature_fish_tail_color"
 	savefile_identifier = PREFERENCE_CHARACTER
-	priority = PREFERENCE_PRIORITY_BODYPARTS
+	priority = PREFERENCE_PRIORITY_PRE_SPECIES
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 
 /datum/preference/choiced/fish_tail_color/has_relevant_feature(datum/preferences/preferences)

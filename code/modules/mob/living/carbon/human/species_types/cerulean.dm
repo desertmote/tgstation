@@ -43,15 +43,20 @@
 	features |= /datum/preference/color/fish_tail_color::savefile_key
 	return features
 
-/datum/species/human/cerulean/on_species_gain(mob/living/carbon/human/human_being, datum/species/old_species, pref_load, regenerate_icons)
+/datum/species/human/cerulean/randomize_features()
+	var/list/features = ..()
+	features[FEATURE_TAIL_FISH_COLOR] = pick(GLOB.carp_colors - COLOR_CARP_SILVER)
+	return features
+
+/datum/species/human/cerulean/on_species_gain(mob/living/carbon/human/cerulean, datum/species/old_species, pref_load, regenerate_icons)
 	. = ..()
-	if (isdummy(human_being))
-		human_being.visual_only_organs = FALSE //sorry but we need them all for the organ set bonus
+	if (isdummy(cerulean))
+		cerulean.visual_only_organs = FALSE //sorry but we need them all for the organ set bonus
 		return
-	if (human_being.has_gravity())
-		human_being.set_resting(TRUE, silent = TRUE, instant = TRUE)
+	if (cerulean.has_gravity())
+		cerulean.set_resting(TRUE, silent = TRUE, instant = TRUE)
 	// apply a free wet stack to prevent the choking screen alert to appear for a second on mob creation
-	human_being.apply_status_effect(/datum/status_effect/fire_handler/wet_stacks, 1, FALSE)
+	cerulean.apply_status_effect(/datum/status_effect/fire_handler/wet_stacks, 1, FALSE)
 
 /// good guy nanotrasen provides a wheelchair to their employees
 /datum/species/human/cerulean/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/equipping, visuals_only)
@@ -81,23 +86,29 @@
 		indirect_action = TRUE,
 	)
 
+// cerulean but with gills
 /datum/species/human/cerulean/ancestral
 	name = "\improper Ancestral Cerulean"
 	id = SPECIES_CERULEAN_ANCESTRAL
 	mutantlungs = /obj/item/organ/lungs/fish
 
+// cerulean but with gills, an angler fish lantern and echolocation
 /datum/species/human/cerulean/ancestral/abyssal
 	name = "\improper Abyssal Cerulean"
 	id = SPECIES_CERULEAN_ABYSSAL
 	mutant_organs = list(
 		/obj/item/organ/tail/fish/cerulean = /datum/sprite_accessory/tails/fish/oversized::name,
-		/obj/item/organ/horns = /datum/sprite_accessory/horns/angler::name,
+		/obj/item/organ/horns = /datum/sprite_accessory/horns/angler::name, // pretty funny lizards have this
 	)
 
-/datum/species/human/cerulean/ancestral/abyssal/on_species_gain(mob/living/carbon/human/human_being, datum/species/old_species, pref_load, regenerate_icons)
+/datum/species/human/cerulean/ancestral/abyssal/on_species_gain(mob/living/carbon/human/cerulean, datum/species/old_species, pref_load, regenerate_icons)
+	cerulean.dna.features[FEATURE_TAIL_FISH_COLOR] = pick(list("#36343f", "#44465c", "#3d4044"))
+	cerulean.dna.features[FEATURE_HORNS] = /datum/sprite_accessory/horns/angler::name
+	cerulean.dna.update_uf_block(/datum/dna_block/feature/fish_tail_color)
+	cerulean.dna.update_uf_block(/datum/dna_block/feature/accessory/horn)
 	. = ..()
-	var/datum/mutation/echolocation/abyssal_sight = locate() in human_being.dna.mutation_index
-	human_being.dna.activate_mutation(abyssal_sight)
+	var/datum/mutation/echolocation/abyssal_sight = locate() in cerulean.dna.mutation_index
+	cerulean.dna.activate_mutation(abyssal_sight)
 
 
 /// the tail which makes the species, without this you're basically just a fishy, legless human.
