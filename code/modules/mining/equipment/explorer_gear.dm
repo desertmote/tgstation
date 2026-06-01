@@ -6,7 +6,7 @@
 	icon = 'icons/obj/clothing/suits/utility.dmi'
 	worn_icon = 'icons/mob/clothing/suits/utility.dmi'
 	inhand_icon_state = null
-	supports_variations_flags = CLOTHING_DIGITIGRADE_MASK
+	supports_variations_flags = CLOTHING_DIGITIGRADE_MASK|CLOTHING_CERULEAN_VARIATION
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT

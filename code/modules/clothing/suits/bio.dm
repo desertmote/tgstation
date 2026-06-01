@@ -36,6 +36,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	clothing_flags = THICKMATERIAL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	supports_variations_flags = CLOTHING_CERULEAN_VARIATION
 	slowdown = 0.5
 	allowed = list(/obj/item/tank/internals, /obj/item/reagent_containers/dropper, /obj/item/flashlight/pen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/reagent_containers/cup/beaker, /obj/item/gun/syringe)
 	armor_type = /datum/armor/suit_bio_suit
@@ -137,6 +138,7 @@
 	inhand_icon_state = "bio_suit"
 	strip_delay = 4 SECONDS
 	equip_delay_other = 2 SECONDS
+	supports_variations_flags = NONE
 
 /obj/item/clothing/suit/bio_suit/plaguedoctorsuit/Initialize(mapload)
 	. = ..()

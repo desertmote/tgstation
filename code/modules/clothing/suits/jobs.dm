@@ -49,6 +49,7 @@
 	post_init_icon_state = "overalls"
 	inhand_icon_state = ""
 	body_parts_covered = CHEST|GROIN|LEGS
+	supports_variations_flags = CLOTHING_CERULEAN_VARIATION
 	gender = PLURAL
 	species_exception = list(/datum/species/golem)
 	greyscale_config = /datum/greyscale_config/overalls
@@ -421,6 +422,7 @@
 	icon_state = "atmos_overalls"
 	inhand_icon_state = ""
 	body_parts_covered = CHEST|GROIN|LEGS
+	supports_variations_flags = CLOTHING_CERULEAN_VARIATION
 	resistance_flags = FIRE_PROOF
 	armor_type = /datum/armor/atmos_overalls
 	species_exception = list(/datum/species/golem)

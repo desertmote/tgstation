@@ -65,6 +65,7 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	supports_variations_flags = CLOTHING_CERULEAN_VARIATION
 
 /obj/item/clothing/suit/utility/fire/heavy
 	name = "heavy firesuit"
@@ -83,6 +84,7 @@
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	flags_inv = HIDESHOES|HIDEJUMPSUIT
+	supports_variations_flags = CLOTHING_CERULEAN_VARIATION
 
 /*
  * Bomb protection
@@ -137,6 +139,7 @@
 	strip_delay = 7 SECONDS
 	equip_delay_other = 7 SECONDS
 	resistance_flags = NONE
+	supports_variations_flags = CLOTHING_CERULEAN_VARIATION
 
 /obj/item/clothing/suit/utility/bomb_suit/Initialize(mapload)
 	. = ..()
@@ -214,6 +217,7 @@
 	strip_delay = 6 SECONDS
 	equip_delay_other = 6 SECONDS
 	flags_inv = HIDEJUMPSUIT
+	supports_variations_flags = CLOTHING_CERULEAN_VARIATION
 	resistance_flags = NONE
 
 /obj/item/clothing/suit/utility/radiation/Initialize(mapload)
