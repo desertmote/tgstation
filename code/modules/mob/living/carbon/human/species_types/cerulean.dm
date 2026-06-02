@@ -168,6 +168,9 @@
 	shake_camera(user, 1 SECONDS, 2) //you shake too hehe
 	user.set_jitter_if_lower(1 SECONDS)
 
+/obj/item/organ/tail/fish/cerulean/get_valid_restyles()
+	return bodypart_overlay.get_global_feature_list()
+
 /// check if we have (enough) blood for an (un)clean cut
 /obj/item/organ/tail/fish/cerulean/proc/splatter_check(mob/living/carbon/owner)
 	if(isnull(owner))
@@ -201,7 +204,10 @@
 	layers = EXTERNAL_BEHIND|EXTERNAL_ADJACENT
 
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/get_global_feature_list()
-	var/list/feature_list = ..()
+	var/static/list/glob_feature_list = list()
+	if(!length(glob_feature_list))
+		glob_feature_list = SSaccessories.feature_list[feature_key]
+	var/list/feature_list = glob_feature_list.Copy()
 	for(var/accessory in feature_list)
 		var/datum/sprite_accessory/accessory_datum = feature_list[accessory]
 		// removing the normal fishe tails from the pool
