@@ -279,7 +279,7 @@
 		return ..()
 	if(receiver.dna.features[feature_key] && istype(parent, /obj/item/organ/tail/fish/cerulean))
 		var/datum/sprite_accessory/accessory = SSaccessories.feature_list[feature_key][receiver.dna.features[feature_key]]
-		if(accessory.locked) //Cerulean w/ a native tail detected. we don't need to do the rest of this proc
+		if(!accessory.natural_spawn) //Cerulean w/ a native tail detected. we don't need to do the rest of this proc
 			return ..()
 	// apply a random fish tail sprite accessory
 	receiver.dna.features[feature_key] = get_random_appearance().name //returns only unlocked accessories
@@ -295,13 +295,6 @@
 
 /datum/bodypart_overlay/mutant/tail/fish/randomize_appearance()
 	return //we already do this above, we are bound to dna!
-
-/datum/bodypart_overlay/mutant/tail/fish/set_dye_color(new_color, obj/item/organ/organ)
-	. = ..()
-	if(!isnull(new_color))
-		organ.set_greyscale(new_color) //don't forget to update the greyscale :>
-		return
-	organ.set_greyscale(organ.owner?.dna.features[FEATURE_TAIL_FISH_COLOR])
 
 /datum/bodypart_overlay/mutant/tail/fish/get_image(image_layer, obj/item/bodypart/limb)
 	var/mutable_appearance/appearance = ..()

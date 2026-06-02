@@ -20,6 +20,15 @@
 		/obj/item/ammo_casing/harpoon,
 		/obj/item/toy/seashell,
 	)
+	fire_overlay = "monkey" //suits for Ceruleans lol
+	electrocution_overlay = "electrocuted_base"
+	/*	fun vars to check out:
+	death_sound =
+	grab_sound =
+	*/
+
+/datum/species/human/cerulean/get_physical_attributes()
+	return "An unremarkable species."
 
 /datum/species/human/cerulean/get_species_description()
 	return "Nothing yet."
@@ -57,40 +66,60 @@
 		cerulean.set_resting(TRUE, silent = TRUE, instant = TRUE)
 	// apply a free wet stack to prevent the choking screen alert to appear for a second on mob creation
 	cerulean.apply_status_effect(/datum/status_effect/fire_handler/wet_stacks, 1, FALSE)
+	RegisterSignals(cerulean, list(COMSIG_CARBON_GAIN_ORGAN, COMSIG_CARBON_LOSE_ORGAN), PROC_REF(update_species_fluff))
+
+/datum/species/human/cerulean/on_species_loss(mob/living/carbon/human/cerulean, datum/species/new_species, pref_load)
+	. = ..()
+	UnregisterSignal(cerulean, list(COMSIG_CARBON_GAIN_ORGAN, COMSIG_CARBON_LOSE_ORGAN))
+
+/// When an organ is lost or added, check if its the tail and update our species fluff accordingly
+/datum/species/human/cerulean/proc/update_species_fluff(mob/living/carbon/cerulean)
+	//check for scales
+	var/datum/status_effect/organ_set_bonus/fish/organ_bonus = cerulean?.has_status_effect(/datum/status_effect/organ_set_bonus/fish)
+	skinned_type = organ_bonus.color_active ? /datum/species/human/cerulean::skinned_type : /datum/species/human::skinned_type
+	meat = organ_bonus.color_active ? /datum/species/human/cerulean::meat : /datum/species/human::meat
+	//check for fishy tail
+	var/obj/item/organ/tail/fish/cerulean/fish_tail = cerulean?.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
+	fire_overlay = fish_tail ? /datum/species/human/cerulean::fire_overlay : /datum/species/human::fire_overlay
+	electrocution_overlay = fish_tail ? /datum/species/human/cerulean::electrocution_overlay : /datum/species/human::electrocution_overlay
 
 /// good guy nanotrasen provides a wheelchair to their employees
-/datum/species/human/cerulean/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/equipping, visuals_only)
+/datum/species/human/cerulean/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/cerulean, visuals_only)
 	if (visuals_only)
 		return
 	if (!istype(job))
 		return
-	equipping.put_in_wheelchair()
+	cerulean.put_in_wheelchair()
 
 /// gives a 'necessary for life' device to Ceruleans with gills
-/datum/species/human/cerulean/post_equip_species_outfit(mob/living/carbon/human/equipping, visuals_only)
+/datum/species/human/cerulean/post_equip_species_outfit(mob/living/carbon/human/cerulean, visuals_only)
 	if (visuals_only)
 		return
-	var/obj/item/organ/lungs/lungs = equipping.get_organ_slot(ORGAN_SLOT_LUNGS)
+	var/obj/item/organ/lungs/lungs = cerulean.get_organ_slot(ORGAN_SLOT_LUNGS)
 	if (!(/datum/gas/water_vapor in lungs?.breathe_always))
 		return
 	// try to attach to uniform
-	var/obj/item/clothing/under/uniform = equipping.w_uniform
-	var/attached = uniform?.attach_accessory(SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer/with_cell, equipping))
+	var/obj/item/clothing/under/uniform = cerulean.w_uniform
+	var/attached = uniform?.attach_accessory(SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer/with_cell, cerulean))
 	if (attached)
 		return
 	// try anything else
-	equipping.equip_in_one_of_slots(
-		equipping = SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer/with_cell, equipping),
+	cerulean.equip_in_one_of_slots(
+		equipping = SSwardrobe.provide_type(/obj/item/clothing/accessory/vaporizer/with_cell, cerulean),
 		slots = list(LOCATION_LPOCKET, LOCATION_RPOCKET, LOCATION_HANDS, LOCATION_BACKPACK),
 		qdel_on_fail = FALSE,
 		indirect_action = TRUE,
 	)
+
 
 // cerulean but with gills
 /datum/species/human/cerulean/ancestral
 	name = "\improper Ancestral Cerulean"
 	id = SPECIES_CERULEAN_ANCESTRAL
 	mutantlungs = /obj/item/organ/lungs/fish
+
+	skinned_type = /obj/item/stack/sheet/animalhide/carp/fish
+	meat = /obj/item/food/fishmeat
 
 // cerulean but with gills, an angler fish lantern and echolocation
 /datum/species/human/cerulean/ancestral/abyssal
@@ -116,7 +145,6 @@
 	fillet_amount = 12
 	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/cerulean
 	external_bodyshapes = BODYSHAPE_CERULEAN
-	restyle_flags = NONE
 	w_class = WEIGHT_CLASS_BULKY
 	organ_traits = list(
 		TRAIT_FREE_FLOAT_MOVEMENT,
@@ -125,22 +153,44 @@
 		TRAIT_BLOCK_ATTACHING_LEGS,
 	)
 
-/obj/item/organ/tail/fish/cerulean/on_mob_insert(mob/living/carbon/owner, special, movement_flags)
+/obj/item/organ/tail/fish/cerulean/on_mob_insert(mob/living/carbon/owner, special)
 	. = ..()
 	get_your_sealegs(owner, special)
 
-/obj/item/organ/tail/fish/cerulean/on_mob_remove(mob/living/carbon/owner)
+/obj/item/organ/tail/fish/cerulean/on_mob_remove(mob/living/carbon/owner, special)
 	. = ..()
-	if (QDELING(owner) || QDELING(src))
+	if(special)
 		return
-	// losing half your bodymass is going to be bad 💦
+	var/limb_name = "\improper [bodypart_owner.name]"
+	var/tail_name = "\improper [name]"
 	owner.apply_damage(rand(35, 45), def_zone = BODY_ZONE_CHEST, wound_bonus = CANT_WOUND)
-	if (owner.blood_volume)
-		owner.blood_volume -= (BLOOD_VOLUME_NORMAL / 3)
-		owner.add_splatter_floor(get_turf(src))
-		owner.spray_blood(REVERSE_DIR(owner.dir))
-		owner.visible_message(span_warning("[src] detaches from [owner], spilling out liters of [LOWER_TEXT(owner.get_bloodtype()?.get_blood_name())]!"))
-		playsound(src, 'sound/effects/cartoon_sfx/cartoon_splat.ogg', rand(50, 75), TRUE)
+	if(!HAS_TRAIT(owner, TRAIT_ANALGESIA))
+		owner.emote("scream") //owowowowowow
+		owner.set_jitter_if_lower(1 SECONDS)
+		shake_camera(owner, 1 SECONDS, 2)
+		to_chat(owner, span_userdanger("You wince and scream as your [tail_name] is grotesquely torn from your [limb_name]!"))
+	if(!splatter_check(owner))
+		// if you have no blood or are missing half of it, its a clean cut
+		return
+	owner.blood_volume -= (owner.blood_volume / 3)
+	owner.add_splatter_floor(get_turf(src))
+	owner.spray_blood(REVERSE_DIR(owner.dir), 2)
+	owner.visible_message(span_danger("[src] detaches from [owner]'s [limb_name], spilling out liters of [LOWER_TEXT(owner.get_bloodtype()?.get_blood_name())]!"))
+	REMOVE_TRAIT(src, TRAIT_NODROP, ORGAN_INSIDE_BODY_TRAIT) //do this early so we can fling it
+	throw_at(get_edge_target_turf(owner, REVERSE_DIR(owner.dir))) //ok so it doesnt actually fling it it just spins but idk hwo to fling
+	playsound(src, 'sound/effects/cartoon_sfx/cartoon_splat.ogg', rand(50, 75), TRUE)
+
+/obj/item/organ/tail/fish/cerulean/on_surgical_removal(mob/living/user, obj/item/bodypart/limb, obj/item/tool)
+	. = ..()
+	if(!splatter_check(limb.owner))
+		return
+	shake_camera(user, 1 SECONDS, 2) //you shake too hehe
+	user.set_jitter_if_lower(1 SECONDS)
+
+/obj/item/organ/tail/fish/cerulean/proc/splatter_check(mob/living/carbon/owner)
+	if(isnull(owner))
+		return FALSE
+	return (owner.blood_volume && !HAS_TRAIT(owner, TRAIT_NOBLOOD) && owner.blood_volume >= (owner.default_blood_volume / 2))
 
 /// Remove legs on insertion, if we had any
 /obj/item/organ/tail/fish/cerulean/proc/get_your_sealegs(mob/living/carbon/owner, special)
@@ -168,7 +218,3 @@
 
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/get_random_appearance()
 	return fetch_sprite_datum_from_name(pick(get_global_feature_list()))
-
-/datum/bodypart_overlay/mutant/tail/fish/cerulean/can_draw_on_bodypart(obj/item/bodypart/limb)
-	. = ..()
-	return TRUE
