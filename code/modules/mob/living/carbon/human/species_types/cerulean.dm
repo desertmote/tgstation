@@ -20,8 +20,6 @@
 		/obj/item/ammo_casing/harpoon,
 		/obj/item/toy/seashell,
 	)
-	fire_overlay = "monkey" //suits for Ceruleans lol
-	electrocution_overlay = "electrocuted_base"
 	/*	fun vars to check out:
 	death_sound =
 	grab_sound =
@@ -66,22 +64,6 @@
 		cerulean.set_resting(TRUE, silent = TRUE, instant = TRUE)
 	// apply a free wet stack to prevent the choking screen alert to appear for a second on mob creation
 	cerulean.apply_status_effect(/datum/status_effect/fire_handler/wet_stacks, 1, FALSE)
-	RegisterSignals(cerulean, list(COMSIG_CARBON_GAIN_ORGAN, COMSIG_CARBON_LOSE_ORGAN), PROC_REF(update_species_fluff))
-
-/datum/species/human/cerulean/on_species_loss(mob/living/carbon/human/cerulean, datum/species/new_species, pref_load)
-	. = ..()
-	UnregisterSignal(cerulean, list(COMSIG_CARBON_GAIN_ORGAN, COMSIG_CARBON_LOSE_ORGAN))
-
-/// When an organ is lost or added, check if its the tail and update our species fluff accordingly
-/datum/species/human/cerulean/proc/update_species_fluff(mob/living/carbon/cerulean)
-	//check for scales
-	var/datum/status_effect/organ_set_bonus/fish/organ_bonus = cerulean?.has_status_effect(/datum/status_effect/organ_set_bonus/fish)
-	skinned_type = organ_bonus.color_active ? /datum/species/human/cerulean::skinned_type : /datum/species/human::skinned_type
-	meat = organ_bonus.color_active ? /datum/species/human/cerulean::meat : /datum/species/human::meat
-	//check for fishy tail
-	var/obj/item/organ/tail/fish/cerulean/fish_tail = cerulean?.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
-	fire_overlay = fish_tail ? /datum/species/human/cerulean::fire_overlay : /datum/species/human::fire_overlay
-	electrocution_overlay = fish_tail ? /datum/species/human/cerulean::electrocution_overlay : /datum/species/human::electrocution_overlay
 
 /// good guy nanotrasen provides a wheelchair to their employees
 /datum/species/human/cerulean/pre_equip_species_outfit(datum/job/job, mob/living/carbon/human/cerulean, visuals_only)
@@ -118,9 +100,6 @@
 	id = SPECIES_CERULEAN_ANCESTRAL
 	mutantlungs = /obj/item/organ/lungs/fish
 
-	skinned_type = /obj/item/stack/sheet/animalhide/carp/fish
-	meat = /obj/item/food/fishmeat
-
 // cerulean but with gills, an angler fish lantern and echolocation
 /datum/species/human/cerulean/ancestral/abyssal
 	name = "\improper Abyssal Cerulean"
@@ -156,9 +135,11 @@
 /obj/item/organ/tail/fish/cerulean/on_mob_insert(mob/living/carbon/owner, special)
 	. = ..()
 	get_your_sealegs(owner, special)
+	RegisterSignals(owner, list(COMSIG_CARBON_GAIN_ORGAN, COMSIG_CARBON_LOSE_ORGAN), PROC_REF(update_species_fluff))
 
 /obj/item/organ/tail/fish/cerulean/on_mob_remove(mob/living/carbon/owner, special)
 	. = ..()
+	UnregisterSignal(owner, list(COMSIG_CARBON_GAIN_ORGAN, COMSIG_CARBON_LOSE_ORGAN))
 	if(special)
 		return
 	var/limb_name = "\improper [bodypart_owner.name]"
@@ -187,16 +168,28 @@
 	shake_camera(user, 1 SECONDS, 2) //you shake too hehe
 	user.set_jitter_if_lower(1 SECONDS)
 
+/// check if we have (enough) blood for an (un)clean cut
 /obj/item/organ/tail/fish/cerulean/proc/splatter_check(mob/living/carbon/owner)
 	if(isnull(owner))
 		return FALSE
 	return (owner.blood_volume && !HAS_TRAIT(owner, TRAIT_NOBLOOD) && owner.blood_volume >= (owner.default_blood_volume / 2))
 
+/// do some fun fluff stuff when our organs or organ bonus situation changes
+/obj/item/organ/tail/fish/cerulean/proc/update_species_fluff(mob/living/carbon/owner)
+	//check for scales
+	var/datum/status_effect/organ_set_bonus/fish/organ_bonus = owner?.has_status_effect(/datum/status_effect/organ_set_bonus/fish)
+	owner.dna.species.skinned_type = organ_bonus?.color_active ? /obj/item/stack/sheet/animalhide/carp/fish : /datum/species/human::skinned_type
+	owner.dna.species.meat = organ_bonus?.color_active ? /obj/item/food/fishmeat : /datum/species/human::meat
+	//check for fishy tail
+	var/obj/item/organ/tail/fish/cerulean/fish_tail = owner?.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
+	owner.dna.species.fire_overlay = fish_tail ? "monkey" : /datum/species/human::fire_overlay //monkey overlay is just legless - perfect for Ceruleans
+	owner.dna.species.electrocution_overlay = fish_tail ? "electrocuted_base_cerulean" : /datum/species/human::electrocution_overlay //they call her one of the most dedicated fluff devs
+
 /// Remove legs on insertion, if we had any
 /obj/item/organ/tail/fish/cerulean/proc/get_your_sealegs(mob/living/carbon/owner, special)
 	var/obj/item/bodypart/right_leg = owner.get_bodypart(BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/left_leg = owner.get_bodypart(BODY_ZONE_L_LEG)
-	if (special)
+	if(special)
 		right_leg?.drop_limb(special, FALSE, FALSE)
 		left_leg?.drop_limb(special, FALSE, FALSE)
 		return

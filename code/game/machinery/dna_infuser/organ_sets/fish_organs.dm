@@ -279,7 +279,7 @@
 		return ..()
 	if(receiver.dna.features[feature_key] && istype(parent, /obj/item/organ/tail/fish/cerulean))
 		var/datum/sprite_accessory/accessory = SSaccessories.feature_list[feature_key][receiver.dna.features[feature_key]]
-		if(!accessory.natural_spawn) //Cerulean w/ a native tail detected. we don't need to do the rest of this proc
+		if(accessory.locked) //Cerulean w/ a native tail detected. we don't need to do the rest of this proc
 			return ..()
 	// apply a random fish tail sprite accessory
 	receiver.dna.features[feature_key] = get_random_appearance().name //returns only unlocked accessories

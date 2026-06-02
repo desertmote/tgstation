@@ -2027,7 +2027,7 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 	name = "Oversized"
 	icon_state = "mermaid"
 	gender_specific = TRUE
-	natural_spawn = FALSE
+	locked = TRUE
 
 /datum/sprite_accessory/tails/lizard
 	icon = 'icons/mob/human/species/lizard/lizard_tails.dmi'
