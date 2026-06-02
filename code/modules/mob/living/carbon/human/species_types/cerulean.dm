@@ -39,13 +39,13 @@
 
 /datum/species/human/cerulean/get_features()
 	var/list/features = ..()
-	features |= /datum/preference/choiced/lungs_choice::savefile_key
-	features |= /datum/preference/color/fish_tail_color::savefile_key
+	LAZYOR(features, /datum/preference/choiced/lungs_choice::savefile_key)
+	LAZYOR(features, /datum/preference/color/fish_tail_color::savefile_key)
 	return features
 
 /datum/species/human/cerulean/randomize_features()
 	var/list/features = ..()
-	features[FEATURE_TAIL_FISH_COLOR] = pick(GLOB.carp_colors - COLOR_CARP_SILVER)
+	LAZYSET(features, FEATURE_TAIL_FISH_COLOR, pick(GLOB.carp_colors - COLOR_CARP_SILVER))
 	return features
 
 /datum/species/human/cerulean/on_species_gain(mob/living/carbon/human/cerulean, datum/species/old_species, pref_load, regenerate_icons)
@@ -102,9 +102,7 @@
 	)
 
 /datum/species/human/cerulean/ancestral/abyssal/on_species_gain(mob/living/carbon/human/cerulean, datum/species/old_species, pref_load, regenerate_icons)
-	cerulean.dna.features[FEATURE_TAIL_FISH_COLOR] = pick(list("#36343f", "#44465c", "#3d4044"))
 	cerulean.dna.features[FEATURE_HORNS] = /datum/sprite_accessory/horns/angler::name
-	cerulean.dna.update_uf_block(/datum/dna_block/feature/fish_tail_color)
 	cerulean.dna.update_uf_block(/datum/dna_block/feature/accessory/horn)
 	. = ..()
 	var/datum/mutation/echolocation/abyssal_sight = locate() in cerulean.dna.mutation_index

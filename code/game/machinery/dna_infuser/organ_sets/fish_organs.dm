@@ -239,6 +239,7 @@
 	owner.AddElementTrait(TRAIT_WADDLING, type, /datum/element/waddling)
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(check_location))
 	RegisterSignal(owner, COMSIG_LIVING_GIBBER_ACT, PROC_REF(on_gibber_processed))
+	set_greyscale(owner.dna.features[FEATURE_TAIL_FISH_COLOR])
 	check_location(owner, null)
 
 /obj/item/organ/tail/fish/on_mob_remove(mob/living/carbon/owner)
@@ -278,26 +279,23 @@
 	return SSaccessories.feature_list[feature_key]
 
 /datum/bodypart_overlay/mutant/tail/fish/on_mob_insert(obj/item/organ/parent, mob/living/carbon/receiver)
-	//Initialize the related dna feature block if we don't have any so it doesn't error out.
-	//This isn't tied to any species, but I kinda want it to be mutable instead of having a fixed sprite accessory.
-	if(imprint_on_next_insertion || !receiver.dna.features[feature_key])
-		receiver.dna.features[feature_key] = get_random_appearance().name // this proc not only returns a random accessory from our pool, it also excludes locked ones. wow!
-		receiver.dna.update_uf_block(/datum/dna_block/feature/accessory/tail_fish)
+	if(!imprint_on_next_insertion)
+		return ..()
+	if(receiver.dna.features[feature_key])
+		var/datum/sprite_accessory/accessory = SSaccessories.feature_list[feature_key][receiver.dna.features[feature_key]]
+		if(accessory.locked) //Cerulean detected. we don't need to do the rest of this proc
+			return ..()
+	// apply a random fish tail sprite accessory
+	receiver.dna.features[feature_key] = get_random_appearance().name //returns only unlocked accessories
+	receiver.dna.update_uf_block(/datum/dna_block/feature/accessory/tail_fish)
 	return ..()
 
-/datum/bodypart_overlay/mutant/tail/fish/added_to_limb(obj/item/bodypart/limb)
-	return // used to apply color, but we already do this elsewhere
-
-/datum/bodypart_overlay/mutant/tail/fish/get_overlay(layer, obj/item/bodypart/limb)
-	inherit_color(limb, TRUE)
-	return ..()
-
-/datum/bodypart_overlay/mutant/tail/fish/override_color(obj/item/bodypart/bodypart_owner)
-	//If the owner uses mutant colors, inherit the color of the bodypart
-	if(!bodypart_owner.owner || HAS_TRAIT(bodypart_owner.owner, TRAIT_MUTANT_COLORS))
-		return bodypart_owner.draw_color
-	else //otherwise get a random carp color from the dna feature
-		return bodypart_owner.owner.dna.features[FEATURE_TAIL_FISH_COLOR]
+/datum/bodypart_overlay/mutant/tail/fish/override_color(obj/item/bodypart/limb)
+	if(isnull(limb.owner))
+		return limb.draw_color
+	if(HAS_TRAIT(limb.owner, TRAIT_MUTANT_COLORS))
+		return limb.owner.dna.features[FEATURE_MUTANT_COLOR]
+	return limb.owner.dna.features[FEATURE_TAIL_FISH_COLOR]
 
 /datum/bodypart_overlay/mutant/tail/fish/get_image(image_layer, obj/item/bodypart/limb)
 	var/mutable_appearance/appearance = ..()
@@ -458,6 +456,13 @@
 	. = ..()
 	AddElement(/datum/element/organ_set_bonus, /datum/status_effect/organ_set_bonus/fish)
 
+/obj/item/organ/stomach/fish/on_mob_insert(mob/living/carbon/owner, special, movement_flags)
+	. = ..()
+	set_greyscale(list(owner.dna.features[FEATURE_TAIL_FISH_COLOR], FISH_SCLERA_COLOR, FISH_PUPIL_COLOR))
+
+/obj/item/organ/stomach/fish/get_greyscale_color_from_draw_color()
+	set_greyscale(list(owner.dna.features[FEATURE_TAIL_FISH_COLOR], FISH_SCLERA_COLOR, FISH_PUPIL_COLOR))
+
 /obj/item/organ/tongue/fish
 	name = "mutated fish-tongue"
 	desc = "Interestingly, a fish-tongue isn't much unlike the humanoid variety."
@@ -548,6 +553,13 @@
 /obj/item/organ/liver/fish/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/organ_set_bonus, /datum/status_effect/organ_set_bonus/fish)
+
+/obj/item/organ/liver/fish/on_mob_insert(mob/living/carbon/owner, special, movement_flags)
+	. = ..()
+	set_greyscale(list(owner.dna.features[FEATURE_TAIL_FISH_COLOR], FISH_SCLERA_COLOR, FISH_PUPIL_COLOR))
+
+/obj/item/organ/liver/fish/get_greyscale_color_from_draw_color()
+	set_greyscale(list(owner.dna.features[FEATURE_TAIL_FISH_COLOR], FISH_SCLERA_COLOR, FISH_PUPIL_COLOR))
 
 /obj/item/organ/liver/fish/grind_results()
 	return list(/datum/reagent/consumable/nutriment/peptides = 5, /datum/reagent/toxin/tetrodotoxin = 5)

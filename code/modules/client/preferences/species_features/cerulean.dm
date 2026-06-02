@@ -1,4 +1,4 @@
-GLOBAL_LIST_INIT(cerulean_respiration, list(
+GLOBAL_LIST_INIT(cerulean_respiration_variation, list(
 	"Oxygen" = /datum/species/human/cerulean, // i know fish also breathe oxygen
 	"Water vapor" = /datum/species/human/cerulean/ancestral, // but this gets the idea across better
 	))
@@ -15,12 +15,11 @@ GLOBAL_LIST_INIT(cerulean_respiration, list(
 	return current_species_has_savekey(preferences)
 
 /datum/preference/choiced/lungs_choice/apply_to_human(mob/living/carbon/human/target, value)
-	if(!(savefile_key in target.dna?.species?.get_features()))
-		return
-	target.set_species(GLOB.cerulean_respiration[value], icon_update = TRUE, pref_load = FALSE)
+	if(savefile_key in target.dna?.species?.get_features())
+		target.set_species(GLOB.cerulean_respiration_variation[value], icon_update = TRUE, pref_load = FALSE)
 
 /datum/preference/choiced/lungs_choice/init_possible_values()
-	return GLOB.cerulean_respiration
+	return GLOB.cerulean_respiration_variation
 
 /datum/preference/choiced/lungs_choice/create_default_value()
 	return "Oxygen"
@@ -30,15 +29,12 @@ GLOBAL_LIST_INIT(cerulean_respiration, list(
 		return ..(create_default_value(), preferences)
 	return ..(value, preferences)
 
-/// The color given to people with a fish tail, not exclusive to Ceruleans
+/// The color given to people with a fish tail, the selection is exclusive to Ceruleans
 /datum/preference/color/fish_tail_color
 	savefile_key = "feature_fish_tail_color"
+	relevant_organ = /obj/item/organ/tail/fish
 	savefile_identifier = PREFERENCE_CHARACTER
-	priority = PREFERENCE_PRIORITY_PRE_SPECIES
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
-
-/datum/preference/choiced/fish_tail_color/has_relevant_feature(datum/preferences/preferences)
-	return current_species_has_savekey(preferences)
 
 /datum/preference/color/fish_tail_color/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features[FEATURE_TAIL_FISH_COLOR] = value
