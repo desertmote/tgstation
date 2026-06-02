@@ -142,9 +142,6 @@
 		owner.visible_message(span_warning("[src] detaches from [owner], spilling out liters of [LOWER_TEXT(owner.get_bloodtype()?.get_blood_name())]!"))
 		playsound(src, 'sound/effects/cartoon_sfx/cartoon_splat.ogg', rand(50, 75), TRUE)
 
-/obj/item/organ/tail/fish/cerulean/mutate_feature(features, mob/living/carbon/human/owner)
-	return //no mutation
-
 /// Remove legs on insertion, if we had any
 /obj/item/organ/tail/fish/cerulean/proc/get_your_sealegs(mob/living/carbon/owner, special)
 	var/obj/item/bodypart/right_leg = owner.get_bodypart(BODY_ZONE_R_LEG)
@@ -160,8 +157,17 @@
 /datum/bodypart_overlay/mutant/tail/fish/cerulean
 	layers = EXTERNAL_BEHIND|EXTERNAL_ADJACENT
 
+/datum/bodypart_overlay/mutant/tail/fish/cerulean/get_global_feature_list()
+	var/list/feature_list = ..()
+	for(var/accessory in feature_list)
+		var/datum/sprite_accessory/accessory_datum = feature_list[accessory]
+		// removing the normal fishe tails from the pool
+		if(!istype(accessory_datum, /datum/sprite_accessory/tails/fish/oversized))
+			feature_list -= accessory
+	return feature_list
+
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/get_random_appearance()
-	return /datum/sprite_accessory/tails/fish/oversized
+	return fetch_sprite_datum_from_name(pick(get_global_feature_list()))
 
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/can_draw_on_bodypart(obj/item/bodypart/limb)
 	. = ..()
