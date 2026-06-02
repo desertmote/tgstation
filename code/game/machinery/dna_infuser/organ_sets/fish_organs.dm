@@ -234,7 +234,7 @@
 	var/time_to_fillet = fillet_amount * 0.5 SECONDS
 	AddElement(/datum/element/processable, TOOL_KNIFE, fillet_type, fillet_amount, time_to_fillet, screentip_verb = "Cut")
 
-/obj/item/organ/tail/fish/on_mob_insert(mob/living/carbon/owner, special, movement_flags)
+/obj/item/organ/tail/fish/on_mob_insert(mob/living/carbon/owner)
 	. = ..()
 	owner.AddElementTrait(TRAIT_WADDLING, type, /datum/element/waddling)
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(check_location))
@@ -274,9 +274,6 @@
 	feature_key = FEATURE_TAIL_FISH
 	color_source = ORGAN_COLOR_OVERRIDE
 	draw_on_husks = HUSK_OVERLAY_GRAYSCALE
-
-/datum/bodypart_overlay/mutant/tail/fish/get_global_feature_list()
-	return SSaccessories.feature_list[feature_key]
 
 /datum/bodypart_overlay/mutant/tail/fish/on_mob_insert(obj/item/organ/parent, mob/living/carbon/receiver)
 	if(!imprint_on_next_insertion)
