@@ -102,7 +102,7 @@
 
 /datum/status_effect/organ_set_bonus/fish/texture_limb(atom/source, obj/item/bodypart/limb)
 	. = ..()
-	if (!color_active || !iscarbon(owner))
+	if (!color_active || !iscarbon(owner) || limb.bodytype & BODYTYPE_ROBOTIC)
 		return
 	var/mob/living/carbon/carbon_owner = owner
 	limb.add_color_override(carbon_owner.dna.features[FEATURE_TAIL_FISH_COLOR], LIMB_COLOR_FISH_INFUSION)
@@ -239,7 +239,6 @@
 	owner.AddElementTrait(TRAIT_WADDLING, type, /datum/element/waddling)
 	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(check_location))
 	RegisterSignal(owner, COMSIG_LIVING_GIBBER_ACT, PROC_REF(on_gibber_processed))
-	set_greyscale(owner.dna.features[FEATURE_TAIL_FISH_COLOR])
 	check_location(owner, null)
 
 /obj/item/organ/tail/fish/on_mob_remove(mob/living/carbon/owner)
@@ -278,9 +277,9 @@
 /datum/bodypart_overlay/mutant/tail/fish/on_mob_insert(obj/item/organ/parent, mob/living/carbon/receiver)
 	if(!imprint_on_next_insertion)
 		return ..()
-	if(receiver.dna.features[feature_key])
+	if(receiver.dna.features[feature_key] && istype(parent, /obj/item/organ/tail/fish/cerulean))
 		var/datum/sprite_accessory/accessory = SSaccessories.feature_list[feature_key][receiver.dna.features[feature_key]]
-		if(accessory.locked) //Cerulean detected. we don't need to do the rest of this proc
+		if(accessory.locked) //Cerulean w/ a default tail detected. we don't need to do the rest of this proc
 			return ..()
 	// apply a random fish tail sprite accessory
 	receiver.dna.features[feature_key] = get_random_appearance().name //returns only unlocked accessories
@@ -293,6 +292,16 @@
 	if(HAS_TRAIT(limb.owner, TRAIT_MUTANT_COLORS))
 		return limb.owner.dna.features[FEATURE_MUTANT_COLOR]
 	return limb.owner.dna.features[FEATURE_TAIL_FISH_COLOR]
+
+/datum/bodypart_overlay/mutant/tail/fish/randomize_appearance()
+	return //we already do this above, we are bound to dna!
+
+/datum/bodypart_overlay/mutant/tail/fish/set_dye_color(new_color, obj/item/organ/organ)
+	. = ..()
+	if(!isnull(new_color))
+		organ.set_greyscale(new_color) //don't forget to update the greyscale :>
+		return
+	organ.set_greyscale(organ.owner?.dna.features[FEATURE_TAIL_FISH_COLOR])
 
 /datum/bodypart_overlay/mutant/tail/fish/get_image(image_layer, obj/item/bodypart/limb)
 	var/mutable_appearance/appearance = ..()
@@ -453,13 +462,6 @@
 	. = ..()
 	AddElement(/datum/element/organ_set_bonus, /datum/status_effect/organ_set_bonus/fish)
 
-/obj/item/organ/stomach/fish/on_mob_insert(mob/living/carbon/owner, special, movement_flags)
-	. = ..()
-	set_greyscale(list(owner.dna.features[FEATURE_TAIL_FISH_COLOR], FISH_SCLERA_COLOR, FISH_PUPIL_COLOR))
-
-/obj/item/organ/stomach/fish/get_greyscale_color_from_draw_color()
-	set_greyscale(list(owner.dna.features[FEATURE_TAIL_FISH_COLOR], FISH_SCLERA_COLOR, FISH_PUPIL_COLOR))
-
 /obj/item/organ/tongue/fish
 	name = "mutated fish-tongue"
 	desc = "Interestingly, a fish-tongue isn't much unlike the humanoid variety."
@@ -550,13 +552,6 @@
 /obj/item/organ/liver/fish/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/organ_set_bonus, /datum/status_effect/organ_set_bonus/fish)
-
-/obj/item/organ/liver/fish/on_mob_insert(mob/living/carbon/owner, special, movement_flags)
-	. = ..()
-	set_greyscale(list(owner.dna.features[FEATURE_TAIL_FISH_COLOR], FISH_SCLERA_COLOR, FISH_PUPIL_COLOR))
-
-/obj/item/organ/liver/fish/get_greyscale_color_from_draw_color()
-	set_greyscale(list(owner.dna.features[FEATURE_TAIL_FISH_COLOR], FISH_SCLERA_COLOR, FISH_PUPIL_COLOR))
 
 /obj/item/organ/liver/fish/grind_results()
 	return list(/datum/reagent/consumable/nutriment/peptides = 5, /datum/reagent/toxin/tetrodotoxin = 5)
