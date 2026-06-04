@@ -215,8 +215,6 @@
 #define SPECIES_LIZARD_SILVER "silverscale"
 #define SPECIES_NIGHTMARE "nightmare"
 #define SPECIES_CERULEAN "cerulean"
-#define SPECIES_CERULEAN_ANCESTRAL "cerulean_ancestral"
-#define SPECIES_CERULEAN_ABYSSAL "cerulean_abyssal"
 #define SPECIES_MONKEY "monkey"
 #define SPECIES_MOTH "moth"
 #define SPECIES_MUSHROOM "mush"

@@ -27,10 +27,7 @@
 
 /datum/component/wet_stacks_clothing/UnregisterFromParent()
 	. = ..()
-	UnregisterSignal(parent, list(
-		COMSIG_ITEM_EQUIPPED,
-		COMSIG_ITEM_DROPPED,
-	))
+	UnregisterSignal(parent, list(COMSIG_ITEM_EQUIPPED,	COMSIG_ITEM_DROPPED))
 
 /// proc when picked up or worn by someone
 /datum/component/wet_stacks_clothing/proc/start_processing(obj/item/source, mob/living/user, slot)

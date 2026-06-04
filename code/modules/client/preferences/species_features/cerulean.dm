@@ -1,6 +1,6 @@
 GLOBAL_LIST_INIT(cerulean_respiration_variation, list(
-	"Oxygen" = /datum/species/human/cerulean, // i know fish also breathe oxygen
-	"Water vapor" = /datum/species/human/cerulean/ancestral, // but this gets the idea across better
+	"Oxygen" = /obj/item/organ/lungs, // i know fish also breathe oxygen
+	"Water vapor" = /obj/item/organ/lungs/fish, // but this gets the idea across better
 	))
 
 /// Whether or not a Cerulean has air-breathing lungs or water-breathing gills
@@ -15,8 +15,8 @@ GLOBAL_LIST_INIT(cerulean_respiration_variation, list(
 	return current_species_has_savekey(preferences)
 
 /datum/preference/choiced/lungs_choice/apply_to_human(mob/living/carbon/human/target, value)
-	if(savefile_key in target.dna?.species?.get_features())
-		target.set_species(GLOB.cerulean_respiration_variation[value], icon_update = TRUE, pref_load = FALSE)
+	target.dna.species.mutantlungs = GLOB.cerulean_respiration_variation[value]
+	target.dna.species.regenerate_organs(target, GLOB.species_prototypes[target.dna.species.type], TRUE, (GLOB.all_body_zones - BODY_ZONE_CHEST), FALSE, FALSE)
 
 /datum/preference/choiced/lungs_choice/init_possible_values()
 	return GLOB.cerulean_respiration_variation

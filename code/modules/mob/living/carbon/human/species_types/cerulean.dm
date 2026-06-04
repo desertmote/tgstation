@@ -1,7 +1,9 @@
 /datum/species/human/cerulean
 	name = "\improper Cerulean"
 	id = SPECIES_CERULEAN
-	mutant_organs = list(/obj/item/organ/tail/fish/cerulean = /datum/sprite_accessory/tails/fish/oversized::name)
+	mutant_organs = list(
+		/obj/item/organ/tail/fish/cerulean = /datum/sprite_accessory/tails/fish/cerulean::name,
+	)
 	mutanttongue = /obj/item/organ/tongue/fish
 	mutantstomach = /obj/item/organ/stomach/fish
 	mutantliver = /obj/item/organ/liver/fish
@@ -11,7 +13,6 @@
 		BODY_ZONE_HEAD = /obj/item/bodypart/head,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest,
 	)
-	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_AQUATIC
 
 	species_cookie = /obj/item/food/chips/shrimp
 	inert_mutation = /datum/mutation/echolocation
@@ -94,37 +95,14 @@
 	)
 
 
-// cerulean but with gills
-/datum/species/human/cerulean/ancestral
-	name = "\improper Ancestral Cerulean"
-	id = SPECIES_CERULEAN_ANCESTRAL
-	mutantlungs = /obj/item/organ/lungs/fish
-
-// cerulean but with gills, an angler fish lantern and echolocation
-/datum/species/human/cerulean/ancestral/abyssal
-	name = "\improper Abyssal Cerulean"
-	id = SPECIES_CERULEAN_ABYSSAL
-	mutant_organs = list(
-		/obj/item/organ/tail/fish/cerulean = /datum/sprite_accessory/tails/fish/oversized::name,
-		/obj/item/organ/horns = /datum/sprite_accessory/horns/angler::name, // pretty funny lizards have this
-	)
-
-/datum/species/human/cerulean/ancestral/abyssal/on_species_gain(mob/living/carbon/human/cerulean, datum/species/old_species, pref_load, regenerate_icons)
-	cerulean.dna.features[FEATURE_HORNS] = /datum/sprite_accessory/horns/angler::name
-	cerulean.dna.update_uf_block(/datum/dna_block/feature/accessory/horn)
-	. = ..()
-	var/datum/mutation/echolocation/abyssal_sight = locate() in cerulean.dna.mutation_index
-	cerulean.dna.activate_mutation(abyssal_sight)
-
-
 /// the tail which makes the species, without this you're basically just a fishy, legless human.
 /obj/item/organ/tail/fish/cerulean
 	name = "oversized fish tail"
 	desc = "A hugely sized and scaled fish tail, clearly severed from something much larger than a mere space carp."
-	fillet_amount = 12
-	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/cerulean
 	external_bodyshapes = BODYSHAPE_CERULEAN
+	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/cerulean
 	w_class = WEIGHT_CLASS_BULKY
+	fillet_amount = 12
 	organ_traits = list(
 		TRAIT_FREE_FLOAT_MOVEMENT,
 		TRAIT_FLOPPING,
@@ -168,6 +146,7 @@
 	shake_camera(user, 1 SECONDS, 2) //you shake too hehe
 	user.set_jitter_if_lower(1 SECONDS)
 
+//
 /obj/item/organ/tail/fish/cerulean/get_valid_restyles()
 	return bodypart_overlay.get_global_feature_list()
 
@@ -185,10 +164,10 @@
 	owner.dna.species.meat = organ_bonus?.color_active ? /obj/item/food/fishmeat : /datum/species/human::meat
 	//check for fishy tail
 	var/obj/item/organ/tail/fish/cerulean/fish_tail = owner?.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
-	owner.dna.species.fire_overlay = fish_tail ? "monkey" : /datum/species/human::fire_overlay //monkey overlay is just legless - perfect for Ceruleans
-	owner.dna.species.electrocution_overlay = fish_tail ? "electrocuted_base_cerulean" : /datum/species/human::electrocution_overlay //they call her one of the most dedicated fluff devs
+	owner.dna.species.fire_overlay = fish_tail ? "monkey" : /datum/species/human::fire_overlay //monkey overlay is perfect for a legless body
+	owner.dna.species.electrocution_overlay = fish_tail ? "electrocuted_base_cerulean" : /datum/species/human::electrocution_overlay
 
-/// Remove legs on insertion, if we had any
+/// If legs are present remove them silently if special = true, not so silently else
 /obj/item/organ/tail/fish/cerulean/proc/get_your_sealegs(mob/living/carbon/owner, special)
 	var/obj/item/bodypart/right_leg = owner.get_bodypart(BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/left_leg = owner.get_bodypart(BODY_ZONE_L_LEG)
@@ -199,10 +178,22 @@
 	right_leg?.dismember()
 	left_leg?.dismember()
 
-/// the tail has a fixed appearance for the modsuit overlays
+///
+/obj/item/organ/tail/fish/cerulean/abyssal
+//	name = ""
+//	desc = ""
+	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal
+
+
+/// the bodypart overlay for cerulean fish tails!
 /datum/bodypart_overlay/mutant/tail/fish/cerulean
 	layers = EXTERNAL_BEHIND|EXTERNAL_ADJACENT
 
+// don't randomize these, species handles that. dna mutation and flesh reshaper still work
+/datum/bodypart_overlay/mutant/tail/fish/cerulean/get_random_appearance()
+	return sprite_datum ? sprite_datum : fetch_sprite_datum(/datum/sprite_accessory/tails/fish/cerulean)
+
+// make our own little feature list by copying the global and removing the normal fish tails
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/get_global_feature_list()
 	var/static/list/glob_feature_list = list()
 	if(!length(glob_feature_list))
@@ -210,10 +201,16 @@
 	var/list/feature_list = glob_feature_list.Copy()
 	for(var/accessory in feature_list)
 		var/datum/sprite_accessory/accessory_datum = feature_list[accessory]
-		// removing the normal fishe tails from the pool
-		if(!istype(accessory_datum, /datum/sprite_accessory/tails/fish/oversized))
+		if(!istype(accessory_datum, /datum/sprite_accessory/tails/fish/cerulean))
 			feature_list -= accessory
 	return feature_list
 
-/datum/bodypart_overlay/mutant/tail/fish/cerulean/get_random_appearance()
-	return fetch_sprite_datum_from_name(pick(get_global_feature_list()))
+// an additional overlay to be added to the image stack. used by abyssal cerulean's skeleton
+/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/get_overlay(layer, obj/item/bodypart/limb, is_husked)
+	var/list/appearance = ..()
+	appearance |= mutable_appearance('icons/mob/human/species/cerulean/cerulean_tails.dmi', "fish_bones", layer = -BODY_BEHIND_LAYER)
+	return appearance
+
+// a mask we are applying to the tail and chest, so the abyssal's skeleton shows. spooky!
+/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/modify_bodypart_appearance(datum/appearance)
+	appearance.add_filter("abyssal_subtract_mask", 2, alpha_mask_filter(icon(MASKING_HELPERS_PATH, "female_full")))

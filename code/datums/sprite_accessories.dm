@@ -1294,7 +1294,7 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 			created = wear_female_version(icon_state_to_use, icon, female_sprite_flags_to_use)
 		if(use_digi)
 			var/icon/replacement = icon(SSgreyscale.GetColoredIconByType(/datum/greyscale_config/digitigrade_underwear, greyscale_colors), digi_icon_state)
-			created = mask_icon(created, LEGS_MASK, replacement)
+			created = apply_icon_mask(created, LEGS_MASK, replacement)
 
 		cached_icons[key] = fcopy_rsc(created)
 		result = mutable_appearance(created)
@@ -2023,9 +2023,10 @@ GLOBAL_LIST_EMPTY(blended_hair_icons_cache)
 	center = TRUE
 	dimension_x = 36
 
-/datum/sprite_accessory/tails/fish/oversized // Cerulean tail base
-	name = "Oversized"
-	icon_state = "mermaid"
+/datum/sprite_accessory/tails/fish/cerulean
+	name = "Plain"
+	icon = 'icons/mob/human/species/cerulean/cerulean_tails.dmi'
+	icon_state = "plain"
 	gender_specific = TRUE
 	locked = TRUE
 

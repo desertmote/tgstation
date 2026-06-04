@@ -1126,12 +1126,6 @@
 /mob/living/carbon/human/species/cerulean
 	race = /datum/species/human/cerulean
 
-/mob/living/carbon/human/species/cerulean/ancestral
-	race = /datum/species/human/cerulean/ancestral
-
-/mob/living/carbon/human/species/cerulean/abyssal
-	race = /datum/species/human/cerulean/ancestral/abyssal
-
 /mob/living/carbon/human/species/moth
 	race = /datum/species/moth
 

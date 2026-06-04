@@ -275,15 +275,9 @@
 	draw_on_husks = HUSK_OVERLAY_GRAYSCALE
 
 /datum/bodypart_overlay/mutant/tail/fish/on_mob_insert(obj/item/organ/parent, mob/living/carbon/receiver)
-	if(!imprint_on_next_insertion)
-		return ..()
-	if(receiver.dna.features[feature_key] && istype(parent, /obj/item/organ/tail/fish/cerulean))
-		var/datum/sprite_accessory/accessory = SSaccessories.feature_list[feature_key][receiver.dna.features[feature_key]]
-		if(accessory.locked) //Cerulean w/ a native tail detected. we don't need to do the rest of this proc
-			return ..()
-	// apply a random fish tail sprite accessory
-	receiver.dna.features[feature_key] = get_random_appearance().name //returns only unlocked accessories
-	receiver.dna.update_uf_block(/datum/dna_block/feature/accessory/tail_fish)
+	if(imprint_on_next_insertion || !(receiver.dna.features[feature_key] in get_global_feature_list()))
+		receiver.dna.features[feature_key] = get_random_appearance().name
+		receiver.dna.update_uf_block(/datum/dna_block/feature/accessory/tail_fish)
 	return ..()
 
 /datum/bodypart_overlay/mutant/tail/fish/override_color(obj/item/bodypart/limb)

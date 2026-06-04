@@ -36,10 +36,10 @@
 	else
 		// we are just cutting the pant
 		if(item.supports_variations_flags & CLOTHING_CERULEAN_MASK_LEGS)
-			mer_clothing_icon = mask_icon(base_icon, LEGS_MASK)
+			mer_clothing_icon = apply_icon_mask(base_icon, LEGS_MASK)
 		// remove any pixels that typically appear between the legs
 		if(item.supports_variations_flags & CLOTHING_CERULEAN_MASK_INBETWEEN)
-			mer_clothing_icon = mask_icon(base_icon, BACK_COAT_MASK)
+			mer_clothing_icon = apply_icon_mask(base_icon, BACK_COAT_MASK)
 
 	if(!mer_clothing_icon)
 		stack_trace("[item.type] was set to generate a Cerulean fish-tail clothing icon, but there was no result.")
@@ -73,7 +73,7 @@
 		return icon(CERULEAN_MODSUIT_FILE, icon_state_string)
 
 	// lets cut away the legs first, we really don't need them
-	mask_icon(base_icon, LEGS_MASK)
+	apply_icon_mask(base_icon, LEGS_MASK)
 	// lets run through generating according to what our variables are set to
 	if(!isnull(GLOB.mer_mod_theme[theme]) && theme != NO_THEME_ENTRY)
 		// add a colored icon for each modular part, according to the theme fetched from GLOB.mer_mod_theme

@@ -133,14 +133,6 @@
 	build_path = /obj/item/organ/tail/cat
 	category = list(SPECIES_HUMAN)
 
-/datum/design/fish_tail
-	name = /obj/item/organ/tail/fish::name
-	id = "fishtail"
-	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
-	build_path = /obj/item/organ/tail/fish
-	category = list(SPECIES_HUMAN)
-
 /datum/design/oversized_fish_tail
 	name = /obj/item/organ/tail/fish/cerulean::name
 	id = "oversizedfishtail"
@@ -188,6 +180,14 @@
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10, /datum/reagent/toxin/plasma = 20)
 	build_path = /obj/item/organ/tongue/bone/plasmaman
 	category = list(SPECIES_PLASMAMAN)
+
+/datum/design/fish_tongue
+	name = /obj/item/organ/tongue/fish::name
+	id = "fishtongue"
+	build_type = LIMBGROWER
+	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10)
+	build_path = /obj/item/organ/tongue/fish
+	category = list(SPECIES_CERULEAN)
 
 /datum/design/plasmaman_liver
 	name = "Reagent Processing Crystal"
@@ -328,7 +328,7 @@
 
 /obj/item/disk/design_disk/limbs/cerulean
 	name = "Cerulean Organ Design Disk"
-	limb_designs = list(/datum/design/fish_stomach, /datum/design/fish_liver, /datum/design/fish_lungs, /datum/design/fish_tail, /datum/design/oversized_fish_tail)
+	limb_designs = list(/datum/design/fish_stomach, /datum/design/fish_liver, /datum/design/fish_lungs, /datum/design/fish_tongue, /datum/design/oversized_fish_tail)
 
 /datum/design/limb_disk/cerulean
 	name = "Cerulean Organ Design Disk"
