@@ -629,7 +629,7 @@ world
 	return mask_icon
 
 /**
- * N/a
+ * A simple helper proc to apply a mask to an icon
  * Arguments:
  * * base_icon - the icon which the proc will apply the mask on
  * * mask_to_use - the mask to use from code\__DEFINES\icon_masks.dm

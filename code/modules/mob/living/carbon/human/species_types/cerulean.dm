@@ -189,9 +189,9 @@
 /datum/bodypart_overlay/mutant/tail/fish/cerulean
 	layers = EXTERNAL_BEHIND|EXTERNAL_ADJACENT
 
-// don't randomize these, species handles that. dna mutation and flesh reshaper still work
+// simpeler than parent. we don't care about locked/natural_spawn. all the accessories in our pool are locked
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/get_random_appearance()
-	return sprite_datum ? sprite_datum : fetch_sprite_datum(/datum/sprite_accessory/tails/fish/cerulean)
+	return fetch_sprite_datum_from_name(pick(get_global_feature_list()))
 
 // make our own little feature list by copying the global and removing the normal fish tails
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/get_global_feature_list()
@@ -208,9 +208,19 @@
 // an additional overlay to be added to the image stack. used by abyssal cerulean's skeleton
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/get_overlay(layer, obj/item/bodypart/limb, is_husked)
 	var/list/appearance = ..()
-	appearance |= mutable_appearance('icons/mob/human/species/cerulean/cerulean_tails.dmi', "fish_bones", layer = -BODY_BEHIND_LAYER)
+	appearance |= mutable_appearance(sprite_datum.icon, "abyssal_skeleton", layer = bitflag_to_layer(layer))
 	return appearance
 
 // a mask we are applying to the tail and chest, so the abyssal's skeleton shows. spooky!
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/modify_bodypart_appearance(datum/appearance)
-	appearance.add_filter("abyssal_subtract_mask", 2, alpha_mask_filter(icon(MASKING_HELPERS_PATH, "female_full")))
+	apply_abyssal_body_mask(appearance)
+
+/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/proc/apply_abyssal_body_mask(image/main_image)
+	var/icon/mask_icon = new(main_image.icon)
+	mask_icon.Blend(icon(
+			sprite_datum.icon,
+			"[copytext_char(main_image.icon_state, length(main_image.icon_state))]_abyssal_mask", //copy and paste body physique key from icon_state steamhappy
+			),
+		ICON_SUBTRACT,
+	)
+	main_image.icon = mask_icon //apply the mask
