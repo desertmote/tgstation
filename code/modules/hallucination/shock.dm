@@ -4,13 +4,12 @@
 	hallucination_tier = HALLUCINATION_TIER_COMMON
 
 	var/electrocution_icon = 'icons/mob/human/human.dmi'
-	var/electrocution_icon_state = "electrocuted_generic"
+	var/electrocution_icon_state = "electrocuted_base"
 	var/image/shock_image
 	var/image/electrocution_skeleton_anim
 
 /datum/hallucination/shock/New(mob/living/hallucinator)
-	var/mob/living/carbon/human/human_hallucinator = hallucinator
-	electrocution_icon_state = human_hallucinator ? human_hallucinator.dna.species.electrocution_overlay : initial(electrocution_icon_state)
+	electrocution_icon_state = ishuman(hallucinator) ? "electrocuted_base" : "electrocuted_generic"
 	return ..()
 
 /datum/hallucination/shock/Destroy()
