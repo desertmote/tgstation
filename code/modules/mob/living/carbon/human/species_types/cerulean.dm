@@ -113,7 +113,6 @@
 /obj/item/organ/tail/fish/cerulean/on_mob_insert(mob/living/carbon/owner, special)
 	. = ..()
 	get_your_sealegs(owner, special)
-	RegisterSignals(owner, list(COMSIG_CARBON_GAIN_ORGAN, COMSIG_CARBON_LOSE_ORGAN), PROC_REF(update_species_fluff))
 
 /obj/item/organ/tail/fish/cerulean/on_mob_remove(mob/living/carbon/owner, special)
 	. = ..()
@@ -155,17 +154,6 @@
 	if(isnull(owner))
 		return FALSE
 	return (owner.blood_volume && !HAS_TRAIT(owner, TRAIT_NOBLOOD) && owner.blood_volume >= (owner.default_blood_volume / 2))
-
-/// do some fun fluff stuff when our organs or organ bonus situation changes
-/obj/item/organ/tail/fish/cerulean/proc/update_species_fluff(mob/living/carbon/owner)
-	//check for scales
-	var/datum/status_effect/organ_set_bonus/fish/organ_bonus = owner?.has_status_effect(/datum/status_effect/organ_set_bonus/fish)
-	owner.dna.species.skinned_type = organ_bonus?.color_active ? /obj/item/stack/sheet/animalhide/carp/fish : /datum/species/human::skinned_type
-	owner.dna.species.meat = organ_bonus?.color_active ? /obj/item/food/fishmeat : /datum/species/human::meat
-	//check for fishy tail
-	var/obj/item/organ/tail/fish/cerulean/fish_tail = owner?.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
-	owner.dna.species.fire_overlay = fish_tail ? "monkey" : /datum/species/human::fire_overlay //monkey overlay is perfect for a legless body
-	owner.dna.species.electrocution_overlay = fish_tail ? "electrocuted_base_cerulean" : /datum/species/human::electrocution_overlay
 
 /// If legs are present remove them silently if special = true, not so silently else
 /obj/item/organ/tail/fish/cerulean/proc/get_your_sealegs(mob/living/carbon/owner, special)
