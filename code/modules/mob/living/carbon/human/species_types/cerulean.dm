@@ -196,7 +196,7 @@
 // an additional overlay to be added to the image stack. used by abyssal cerulean's skeleton
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/get_overlay(layer, obj/item/bodypart/limb, is_husked)
 	var/list/appearance = ..()
-	appearance |= mutable_appearance(sprite_datum.icon, "abyssal_skeleton", layer = bitflag_to_layer(layer))
+	appearance |= image(sprite_datum.icon, "abyssal_skeleton", layer = bitflag_to_layer(layer))
 	return appearance
 
 // a mask we are applying to the tail and chest, so the abyssal's skeleton shows. spooky!
@@ -204,11 +204,12 @@
 	apply_abyssal_body_mask(appearance)
 
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/proc/apply_abyssal_body_mask(image/main_image)
+	// check the key for physique. little awkward because some icons have it at the front, some at the back of the string
+	var/physique = copytext_char(main_image.icon_state,-1)
+	if(!(physique == "f" || physique == "m"))
+		physique = copytext_char(main_image.icon_state, 1, 2)
+	var/use_physique = icon_exists(sprite_datum.icon, "[physique]_abyssal_mask") //do we use a fallback in case the chest was never gendered
+	// build the mask
 	var/icon/mask_icon = new(main_image.icon)
-	mask_icon.Blend(icon(
-			sprite_datum.icon,
-			"[copytext_char(main_image.icon_state, length(main_image.icon_state))]_abyssal_mask", //copy and paste body physique key from icon_state steamhappy
-			),
-		ICON_SUBTRACT,
-	)
+	mask_icon.Blend(icon(sprite_datum.icon, use_physique ? "[physique]_abyssal_mask" : "m_abyssal_mask"), ICON_SUBTRACT)
 	main_image.icon = mask_icon //apply the mask

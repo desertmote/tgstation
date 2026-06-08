@@ -16,7 +16,7 @@ GLOBAL_LIST_INIT(cerulean_respiration_variation, list(
 
 /datum/preference/choiced/lungs_choice/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.species.mutantlungs = GLOB.cerulean_respiration_variation[value]
-	target.dna.species.regenerate_organs(target, GLOB.species_prototypes[target.dna.species.type], TRUE, (GLOB.all_body_zones - BODY_ZONE_CHEST), FALSE, FALSE)
+	target.dna.species.regenerate_organs(target, GLOB.species_prototypes[target.dna.species.type], FALSE, (GLOB.all_body_zones - BODY_ZONE_CHEST))
 
 /datum/preference/choiced/lungs_choice/init_possible_values()
 	return GLOB.cerulean_respiration_variation
