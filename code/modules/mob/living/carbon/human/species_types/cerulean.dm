@@ -95,7 +95,10 @@
 	)
 
 
-/// the tail which makes the species, without this you're basically just a fishy, legless human.
+/*
+ *
+ *
+ */
 /obj/item/organ/tail/fish/cerulean
 	name = "oversized fish tail"
 	desc = "A hugely sized and scaled fish tail, clearly severed from something much larger than a mere space carp."
@@ -166,13 +169,6 @@
 	right_leg?.dismember()
 	left_leg?.dismember()
 
-///
-/obj/item/organ/tail/fish/cerulean/abyssal
-//	name = ""
-//	desc = ""
-	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal
-
-
 /// the bodypart overlay for cerulean fish tails!
 /datum/bodypart_overlay/mutant/tail/fish/cerulean
 	layers = EXTERNAL_BEHIND|EXTERNAL_ADJACENT
@@ -193,10 +189,23 @@
 			feature_list -= accessory
 	return feature_list
 
+
+/*
+ *
+ *
+ */
+/obj/item/organ/tail/fish/cerulean/abyssal
+//	name = ""
+//	desc = ""
+	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal
+
+#define SKELETON_ICON_STATE "abyssal_skeleton"
+#define SKELETON_ALPHA 55
+
 // an additional overlay to be added to the image stack. used by abyssal cerulean's skeleton
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/get_overlay(layer, obj/item/bodypart/limb, is_husked)
 	var/list/appearance = ..()
-	appearance |= image(sprite_datum.icon, "abyssal_skeleton", layer = bitflag_to_layer(layer))
+	appearance += mutable_appearance(sprite_datum.icon, SKELETON_ICON_STATE, alpha = SKELETON_ALPHA, layer = bitflag_to_layer(layer))
 	return appearance
 
 // a mask we are applying to the tail and chest, so the abyssal's skeleton shows. spooky!
@@ -211,5 +220,8 @@
 	var/use_physique = icon_exists(sprite_datum.icon, "[physique]_abyssal_mask") //do we use a fallback in case the chest was never gendered
 	// build the mask
 	var/icon/mask_icon = new(main_image.icon)
-	mask_icon.Blend(icon(sprite_datum.icon, use_physique ? "[physique]_abyssal_mask" : "m_abyssal_mask"), ICON_SUBTRACT)
+	mask_icon.Blend(icon(sprite_datum.icon, use_physique ? "[physique]_abyssal_mask" : "m_abyssal_mask"), ICON_MULTIPLY)
 	main_image.icon = mask_icon //apply the mask
+
+#undef SKELETON_ICON_STATE
+#undef SKELETON_ALPHA
