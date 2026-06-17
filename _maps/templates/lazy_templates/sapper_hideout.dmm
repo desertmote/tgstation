@@ -877,7 +877,6 @@
 /area/misc/sapper_hideout/hangar)
 "zp" = (
 /obj/item/light/bulb/broken,
-/obj/machinery/light/small/built/directional/east,
 /obj/item/stack/cable_coil{
 	amount = 2;
 	icon_state = "coil2"
@@ -937,10 +936,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/red/line,
-/turf/open/floor/iron/smooth,
-/area/space)
-"Ax" = (
-/mob/living/simple_animal/bot/mulebot,
 /turf/open/floor/iron/smooth,
 /area/space)
 "AE" = (
@@ -2105,7 +2100,7 @@ Gz
 Zs
 Zs
 Zs
-Ax
+Zs
 Zs
 Bo
 WB

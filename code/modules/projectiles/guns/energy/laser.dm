@@ -27,10 +27,6 @@
 		overlay_x = 18, \
 		overlay_y = 12)
 
-/obj/item/gun/energy/laser/empty
-	cell_type = /obj/item/stock_parts/power_store/cell/empty
-	dead_cell = TRUE
-
 /obj/item/gun/energy/laser/pistol
 	name = "\improper Type 5/C laser pistol"
 	desc = "The Type 5 Heat Delivery System, Compact Variant, developed by Nanotrasen. The workhorse of Nanotrasen's security forces, but in a more portable size. \

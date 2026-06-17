@@ -21,7 +21,6 @@
 		uniform = /obj/item/clothing/under/sapper/skirt
 
 /datum/outfit/sapper/post_equip(mob/living/carbon/human/equipped)
-	equipped.faction |= ROLE_SPACE_SAPPER
 	var/obj/item/radio/headset/outfit_radio = equipped.ears
 	if(outfit_radio)
 		outfit_radio.keyslot2 = new /obj/item/encryptionkey/syndicate()
