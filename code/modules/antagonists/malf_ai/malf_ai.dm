@@ -40,7 +40,6 @@
 	malfunction_flavor = strings(MALFUNCTION_FLAVOR_FILE, employer)
 
 	add_law_zero()
-	RegisterSignal(owner.current, COMSIG_SILICON_AI_CORE_STATUS, PROC_REF(core_status))
 	if(malf_sound)
 		owner.current.playsound_local(get_turf(owner.current), malf_sound, 100, FALSE, pressure_affected = FALSE, use_reverb = FALSE)
 	owner.current.grant_language(/datum/language/codespeak, source = LANGUAGE_MALF)
@@ -57,7 +56,6 @@
 		malf_ai.remove_malf_abilities()
 		QDEL_NULL(malf_ai.malf_picker)
 
-	UnregisterSignal(owner, COMSIG_SILICON_AI_CORE_STATUS)
 	return ..()
 
 /// Generates a complete set of malf AI objectives up to the traitor objective limit.
@@ -120,8 +118,8 @@
 	if(istype(datum_owner))
 		datum_owner.hack_software = TRUE
 
-	datum_owner.AddComponent(/datum/component/codeword_hearing, GLOB.syndicate_code_phrase_regex, "blue", src)
-	datum_owner.AddComponent(/datum/component/codeword_hearing, GLOB.syndicate_code_response_regex, "red", src)
+	datum_owner.AddComponent(/datum/component/codeword_hearing, SStraitor.syndicate_code_phrase_regex, "blue", src)
+	datum_owner.AddComponent(/datum/component/codeword_hearing, SStraitor.syndicate_code_response_regex, "red", src)
 
 /datum/antagonist/malf_ai/remove_innate_effects(mob/living/mob_override)
 	var/mob/living/silicon/ai/datum_owner = mob_override || owner.current
@@ -137,8 +135,8 @@
 	if(!owner.current)
 		return
 
-	var/phrases = jointext(GLOB.syndicate_code_phrase, ", ")
-	var/responses = jointext(GLOB.syndicate_code_response, ", ")
+	var/phrases = jointext(SStraitor.syndicate_code_phrase, ", ")
+	var/responses = jointext(SStraitor.syndicate_code_response, ", ")
 
 	antag_memory += "<b>Code Phrase</b>: [span_blue("[phrases]")]<br>"
 	antag_memory += "<b>Code Response</b>: [span_red("[responses]")]<br>"
@@ -178,8 +176,8 @@
 
 	data["has_codewords"] = should_give_codewords
 	if(should_give_codewords)
-		data["phrases"] = jointext(GLOB.syndicate_code_phrase, ", ")
-		data["responses"] = jointext(GLOB.syndicate_code_response, ", ")
+		data["phrases"] = jointext(SStraitor.syndicate_code_phrase, ", ")
+		data["responses"] = jointext(SStraitor.syndicate_code_response, ", ")
 	data["intro"] = malfunction_flavor["introduction"]
 	data["allies"] = malfunction_flavor["allies"]
 	data["goal"] = malfunction_flavor["goal"]
@@ -262,22 +260,14 @@
 	return result.Join("<br>")
 
 /datum/antagonist/malf_ai/get_preview_icon()
-	var/icon/malf_ai_icon = icon('icons/mob/silicon/ai.dmi', "ai-red")
+	var/datum/universal_icon/malf_ai_icon = uni_icon('icons/mob/silicon/ai.dmi', "ai-red")
 
 	// Crop out the borders of the AI, just the face
-	malf_ai_icon.Crop(5, 27, 28, 6)
+	malf_ai_icon.crop(5, 6, 28, 27)
 
-	malf_ai_icon.Scale(ANTAGONIST_PREVIEW_ICON_SIZE, ANTAGONIST_PREVIEW_ICON_SIZE)
+	malf_ai_icon.scale(ANTAGONIST_PREVIEW_ICON_SIZE, ANTAGONIST_PREVIEW_ICON_SIZE)
 
 	return malf_ai_icon
-
-/datum/antagonist/malf_ai/proc/core_status(datum/source)
-	SIGNAL_HANDLER
-
-	var/mob/living/silicon/ai/malf_owner = owner.current
-	if(malf_owner?.linked_core)
-		return COMPONENT_CORE_ALL_GOOD
-	return COMPONENT_CORE_DISCONNECTED
 
 //Subtype of Malf AI datum, used for one of the traitor final objectives
 /datum/antagonist/malf_ai/infected
