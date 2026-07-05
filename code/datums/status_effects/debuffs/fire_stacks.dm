@@ -355,6 +355,14 @@
 	if(stacks <= 0)
 		qdel(src)
 		return
+
+	if(HAS_TRAIT(owner, TRAIT_RESISTCOLD))
+		return
+
+	if(owner.bodytemperature <= WATER_VAPOR_DEPOSITION_POINT)
+		owner.apply_status_effect(/datum/status_effect/freon, stacks SECONDS)
+		qdel(src)
+
 	if(stacks > WET_STACKS_MINIMUM_VFX)
 		owner.add_shared_particles(/particles/droplets)
 	if(stacks <= WET_STACKS_MINIMUM_VFX)

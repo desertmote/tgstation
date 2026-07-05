@@ -171,7 +171,10 @@
 
 /// the bodypart overlay for cerulean fish tails!
 /datum/bodypart_overlay/mutant/tail/fish/cerulean
-	layers = EXTERNAL_BEHIND|EXTERNAL_ADJACENT
+	layers = list(
+		EXTERNAL_ADJACENT = BODY_ADJ_LAYER,
+		EXTERNAL_BEHIND = BODY_BEHIND_LAYER,
+	)
 
 // simpeler than parent. we don't care about locked/natural_spawn. all the accessories in our pool are locked
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/get_random_appearance()
@@ -205,8 +208,11 @@
 // an additional overlay to be added to the image stack. used by abyssal cerulean's skeleton
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/get_overlay(layer, obj/item/bodypart/limb, is_husked)
 	var/list/appearance = ..()
-	appearance += mutable_appearance(sprite_datum.icon, SKELETON_ICON_STATE, alpha = SKELETON_ALPHA, layer = bitflag_to_layer(layer))
+	appearance += mutable_appearance(sprite_datum.icon, SKELETON_ICON_STATE, alpha = SKELETON_ALPHA, layer = layer)
 	return appearance
+
+/datum/bodypart_overlay/proc/modify_bodypart_appearance(datum/appearance)
+	return
 
 // a mask we are applying to the tail and chest, so the abyssal's skeleton shows. spooky!
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/modify_bodypart_appearance(datum/appearance)

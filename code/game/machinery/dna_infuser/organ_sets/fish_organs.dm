@@ -26,7 +26,7 @@
 		TRAIT_WATER_ADAPTATION,
 		)
 	bonus_biotype = MOB_AQUATIC
-	limb_overlay = /datum/bodypart_overlay/texture/fishscale
+	limb_texture = /datum/bodypart_texture/fishscale
 	/// Are we at all five organs?
 	var/color_active = FALSE
 
@@ -290,15 +290,6 @@
 /datum/bodypart_overlay/mutant/tail/fish/randomize_appearance()
 	return //we already do this above, we are bound to dna!
 
-/datum/bodypart_overlay/mutant/tail/fish/get_image(image_layer, obj/item/bodypart/limb)
-	var/mutable_appearance/appearance = ..()
-	// We add all appearances the parent bodypart has to the tail to inherit scales and fancy effects
-	// but most other organs don't want to inherit those so we do it here and not on parent
-	for (var/datum/bodypart_overlay/texture/texture in limb.bodypart_overlays)
-		if(texture.can_draw_on_bodypart(limb, limb.owner, limb.is_husked))
-			texture.modify_bodypart_appearance(appearance)
-	return appearance
-
 ///Lungs that replace the need of oxygen with water vapor or being wet
 /obj/item/organ/lungs/fish
 	name = "mutated gills"
@@ -322,7 +313,6 @@
 /obj/item/organ/lungs/fish/Initialize(mapload)
 	. = ..()
 	add_gas_reaction(/datum/gas/water_vapor, always = PROC_REF(breathe_water))
-	respiration_type |= RESPIRATION_OXYGEN //after all, we get oxygen from water
 	AddElement(/datum/element/organ_set_bonus, /datum/status_effect/organ_set_bonus/fish)
 	if(has_gills)
 		gills = new()
@@ -376,14 +366,14 @@
 /datum/bodypart_overlay/simple/gills
 	icon = 'icons/mob/human/fish_features.dmi'
 	icon_state = "gills"
-	layers = EXTERNAL_ADJACENT
+	layers = list(EXTERNAL_ADJACENT = BODY_ADJ_LAYER)
 	draw_on_husks = HUSK_OVERLAY_GRAYSCALE
 
-/datum/bodypart_overlay/simple/gills/get_image(image_layer, obj/item/bodypart/limb)
+/datum/bodypart_overlay/simple/gills/get_image(obj/item/bodypart/limb, layer_index, layer_real)
 	return image(
 		icon = icon,
-		icon_state = "[icon_state]_[mutant_bodyparts_layertext(image_layer)]",
-		layer = image_layer,
+		icon_state = "[icon_state]_[layer_index]",
+		layer = layer_real,
 	)
 
 /// Subtype of gills that allow the mob to optionally breathe water.
