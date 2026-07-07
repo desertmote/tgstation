@@ -1401,9 +1401,6 @@
 			owner.apply_height(actual_overlay, overlay.offset_location)
 			. += actual_overlay
 
-		for(var/datum/layer in .)
-			overlay.modify_bodypart_appearance(layer)
-
 	// Then texture everything at once, including bodypart overlays
 	for(var/datum/bodypart_texture/texture as anything in bodypart_textures)
 		if(!texture.can_texture_bodypart(src))

@@ -211,13 +211,6 @@
 	appearance += mutable_appearance(sprite_datum.icon, SKELETON_ICON_STATE, alpha = SKELETON_ALPHA, layer = layer)
 	return appearance
 
-/datum/bodypart_overlay/proc/modify_bodypart_appearance(datum/appearance)
-	return
-
-// a mask we are applying to the tail and chest, so the abyssal's skeleton shows. spooky!
-/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/modify_bodypart_appearance(datum/appearance)
-	apply_abyssal_body_mask(appearance)
-
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/proc/apply_abyssal_body_mask(image/main_image)
 	// check the key for physique. little awkward because some icons have it at the front, some at the back of the string
 	var/physique = copytext_char(main_image.icon_state,-1)
