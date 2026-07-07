@@ -203,24 +203,36 @@
 	bodypart_overlay = /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal
 
 #define SKELETON_ICON_STATE "abyssal_skeleton"
-#define SKELETON_ALPHA 55
+#define SKELETON_ALPHA 115
+
+/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal
+	var/abyssal_tweak = /datum/bodypart_texture/abyssal_cerulean
 
 // an additional overlay to be added to the image stack. used by abyssal cerulean's skeleton
-/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/get_overlay(layer, obj/item/bodypart/limb, is_husked)
-	var/list/appearance = ..()
-	appearance += mutable_appearance(sprite_datum.icon, SKELETON_ICON_STATE, alpha = SKELETON_ALPHA, layer = layer)
-	return appearance
+/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/get_overlay(obj/item/bodypart/limb, layer_index, layer_real)
+	var/list/created_overlays = ..()
+	created_overlays += mutable_appearance(/datum/sprite_accessory/tails/fish/cerulean::icon, SKELETON_ICON_STATE, alpha = SKELETON_ALPHA, layer = layer_real)
+	return created_overlays
 
-/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/proc/apply_abyssal_body_mask(image/main_image)
+/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/added_to_limb(obj/item/bodypart/limb)
+	limb.add_bodypart_texture(abyssal_tweak, FALSE)
+
+/datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/removed_from_limb(obj/item/bodypart/limb)
+	limb.remove_bodypart_texture(abyssal_tweak, FALSE)
+
+/datum/bodypart_texture/abyssal_cerulean
+	overlay_priority = (BODYPART_OVERLAY_FISH_INFUSION + 1)
+
+/datum/bodypart_texture/abyssal_cerulean/modify_bodypart_appearance(image/appearance)
 	// check the key for physique. little awkward because some icons have it at the front, some at the back of the string
-	var/physique = copytext_char(main_image.icon_state,-1)
+	var/physique = copytext_char(appearance.icon_state,-1)
 	if(!(physique == "f" || physique == "m"))
-		physique = copytext_char(main_image.icon_state, 1, 2)
-	var/use_physique = icon_exists(sprite_datum.icon, "[physique]_abyssal_mask") //do we use a fallback in case the chest was never gendered
+		physique = copytext_char(appearance.icon_state, 1, 2)
+	var/use_physique = icon_exists(/datum/sprite_accessory/tails/fish/cerulean::icon, "[physique]_abyssal_mask") //do we use a fallback in case the chest was never gendered
 	// build the mask
-	var/icon/mask_icon = new(main_image.icon)
-	mask_icon.Blend(icon(sprite_datum.icon, use_physique ? "[physique]_abyssal_mask" : "m_abyssal_mask"), ICON_MULTIPLY)
-	main_image.icon = mask_icon //apply the mask
+	var/icon/mask_icon = new(appearance.icon)
+	mask_icon.Blend(icon(/datum/sprite_accessory/tails/fish/cerulean::icon, use_physique ? "[physique]_abyssal_mask" : "m_abyssal_mask"), ICON_MULTIPLY)
+	appearance.icon = mask_icon //apply the mask
 
 #undef SKELETON_ICON_STATE
 #undef SKELETON_ALPHA
