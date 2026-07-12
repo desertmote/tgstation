@@ -53,7 +53,7 @@
 	. = ..()
 	RegisterSignals(src, list(COMSIG_ITEM_PICKUP, COMSIG_ITEM_DROPPED), PROC_REF(oh_what_a_neat_hat))
 
-/obj/item/clothing/shoes/suicide_act(mob/living/carbon/user)
+/obj/item/clothing/shoes/suicide_act(mob/living/user)
 	if(prob(50))
 		user.visible_message(span_suicide("[user] begins fastening \the [src] up waaay too tightly! It looks like [user.p_theyre()] trying to commit suicide!"))
 		var/obj/item/bodypart/leg/left = user.get_bodypart(BODY_ZONE_L_LEG)
