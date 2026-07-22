@@ -548,8 +548,9 @@
 		DYNAMIC_TIER_MEDIUMHIGH = 0,
 		DYNAMIC_TIER_HIGH = 0,
 	)
+	min_antag_cap = 1
 //	min_pop = 10
-	min_antag_cap = 2
+//	min_antag_cap = 2
 	max_antag_cap = 2
 	blacklisted_roles = list(
 		JOB_CAPTAIN,
