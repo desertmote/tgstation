@@ -205,7 +205,6 @@
 		explosion(src, devastation_range = 4, heavy_impact_range = 8, light_impact_range = 16, flash_range = 32)
 		qdel(src)
 
-
 #define POWER_FOR_PAYOUT (20 KILO WATTS) // How much do we draw for a payout
 #define PAYOUT 100 // How much is the energy worth
 #define DRAIN_FORMULA (0.1 * STANDARD_BATTERY_CHARGE) //How much % per tick gets drained from the powernet. standard cell because thats what APCs start with
