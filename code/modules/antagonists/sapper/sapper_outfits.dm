@@ -118,7 +118,6 @@
 	title = ROLE_SPACE_SAPPER
 	policy_index = ROLE_SPACE_SAPPER
 
-////
 // Preview icon outfits
 /datum/outfit/sapper_preview
 	name = "Space Sapper 1 (Preview Only)"
