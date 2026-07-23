@@ -321,7 +321,7 @@
 "AA" = (
 /obj/structure/cable,
 /obj/item/food/cnds/random{
-	pixel_x = -8;
+	pixel_x = -7;
 	pixel_y = -8
 	},
 /turf/open/floor/catwalk_floor/iron_white,
@@ -398,16 +398,9 @@
 /obj/item/rpd_upgrade/unwrench,
 /obj/item/airlock_painter,
 /obj/item/airlock_painter/decal,
-/obj/item/airlock_painter/decal/tile,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/catwalk_floor/iron_white,
-/area/shuttle/sapper)
-"FE" = (
-/obj/machinery/porta_turret/sapper/shuttle{
-	on = 0
-	},
-/turf/closed/wall/mineral/titanium,
 /area/shuttle/sapper)
 "Ih" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -433,7 +426,6 @@
 	amount = 20
 	},
 /obj/item/forcefield_projector,
-/obj/item/gun/energy/laser/empty,
 /obj/item/stack/sheet/mineral/sandbags{
 	amount = 5
 	},
@@ -600,7 +592,6 @@
 	amount = 20
 	},
 /obj/item/forcefield_projector,
-/obj/item/gun/energy/laser/empty,
 /turf/open/floor/catwalk_floor/iron_white,
 /area/shuttle/sapper)
 "Yx" = (
@@ -627,7 +618,7 @@ Yx
 "}
 (2,1,1) = {"
 Yx
-FE
+yE
 yE
 Ih
 mE
@@ -635,7 +626,7 @@ sM
 xA
 Ih
 yE
-FE
+yE
 rT
 "}
 (3,1,1) = {"
@@ -731,7 +722,7 @@ rU
 "}
 (10,1,1) = {"
 Yx
-FE
+yE
 yE
 Ih
 nE
@@ -739,7 +730,7 @@ Sa
 JF
 Ih
 yE
-FE
+yE
 ju
 "}
 (11,1,1) = {"

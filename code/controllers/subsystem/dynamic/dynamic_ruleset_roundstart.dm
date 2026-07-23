@@ -563,11 +563,16 @@
 /datum/dynamic_ruleset/roundstart/sapper_gang/prepare_for_role(datum/mind/candidate)
 	LAZYSET(SSjob.forced_occupations, candidate, /datum/job/space_sapper)
 
-/datum/dynamic_ruleset/roundstart/sapper_gang/create_execute_args()
-	return list(new /datum/team/sapper())
+/datum/dynamic_ruleset/roundstart/sapper_gang/execute()
+	SSmapping.lazy_load_template(LAZY_TEMPLATE_KEY_SAPPER_HIDEOUT)
+	return ..()
 
-/datum/dynamic_ruleset/roundstart/sapper_gang/assign_role(datum/mind/candidate, datum/team/sapper/team)
+/datum/dynamic_ruleset/roundstart/sapper_gang/create_execute_args()
+	return list(new /datum/team/sapper_gang())
+
+/datum/dynamic_ruleset/roundstart/sapper_gang/assign_role(datum/mind/candidate, datum/team/sapper_gang/sapper_gang)
 	if(candidate == selected_minds[1])
-		candidate.add_antag_datum(/datum/antagonist/sapper, team)
+		candidate.add_antag_datum(/datum/antagonist/sapper/one)
 	else
-		candidate.add_antag_datum(/datum/antagonist/sapper, team)
+		candidate.add_antag_datum(/datum/antagonist/sapper/two)
+	sapper_gang.add_member(candidate)

@@ -7,7 +7,6 @@ const SpaceSapper: Antagonist = {
     `
     You're an illegal credits miner! Construct elaborate bases and
     defend your shuttle and its credit-miner machine at all costs!
-    Or perhaps work together with the station, crime is optional...
     `,
   ],
   category: Category.Roundstart,

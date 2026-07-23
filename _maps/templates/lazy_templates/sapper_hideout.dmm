@@ -687,18 +687,18 @@
 	},
 /area/space)
 "wc" = (
-/obj/docking_port/stationary{
-	area_type = /area/misc/sapper_hideout;
-	roundstart_template = /datum/map_template/shuttle/sapper/default;
-	shuttle_id = "sapper_hideout";
-	height = 11;
-	width = 11;
-	dwidth = 5;
-	dir = 8;
-	name = "Abandoned Barracks"
-	},
 /obj/effect/turf_decal/stripes/white{
 	dir = 4
+	},
+/obj/docking_port/stationary{
+	dir = 8;
+	hidden = 1;
+	name = "Sapper Hideout";
+	shuttle_id = "sapper_hideout";
+	roundstart_template = /datum/map_template/shuttle/sapper/default;
+	width = 11;
+	height = 11;
+	dwidth = 5
 	},
 /turf/open/floor/iron/smooth_half{
 	dir = 1
@@ -751,13 +751,6 @@
 /obj/item/shard,
 /obj/item/shard,
 /turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"xi" = (
-/obj/structure/cable/layer3,
-/obj/effect/light_emitter/space{
-	set_luminosity = 5
-	},
-/turf/open/floor/catwalk_floor/iron_smooth,
 /area/misc/sapper_hideout/hangar)
 "xl" = (
 /obj/structure/minecart_rail{
@@ -993,9 +986,6 @@
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
 "Cd" = (
-/obj/effect/light_emitter/space{
-	set_luminosity = 5
-	},
 /obj/effect/turf_decal/sand,
 /obj/effect/mapping_helpers/burnt_floor,
 /turf/open/floor/plating,
@@ -1088,9 +1078,6 @@
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
 "EB" = (
-/obj/effect/light_emitter/space{
-	set_luminosity = 5
-	},
 /obj/structure/tank_frame,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
@@ -1215,12 +1202,6 @@
 /obj/machinery/light/small/broken/directional/east,
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
-"HU" = (
-/obj/effect/light_emitter/space{
-	set_luminosity = 5
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
 "ID" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
@@ -1241,13 +1222,6 @@
 	dir = 8
 	},
 /area/space)
-"Jm" = (
-/obj/structure/cable/layer3,
-/obj/effect/light_emitter/space{
-	set_luminosity = 5
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
 "Jr" = (
 /obj/effect/decal/cleanable/plasma,
 /obj/machinery/reagentgrinder,
@@ -1342,14 +1316,6 @@
 	dir = 8
 	},
 /turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"Ni" = (
-/obj/structure/cable/layer3,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden/layer2,
-/obj/effect/light_emitter/space{
-	set_luminosity = 5
-	},
-/turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
 "Nk" = (
 /obj/effect/turf_decal/stripes/white{
@@ -1551,13 +1517,6 @@
 /obj/structure/cable/layer3,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"Ta" = (
-/obj/effect/light_emitter/space{
-	set_luminosity = 5
-	},
-/obj/structure/lattice,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
 "Tf" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -2679,7 +2638,7 @@ AE
 Nf
 ED
 DE
-Ta
+VF
 Bx
 VF
 Bx
@@ -2731,7 +2690,7 @@ bN
 bN
 RK
 YP
-xi
+vM
 On
 aR
 TT
@@ -2747,7 +2706,7 @@ bR
 TT
 mE
 Bx
-xi
+vM
 VF
 bN
 bN
@@ -2923,7 +2882,7 @@ Ea
 Ea
 co
 PA
-xi
+vM
 xK
 cN
 Fm
@@ -3083,7 +3042,7 @@ bN
 qK
 bN
 VF
-Jm
+li
 hT
 GT
 Pd
@@ -3099,7 +3058,7 @@ nT
 Qv
 kl
 yx
-Ni
+tK
 hS
 bN
 bN
@@ -3151,7 +3110,7 @@ qn
 gt
 Jr
 XZ
-HU
+On
 iF
 ED
 On

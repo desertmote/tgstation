@@ -4,6 +4,7 @@
 	id = /obj/item/card/id/advanced
 	id_trim = /datum/id_trim/sapper
 
+	mask = /obj/item/clothing/mask/gas/atmos/sapper
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/sapper
 	belt = /obj/item/storage/belt/utility/sapper
@@ -32,6 +33,9 @@
 		outfit_id.registered_name = equipped.real_name
 		outfit_id.update_label()
 		outfit_id.update_icon()
+
+/datum/outfit/sapper/partner
+	mask = /obj/item/clothing/mask/gas/atmos/sapper/partner
 
 /obj/item/clothing/mask/gas/atmos/sapper
 	name = "\improper Sapper Heatsilk gas mask"
