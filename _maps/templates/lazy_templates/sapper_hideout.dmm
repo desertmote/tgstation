@@ -1,11 +1,5 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"bH" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"dk" = (
+"ac" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
@@ -15,86 +9,95 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/misc/sapper_hideout/hangar)
-"dp" = (
-/obj/effect/turf_decal/siding/dark/corner{
+"ai" = (
+/obj/effect/turf_decal/stripes/corner{
 	dir = 4
-	},
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"dF" = (
-/obj/effect/turf_decal/siding/dark/corner,
-/obj/effect/decal/cleanable/blood/oil,
-/obj/structure/cable/layer3,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"ej" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 10
-	},
-/obj/structure/marker_beacon/bronze{
-	pixel_y = 8;
-	pixel_x = 8
-	},
-/turf/open/floor/iron/smooth_corner{
-	dir = 4
-	},
-/area/misc/sapper_hideout/hangar)
-"ey" = (
-/obj/structure/girder,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"eH" = (
-/obj/structure/marker_beacon/bronze{
-	pixel_y = 8;
-	pixel_x = 8
-	},
-/obj/effect/turf_decal/stripes/white{
-	dir = 10
-	},
-/turf/open/floor/iron/smooth_corner{
-	dir = 4
-	},
-/area/misc/sapper_hideout/hangar)
-"eQ" = (
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/turf_decal/tile/yellow/half/contrasted,
-/obj/structure/mop_bucket/janitorialcart{
-	dir = 8
 	},
 /turf/open/floor/iron/smooth,
 /area/misc/sapper_hideout/hangar)
-"eT" = (
-/obj/structure/cable/layer3,
+"bg" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"bF" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"cx" = (
 /obj/effect/light_emitter/fake_outdoors,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/misc/sapper_hideout/hangar)
-"fd" = (
-/turf/open/floor/plating/reinforced,
+"cM" = (
+/obj/machinery/power/apc/auto_name/directional/west{
+	cable_layer = 4
+	},
+/obj/effect/mapping_helpers/apc/cell_10k,
+/obj/effect/mapping_helpers/apc/full_charge,
+/obj/effect/mapping_helpers/apc/unlocked,
+/obj/effect/mapping_helpers/apc/cut_AI_wire,
+/obj/structure/cable/layer3,
+/obj/effect/mapping_helpers/apc,
+/turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"fu" = (
+"cV" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark/corner{
 	dir = 4
 	},
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
-"gz" = (
+"dl" = (
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"dF" = (
+/obj/structure/cable/layer3,
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/misc/sapper_hideout/hangar)
+"dK" = (
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 1
+	},
+/obj/structure/cable/layer3,
+/obj/effect/decal/cleanable/ash,
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"ec" = (
+/obj/structure/railing,
 /obj/effect/turf_decal/stripes/asteroid/line,
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
-"gJ" = (
-/obj/machinery/atmospherics/components/trinary/filter/flipped/layer2{
-	dir = 1
-	},
+"eK" = (
+/obj/structure/cable/layer3,
+/obj/machinery/atmospherics/pipe/smart/simple/green/hidden/layer2,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"gX" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark{
+"eP" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/stripes/asteroid/corner{
 	dir = 4
 	},
-/turf/open/misc/sandy_dirt,
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
-"hm" = (
+"fk" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 8
+	},
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"fu" = (
+/obj/effect/turf_decal/stripes/white,
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"fy" = (
 /obj/structure/frame/computer{
 	anchored = 1
 	},
@@ -108,642 +111,119 @@
 /obj/effect/turf_decal/sand,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"hp" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark,
-/turf/open/misc/sandy_dirt,
-/area/misc/sapper_hideout)
-"hC" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
+"fX" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/structure/cable/layer3,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout/hangar)
+"gk" = (
+/obj/item/stack/rods/ten,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"gs" = (
+/obj/structure/girder,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"gv" = (
+/turf/cordon,
+/area/space)
+"gW" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
 	dir = 4
 	},
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
-"id" = (
+"hw" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/end{
+	dir = 1
+	},
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
-"iC" = (
-/obj/structure/lattice,
-/turf/open/lava/plasma/air,
+"hz" = (
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"iV" = (
+/obj/structure/railing/corner,
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"jv" = (
+/obj/effect/turf_decal/siding/dark/corner,
+/obj/structure/cable/layer3,
+/turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"iD" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 10
+"jL" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 8
 	},
 /obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"jX" = (
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"kk" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 1
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"ko" = (
+/obj/structure/cable/layer3,
+/obj/structure/lattice,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"kB" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 9
+	},
+/obj/structure/cable/layer3,
 /obj/item/flashlight/glowstick/yellow{
 	start_on = 1
 	},
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"je" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
-	dir = 8
-	},
-/obj/machinery/portable_atmospherics/canister,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"jq" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"ju" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark/corner,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"jx" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 8
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"jJ" = (
-/turf/open/misc/sandy_dirt,
-/area/misc/sapper_hideout)
-"jX" = (
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"kd" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"ki" = (
-/obj/structure/railing,
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"kD" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4
-	},
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"kG" = (
-/obj/item/stack/rods/ten,
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"kX" = (
-/obj/machinery/atmospherics/components/tank/air/layer2,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"lf" = (
-/obj/effect/mapping_helpers/burnt_floor,
-/obj/item/storage/toolbox/mechanical,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"mu" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 1
-	},
-/obj/item/reagent_containers/spray/cleaner{
-	pixel_x = 7;
-	pixel_y = 13
-	},
-/obj/item/rag{
-	pixel_x = -4;
-	pixel_y = 11
-	},
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"mJ" = (
-/obj/structure/marker_beacon/bronze{
-	pixel_y = -8;
-	pixel_x = -8
-	},
-/obj/effect/turf_decal/stripes/white{
-	dir = 5
-	},
-/turf/open/floor/iron/smooth_corner{
-	dir = 8
-	},
-/area/misc/sapper_hideout/hangar)
-"mK" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"mO" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"mY" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 8
-	},
-/turf/open/misc/sandy_dirt,
-/area/misc/sapper_hideout)
-"nO" = (
-/turf/closed/mineral/random/stationside/asteroid/porus,
-/area/misc/sapper_hideout)
-"oi" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 1
-	},
-/turf/open/misc/sandy_dirt,
-/area/misc/sapper_hideout)
-"oF" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/obj/structure/cable/layer3,
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout/hangar)
-"pg" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/obj/structure/cable/layer3,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"pm" = (
-/obj/structure/cable/layer3,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden/layer2,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"pp" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/binary/pump/off/green/visible/layer2{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"pD" = (
-/obj/machinery/atmospherics/components/tank/air/layer2{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"pU" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"qz" = (
-/obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"qE" = (
-/obj/machinery/mech_bay_recharge_port,
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"qF" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/blood/splatter/oil,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"qR" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 5
-	},
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"ru" = (
-/obj/structure/cable/layer3,
-/turf/open/floor/catwalk_floor/iron_smooth,
-/area/misc/sapper_hideout/hangar)
-"rx" = (
-/obj/item/stack/sheet/iron/five,
-/obj/structure/girder,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"sg" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 10
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"sk" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/iron/smooth_half{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"td" = (
-/obj/structure/cable/layer3,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"te" = (
-/obj/structure/fluff/broken_canister_frame,
-/obj/item/stock_parts/power_store/cell/empty,
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"tA" = (
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"uv" = (
-/obj/machinery/atmospherics/components/tank/air/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"vW" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"wo" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 8
-	},
-/turf/open/floor/iron/smooth_half{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"wW" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 6
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"xp" = (
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"xT" = (
-/obj/item/stack/rods/two,
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout)
-"ya" = (
-/obj/effect/turf_decal/stripes/asteroid/corner,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"yn" = (
-/obj/structure/tank_frame,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"yq" = (
-/obj/structure/cable/layer3,
-/obj/structure/lattice,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"yw" = (
-/obj/structure/cable/layer3,
-/obj/structure/lattice,
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"yJ" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/smart/simple/green/visible/layer2,
-/turf/open/floor/iron/smooth_corner{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"yW" = (
-/obj/structure/cable/layer3,
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"zq" = (
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 1
-	},
-/obj/structure/cable/layer3,
-/obj/effect/decal/cleanable/ash,
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"zr" = (
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 1
-	},
-/obj/structure/cable/layer3,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"zC" = (
-/obj/effect/turf_decal/stripes/white,
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"zH" = (
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/floor/catwalk_floor/iron_smooth,
-/area/misc/sapper_hideout/hangar)
-"Ar" = (
-/obj/effect/turf_decal/siding/dark,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"AK" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 1
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"AS" = (
-/turf/cordon,
-/area/space)
-"Bg" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 9
-	},
-/obj/structure/marker_beacon/bronze{
-	pixel_y = -8;
-	pixel_x = 8
-	},
-/turf/open/floor/iron/smooth_corner,
-/area/misc/sapper_hideout/hangar)
-"Bw" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/obj/structure/cable/layer3,
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"BA" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
-	dir = 8
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"BH" = (
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"CH" = (
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 4
-	},
-/obj/structure/lattice,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"CK" = (
+"lS" = (
 /obj/effect/turf_decal/stripes/corner,
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/iron/smooth,
 /area/misc/sapper_hideout/hangar)
-"CR" = (
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"CZ" = (
-/obj/effect/turf_decal/stripes/white{
+"mo" = (
+/obj/structure/railing{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/iron/smooth_half{
-	dir = 1
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
 	},
-/area/misc/sapper_hideout/hangar)
-"Dh" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 1
-	},
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"DH" = (
-/turf/open/floor/engine,
-/area/misc/sapper_hideout)
-"DP" = (
-/obj/effect/turf_decal/siding/dark/corner,
-/obj/structure/cable/layer3,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"DR" = (
-/obj/item/stock_parts/power_store/battery/empty{
-	pixel_y = 6;
-	pixel_x = 3
-	},
-/obj/item/stock_parts/power_store/battery/empty{
-	pixel_y = -6;
-	pixel_x = -5
-	},
-/obj/effect/turf_decal/sand,
-/obj/effect/turf_decal/siding/dark,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"DS" = (
-/turf/open/space/basic,
-/area/space)
-"DW" = (
-/obj/structure/railing/corner,
-/obj/effect/turf_decal/stripes/asteroid/corner,
+/obj/effect/light_emitter/fake_outdoors,
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
-"Ed" = (
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/iron/smooth_half,
+"mG" = (
+/obj/machinery/atmospherics/pipe/smart/simple/general/visible/layer2,
+/obj/structure/lattice,
+/turf/open/lava/plasma/air,
 /area/misc/sapper_hideout/hangar)
-"EL" = (
+"mR" = (
 /obj/item/wallframe/airalarm,
 /obj/item/electronics/airalarm,
 /obj/item/stack/cable_coil/five,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"EW" = (
-/obj/machinery/atmospherics/pipe/smart/simple/general/visible/layer2,
-/obj/structure/lattice,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"Fj" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 8
-	},
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/floor/iron/smooth_half{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"Fs" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
-	dir = 1
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Hp" = (
-/obj/machinery/power/apc/auto_name/directional/west{
-	cable_layer = 4
-	},
-/obj/effect/mapping_helpers/apc/cell_10k,
-/obj/effect/mapping_helpers/apc/full_charge,
-/obj/effect/mapping_helpers/apc/unlocked,
-/obj/effect/mapping_helpers/apc/cut_AI_wire,
-/obj/structure/cable/layer3,
-/obj/effect/mapping_helpers/apc,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Hy" = (
-/obj/structure/railing,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"HK" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 4
-	},
-/turf/open/floor/iron/smooth_half{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"IX" = (
-/obj/structure/cable/layer3,
-/obj/effect/landmark/start/sapper,
-/turf/open/floor/catwalk_floor/iron_smooth,
-/area/misc/sapper_hideout/hangar)
-"Jg" = (
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Jy" = (
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/floor/engine,
-/area/misc/sapper_hideout)
-"JN" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 5
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Ki" = (
-/obj/structure/railing/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Kx" = (
-/obj/structure/rack,
-/obj/item/clothing/head/utility/welding,
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"KE" = (
-/obj/structure/railing/corner,
-/obj/effect/turf_decal/stripes/asteroid/corner,
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"KG" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 9
-	},
-/obj/structure/cable/layer3,
-/obj/item/flashlight/glowstick/yellow{
-	start_on = 1
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"KT" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/obj/structure/cable/layer3,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout/hangar)
-"LR" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 1
-	},
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"My" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"MH" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/asteroid/end{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Nx" = (
-/obj/structure/railing,
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"NJ" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 6
-	},
-/obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"Og" = (
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/turf_decal/tile/yellow/half/contrasted,
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"Oo" = (
-/obj/machinery/atmospherics/components/trinary/mixer/flipped/layer2{
-	dir = 4
-	},
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Or" = (
-/turf/open/floor/catwalk_floor/iron_smooth,
-/area/misc/sapper_hideout/hangar)
-"OY" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 8
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Pu" = (
+"mU" = (
 /obj/effect/turf_decal/stripes/white{
 	dir = 4
 	},
@@ -761,67 +241,164 @@
 	dir = 1
 	},
 /area/misc/sapper_hideout/hangar)
-"PD" = (
-/obj/structure/cable/layer3,
-/obj/item/flashlight/glowstick/yellow{
-	start_on = 1
+"nh" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
 	},
-/turf/open/floor/catwalk_floor/iron_smooth,
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
+/turf/open/floor/iron/smooth,
 /area/misc/sapper_hideout/hangar)
-"PN" = (
-/obj/effect/mapping_helpers/burnt_floor,
-/obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Qv" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"QI" = (
-/obj/item/stack/rods/ten,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"QK" = (
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"QX" = (
+"nC" = (
 /obj/effect/turf_decal/stripes/white{
 	dir = 1
 	},
-/obj/structure/reagent_dispensers/watertank,
+/obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/iron/smooth_half,
 /area/misc/sapper_hideout/hangar)
-"Rm" = (
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/mapping_helpers/broken_floor,
-/obj/effect/turf_decal/tile/yellow/half/contrasted,
-/turf/open/floor/iron/smooth,
+"nN" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 4
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"oo" = (
+/obj/machinery/atmospherics/components/trinary/mixer/flipped/layer2{
+	dir = 4
+	},
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"RC" = (
+"oU" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/color_adapter/layer2,
+/turf/open/floor/iron/smooth_corner{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"pm" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 8
+	},
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"pP" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"qI" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/structure/cable/layer3,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout/hangar)
+"qS" = (
+/obj/structure/cable/layer3,
+/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"se" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 1
+	},
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"sR" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 1
+	},
+/turf/open/misc/sandy_dirt,
+/area/misc/sapper_hideout)
+"sU" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 10
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"sZ" = (
+/obj/structure/fluff/broken_canister_frame,
+/obj/item/stock_parts/power_store/cell/empty,
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"te" = (
+/turf/closed/wall,
+/area/misc/sapper_hideout/hangar)
+"ts" = (
+/obj/structure/tank_frame,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"tJ" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"tL" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"ui" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 1
+	},
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 7;
+	pixel_y = 13
+	},
+/obj/item/rag{
+	pixel_x = -4;
+	pixel_y = 11
+	},
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"uv" = (
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"vh" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
+	},
+/obj/effect/mapping_helpers/burnt_floor,
+/obj/item/flashlight/glowstick/yellow{
+	start_on = 1
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"vB" = (
 /obj/structure/tank_frame,
 /obj/effect/turf_decal/sand,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"RR" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Sq" = (
-/obj/structure/cable/layer3,
+"vF" = (
+/obj/effect/mapping_helpers/broken_floor,
 /obj/effect/turf_decal/sand/plating,
-/obj/effect/light_emitter/fake_outdoors,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"Ss" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
+"vL" = (
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/engine,
+/area/misc/sapper_hideout)
+"xb" = (
+/obj/effect/mapping_helpers/burnt_floor,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"TE" = (
+"xx" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
@@ -831,125 +408,15 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/misc/sapper_hideout/hangar)
-"TF" = (
-/obj/structure/marker_beacon/bronze{
-	pixel_y = -8;
-	pixel_x = 8
-	},
-/obj/effect/turf_decal/stripes/white{
-	dir = 9
-	},
-/turf/open/floor/iron/smooth_corner,
+"xA" = (
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"TL" = (
-/obj/effect/turf_decal/stripes/white,
+"xB" = (
+/obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/iron/smooth_half,
 /area/misc/sapper_hideout/hangar)
-"TV" = (
-/obj/structure/lattice,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout)
-"UM" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"US" = (
-/obj/structure/marker_beacon/bronze,
-/turf/open/floor/engine,
-/area/misc/sapper_hideout)
-"Vz" = (
-/obj/structure/cable/layer3,
-/obj/effect/turf_decal/sand/plating,
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"VH" = (
-/obj/structure/tank_holder,
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"VO" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/obj/effect/mapping_helpers/broken_floor,
-/obj/effect/turf_decal/tile/yellow/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"VP" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/yellow/half/contrasted{
-	dir = 4
-	},
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"VQ" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"VY" = (
-/obj/structure/cable/layer3,
-/obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Wf" = (
-/obj/effect/mapping_helpers/broken_floor,
-/obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"WF" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 5
-	},
-/obj/structure/marker_beacon/bronze{
-	pixel_y = -8;
-	pixel_x = -8
-	},
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"WH" = (
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"WR" = (
-/obj/structure/cable/layer3,
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Yk" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/iron/smooth_half{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"Yu" = (
-/turf/closed/wall,
-/area/misc/sapper_hideout/hangar)
-"YD" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/asteroid/end{
-	dir = 1
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"YJ" = (
+"xL" = (
 /obj/structure/marker_beacon/bronze{
 	pixel_y = 8;
 	pixel_x = -8
@@ -961,10 +428,543 @@
 	dir = 1
 	},
 /area/misc/sapper_hideout/hangar)
-"ZR" = (
+"yi" = (
+/obj/machinery/mech_bay_recharge_port,
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"yv" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 8
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"yA" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"zm" = (
+/obj/item/stock_parts/power_store/battery/empty{
+	pixel_y = 6;
+	pixel_x = 3
+	},
+/obj/item/stock_parts/power_store/battery/empty{
+	pixel_y = -6;
+	pixel_x = -5
+	},
+/obj/effect/turf_decal/sand,
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"zn" = (
+/obj/structure/cable/layer3,
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"zq" = (
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"zH" = (
+/obj/structure/lattice,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout)
+"Af" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/mapping_helpers/broken_floor,
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"Aq" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 6
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"As" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 10
+	},
+/obj/structure/marker_beacon/bronze{
+	pixel_y = 8;
+	pixel_x = 8
+	},
+/turf/open/floor/iron/smooth_corner{
+	dir = 4
+	},
+/area/misc/sapper_hideout/hangar)
+"AI" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"Bc" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Bg" = (
+/obj/structure/cable/layer3,
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Bm" = (
+/obj/structure/marker_beacon/bronze{
+	pixel_y = -8;
+	pixel_x = -8
+	},
+/obj/effect/turf_decal/stripes/white{
+	dir = 5
+	},
+/turf/open/floor/iron/smooth_corner{
+	dir = 8
+	},
+/area/misc/sapper_hideout/hangar)
+"Ce" = (
+/obj/machinery/atmospherics/components/tank/air/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Cl" = (
+/obj/structure/cable/layer3,
+/obj/item/flashlight/glowstick/yellow{
+	start_on = 1
+	},
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/misc/sapper_hideout/hangar)
+"Cm" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 1
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Cp" = (
+/obj/structure/tank_holder,
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"CS" = (
+/turf/open/floor/plating/reinforced,
+/area/misc/sapper_hideout/hangar)
+"CT" = (
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/engine,
+/area/misc/sapper_hideout)
+"Dc" = (
+/obj/structure/railing/corner,
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"DC" = (
+/turf/open/misc/sandy_dirt,
+/area/misc/sapper_hideout)
+"DF" = (
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"DG" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 8
 	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"DN" = (
+/obj/structure/cable/layer3,
+/obj/structure/lattice,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"DO" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark,
+/turf/open/misc/sandy_dirt,
+/area/misc/sapper_hideout)
+"DR" = (
+/obj/structure/marker_beacon/bronze{
+	pixel_y = -8;
+	pixel_x = 8
+	},
+/obj/effect/turf_decal/stripes/white{
+	dir = 9
+	},
+/turf/open/floor/iron/smooth_corner,
+/area/misc/sapper_hideout/hangar)
+"DS" = (
+/turf/open/space/basic,
+/area/space)
+"DV" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"Ek" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 4
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"EB" = (
+/obj/structure/cable/layer3,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/misc/sapper_hideout/hangar)
+"Fv" = (
+/obj/effect/mapping_helpers/burnt_floor,
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"FC" = (
+/obj/structure/lattice,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"FO" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"FS" = (
+/obj/item/stack/sheet/iron/five,
+/obj/structure/girder,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"FU" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"FW" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Gb" = (
+/obj/effect/turf_decal/stripes/white,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"Gl" = (
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Gw" = (
+/obj/structure/cable/layer3,
+/obj/effect/turf_decal/sand/plating,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"GC" = (
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Hx" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 5
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"HM" = (
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"IM" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 4
+	},
+/turf/open/misc/sandy_dirt,
+/area/misc/sapper_hideout)
+"Jo" = (
+/turf/open/floor/engine,
+/area/misc/sapper_hideout)
+"Km" = (
+/obj/effect/mapping_helpers/burnt_floor,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Ky" = (
+/obj/item/stack/rods/ten,
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"KW" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"Lf" = (
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/misc/sapper_hideout/hangar)
+"Lz" = (
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"LT" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Mc" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
+/obj/structure/mop_bucket/janitorialcart{
+	dir = 8
+	},
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"Mu" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/structure/cable/layer3,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"MV" = (
+/obj/machinery/atmospherics/components/tank/air/layer2{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"NE" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/splatter/oil,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"NF" = (
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"OO" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 8
+	},
+/turf/open/misc/sandy_dirt,
+/area/misc/sapper_hideout)
+"OY" = (
+/turf/closed/mineral/random/stationside/asteroid/porus,
+/area/misc/sapper_hideout)
+"Pp" = (
+/obj/structure/cable/layer3,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"QQ" = (
+/obj/machinery/atmospherics/components/tank/air/layer2,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"QV" = (
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 4
+	},
+/obj/structure/lattice,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"RG" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 5
+	},
+/obj/structure/marker_beacon/bronze{
+	pixel_y = -8;
+	pixel_x = -8
+	},
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"RY" = (
+/obj/structure/marker_beacon/bronze{
+	pixel_y = 8;
+	pixel_x = 8
+	},
+/obj/effect/turf_decal/stripes/white{
+	dir = 10
+	},
+/turf/open/floor/iron/smooth_corner{
+	dir = 4
+	},
+/area/misc/sapper_hideout/hangar)
+"Se" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 5
+	},
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Sy" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/broken_floor,
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"Tm" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"TO" = (
+/obj/machinery/atmospherics/components/trinary/filter/flipped/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"TT" = (
+/obj/effect/turf_decal/siding/dark/corner,
+/obj/effect/decal/cleanable/blood/oil,
+/obj/structure/cable/layer3,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"TW" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 8
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Uo" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 8
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Ut" = (
+/obj/item/stack/rods/two,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout)
+"UD" = (
+/obj/structure/rack,
+/obj/item/clothing/head/utility/welding,
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"UI" = (
+/obj/structure/cable/layer3,
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"UX" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"Vb" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/structure/cable/layer3,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Vi" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"VJ" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/end{
+	dir = 4
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"VY" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 1
+	},
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"Wr" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/binary/pump/off/green/visible/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"WO" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"XT" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 9
+	},
+/obj/structure/marker_beacon/bronze{
+	pixel_y = -8;
+	pixel_x = 8
+	},
+/turf/open/floor/iron/smooth_corner,
+/area/misc/sapper_hideout/hangar)
+"Yy" = (
+/obj/structure/cable/layer3,
+/obj/effect/landmark/start/sapper,
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/misc/sapper_hideout/hangar)
+"Zh" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Zk" = (
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 1
+	},
+/obj/structure/cable/layer3,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"ZE" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
 
@@ -5891,32 +5891,32 @@ DS
 DS
 DS
 DS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
 DS
 DS
 DS
@@ -5993,32 +5993,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-AS
+gv
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+gv
 DS
 DS
 DS
@@ -6095,32 +6095,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-ju
-UM
-gX
-gX
-fu
-id
-id
-id
-id
-id
-id
-id
-nO
-AS
+gv
+OY
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+Tm
+nN
+IM
+IM
+cV
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+OY
+gv
 DS
 DS
 DS
@@ -6197,32 +6197,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-Qv
-DH
-DH
-xT
-oi
-id
-id
-id
-id
-id
-id
-id
-nO
-AS
+gv
+OY
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+tL
+Jo
+Jo
+Ut
+sR
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+OY
+gv
 DS
 DS
 DS
@@ -6299,32 +6299,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-jJ
-TV
-US
-DH
-oi
-id
-id
-id
-id
-id
-id
-id
-nO
-AS
+gv
+OY
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+DC
+zH
+vL
+Jo
+sR
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+OY
+gv
 DS
 DS
 DS
@@ -6401,32 +6401,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-id
-BH
-id
-id
-DW
-My
-VQ
-pU
-hp
-Jy
-xT
-DH
-AK
-KE
-VQ
-VQ
-pU
-BH
-id
-id
-nO
-AS
+gv
+OY
+GC
+GC
+GC
+Lz
+GC
+GC
+Dc
+mo
+Vi
+Ek
+DO
+CT
+Ut
+Jo
+Cm
+iV
+Vi
+Vi
+Ek
+Lz
+GC
+GC
+OY
+gv
 DS
 DS
 DS
@@ -6503,32 +6503,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-ya
-hC
-hC
-hC
-hC
-hC
-ki
-Yu
-Yu
-mO
-BA
+gv
 OY
-jJ
-mY
-Fs
-Nx
-Yu
-ey
-mO
-id
-id
-id
-nO
-AS
+hz
+pP
+pP
+pP
+pP
+pP
+eP
+te
+te
+Zh
+yv
+Uo
+DC
+OO
+kk
+ec
+te
+gs
+Zh
+GC
+GC
+GC
+OY
+gv
 DS
 DS
 DS
@@ -6605,32 +6605,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-gz
-qE
-hm
-WH
-WH
-WH
-Hy
-rx
-Yu
-mO
-id
-jJ
-id
-jJ
-id
-Nx
-Yu
-Yu
-mO
-id
-id
-id
-nO
-AS
+gv
+OY
+ZE
+yi
+fy
+uv
+uv
+uv
+Bc
+FS
+te
+Zh
+GC
+DC
+GC
+DC
+GC
+ec
+te
+te
+Zh
+GC
+GC
+GC
+OY
+gv
 DS
 DS
 DS
@@ -6707,32 +6707,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-gz
-QI
-WH
-WH
-WH
-WH
-MH
-EL
-YD
-Ki
-hC
-hC
-hC
-hC
-hC
-wW
-Hp
-YD
-Ki
-hC
-jq
-id
-nO
-AS
+gv
+OY
+ZE
+gk
+uv
+uv
+uv
+uv
+VJ
+mR
+hw
+yA
+pP
+pP
+pP
+pP
+pP
+Aq
+cM
+hw
+yA
+pP
+gW
+GC
+OY
+gv
 DS
 DS
 DS
@@ -6809,32 +6809,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-gz
-VH
-WH
-WH
-WH
-WR
-ru
-ru
-yq
-ru
-IX
-IX
-IX
-IX
-IX
-ru
-td
-PD
-WR
-WR
-RR
-id
-nO
-AS
+gv
+OY
+ZE
+Cp
+uv
+uv
+uv
+zn
+dF
+dF
+DN
+dF
+Yy
+Yy
+Yy
+Yy
+Yy
+dF
+Pp
+Cl
+zn
+zn
+LT
+GC
+OY
+gv
 DS
 DS
 DS
@@ -6911,32 +6911,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-gz
-Kx
-WH
-WH
-td
-DP
-VP
-Ss
-TE
-VP
-VP
-VP
-VP
-VP
-Ss
-dk
-VP
-dp
-tA
-ru
-RR
-id
-nO
-AS
+gv
+OY
+ZE
+UD
+uv
+uv
+Pp
+jv
+WO
+FW
+xx
+WO
+WO
+WO
+WO
+WO
+FW
+ac
+WO
+jX
+xb
+dF
+LT
+GC
+OY
+gv
 DS
 DS
 DS
@@ -7013,32 +7013,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-jx
-ZR
-sg
-yw
-dF
-NJ
-TF
-Fj
-wo
-Yk
-wo
-Fj
-wo
-Yk
-wo
-Fj
-eH
-qR
-CH
-eT
-RR
-id
-nO
-AS
+gv
+OY
+TW
+DG
+sU
+ko
+TT
+nh
+DR
+fk
+pm
+jL
+pm
+fk
+pm
+jL
+pm
+fk
+RY
+Se
+QV
+EB
+LT
+GC
+OY
+gv
 DS
 DS
 DS
@@ -7115,32 +7115,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-gz
-ru
-Og
-Bg
-vW
-Or
-Or
-Or
-Or
-iC
-Or
-Or
-Or
-Or
-kd
-ej
-qF
-td
-RR
-id
-nO
-AS
+gv
+OY
+GC
+GC
+ZE
+dF
+KW
+XT
+bg
+Lf
+Lf
+Lf
+Lf
+FC
+Lf
+Lf
+Lf
+Lf
+FU
+As
+NE
+Pp
+LT
+GC
+OY
+gv
 DS
 DS
 DS
@@ -7217,32 +7217,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-gz
-ru
-Og
-QX
-xp
-Or
-fd
-tA
-WH
-tA
-WH
-WH
-fd
-Or
-Ed
-TL
-mK
-ru
-RR
-id
-nO
-AS
+gv
+OY
+GC
+GC
+ZE
+dF
+KW
+VY
+dl
+Lf
+CS
+xb
+uv
+xb
+uv
+uv
+CS
+Lf
+xB
+fu
+UX
+dF
+LT
+GC
+OY
+gv
 DS
 DS
 DS
@@ -7319,32 +7319,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-gz
-ru
-eQ
-mu
-QK
-Or
-tA
-Jg
-PN
-iC
-Wf
-Jg
-WH
-Or
-xp
-zC
-mK
-td
-RR
-id
-nO
-AS
+gv
+OY
+GC
+GC
+ZE
+dF
+Mc
+ui
+DF
+Lf
+xb
+Gl
+Fv
+FC
+vF
+Gl
+uv
+Lf
+dl
+Gb
+UX
+Pp
+LT
+GC
+OY
+gv
 DS
 DS
 DS
@@ -7421,32 +7421,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-gz
-ru
-Ar
-LR
-xp
-Or
-WH
-qz
-CR
-CR
-CR
-iC
-WH
-Or
-QK
-TL
-mK
-td
-RR
-id
-nO
-AS
+gv
+OY
+GC
+GC
+ZE
+dF
+xA
+nC
+dl
+Lf
+uv
+zq
+NF
+NF
+NF
+FC
+uv
+Lf
+DF
+fu
+UX
+Pp
+LT
+GC
+OY
+gv
 DS
 DS
 DS
@@ -7523,32 +7523,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-gz
-ru
-Og
-Dh
-xp
-Or
-WH
-iC
-CR
-CR
-CR
-iC
-WH
-Or
-xp
-TL
-VO
-ru
-RR
-id
-nO
-AS
+gv
+OY
+GC
+GC
+ZE
+dF
+KW
+se
+dl
+Lf
+uv
+FC
+NF
+NF
+NF
+FC
+uv
+Lf
+dl
+fu
+Sy
+dF
+LT
+GC
+OY
+gv
 DS
 DS
 DS
@@ -7625,32 +7625,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-gz
-eT
-Og
-Dh
-xp
-zH
-WH
-Wf
-CR
-jX
-CR
-PN
-WH
-zH
-QK
-TL
-mK
-eT
-RR
-id
-nO
-AS
+gv
+OY
+GC
+GC
+ZE
+EB
+KW
+se
+dl
+cx
+uv
+vF
+NF
+HM
+NF
+Fv
+uv
+cx
+DF
+fu
+UX
+EB
+LT
+GC
+OY
+gv
 DS
 DS
 DS
@@ -7727,32 +7727,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-jx
-VY
-Og
-Dh
-QK
-Or
-WH
-Jg
-PN
-iC
-CR
-WH
-WH
-Or
-xp
-TL
-mK
-td
-RR
-id
-nO
-AS
+gv
+OY
+GC
+GC
+TW
+Bg
+KW
+se
+DF
+Lf
+uv
+Gl
+Fv
+FC
+NF
+uv
+uv
+Lf
+dl
+fu
+UX
+Pp
+LT
+GC
+OY
+gv
 DS
 DS
 DS
@@ -7829,32 +7829,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-id
-yq
-Rm
-Dh
-xp
-iC
-fd
-tA
-WH
-Jg
-WH
-tA
-fd
-iC
-xp
-TL
-VO
-td
-JN
-jq
-nO
-AS
+gv
+OY
+GC
+GC
+GC
+DN
+Af
+se
+dl
+FC
+CS
+xb
+uv
+Gl
+uv
+xb
+CS
+FC
+dl
+fu
+Sy
+Pp
+Hx
+gW
+OY
+gv
 DS
 DS
 DS
@@ -7931,32 +7931,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-id
-VY
-DR
-WF
-kD
-Or
-Or
-Or
-Or
-Or
-Or
-Or
-Or
-Or
-CK
-yJ
-pp
-pm
-Jg
-RR
-nO
-AS
+gv
+OY
+GC
+GC
+GC
+Bg
+zm
+RG
+ai
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
+Lf
+lS
+oU
+Wr
+eK
+Gl
+LT
+OY
+gv
 DS
 DS
 DS
@@ -8033,32 +8033,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-id
-yq
-te
-iD
-mJ
-HK
-HK
-CZ
-HK
-Pu
-HK
-HK
-sk
-HK
-YJ
-KG
-zq
-pm
-lf
-RR
-nO
-AS
+gv
+OY
+GC
+GC
+GC
+DN
+sZ
+vh
+Bm
+tJ
+tJ
+AI
+tJ
+mU
+tJ
+tJ
+DV
+tJ
+xL
+kB
+dK
+eK
+Km
+LT
+OY
+gv
 DS
 DS
 DS
@@ -8135,32 +8135,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-id
-Sq
-WR
-yW
-KT
-oF
-KT
-KT
-KT
-oF
-KT
-Vz
-pg
-Bw
-pg
-zr
-iC
-Oo
-bH
-RR
-nO
-AS
+gv
+OY
+GC
+GC
+GC
+Gw
+zn
+UI
+fX
+qI
+fX
+fX
+fX
+qI
+fX
+qS
+Mu
+Vb
+Mu
+Zk
+FC
+oo
+bF
+LT
+OY
+gv
 DS
 DS
 DS
@@ -8237,32 +8237,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-jx
-sg
-yn
-pD
-kX
-gJ
-EW
-kG
-RR
-nO
-AS
+gv
+OY
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+TW
+sU
+ts
+MV
+QQ
+TO
+mG
+Ky
+LT
+OY
+gv
 DS
 DS
 DS
@@ -8339,32 +8339,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-gz
-RC
-uv
-uv
-je
-Jg
-Jg
-RR
-nO
-AS
+gv
+OY
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+ZE
+vB
+Ce
+Ce
+FO
+Gl
+Gl
+LT
+OY
+gv
 DS
 DS
 DS
@@ -8441,32 +8441,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-id
-jx
-ZR
-ZR
-ZR
-ZR
-ZR
-ZR
-id
-nO
-AS
+gv
+OY
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+GC
+TW
+DG
+DG
+DG
+DG
+DG
+DG
+GC
+OY
+gv
 DS
 DS
 DS
@@ -8543,32 +8543,32 @@ DS
 DS
 DS
 DS
-AS
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-nO
-AS
+gv
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+OY
+gv
 DS
 DS
 DS
@@ -8645,32 +8645,32 @@ DS
 DS
 DS
 DS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
-AS
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+gv
 DS
 DS
 DS
