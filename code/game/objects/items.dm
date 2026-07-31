@@ -844,7 +844,7 @@ GAME_VERB_SRC(/obj/item, verb_pickup, oview(1), "Pick up", null)
 
 	attack_self(user)
 
-///This proc determines if and at what an object will reflect energy projectiles if it's in l_hand,r_hand or wear_suit
+///This proc determines if and at what an object will reflect energy projectiles if it's worn or inhand
 /obj/item/proc/IsReflect(def_zone)
 	return FALSE
 

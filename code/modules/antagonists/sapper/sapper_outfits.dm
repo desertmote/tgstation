@@ -47,11 +47,10 @@
 	icon_state = "gas_sapper_two"
 
 /obj/item/clothing/mask/gas/atmos/sapper/IsReflect(def_zone)
-	if(def_zone in list(BODY_ZONE_HEAD))
+	if(def_zone != BODY_ZONE_HEAD)
 		return FALSE
 	if(prob(hit_reflect_chance))
 		return TRUE
-	return FALSE
 
 /obj/item/clothing/under/sapper
 	name = "\improper Sapper Heatsilk slacks"
@@ -71,7 +70,6 @@
 		return FALSE
 	if(prob(hit_reflect_chance))
 		return TRUE
-	return
 
 /obj/item/clothing/under/sapper/skirt
 	name = "\improper Sapper Heatsilk skirt"

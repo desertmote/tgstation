@@ -64,13 +64,19 @@
 		return ..(bullet, def_zone, piercing_hit, 100)
 	return ..()
 
-///Reflection checks for anything in your l_hand, r_hand, or wear_suit based on the reflection chance of the object
+///Reflection checks for items worn based on the reflection chance of the object
 /mob/living/carbon/human/proc/check_reflect(def_zone)
 	if(wear_suit)
 		if(wear_suit.IsReflect(def_zone))
 			return TRUE
+	if(w_uniform)
+		if(w_uniform.IsReflect(def_zone))
+			return TRUE
 	if(head)
 		if(head.IsReflect(def_zone))
+			return TRUE
+	if(wear_mask)
+		if(wear_mask.IsReflect(def_zone))
 			return TRUE
 	for(var/obj/item/I in held_items)
 		if(I.IsReflect(def_zone))

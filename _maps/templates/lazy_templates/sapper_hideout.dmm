@@ -1,5 +1,197 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ac" = (
+"ae" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 10
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"ar" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"aH" = (
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"bq" = (
+/obj/structure/tank_frame,
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"bR" = (
+/obj/structure/cable/layer3,
+/obj/effect/turf_decal/sand/plating,
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"cd" = (
+/obj/effect/mapping_helpers/burnt_floor,
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"ch" = (
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"cx" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"dc" = (
+/obj/machinery/power/rtg/debug{
+	cable_layer = 4
+	},
+/obj/structure/cable/layer3,
+/turf/open/misc/ironsand,
+/area/misc/sapper_hideout/hangar)
+"dt" = (
+/obj/structure/girder,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"du" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/structure/cable/layer3,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"dG" = (
+/obj/structure/cable/layer3,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"dJ" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 6
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"dZ" = (
+/obj/item/stack/sheet/iron/five,
+/obj/structure/girder,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"eN" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 9
+	},
+/obj/structure/marker_beacon/bronze{
+	pixel_y = -8;
+	pixel_x = 8
+	},
+/turf/open/floor/iron/smooth_corner,
+/area/misc/sapper_hideout/hangar)
+"eT" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"fD" = (
+/obj/structure/cable/layer3,
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"fK" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 1
+	},
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"ge" = (
+/obj/effect/mapping_helpers/burnt_floor,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"gm" = (
+/obj/structure/cable/layer3,
+/obj/item/flashlight/glowstick/yellow{
+	start_on = 1
+	},
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/misc/sapper_hideout/hangar)
+"hg" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/asteroid/end{
+	dir = 4
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"hq" = (
+/obj/structure/cable/layer3,
+/obj/structure/lattice,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"hK" = (
+/obj/effect/mapping_helpers/broken_floor,
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"hS" = (
+/turf/open/floor/engine,
+/area/misc/sapper_hideout)
+"ji" = (
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"jp" = (
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 4
+	},
+/obj/structure/lattice,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"jO" = (
+/obj/structure/tank_holder,
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"jS" = (
+/obj/effect/turf_decal/siding/dark/corner,
+/obj/effect/decal/cleanable/blood/oil,
+/obj/structure/cable/layer3,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"jX" = (
+/obj/item/stack/rods/two,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout)
+"li" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"lB" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"lO" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
@@ -9,55 +201,37 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/misc/sapper_hideout/hangar)
-"ai" = (
-/obj/effect/turf_decal/stripes/corner{
+"mj" = (
+/obj/effect/turf_decal/stripes/white{
 	dir = 4
 	},
-/turf/open/floor/iron/smooth,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
 /area/misc/sapper_hideout/hangar)
-"bg" = (
+"mN" = (
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"mX" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
 /obj/effect/mapping_helpers/burnt_floor,
 /turf/open/floor/iron/smooth,
 /area/misc/sapper_hideout/hangar)
-"bF" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
-	dir = 1
+"na" = (
+/obj/structure/marker_beacon/bronze{
+	pixel_y = -8;
+	pixel_x = -8
 	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"cx" = (
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/floor/catwalk_floor/iron_smooth,
-/area/misc/sapper_hideout/hangar)
-"cM" = (
-/obj/machinery/power/apc/auto_name/directional/west{
-	cable_layer = 4
+/obj/effect/turf_decal/stripes/white{
+	dir = 5
 	},
-/obj/effect/mapping_helpers/apc/cell_10k,
-/obj/effect/mapping_helpers/apc/full_charge,
-/obj/effect/mapping_helpers/apc/unlocked,
-/obj/effect/mapping_helpers/apc/cut_AI_wire,
-/obj/structure/cable/layer3,
-/obj/effect/mapping_helpers/apc,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"cV" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
-	dir = 4
+/turf/open/floor/iron/smooth_corner{
+	dir = 8
 	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"dl" = (
-/turf/open/floor/iron/smooth_half,
 /area/misc/sapper_hideout/hangar)
-"dF" = (
-/obj/structure/cable/layer3,
-/turf/open/floor/catwalk_floor/iron_smooth,
-/area/misc/sapper_hideout/hangar)
-"dK" = (
+"nh" = (
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 1
 	},
@@ -66,38 +240,370 @@
 /obj/effect/mapping_helpers/burnt_floor,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"ec" = (
-/obj/structure/railing,
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"eK" = (
-/obj/structure/cable/layer3,
-/obj/machinery/atmospherics/pipe/smart/simple/green/hidden/layer2,
+"nz" = (
+/obj/item/stack/rods/ten,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"eP" = (
-/obj/structure/railing,
-/obj/effect/turf_decal/stripes/asteroid/corner{
+"nZ" = (
+/obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/asteroid/line,
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"of" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"om" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
-"fk" = (
+"ot" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"oF" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 8
+	},
+/turf/open/misc/beach/sand,
+/area/misc/sapper_hideout)
+"pu" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"pI" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/misc/ironsand,
+/area/misc/sapper_hideout)
+"pU" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/color_adapter/layer2,
+/turf/open/floor/iron/smooth_corner{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"pW" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 8
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"pY" = (
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"qA" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/structure/cable/layer3,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout/hangar)
+"qX" = (
 /obj/effect/turf_decal/stripes/white{
 	dir = 8
 	},
-/obj/effect/light_emitter/fake_outdoors,
 /turf/open/floor/iron/smooth_half{
 	dir = 1
 	},
 /area/misc/sapper_hideout/hangar)
-"fu" = (
+"rl" = (
+/obj/structure/cable/layer3,
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"ry" = (
+/obj/item/stock_parts/power_store/battery/empty{
+	pixel_y = 6;
+	pixel_x = 3
+	},
+/obj/item/stock_parts/power_store/battery/empty{
+	pixel_y = -6;
+	pixel_x = -5
+	},
+/obj/effect/turf_decal/sand,
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"rL" = (
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"rS" = (
+/obj/structure/rack,
+/obj/item/clothing/head/utility/welding,
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"so" = (
+/turf/open/floor/plating/reinforced,
+/area/misc/sapper_hideout/hangar)
+"sv" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
+	},
+/obj/effect/mapping_helpers/burnt_floor,
+/obj/item/flashlight/glowstick/yellow{
+	start_on = 1
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"sZ" = (
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"tu" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 5
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"tx" = (
+/turf/closed/wall,
+/area/misc/sapper_hideout/hangar)
+"tD" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
+/obj/structure/mop_bucket/janitorialcart{
+	dir = 8
+	},
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"tO" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 1
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"up" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 4
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"uP" = (
+/obj/structure/railing/corner,
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"vb" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 8
+	},
+/turf/open/misc/ironsand,
+/area/misc/sapper_hideout)
+"vE" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 5
+	},
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"wg" = (
+/obj/structure/marker_beacon/bronze{
+	pixel_y = -8;
+	pixel_x = 8
+	},
+/obj/effect/turf_decal/stripes/white{
+	dir = 9
+	},
+/turf/open/floor/iron/smooth_corner,
+/area/misc/sapper_hideout/hangar)
+"wv" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 1
+	},
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"wO" = (
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"xg" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/misc/beach/sand,
+/area/misc/sapper_hideout)
+"xl" = (
+/obj/machinery/atmospherics/pipe/smart/simple/general/visible/layer2,
+/obj/structure/lattice,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"yk" = (
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 1
+	},
+/obj/structure/cable/layer3,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"yv" = (
+/obj/structure/marker_beacon/bronze{
+	pixel_y = 8;
+	pixel_x = -8
+	},
+/obj/effect/turf_decal/stripes/white{
+	dir = 6
+	},
+/turf/open/floor/iron/smooth_corner{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"yP" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 10
+	},
+/obj/structure/marker_beacon/bronze{
+	pixel_y = 8;
+	pixel_x = 8
+	},
+/turf/open/floor/iron/smooth_corner{
+	dir = 4
+	},
+/area/misc/sapper_hideout/hangar)
+"zj" = (
+/obj/machinery/atmospherics/components/trinary/filter/flipped/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"zt" = (
+/turf/closed/mineral/random/stationside/asteroid/porus,
+/area/misc/sapper_hideout)
+"zO" = (
 /obj/effect/turf_decal/stripes/white,
 /turf/open/floor/iron/smooth_half,
 /area/misc/sapper_hideout/hangar)
-"fy" = (
+"Aw" = (
+/obj/structure/cable/layer3,
+/obj/machinery/atmospherics/pipe/smart/simple/green/hidden/layer2,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Bf" = (
+/obj/item/wallframe/airalarm,
+/obj/item/electronics/airalarm,
+/obj/item/stack/cable_coil/five,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Bh" = (
+/obj/structure/fluff/broken_canister_frame,
+/obj/item/stock_parts/power_store/cell/empty,
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Bt" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/structure/cable/layer3,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout/hangar)
+"BH" = (
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"BZ" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 1
+	},
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 7;
+	pixel_y = 13
+	},
+/obj/item/rag{
+	pixel_x = -4;
+	pixel_y = 11
+	},
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"Ca" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 8
+	},
+/turf/open/misc/beach/sand,
+/area/misc/sapper_hideout)
+"Cb" = (
+/obj/structure/cable/layer3,
+/obj/structure/lattice,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"Ce" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/splatter/oil,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Cf" = (
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/engine,
+/area/misc/sapper_hideout)
+"CO" = (
+/obj/effect/turf_decal/stripes/corner,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"Da" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"DH" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"DS" = (
+/turf/open/misc/beach/sand,
+/area/misc/sapper_hideout)
+"EJ" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 5
+	},
+/obj/structure/marker_beacon/bronze{
+	pixel_y = -8;
+	pixel_x = -8
+	},
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"Fe" = (
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"FJ" = (
+/obj/machinery/atmospherics/components/tank/air/layer2,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"FU" = (
 /obj/structure/frame/computer{
 	anchored = 1
 	},
@@ -111,31 +617,114 @@
 /obj/effect/turf_decal/sand,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"fX" = (
+"Gw" = (
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Hu" = (
+/obj/machinery/mech_bay_recharge_port,
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"HG" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Io" = (
+/obj/structure/cable/layer3,
+/obj/effect/turf_decal/sand/plating,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Iv" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Iy" = (
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/mapping_helpers/broken_floor,
+/obj/effect/turf_decal/tile/yellow/half/contrasted,
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"IQ" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"IV" = (
+/obj/machinery/power/apc/auto_name/directional/west{
+	cable_layer = 4
+	},
+/obj/effect/mapping_helpers/apc/cell_10k,
+/obj/effect/mapping_helpers/apc/full_charge,
+/obj/effect/mapping_helpers/apc/unlocked,
+/obj/effect/mapping_helpers/apc/cut_AI_wire,
+/obj/structure/cable/layer3,
+/obj/effect/mapping_helpers/apc,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Jk" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"JZ" = (
+/turf/open/misc/ironsand,
+/area/misc/sapper_hideout)
+"Kb" = (
+/obj/structure/railing/corner,
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"KM" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 1
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"KV" = (
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/misc/sapper_hideout/hangar)
+"Lx" = (
+/obj/structure/marker_beacon/bronze{
+	pixel_y = 8;
+	pixel_x = 8
+	},
+/obj/effect/turf_decal/stripes/white{
+	dir = 10
+	},
+/turf/open/floor/iron/smooth_corner{
+	dir = 4
+	},
+/area/misc/sapper_hideout/hangar)
+"NF" = (
+/obj/structure/cable/layer3,
+/obj/effect/landmark/start/sapper,
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/misc/sapper_hideout/hangar)
+"NO" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
 /obj/structure/cable/layer3,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout/hangar)
-"gk" = (
-/obj/item/stack/rods/ten,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"gs" = (
-/obj/structure/girder,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"gv" = (
-/turf/cordon,
-/area/space)
-"gW" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 4
+"OM" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
 	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"hw" = (
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"OO" = (
 /obj/structure/railing{
 	dir = 8
 	},
@@ -144,50 +733,19 @@
 	},
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
-"hz" = (
-/obj/effect/turf_decal/stripes/asteroid/corner,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"iV" = (
-/obj/structure/railing/corner,
-/obj/effect/turf_decal/stripes/asteroid/corner,
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"jv" = (
-/obj/effect/turf_decal/siding/dark/corner,
-/obj/structure/cable/layer3,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"jL" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/iron/smooth_half{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"jX" = (
-/obj/effect/turf_decal/siding/dark/corner{
+"Pa" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"kk" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
-	dir = 1
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Pl" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 8
 	},
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
-"ko" = (
-/obj/structure/cable/layer3,
-/obj/structure/lattice,
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"kB" = (
+"Pn" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 9
 	},
@@ -197,33 +755,7 @@
 	},
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"lS" = (
-/obj/effect/turf_decal/stripes/corner,
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"mo" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"mG" = (
-/obj/machinery/atmospherics/pipe/smart/simple/general/visible/layer2,
-/obj/structure/lattice,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"mR" = (
-/obj/item/wallframe/airalarm,
-/obj/item/electronics/airalarm,
-/obj/item/stack/cable_coil/five,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"mU" = (
+"PW" = (
 /obj/effect/turf_decal/stripes/white{
 	dir = 4
 	},
@@ -241,680 +773,20 @@
 	dir = 1
 	},
 /area/misc/sapper_hideout/hangar)
-"nh" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 6
-	},
-/obj/effect/turf_decal/tile/yellow/anticorner/contrasted,
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"nC" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 1
-	},
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"nN" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"oo" = (
+"Ql" = (
 /obj/machinery/atmospherics/components/trinary/mixer/flipped/layer2{
 	dir = 4
 	},
 /obj/effect/light_emitter/fake_outdoors,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"oU" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/color_adapter/layer2,
-/turf/open/floor/iron/smooth_corner{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"pm" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 8
-	},
-/turf/open/floor/iron/smooth_half{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"pP" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"qI" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/obj/structure/cable/layer3,
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout/hangar)
-"qS" = (
-/obj/structure/cable/layer3,
-/obj/effect/turf_decal/sand/plating,
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"se" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 1
-	},
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"sR" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 1
-	},
-/turf/open/misc/sandy_dirt,
-/area/misc/sapper_hideout)
-"sU" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 10
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"sZ" = (
-/obj/structure/fluff/broken_canister_frame,
-/obj/item/stock_parts/power_store/cell/empty,
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"te" = (
-/turf/closed/wall,
-/area/misc/sapper_hideout/hangar)
-"ts" = (
-/obj/structure/tank_frame,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"tJ" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 4
-	},
-/turf/open/floor/iron/smooth_half{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"tL" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"ui" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 1
-	},
-/obj/item/reagent_containers/spray/cleaner{
-	pixel_x = 7;
-	pixel_y = 13
-	},
-/obj/item/rag{
-	pixel_x = -4;
-	pixel_y = 11
-	},
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"uv" = (
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"vh" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 10
-	},
-/obj/effect/mapping_helpers/burnt_floor,
-/obj/item/flashlight/glowstick/yellow{
-	start_on = 1
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"vB" = (
-/obj/structure/tank_frame,
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"vF" = (
-/obj/effect/mapping_helpers/broken_floor,
-/obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"vL" = (
-/obj/structure/marker_beacon/bronze,
-/turf/open/floor/engine,
-/area/misc/sapper_hideout)
-"xb" = (
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"xx" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood/oil,
-/obj/effect/turf_decal/tile/yellow/half/contrasted{
-	dir = 4
-	},
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"xA" = (
-/obj/effect/turf_decal/siding/dark,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"xB" = (
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"xL" = (
-/obj/structure/marker_beacon/bronze{
-	pixel_y = 8;
-	pixel_x = -8
-	},
-/obj/effect/turf_decal/stripes/white{
-	dir = 6
-	},
-/turf/open/floor/iron/smooth_corner{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"yi" = (
-/obj/machinery/mech_bay_recharge_port,
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"yv" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
-	dir = 8
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"yA" = (
-/obj/structure/railing/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"zm" = (
-/obj/item/stock_parts/power_store/battery/empty{
-	pixel_y = 6;
-	pixel_x = 3
-	},
-/obj/item/stock_parts/power_store/battery/empty{
-	pixel_y = -6;
-	pixel_x = -5
-	},
-/obj/effect/turf_decal/sand,
-/obj/effect/turf_decal/siding/dark,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"zn" = (
-/obj/structure/cable/layer3,
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"zq" = (
-/obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"zH" = (
-/obj/structure/lattice,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout)
-"Af" = (
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/mapping_helpers/broken_floor,
-/obj/effect/turf_decal/tile/yellow/half/contrasted,
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"Aq" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 6
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"As" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 10
-	},
-/obj/structure/marker_beacon/bronze{
-	pixel_y = 8;
-	pixel_x = 8
-	},
-/turf/open/floor/iron/smooth_corner{
-	dir = 4
-	},
-/area/misc/sapper_hideout/hangar)
-"AI" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/iron/smooth_half{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"Bc" = (
-/obj/structure/railing,
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Bg" = (
-/obj/structure/cable/layer3,
-/obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Bm" = (
-/obj/structure/marker_beacon/bronze{
-	pixel_y = -8;
-	pixel_x = -8
-	},
-/obj/effect/turf_decal/stripes/white{
-	dir = 5
-	},
-/turf/open/floor/iron/smooth_corner{
-	dir = 8
-	},
-/area/misc/sapper_hideout/hangar)
-"Ce" = (
-/obj/machinery/atmospherics/components/tank/air/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Cl" = (
-/obj/structure/cable/layer3,
-/obj/item/flashlight/glowstick/yellow{
-	start_on = 1
-	},
-/turf/open/floor/catwalk_floor/iron_smooth,
-/area/misc/sapper_hideout/hangar)
-"Cm" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 1
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Cp" = (
-/obj/structure/tank_holder,
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"CS" = (
-/turf/open/floor/plating/reinforced,
-/area/misc/sapper_hideout/hangar)
-"CT" = (
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/floor/engine,
-/area/misc/sapper_hideout)
-"Dc" = (
-/obj/structure/railing/corner,
-/obj/effect/turf_decal/stripes/asteroid/corner,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"DC" = (
-/turf/open/misc/sandy_dirt,
-/area/misc/sapper_hideout)
-"DF" = (
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"DG" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 8
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"DN" = (
-/obj/structure/cable/layer3,
-/obj/structure/lattice,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"DO" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark,
-/turf/open/misc/sandy_dirt,
-/area/misc/sapper_hideout)
-"DR" = (
-/obj/structure/marker_beacon/bronze{
-	pixel_y = -8;
-	pixel_x = 8
-	},
-/obj/effect/turf_decal/stripes/white{
-	dir = 9
-	},
-/turf/open/floor/iron/smooth_corner,
-/area/misc/sapper_hideout/hangar)
-"DS" = (
-/turf/open/space/basic,
-/area/space)
-"DV" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/iron/smooth_half{
-	dir = 1
-	},
-/area/misc/sapper_hideout/hangar)
-"Ek" = (
-/obj/structure/railing/corner{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"EB" = (
-/obj/structure/cable/layer3,
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/floor/catwalk_floor/iron_smooth,
-/area/misc/sapper_hideout/hangar)
-"Fv" = (
-/obj/effect/mapping_helpers/burnt_floor,
-/obj/effect/turf_decal/sand/plating,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"FC" = (
-/obj/structure/lattice,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"FO" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
-	dir = 8
-	},
-/obj/machinery/portable_atmospherics/canister,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"FS" = (
-/obj/item/stack/sheet/iron/five,
-/obj/structure/girder,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"FU" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"FW" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Gb" = (
-/obj/effect/turf_decal/stripes/white,
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"Gl" = (
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Gw" = (
-/obj/structure/cable/layer3,
-/obj/effect/turf_decal/sand/plating,
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"GC" = (
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Hx" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 5
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"HM" = (
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"IM" = (
+"QD" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 4
 	},
-/turf/open/misc/sandy_dirt,
-/area/misc/sapper_hideout)
-"Jo" = (
-/turf/open/floor/engine,
-/area/misc/sapper_hideout)
-"Km" = (
-/obj/effect/mapping_helpers/burnt_floor,
-/obj/item/storage/toolbox/mechanical,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Ky" = (
-/obj/item/stack/rods/ten,
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"KW" = (
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/turf_decal/tile/yellow/half/contrasted,
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"Lf" = (
-/turf/open/floor/catwalk_floor/iron_smooth,
-/area/misc/sapper_hideout/hangar)
-"Lz" = (
-/obj/effect/light_emitter/fake_outdoors,
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
-"LT" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Mc" = (
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/turf_decal/tile/yellow/half/contrasted,
-/obj/structure/mop_bucket/janitorialcart{
-	dir = 8
-	},
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"Mu" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/obj/structure/cable/layer3,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"MV" = (
-/obj/machinery/atmospherics/components/tank/air/layer2{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"NE" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/blood/splatter/oil,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"NF" = (
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"OO" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 8
-	},
-/turf/open/misc/sandy_dirt,
-/area/misc/sapper_hideout)
-"OY" = (
-/turf/closed/mineral/random/stationside/asteroid/porus,
-/area/misc/sapper_hideout)
-"Pp" = (
-/obj/structure/cable/layer3,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"QQ" = (
-/obj/machinery/atmospherics/components/tank/air/layer2,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"QV" = (
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 4
-	},
-/obj/structure/lattice,
-/turf/open/lava/plasma/air,
-/area/misc/sapper_hideout/hangar)
-"RG" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 5
-	},
-/obj/structure/marker_beacon/bronze{
-	pixel_y = -8;
-	pixel_x = -8
-	},
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"RY" = (
-/obj/structure/marker_beacon/bronze{
-	pixel_y = 8;
-	pixel_x = 8
-	},
-/obj/effect/turf_decal/stripes/white{
-	dir = 10
-	},
-/turf/open/floor/iron/smooth_corner{
-	dir = 4
-	},
-/area/misc/sapper_hideout/hangar)
-"Se" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 5
-	},
-/obj/effect/mapping_helpers/burnt_floor,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Sy" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/obj/effect/mapping_helpers/broken_floor,
-/obj/effect/turf_decal/tile/yellow/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"Tm" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark/corner,
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"TO" = (
-/obj/machinery/atmospherics/components/trinary/filter/flipped/layer2{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"TT" = (
-/obj/effect/turf_decal/siding/dark/corner,
-/obj/effect/decal/cleanable/blood/oil,
-/obj/structure/cable/layer3,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"TW" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 8
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Uo" = (
-/obj/effect/turf_decal/siding/wideplating_new/dark{
-	dir = 8
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Ut" = (
-/obj/item/stack/rods/two,
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout)
-"UD" = (
-/obj/structure/rack,
-/obj/item/clothing/head/utility/welding,
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"UI" = (
-/obj/structure/cable/layer3,
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"UX" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow/half/contrasted{
-	dir = 1
-	},
-/turf/open/floor/iron/smooth,
-/area/misc/sapper_hideout/hangar)
-"Vb" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/obj/structure/cable/layer3,
-/obj/effect/light_emitter/fake_outdoors,
-/turf/open/floor/plating,
-/area/misc/sapper_hideout/hangar)
-"Vi" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"VJ" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/asteroid/end{
-	dir = 4
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"VY" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 1
-	},
-/obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/iron/smooth_half,
-/area/misc/sapper_hideout/hangar)
-"Wr" = (
+"QO" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
@@ -923,76 +795,192 @@
 	},
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"WO" = (
+"RD" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"Sa" = (
+/obj/structure/lattice,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout)
+"Sc" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark/corner{
+	dir = 8
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Sm" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"Sy" = (
+/obj/structure/railing,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"SE" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/burnt_floor,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"Tc" = (
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/engine,
+/area/misc/sapper_hideout)
+"Te" = (
+/obj/machinery/atmospherics/components/tank/air/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"TC" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"TJ" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 8
+	},
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"TX" = (
+/obj/structure/tank_frame,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Ug" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Uh" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/oil,
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/iron/smooth,
 /area/misc/sapper_hideout/hangar)
-"XT" = (
-/obj/effect/turf_decal/stripes/white{
-	dir = 9
-	},
-/obj/structure/marker_beacon/bronze{
-	pixel_y = -8;
-	pixel_x = 8
-	},
-/turf/open/floor/iron/smooth_corner,
-/area/misc/sapper_hideout/hangar)
-"Yy" = (
-/obj/structure/cable/layer3,
-/obj/effect/landmark/start/sapper,
-/turf/open/floor/catwalk_floor/iron_smooth,
-/area/misc/sapper_hideout/hangar)
-"Zh" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
-	},
-/turf/open/misc/asteroid,
-/area/misc/sapper_hideout)
-"Zk" = (
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 1
-	},
-/obj/structure/cable/layer3,
+"UC" = (
+/obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating,
 /area/misc/sapper_hideout/hangar)
-"ZE" = (
+"UX" = (
+/obj/structure/cable/layer3,
+/obj/effect/turf_decal/sand/plating,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Wh" = (
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/misc/sapper_hideout/hangar)
+"Wi" = (
 /obj/effect/turf_decal/stripes/asteroid/line,
 /turf/open/misc/asteroid,
 /area/misc/sapper_hideout)
+"WH" = (
+/obj/structure/lattice,
+/turf/open/lava/plasma/air,
+/area/misc/sapper_hideout/hangar)
+"WV" = (
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"WX" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 4
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"Xj" = (
+/obj/item/stack/rods/ten,
+/obj/effect/turf_decal/sand,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"XS" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/broken_floor,
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/smooth,
+/area/misc/sapper_hideout/hangar)
+"Yd" = (
+/obj/structure/cable/layer3,
+/obj/effect/light_emitter/fake_outdoors,
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/misc/sapper_hideout/hangar)
+"Yf" = (
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Yg" = (
+/obj/machinery/atmospherics/components/tank/air/layer2{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"Yo" = (
+/obj/effect/turf_decal/stripes/white,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/iron/smooth_half,
+/area/misc/sapper_hideout/hangar)
+"Yv" = (
+/obj/effect/turf_decal/siding/wideplating_new/dark{
+	dir = 8
+	},
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout)
+"YD" = (
+/obj/structure/cable/layer3,
+/turf/open/misc/asteroid,
+/area/misc/sapper_hideout/hangar)
+"YG" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/iron/smooth_half{
+	dir = 1
+	},
+/area/misc/sapper_hideout/hangar)
+"ZB" = (
+/obj/effect/turf_decal/siding/dark/corner,
+/obj/structure/cable/layer3,
+/turf/open/floor/plating,
+/area/misc/sapper_hideout/hangar)
+"ZS" = (
+/obj/structure/cable/layer3,
+/turf/open/floor/catwalk_floor/iron_smooth,
+/area/misc/sapper_hideout/hangar)
 
 (1,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -1147,56 +1135,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (3,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -1351,56 +1291,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (5,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -1555,56 +1447,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (7,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -1759,56 +1603,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (9,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -1963,56 +1759,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (11,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -2167,56 +1915,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (13,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -2371,56 +2071,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (15,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -2575,56 +2227,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (17,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -2779,56 +2383,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (19,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -2983,56 +2539,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (21,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -3187,56 +2695,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (23,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -3391,56 +2851,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (25,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
@@ -3595,30 +3007,6 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (27,1,1) = {"
 DS
@@ -3658,35 +3046,11 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+mN
+mN
+mN
+mN
+mN
 DS
 DS
 DS
@@ -3759,37 +3123,13 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+mN
+Iv
+QD
+QD
+QD
+up
+mN
 DS
 DS
 DS
@@ -3860,39 +3200,15 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+mN
+mN
+TC
+hS
+hS
+jX
+tO
+mN
+mN
 DS
 DS
 DS
@@ -3945,6 +3261,9 @@ DS
 DS
 DS
 DS
+mN
+mN
+mN
 DS
 DS
 DS
@@ -3958,44 +3277,17 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+mN
+mN
+mN
+mN
+Sa
+Tc
+hS
+tO
+mN
+mN
+mN
 DS
 DS
 DS
@@ -4045,61 +3337,37 @@ DS
 DS
 DS
 DS
+mN
+mN
+mN
+mN
+mN
+mN
 DS
 DS
 DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+mN
+mN
+aH
+mN
+mN
+Kb
+pu
+om
+WX
+TC
+Cf
+jX
+hS
+tO
+uP
+om
+om
+WX
+aH
 DS
 DS
 DS
@@ -4147,62 +3415,38 @@ DS
 DS
 DS
 DS
+mN
+mN
+mN
+mN
+mN
+mN
 DS
 DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+BH
+Ug
+Ug
+Ug
+Ug
+Ug
+cx
+tx
+tx
+li
+Sc
+Yv
+mN
+Yv
+KM
+IQ
+tx
+dt
+li
+mN
+mN
 DS
 DS
 DS
@@ -4249,62 +3493,38 @@ DS
 DS
 DS
 DS
+mN
+mN
+mN
+mN
+mN
+mN
 DS
 DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+Wi
+Hu
+FU
+Yf
+Yf
+Yf
+Sy
+dZ
+tx
+li
+mN
+mN
+mN
+mN
+mN
+IQ
+tx
+tx
+li
+mN
+mN
 DS
 DS
 DS
@@ -4350,64 +3570,40 @@ DS
 DS
 DS
 DS
+mN
+mN
+mN
+mN
+mN
+mN
+mN
+mN
 DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+Wi
+nz
+Yf
+Yf
+Yf
+Yf
+hg
+Bf
+OO
+lB
+Ug
+Ug
+Ug
+Ug
+Ug
+dJ
+IV
+OO
+lB
+Ug
+Pa
+mN
 DS
 DS
 DS
@@ -4452,64 +3648,40 @@ DS
 DS
 DS
 DS
+mN
+mN
+mN
+mN
+mN
+mN
+mN
+mN
+mN
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+Wi
+jO
+Yf
+Yf
+Yf
+fD
+ZS
+ZS
+hq
+ZS
+NF
+NF
+NF
+NF
+NF
+ZS
+dG
+gm
+fD
+fD
+ot
+mN
 DS
 DS
 DS
@@ -4554,64 +3726,40 @@ DS
 DS
 DS
 DS
+mN
+mN
+mN
+mN
+mN
+mN
+mN
+mN
+mN
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+Wi
+rS
+Yf
+Yf
+dG
+ZB
+nZ
+eT
+Uh
+nZ
+nZ
+nZ
+nZ
+nZ
+eT
+lO
+nZ
+Gw
+ch
+ZS
+ot
+mN
 DS
 DS
 DS
@@ -4656,64 +3804,40 @@ DS
 DS
 DS
 DS
+mN
+mN
+mN
+mN
+mN
+mN
+mN
+mN
+mN
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+pW
+Pl
+ae
+Cb
+jS
+DH
+wg
+TJ
+qX
+SE
+qX
+TJ
+qX
+SE
+qX
+TJ
+Lx
+vE
+jp
+Yd
+ot
+mN
 DS
 DS
 DS
@@ -4759,64 +3883,40 @@ DS
 DS
 DS
 DS
+mN
+mN
+mN
+mN
+mN
+mN
+mN
+mN
 DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+mN
+Wi
+ZS
+Da
+eN
+mX
+Wh
+Wh
+Wh
+Wh
+WH
+Wh
+Wh
+Wh
+Wh
+OM
+yP
+Ce
+dG
+ot
+mN
+mN
 DS
 DS
 DS
@@ -4862,63 +3962,39 @@ DS
 DS
 DS
 DS
+mN
+mN
+mN
+mN
+mN
+mN
 DS
 DS
 DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+Wi
+ZS
+Da
+wv
+sZ
+Wh
+so
+ch
+Yf
+ch
+Yf
+Yf
+so
+Wh
+rL
+zO
+Sm
+ZS
+ot
+mN
+mN
 DS
 DS
 DS
@@ -4958,69 +4034,45 @@ DS
 DS
 DS
 DS
+JZ
+JZ
+JZ
 DS
 DS
 DS
 DS
+mN
+mN
+mN
 DS
 DS
 DS
 DS
+JZ
+JZ
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+Wi
+ZS
+tD
+BZ
+wO
+Wh
+ch
+ji
+cd
+WH
+hK
+ji
+Yf
+Wh
+sZ
+Yo
+Sm
+dG
+ot
+mN
+mN
 DS
 DS
 DS
@@ -5060,6 +4112,10 @@ DS
 DS
 DS
 DS
+JZ
+JZ
+JZ
+JZ
 DS
 DS
 DS
@@ -5068,61 +4124,33 @@ DS
 DS
 DS
 DS
+JZ
+JZ
+JZ
+JZ
+JZ
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+Wi
+ZS
+WV
+Jk
+sZ
+Wh
+Yf
+UC
+Fe
+Fe
+Fe
+WH
+Yf
+Wh
+wO
+zO
+Sm
+dG
+ot
+mN
+mN
 DS
 DS
 DS
@@ -5160,72 +4188,48 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+JZ
+zt
+JZ
+JZ
+DS
+DS
+DS
+DS
+DS
+DS
+DS
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+Wi
+ZS
+Da
+fK
+sZ
+Wh
+Yf
+WH
+Fe
+Fe
+Fe
+WH
+Yf
+Wh
+sZ
+zO
+XS
+ZS
+ot
+mN
+mN
+mN
 DS
 DS
 DS
@@ -5261,73 +4265,49 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+zt
+zt
+zt
+zt
+JZ
+JZ
+DS
+DS
+DS
+DS
+DS
+JZ
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+JZ
+pI
+Yd
+Da
+fK
+sZ
+KV
+Yf
+hK
+Fe
+pY
+Fe
+cd
+Yf
+KV
+wO
+zO
+Sm
+Yd
+ot
+mN
+mN
+mN
 DS
 DS
 DS
@@ -5363,73 +4343,49 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+zt
+zt
+zt
+zt
+JZ
+JZ
+DS
+DS
+DS
+DS
+DS
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+zt
+JZ
+vb
+Io
+Da
+fK
+wO
+Wh
+Yf
+ji
+cd
+WH
+Fe
+Yf
+Yf
+Wh
+sZ
+zO
+Sm
+dG
+ot
+mN
+mN
+mN
 DS
 DS
 DS
@@ -5465,73 +4421,49 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+zt
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+DS
+DS
+DS
+JZ
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+zt
+JZ
+JZ
+hq
+Iy
+fK
+sZ
+WH
+so
+ch
+Yf
+ji
+Yf
+ch
+so
+WH
+sZ
+zO
+XS
+dG
+tu
+Pa
+mN
+mN
 DS
 DS
 DS
@@ -5567,73 +4499,49 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+zt
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+zt
+JZ
+JZ
+Io
+ry
+EJ
+ar
+Wh
+Wh
+Wh
+Wh
+Wh
+Wh
+Wh
+Wh
+Wh
+CO
+pU
+QO
+Aw
+ji
+ot
+mN
+mN
 DS
 DS
 DS
@@ -5669,73 +4577,49 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+zt
+zt
+JZ
+hq
+Bh
+sv
+na
+mj
+mj
+YG
+mj
+PW
+mj
+mj
+RD
+mj
+yv
+Pn
+nh
+Aw
+ge
+ot
+mN
+mN
 DS
 DS
 DS
@@ -5771,73 +4655,49 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+zt
+zt
+zt
+JZ
+UX
+fD
+rl
+qA
+Bt
+qA
+qA
+qA
+Bt
+qA
+bR
+NO
+du
+NO
+yk
+WH
+Ql
+of
+ot
+mN
+mN
 DS
 DS
 DS
@@ -5873,72 +4733,48 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+zt
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+YD
+mN
+mN
+pW
+ae
+TX
+Yg
+FJ
+zj
+xl
+Xj
+ot
+mN
 DS
 DS
 DS
@@ -5976,71 +4812,47 @@ DS
 DS
 DS
 DS
+JZ
+JZ
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+DS
+JZ
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+zt
+zt
+dc
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-gv
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-gv
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+xg
+bq
+Te
+Te
+HG
+ji
+ji
+ot
+mN
 DS
 DS
 DS
@@ -6078,71 +4890,47 @@ DS
 DS
 DS
 DS
+JZ
+JZ
+zt
+zt
+zt
+zt
+JZ
+JZ
 DS
 DS
 DS
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+JZ
+JZ
+zt
+zt
+zt
+zt
+JZ
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-gv
-OY
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-Tm
-nN
-IM
-IM
-cV
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-OY
-gv
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+oF
+Ca
+Ca
+Ca
+Ca
+Pl
+Pl
+mN
+mN
 DS
 DS
 DS
@@ -6180,6 +4968,35 @@ DS
 DS
 DS
 DS
+JZ
+JZ
+zt
+zt
+zt
+zt
+JZ
+DS
+DS
+DS
+DS
+DS
+JZ
+JZ
+JZ
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+JZ
 DS
 DS
 DS
@@ -6189,61 +5006,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-gv
-OY
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-tL
-Jo
-Jo
-Ut
-sR
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-OY
-gv
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+mN
+mN
 DS
 DS
 DS
@@ -6282,59 +5046,35 @@ DS
 DS
 DS
 DS
+JZ
+JZ
+JZ
+zt
+zt
+JZ
+JZ
 DS
 DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-gv
-OY
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-DC
-zH
-vL
-Jo
-sR
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-OY
-gv
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+JZ
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+JZ
 DS
 DS
 DS
@@ -6385,57 +5125,33 @@ DS
 DS
 DS
 DS
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
 DS
 DS
 DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-gv
-OY
-GC
-GC
-GC
-Lz
-GC
-GC
-Dc
-mo
-Vi
-Ek
-DO
-CT
-Ut
-Jo
-Cm
-iV
-Vi
-Vi
-Ek
-Lz
-GC
-GC
-OY
-gv
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+JZ
+zt
+zt
+zt
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+JZ
+JZ
 DS
 DS
 DS
@@ -6489,6 +5205,9 @@ DS
 DS
 DS
 DS
+JZ
+JZ
+JZ
 DS
 DS
 DS
@@ -6496,48 +5215,21 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-gv
-OY
-hz
-pP
-pP
-pP
-pP
-pP
-eP
-te
-te
-Zh
-yv
-Uo
-DC
-OO
-kk
-ec
-te
-gs
-Zh
-GC
-GC
-GC
-OY
-gv
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+JZ
+JZ
 DS
 DS
 DS
@@ -6602,43 +5294,19 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-gv
-OY
-ZE
-yi
-fy
-uv
-uv
-uv
-Bc
-FS
-te
-Zh
-GC
-DC
-GC
-DC
-GC
-ec
-te
-te
-Zh
-GC
-GC
-GC
-OY
-gv
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+JZ
+JZ
+zt
+zt
+zt
+zt
+JZ
+JZ
+JZ
+JZ
+JZ
 DS
 DS
 DS
@@ -6705,40 +5373,16 @@ DS
 DS
 DS
 DS
-DS
-DS
-gv
-OY
-ZE
-gk
-uv
-uv
-uv
-uv
-VJ
-mR
-hw
-yA
-pP
-pP
-pP
-pP
-pP
-Aq
-cM
-hw
-yA
-pP
-gW
-GC
-OY
-gv
-DS
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
 DS
 DS
 DS
@@ -6807,39 +5451,15 @@ DS
 DS
 DS
 DS
-DS
-DS
-gv
-OY
-ZE
-Cp
-uv
-uv
-uv
-zn
-dF
-dF
-DN
-dF
-Yy
-Yy
-Yy
-Yy
-Yy
-dF
-Pp
-Cl
-zn
-zn
-LT
-GC
-OY
-gv
-DS
-DS
-DS
-DS
-DS
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
 DS
 DS
 DS
@@ -6910,35 +5530,11 @@ DS
 DS
 DS
 DS
-DS
-gv
-OY
-ZE
-UD
-uv
-uv
-Pp
-jv
-WO
-FW
-xx
-WO
-WO
-WO
-WO
-WO
-FW
-ac
-WO
-jX
-xb
-dF
-LT
-GC
-OY
-gv
-DS
-DS
+JZ
+JZ
+JZ
+JZ
+JZ
 DS
 DS
 DS
@@ -7013,32 +5609,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-TW
-DG
-sU
-ko
-TT
-nh
-DR
-fk
-pm
-jL
-pm
-fk
-pm
-jL
-pm
-fk
-RY
-Se
-QV
-EB
-LT
-GC
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -7115,32 +5687,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-ZE
-dF
-KW
-XT
-bg
-Lf
-Lf
-Lf
-Lf
-FC
-Lf
-Lf
-Lf
-Lf
-FU
-As
-NE
-Pp
-LT
-GC
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -7217,32 +5765,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-ZE
-dF
-KW
-VY
-dl
-Lf
-CS
-xb
-uv
-xb
-uv
-uv
-CS
-Lf
-xB
-fu
-UX
-dF
-LT
-GC
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -7319,32 +5843,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-ZE
-dF
-Mc
-ui
-DF
-Lf
-xb
-Gl
-Fv
-FC
-vF
-Gl
-uv
-Lf
-dl
-Gb
-UX
-Pp
-LT
-GC
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -7421,32 +5921,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-ZE
-dF
-xA
-nC
-dl
-Lf
-uv
-zq
-NF
-NF
-NF
-FC
-uv
-Lf
-DF
-fu
-UX
-Pp
-LT
-GC
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -7523,32 +5999,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-ZE
-dF
-KW
-se
-dl
-Lf
-uv
-FC
-NF
-NF
-NF
-FC
-uv
-Lf
-dl
-fu
-Sy
-dF
-LT
-GC
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -7625,32 +6077,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-ZE
-EB
-KW
-se
-dl
-cx
-uv
-vF
-NF
-HM
-NF
-Fv
-uv
-cx
-DF
-fu
-UX
-EB
-LT
-GC
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -7727,32 +6155,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-TW
-Bg
-KW
-se
-DF
-Lf
-uv
-Gl
-Fv
-FC
-NF
-uv
-uv
-Lf
-dl
-fu
-UX
-Pp
-LT
-GC
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -7829,32 +6233,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-GC
-DN
-Af
-se
-dl
-FC
-CS
-xb
-uv
-Gl
-uv
-xb
-CS
-FC
-dl
-fu
-Sy
-Pp
-Hx
-gW
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -7931,32 +6311,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-GC
-Bg
-zm
-RG
-ai
-Lf
-Lf
-Lf
-Lf
-Lf
-Lf
-Lf
-Lf
-Lf
-lS
-oU
-Wr
-eK
-Gl
-LT
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -8033,32 +6389,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-GC
-DN
-sZ
-vh
-Bm
-tJ
-tJ
-AI
-tJ
-mU
-tJ
-tJ
-DV
-tJ
-xL
-kB
-dK
-eK
-Km
-LT
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -8135,32 +6467,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-GC
-Gw
-zn
-UI
-fX
-qI
-fX
-fX
-fX
-qI
-fX
-qS
-Mu
-Vb
-Mu
-Zk
-FC
-oo
-bF
-LT
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -8237,32 +6545,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-TW
-sU
-ts
-MV
-QQ
-TO
-mG
-Ky
-LT
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -8339,32 +6623,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-ZE
-vB
-Ce
-Ce
-FO
-Gl
-Gl
-LT
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -8441,32 +6701,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-GC
-TW
-DG
-DG
-DG
-DG
-DG
-DG
-GC
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -8543,32 +6779,8 @@ DS
 DS
 DS
 DS
-gv
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-OY
-gv
+DS
+DS
 DS
 DS
 DS
@@ -8645,32 +6857,8 @@ DS
 DS
 DS
 DS
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
+DS
+DS
 DS
 DS
 DS
@@ -8797,2300 +6985,8 @@ DS
 DS
 DS
 DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 "}
 (78,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(79,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(80,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(81,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(82,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(83,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(84,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(85,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(86,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(87,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(88,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(89,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(90,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(91,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(92,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(93,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(94,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(95,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(96,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(97,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(98,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(99,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-"}
-(100,1,1) = {"
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
-DS
 DS
 DS
 DS
