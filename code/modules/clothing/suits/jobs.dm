@@ -30,6 +30,12 @@
 	)
 	species_exception = list(/datum/species/golem)
 	armor_type = /datum/armor/suit_apron
+	supports_variations_flags = CLOTHING_DIGITIGRADE_MASK
+	bodyshapes_with_variations = BODYSHAPE_DIGITIGRADE
+
+/obj/item/clothing/suit/apron/generate_digitigrade_icons(icon/base_icon, greyscale_colors)
+	var/icon/legs = icon(SSgreyscale.GetColoredIconByType(/datum/greyscale_config/digitigrade, greyscale_colors), "apron_worn")
+	return apply_icon_mask(base_icon, LEGS_MASK, legs)
 
 /datum/armor/suit_apron
 	bio = 50
@@ -440,6 +446,12 @@
 		/obj/item/gun/ballistic/rifle/rebarxbow,
 		/obj/item/storage/bag/rebar_quiver,
 	)
+	supports_variations_flags = CLOTHING_DIGITIGRADE_MASK
+	bodyshapes_with_variations = BODYSHAPE_DIGITIGRADE
+
+/obj/item/clothing/suit/atmos_overalls/generate_digitigrade_icons(icon/base_icon, greyscale_colors)
+	var/icon/legs = icon(SSgreyscale.GetColoredIconByType(/datum/greyscale_config/digitigrade, greyscale_colors), "apron_worn")
+	return apply_icon_mask(base_icon, LEGS_MASK, legs)
 
 /datum/armor/atmos_overalls
 	fire = 100

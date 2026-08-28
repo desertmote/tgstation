@@ -140,7 +140,7 @@
 	/// Cached particle type
 	var/cached_state
 
-/datum/status_effect/fire_handler/fire_stacks/get_examine_text()
+/datum/status_effect/fire_handler/fire_stacks/get_examine_text(mob/examiner)
 	if(owner.on_fire)
 		return
 
@@ -341,7 +341,7 @@
 	QDEL_NULL(slipperiness)
 	REMOVE_TRAIT(owner, TRAIT_NO_SLIP_WATER, TRAIT_STATUS_EFFECT(id))
 
-/datum/status_effect/fire_handler/wet_stacks/get_examine_text()
+/datum/status_effect/fire_handler/wet_stacks/get_examine_text(mob/examiner)
 	if(stacks <= WET_STACKS_DAMP)
 		return "[owner.p_Their()] skin seem[owner.p_s()] lightly damp."
 	else if(stacks >= WET_STACKS_SOAKED)
