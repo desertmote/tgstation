@@ -148,7 +148,7 @@
 	shake_camera(user, 1 SECONDS, 2) //you shake too hehe
 	user.set_jitter_if_lower(1 SECONDS)
 
-//
+// limit restyle to our tail's unique pool
 /obj/item/organ/tail/fish/cerulean/get_valid_restyles()
 	return bodypart_overlay.get_global_feature_list()
 
@@ -158,7 +158,7 @@
 		return FALSE
 	return (owner.blood_volume && !HAS_TRAIT(owner, TRAIT_NOBLOOD) && owner.blood_volume >= (owner.default_blood_volume / 2))
 
-/// If legs are present remove them silently if special = true, not so silently else
+/// if legs are present remove them silently if special = true, not so silently else
 /obj/item/organ/tail/fish/cerulean/proc/get_your_sealegs(mob/living/carbon/owner, special)
 	var/obj/item/bodypart/right_leg = owner.get_bodypart(BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/left_leg = owner.get_bodypart(BODY_ZONE_L_LEG)
