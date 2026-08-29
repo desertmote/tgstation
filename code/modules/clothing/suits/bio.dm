@@ -39,7 +39,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	clothing_flags = THICKMATERIAL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	supports_variations_flags = CLOTHING_CERULEAN_VARIATION
 	slowdown = 0.5
 	allowed = list(/obj/item/tank/internals, /obj/item/reagent_containers/dropper, /obj/item/flashlight/pen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/reagent_containers/cup/beaker, /obj/item/gun/syringe)
 	armor_type = /datum/armor/suit_bio_suit
@@ -47,7 +46,7 @@
 	strip_delay = 7 SECONDS
 	equip_delay_other = 7 SECONDS
 	resistance_flags = ACID_PROOF
-	supports_variations_flags = CLOTHING_DIGITIGRADE_MASK
+	supports_variations_flags = CLOTHING_DIGITIGRADE_MASK|CLOTHING_CERULEAN_MASK_LEGS
 	bodyshapes_with_variations = BODYSHAPE_DIGITIGRADE
 	/// Type of texture applied by this
 	var/texture_type = /datum/bodypart_texture/mesh/biosuit
