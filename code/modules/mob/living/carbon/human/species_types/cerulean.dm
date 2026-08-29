@@ -176,7 +176,7 @@
 		EXTERNAL_BEHIND = BODY_BEHIND_LAYER,
 	)
 
-// simpeler than parent. we don't care about locked/natural_spawn. all the accessories in our pool are locked
+// simpler than parent. we don't care about locked/natural_spawn. all the accessories in our pool are locked
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/get_random_appearance()
 	return fetch_sprite_datum_from_name(pick(get_global_feature_list()))
 
@@ -194,7 +194,6 @@
 
 
 /*
- *
  *
  */
 /obj/item/organ/tail/fish/cerulean/abyssal
@@ -217,10 +216,10 @@
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/removed_from_limb(obj/item/bodypart/limb)
 	limb.remove_bodypart_texture(abyssal_tweak, FALSE)
 
-/datum/bodypart_texture/abyssal_cerulean
-	overlay_priority = (BODYPART_OVERLAY_FISH_INFUSION + 1)
-
 /datum/bodypart_texture/abyssal_cerulean/modify_bodypart_appearance(image/appearance)
 	var/icon/new_appearance = new(appearance.icon)
 	new_appearance.Blend(icon(/datum/sprite_accessory/tails/fish/cerulean::icon, "abyssal_mask"), ICON_SUBTRACT)
 	appearance.icon = new_appearance
+
+/datum/bodypart_texture/abyssal_cerulean/can_texture_bodypart(obj/item/bodypart/bodypart_owner)
+	return TRUE

@@ -16,10 +16,8 @@
 
 /datum/element/equipment_bodypart_texture/proc/run_blacklist(obj/item/equipped_item, mob/living/carbon/equipper)
 	for(var/bodyshape in bodyshape_blacklist)
-		if(equipper.bodyshape & bodyshape)
-			for(var/obj/item/item as anything in bodyshape_blacklist[bodyshape])
-				if(istype(equipped_item, item))
-					return FALSE
+		if((equipper.bodyshape & bodyshape) && (is_type_in_list(equipped_item, bodyshape_blacklist[bodyshape])))
+			return FALSE
 	return TRUE
 
 /datum/element/equipment_bodypart_texture/Attach(datum/target, body_zone, bodypart_overlay_type)
