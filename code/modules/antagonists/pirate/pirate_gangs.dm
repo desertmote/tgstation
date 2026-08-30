@@ -227,3 +227,26 @@ GLOBAL_LIST_INIT(heavy_pirate_gangs, init_pirate_gangs(is_heavy = TRUE))
 	response_rejected = "FOOLISH DECISION, I'LL MAKE AN EXAMPLE OUT OF YOUR CARCASS!! (does anyone remember how to pilot our ship?)"
 	response_too_late = "YOU ARE ALREADY UNDER SIEGE YOU BUFFON, ARE YOU BRAINSICK OR IGNORANT?!!"
 	response_not_enough = "DO THINK OF ME AS A JESTER? YOU ARE DEAD MEAT!! (i forgot how to fly the ship, tarnation.)"
+
+//
+/datum/pirate_gang/siren
+	name = "Sirens"
+//	ship_template_id = ""
+//	ship_name_pool = ""
+
+//	arrival_announcement = ""
+
+//	response_received = ""
+//	response_rejected = ""
+//	response_too_late = ""
+//	response_not_enough = ""
+
+/datum/pirate_gang/siren/generate_message(payoff)
+	var/list/pirate_gangs = (GLOB.light_pirate_gangs + GLOB.heavy_pirate_gangs)
+	var/datum/pirate_gang/gang_to_imitate = pick(pirate_gangs - src)
+	threat_title = gang_to_imitate.threat_title
+	threat_content = gang_to_imitate.threat_content
+	ship_name = pick(strings(PIRATE_NAMES_FILE, gang_to_imitate.ship_name_pool))
+	possible_answers = gang_to_imitate.possible_answers
+	. = ..()
+	ship_name = pick(strings(PIRATE_NAMES_FILE, ship_name_pool)) //reset ship_name to true name
