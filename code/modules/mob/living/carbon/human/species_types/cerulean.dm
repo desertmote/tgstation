@@ -39,7 +39,7 @@
 
 /datum/species/human/cerulean/prepare_human_for_preview(mob/living/carbon/human/preview_human)
 	preview_human.set_haircolor("#a54ea1", update = FALSE)
-	preview_human.set_hairstyle("Ponytail (Country)", update = TRUE)
+	preview_human.set_hairstyle(/datum/sprite_accessory/hair/countryponytail::name, update = TRUE)
 	preview_human.dna.features[TRAIT_USES_SKINTONES] = "asian1"
 	preview_human.dna.features[FEATURE_TAIL_FISH_COLOR] = COLOR_CARP_TEAL
 	regenerate_organs(preview_human)
@@ -79,7 +79,7 @@
 	if (visuals_only)
 		return
 	var/obj/item/organ/lungs/lungs = cerulean.get_organ_slot(ORGAN_SLOT_LUNGS)
-	if (!(/datum/gas/water_vapor in lungs?.breathe_always))
+	if (/datum/gas/oxygen in lungs?.breathe_always)
 		return
 	// try to attach to uniform
 	var/obj/item/clothing/under/uniform = cerulean.w_uniform
@@ -94,6 +94,22 @@
 		indirect_action = TRUE,
 	)
 
+/*
+ *
+ */
+/datum/species/human/cerulean/abyssal
+	id = "abyssal_cerulean"
+	mutant_organs = list(
+		/obj/item/organ/tail/fish/cerulean/abyssal = /datum/sprite_accessory/tails/fish/cerulean::name,
+		/obj/item/organ/horns = /datum/sprite_accessory/horns/angler::name,
+	)
+	mutantheart = /obj/item/organ/heart/carp
+	mutantlungs = /obj/item/organ/lungs/fish/amphibious
+
+/datum/species/human/cerulean/abyssal/randomize_features()
+	var/list/features = ..()
+	LAZYSET(features, FEATURE_TAIL_FISH_COLOR, COLOR_CARP_DARK_BLUE)
+	return features
 
 /*
  *

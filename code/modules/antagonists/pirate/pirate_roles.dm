@@ -234,3 +234,44 @@
 	. = ..()
 	spawned_mob.dna.add_mutation(/datum/mutation/hulk/superhuman, MUTATION_SOURCE_GHOST_ROLE)
 	spawned_mob.dna.add_mutation(/datum/mutation/gigantism, MUTATION_SOURCE_GHOST_ROLE)
+
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren
+	name = "\improper Sleeper"
+//	desc = ""
+//	density = FALSE
+	mob_species = /datum/species/human/cerulean/abyssal
+	allow_custom_character = NONE
+//	you_are_text = ""
+//	flavour_text = ""
+//	fluff_spawn = null
+//	prompt_name = ""
+	outfit = /datum/outfit
+//	rank = ""
+
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren/special(mob/living/carbon/spawned_mob, mob/mob_possessor, apply_prefs)
+	. = ..()
+	var/mob/living/carbon/human/human_mob = spawned_mob
+	//hair & eye color
+	var/static/list/hairstyles = list( //just some androgynous hairstyles
+		/datum/sprite_accessory/hair/sadako::name,
+	)
+	human_mob.set_hairstyle(pick(hairstyles), update = FALSE)
+	human_mob.set_facial_hairstyle(/datum/sprite_accessory/facial_hair/shaved::name, update = FALSE)
+	human_mob.set_haircolor("#cfcfe6", update = FALSE)
+	human_mob.set_hair_gradient_style(/datum/sprite_accessory/gradient/wavy_spike::name, update = FALSE)
+	human_mob.set_hair_gradient_color("#948fa5", update = FALSE)
+	human_mob.set_eye_color("#ff0000", (rand(0,1) == 1) ? null : pick("#04ff58", "#ffe600"))
+	//angler horn
+	var/its_not_actually_a_horn = human_mob.dna.species.mutant_organs[/obj/item/organ/horns]
+	var/obj/item/organ/horn = human_mob.get_organ_slot(ORGAN_SLOT_EXTERNAL_HORNS)
+	human_mob.dna.features[FEATURE_HORNS] = its_not_actually_a_horn
+	horn?.simple_change_sprite(horn.bodypart_overlay.fetch_sprite_datum_from_name(its_not_actually_a_horn))
+	human_mob.update_body()
+
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren
+//	rank = ""
+//	outfit =
+//	is_leader = TRUE
+
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren
+//	rank = ""
