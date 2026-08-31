@@ -214,8 +214,8 @@
 	automatic_charge_overlays = FALSE
 	ammo_x_offset = 1
 
-/obj/item/gun/energy/laser/scatter/shotty/sawnoff
-	name = "sawn-off laser shotgun"
+/obj/item/gun/energy/laser/scatter/shotty/compact
+	name = "compact laser shotgun"
 	desc = "i just want to kill you."
 	icon_state = "cshotgunc"
 	w_class = WEIGHT_CLASS_NORMAL

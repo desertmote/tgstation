@@ -203,24 +203,26 @@
 	skillchips = list(/obj/item/skillchip/big_pointer) //they don't have an id, so this is needed
 
 /datum/outfit/pirate/siren
-	name = "Siren Sister Outfit"
+	name = "Siren Sister Guitarist"
 
 	uniform = null
-	back = /obj/item/storage/backpack
+	back = /obj/item/instrument/eguitar
+	l_hand = /obj/item/storage/backpack/duffelbag
 	glasses = null
-	suit = null
-	gloves = /obj/item/clothing/gloves/combat
+	suit = /obj/item/clothing/suit/jacket/leather/deadbeat
+	suit_store = /obj/item/gun/energy/laser/scatter/shotty/compact
+	gloves = /obj/item/clothing/gloves/fingerless
 	mask = /obj/item/clothing/mask/facescarf
 	head = null
 	shoes = null
 	ears = /obj/item/radio/headset/syndicate/alt
 
-	backpack_contents = list(
-		/obj/item/storage/box/survival = 1,
-		/obj/item/gun/energy/laser/scatter/shotty/sawnoff = 1,
-		)
-
 	skillchips = list(/obj/item/skillchip/musical)
+
+/datum/outfit/pirate/siren/pre_equip(mob/living/carbon/human/pre_equipped, visuals_only)
+	. = ..()
+	if(!isabyssal(pre_equipped)) //if youre not showing off your skeleton you should have some modesty
+		uniform = /obj/item/clothing/under/color/jumpskirt/black
 
 /datum/outfit/pirate/siren/post_equip(mob/living/carbon/human/equipped)
 	. = ..()
@@ -229,11 +231,11 @@
 		scarf.greyscale_colors = "#3e3e44"
 		scarf.update_greyscale()
 		scarf.adjust_visor(equipped)
-	var/randommm = rand(1,1)
-	if(randommm == 1)
-		equipped.equip_in_one_of_slots(
-			equipping = SSwardrobe.provide_type(/obj/item/clothing/shoes/combat, equipped),
-			slots = list(LOCATION_HEAD),
-			qdel_on_fail = TRUE,
-			indirect_action = TRUE,
-	)
+	equipped.update_lips("lipstick", COLOR_BLACK)
+
+/datum/outfit/pirate/siren/vocalist
+	name = "Siren Sister Vocalist"
+
+	l_hand = null
+	back = /obj/item/storage/backpack
+	backpack_contents = list()

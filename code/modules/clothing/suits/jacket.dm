@@ -139,6 +139,19 @@
 	desc = "You think I'm not even worth a single dollar, but I feel like a millionare."
 	icon_state = "leatherjacket_biker"
 
+/obj/item/clothing/suit/jacket/leather/deadbeat
+	name = "old leather jacket"
+	desc = ""
+	icon = /obj/item/clothing/suit/toggle/jacket/sweater::icon
+	icon_state = /obj/item/clothing/suit/toggle/jacket/sweater::icon_state
+	worn_icon = 'icons/mob/clothing/suits/jacket.dmi'
+	worn_icon_state = "leatherjacket_old"
+	armor_type = /datum/armor/wintercoat_security
+
+/obj/item/clothing/suit/jacket/leather/deadbeat/Initialize(mapload)
+	. = ..()
+	allowed += GLOB.security_vest_allowed
+
 /obj/item/clothing/suit/jacket/puffer
 	name = "puffer jacket"
 	desc = "A thick jacket with a rubbery, water-resistant shell."

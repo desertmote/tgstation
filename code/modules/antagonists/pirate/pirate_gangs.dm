@@ -228,18 +228,15 @@ GLOBAL_LIST_INIT(heavy_pirate_gangs, init_pirate_gangs(is_heavy = TRUE))
 	response_too_late = "YOU ARE ALREADY UNDER SIEGE YOU BUFFON, ARE YOU BRAINSICK OR IGNORANT?!!"
 	response_not_enough = "DO THINK OF ME AS A JESTER? YOU ARE DEAD MEAT!! (i forgot how to fly the ship, tarnation.)"
 
-//
+//wicked assh*le ceruleans that pretend to be a different pirate team
 /datum/pirate_gang/siren
 	name = "Siren Sisters"
-//	ship_template_id = ""
-//	ship_name_pool = ""
+	ship_template_id = "siren"
+	ship_name_pool = "rogue_names"
+	announcement_color = "purple"
 
-//	arrival_announcement = ""
-
-//	response_received = ""
-//	response_rejected = ""
-//	response_too_late = ""
-//	response_not_enough = ""
+	arrival_announcement = "\u266A Ready to play in the greatest performance of your life? \u266B \n\
+		\u2669 Ankōru suru hima wa nai! \u266B"
 
 /datum/pirate_gang/siren/generate_message(payoff)
 	var/list/pirate_gangs = (GLOB.light_pirate_gangs + GLOB.heavy_pirate_gangs)
@@ -250,5 +247,12 @@ GLOBAL_LIST_INIT(heavy_pirate_gangs, init_pirate_gangs(is_heavy = TRUE))
 	possible_answers = gang_to_imitate.possible_answers
 	. = ..()
 	//now that weve sent a message, update our real vars
-	response_rejected = "You really thought we were [ship_name], fufu -- prepare to pay."
-	ship_name = pick(strings(PIRATE_NAMES_FILE, ship_name_pool)) //reset ship_name to true name
+	response_received = "\u266A Fufu~ You fell for it. We're not [ship_name] at all! \u2669 \n\
+		\u2669 Our next show is funded! Sayōnara! \u266B"
+	response_rejected = "\u2669 You must think you're so clever. \u266B \n\
+		\u266A [station_name()] seems like the perfect venue for us anyway!~ \u266B"
+	response_too_late = "\u266B Awh- don't worry, the autographs are free! \u266A"
+	response_not_enough = "\u266A This is hardly enough, baka! \u2669 \n\
+		\u2669 We'll discuss payment after the show.~ \u266B"
+	//reset ship_name to true name
+	ship_name = pick(strings(PIRATE_NAMES_FILE, ship_name_pool))

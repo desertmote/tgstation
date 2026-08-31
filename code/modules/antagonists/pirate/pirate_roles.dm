@@ -249,7 +249,7 @@
 //	flavour_text = ""
 //	prompt_name = ""
 	outfit = /datum/outfit/pirate/siren
-	rank = "Sister"
+	rank = "Guitarist"
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren/check_uses()
 	. = ..()
@@ -277,12 +277,12 @@
 		/datum/sprite_accessory/hair/shorterbangs::name,
 	)
 	var/hex_to_edit = copytext(human_mob.dna.features[FEATURE_TAIL_FISH_COLOR], 2)
-	var/haircolor = sanitize_hexcolor(rgb(//returns a brighter variation of the blorbo's tail color
+	var/haircolor = sanitize_hexcolor(rgb(//returns a much brighter variation of the blorbo's tail color
 		min(255, hex2num(copytext(hex_to_edit, 1, 3)) * 3.5),
 		min(255, hex2num(copytext(hex_to_edit, 3, 5)) * 3.5),
 		min(255, hex2num(copytext(hex_to_edit, 5, 7)) * 3.5),
 	))
-	var/hairgradient_color = sanitize_hexcolor(rgb(//returns a darker variation of the blorbo's tail color
+	var/hairgradient_color = sanitize_hexcolor(rgb(//returns a slightly brighter variation of the blorbo's tail color
 		min(255, hex2num(copytext(hex_to_edit, 1, 3)) * 1.5),
 		min(255, hex2num(copytext(hex_to_edit, 3, 5)) * 1.5),
 		min(255, hex2num(copytext(hex_to_edit, 5, 7)) * 1.5),
@@ -302,5 +302,8 @@
 	horn?.simple_change_sprite(horn.bodypart_overlay.fetch_sprite_datum_from_name(its_not_actually_a_horn))
 
 	human_mob.gender = (rand(0, 10) > 3) ? FEMALE : PLURAL /*despite physique always she/her or they/them.
-	why? well, because i say so. but also because a dose of queer can be healthy and perfectly perfect.
-	also they're sisters. duh. 🏳️‍⚧️*/
+	why? because they're sisters of course. 🏳️‍⚧️*/
+
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren/vocalist
+	rank = "Vocalist"
+	outfit = /datum/outfit/pirate/siren/vocalist
