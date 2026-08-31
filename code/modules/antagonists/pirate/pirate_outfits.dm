@@ -201,3 +201,39 @@
 
 
 	skillchips = list(/obj/item/skillchip/big_pointer) //they don't have an id, so this is needed
+
+/datum/outfit/pirate/siren
+	name = "Siren Sister Outfit"
+
+	uniform = null
+	back = /obj/item/storage/backpack
+	glasses = null
+	suit = null
+	gloves = /obj/item/clothing/gloves/combat
+	mask = /obj/item/clothing/mask/facescarf
+	head = null
+	shoes = null
+	ears = /obj/item/radio/headset/syndicate/alt
+
+	backpack_contents = list(
+		/obj/item/storage/box/survival = 1,
+		/obj/item/gun/energy/laser/scatter/shotty/sawnoff = 1,
+		)
+
+	skillchips = list(/obj/item/skillchip/musical)
+
+/datum/outfit/pirate/siren/post_equip(mob/living/carbon/human/equipped)
+	. = ..()
+	var/obj/item/clothing/mask/facescarf/scarf = equipped.get_item_by_slot(ITEM_SLOT_MASK)
+	if(scarf)
+		scarf.greyscale_colors = "#3e3e44"
+		scarf.update_greyscale()
+		scarf.adjust_visor(equipped)
+	var/randommm = rand(1,1)
+	if(randommm == 1)
+		equipped.equip_in_one_of_slots(
+			equipping = SSwardrobe.provide_type(/obj/item/clothing/shoes/combat, equipped),
+			slots = list(LOCATION_HEAD),
+			qdel_on_fail = TRUE,
+			indirect_action = TRUE,
+	)

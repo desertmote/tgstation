@@ -230,7 +230,7 @@ GLOBAL_LIST_INIT(heavy_pirate_gangs, init_pirate_gangs(is_heavy = TRUE))
 
 //
 /datum/pirate_gang/siren
-	name = "Sirens"
+	name = "Siren Sisters"
 //	ship_template_id = ""
 //	ship_name_pool = ""
 
@@ -249,4 +249,6 @@ GLOBAL_LIST_INIT(heavy_pirate_gangs, init_pirate_gangs(is_heavy = TRUE))
 	ship_name = pick(strings(PIRATE_NAMES_FILE, gang_to_imitate.ship_name_pool))
 	possible_answers = gang_to_imitate.possible_answers
 	. = ..()
+	//now that weve sent a message, update our real vars
+	response_rejected = "You really thought we were [ship_name], fufu -- prepare to pay."
 	ship_name = pick(strings(PIRATE_NAMES_FILE, ship_name_pool)) //reset ship_name to true name

@@ -98,7 +98,7 @@
  *
  */
 /datum/species/human/cerulean/abyssal
-	id = "abyssal_cerulean"
+	id = SPECIES_CERULEAN_ABYSSAL
 	mutant_organs = list(
 		/obj/item/organ/tail/fish/cerulean/abyssal = /datum/sprite_accessory/tails/fish/cerulean::name,
 		/obj/item/organ/horns = /datum/sprite_accessory/horns/angler::name,
@@ -108,7 +108,7 @@
 
 /datum/species/human/cerulean/abyssal/randomize_features()
 	var/list/features = ..()
-	LAZYSET(features, FEATURE_TAIL_FISH_COLOR, COLOR_CARP_DARK_BLUE)
+	LAZYSET(features, FEATURE_TAIL_FISH_COLOR, pick(COLOR_CARP_DARK_BLUE, "#3F1735", "#1E3325"))
 	return features
 
 /*

@@ -214,6 +214,14 @@
 	automatic_charge_overlays = FALSE
 	ammo_x_offset = 1
 
+/obj/item/gun/energy/laser/scatter/shotty/sawnoff
+	name = "sawn-off laser shotgun"
+	desc = "i just want to kill you."
+	icon_state = "cshotgunc"
+	w_class = WEIGHT_CLASS_NORMAL
+	pin = /obj/item/firing_pin
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
+
 ///Laser Cannon
 
 /obj/item/gun/energy/lasercannon

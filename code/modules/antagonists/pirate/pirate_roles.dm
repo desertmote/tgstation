@@ -238,21 +238,18 @@
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren
 	name = "\improper Sleeper"
 //	desc = ""
-//	density = FALSE
+	density = TRUE
+	deletes_on_zero_uses_left = FALSE
 	mob_species = /datum/species/human/cerulean/abyssal
 	allow_custom_character = NONE
-	skin_tone = "albino"
-	haircolor = "#cfcfe6"
-	facial_hairstyle = /datum/sprite_accessory/facial_hair/shaved::name
 	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "pod_1"
-	fluff_spawn = null
+	fluff_spawn = /obj/effect/decal/cleanable/greenglow
 //	you_are_text = ""
 //	flavour_text = ""
-//	fluff_spawn = null
 //	prompt_name = ""
-	outfit = /datum/outfit
-//	rank = ""
+	outfit = /datum/outfit/pirate/siren
+	rank = "Sister"
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren/check_uses()
 	. = ..()
@@ -262,9 +259,14 @@
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren/special(mob/living/carbon/spawned_mob, mob/mob_possessor, apply_prefs)
 	. = ..()
 	var/mob/living/carbon/human/human_mob = spawned_mob
-	var/static/list/eyecolors = list("#ff0000", "#04ff58", "#ffe600", "#d400ff")
-	var/static/list/hairstyles = list(
-		//just some androgynous hairstyles
+	var/datum/language_holder/language_holder = human_mob.get_language_holder()
+	language_holder.selected_language = /datum/language/common //sing
+	human_mob.dna.add_mutation(/datum/mutation/night_vision, MUTATION_SOURCE_GHOST_ROLE)
+	human_mob.add_personalities(list(/datum/personality/apathetic, /datum/personality/pessimistic, /datum/personality/brave)) //i'm not willing to die for this, but i'm willing to kill you
+	var/obj/item/organ/lungs/lungs = new human_mob.dna.species.mutantlungs(human_mob)
+	lungs.mob_insert(human_mob, TRUE, DELETE_IF_REPLACED) //updates the organ set bonus "appropriately", thanks to randomize_human_normie() earlier in the parent call
+	var/list/eyecolors = list("#ff0000", "#04ff58", "#ffe600", "#d400ff")
+	var/list/hairstyles = list(
 		/datum/sprite_accessory/hair/sadako::name,
 		/datum/sprite_accessory/hair/moneypiece::name,
 		/datum/sprite_accessory/hair/frizzysidecut::name,
@@ -274,12 +276,31 @@
 		/datum/sprite_accessory/hair/sidecutbang::name,
 		/datum/sprite_accessory/hair/shorterbangs::name,
 	)
-	human_mob.set_hairstyle(pick(hairstyles), update = FALSE)
-	human_mob.set_hair_gradient_style(/datum/sprite_accessory/gradient/wavy_spike::name, update = FALSE)
-	human_mob.set_hair_gradient_color("#948fa5", update = FALSE)
+	var/hex_to_edit = copytext(human_mob.dna.features[FEATURE_TAIL_FISH_COLOR], 2)
+	var/haircolor = sanitize_hexcolor(rgb(//returns a brighter variation of the blorbo's tail color
+		min(255, hex2num(copytext(hex_to_edit, 1, 3)) * 3.5),
+		min(255, hex2num(copytext(hex_to_edit, 3, 5)) * 3.5),
+		min(255, hex2num(copytext(hex_to_edit, 5, 7)) * 3.5),
+	))
+	var/hairgradient_color = sanitize_hexcolor(rgb(//returns a darker variation of the blorbo's tail color
+		min(255, hex2num(copytext(hex_to_edit, 1, 3)) * 1.5),
+		min(255, hex2num(copytext(hex_to_edit, 3, 5)) * 1.5),
+		min(255, hex2num(copytext(hex_to_edit, 5, 7)) * 1.5),
+	))
+	human_mob.set_facial_hairstyle(/datum/sprite_accessory/facial_hair/shaved::name)
+	human_mob.set_hairstyle(pick(hairstyles))
+	human_mob.set_haircolor(haircolor)
+	human_mob.set_hair_gradient_style(/datum/sprite_accessory/gradient/reflected_inverse::name)
+	human_mob.set_hair_gradient_color(hairgradient_color)
 	human_mob.set_eye_color(pick(eyecolors), pick(eyecolors))
+	human_mob.update_eyes()
+
 	var/its_not_actually_a_horn = human_mob.dna.species.mutant_organs[/obj/item/organ/horns]
 	var/obj/item/organ/horn = human_mob.get_organ_slot(ORGAN_SLOT_EXTERNAL_HORNS)
 	human_mob.dna.features[FEATURE_HORNS] = its_not_actually_a_horn
+	horn?.bodypart_overlay.draw_color = human_mob.dna.features[FEATURE_TAIL_FISH_COLOR]
 	horn?.simple_change_sprite(horn.bodypart_overlay.fetch_sprite_datum_from_name(its_not_actually_a_horn))
-	human_mob.update_body(is_creating = TRUE)
+
+	human_mob.gender = (rand(0, 10) > 3) ? FEMALE : PLURAL /*despite physique always she/her or they/them.
+	why? well, because i say so. but also because a dose of queer can be healthy and perfectly perfect.
+	also they're sisters. duh. 🏳️‍⚧️*/
