@@ -111,6 +111,10 @@
 	LAZYSET(features, FEATURE_TAIL_FISH_COLOR, pick(COLOR_CARP_DARK_BLUE, "#3F1735", "#1E3325"))
 	return features
 
+/datum/species/human/cerulean/abyssal/on_species_gain(mob/living/carbon/human/cerulean, datum/species/old_species, pref_load, regenerate_icons)
+	. = ..()
+	cerulean.add_traits(list(TRAIT_TRUE_NIGHT_VISION, TRAIT_LUMINESCENT_EYES), SPECIES_TRAIT)
+
 /*
  *
  *
@@ -223,7 +227,8 @@
 // an additional overlay to be added to the image stack. used by abyssal cerulean's skeleton
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/get_overlay(obj/item/bodypart/limb, layer_index, layer_real)
 	var/list/created_overlays = ..()
-	created_overlays += mutable_appearance(/datum/sprite_accessory/tails/fish/cerulean::icon, "abyssal_skeleton", alpha = 115, layer = layer_real)
+	created_overlays += mutable_appearance(icon = sprite_datum.icon, icon_state = "abyssal_skeleton", offset_spokesman = limb, alpha = 105, layer = layer_real)
+	created_overlays += emissive_appearance(icon = sprite_datum.icon, icon_state = "abyssal_skeleton", offset_spokesman = limb,	alpha = 35,	layer = layer_real)
 	return created_overlays
 
 /datum/bodypart_overlay/mutant/tail/fish/cerulean/abyssal/added_to_limb(obj/item/bodypart/limb)
