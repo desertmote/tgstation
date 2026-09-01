@@ -19,26 +19,15 @@
 /turf/open/floor/iron,
 /area/shuttle/pirate)
 "d" = (
-/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "pirateshutter"
-	},
-/turf/open/floor/plating/airless,
+/obj/machinery/light/small/red/dim/directional/south,
+/turf/open/floor/iron,
 /area/shuttle/pirate)
 "e" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	id_tag = "pirateshuttle"
-	},
-/obj/effect/mapping_helpers/airlock/cutaiwire,
-/turf/open/floor/plating,
+/obj/machinery/loot_locator,
+/turf/open/floor/iron,
 /area/shuttle/pirate)
 "f" = (
-/obj/machinery/light/small/red/dim/directional/east,
-/obj/effect/turf_decal/tile/dark_blue/fourcorners,
-/turf/open/floor/iron/dark,
-/area/shuttle/pirate)
-"g" = (
-/obj/structure/cable/layer3,
+/obj/machinery/light/small/red/dim/directional/south,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "h" = (
@@ -53,25 +42,17 @@
 "i" = (
 /turf/open/floor/iron,
 /area/shuttle/pirate)
+"j" = (
+/obj/structure/cable/layer3,
+/turf/open/floor/plating,
+/area/shuttle/pirate)
 "k" = (
-/obj/machinery/computer/monitor{
-	dir = 4
-	},
-/turf/open/floor/iron,
+/turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "l" = (
-/obj/machinery/door/airlock/external/glass/ruin{
-	id_tag = "pirateshuttle"
-	},
-/obj/docking_port/mobile/pirate{
-	dir = 2
-	},
-/obj/docking_port/stationary{
-	dir = 2
-	},
-/obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/turf/open/floor/plating,
+/obj/machinery/light/small/red/dim/directional/east,
+/obj/effect/turf_decal/tile/dark_blue/fourcorners,
+/turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "m" = (
 /obj/machinery/door/airlock/external/glass/ruin{
@@ -100,7 +81,7 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "q" = (
-/obj/machinery/light/small/red/dim/directional/south,
+/obj/machinery/light/small/red/dim/directional/east,
 /turf/open/floor/iron,
 /area/shuttle/pirate)
 "r" = (
@@ -149,18 +130,13 @@
 	},
 /turf/open/floor/iron,
 /area/shuttle/pirate)
-"u" = (
-/obj/machinery/light/small/red/dim/directional/south,
-/turf/open/floor/plating,
-/area/shuttle/pirate)
 "v" = (
 /obj/machinery/door/airlock/external/glass/ruin{
 	id_tag = "pirateshuttle"
 	},
+/obj/structure/cable/layer3,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "w" = (
@@ -181,20 +157,29 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "z" = (
-/turf/open/floor/plating/airless,
+/obj/machinery/door/airlock/external/glass/ruin{
+	id_tag = "pirateshuttle"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/plating,
 /area/shuttle/pirate)
 "A" = (
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/pirate,
 /turf/open/floor/iron,
 /area/shuttle/pirate)
 "B" = (
-/obj/effect/mob_spawn/ghost_role/human/pirate/siren/vocalist,
-/obj/effect/turf_decal/tile/dark_blue/fourcorners,
-/turf/open/floor/iron/dark,
+/obj/machinery/computer/piratepad_control,
+/turf/open/floor/iron,
 /area/shuttle/pirate)
 "C" = (
-/obj/machinery/light/small/red/dim/directional/east,
-/turf/open/floor/iron,
+/obj/machinery/door/airlock/maintenance_hatch{
+	id_tag = "pirateshuttle"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/plating,
 /area/shuttle/pirate)
 "D" = (
 /obj/structure/railing{
@@ -212,7 +197,9 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "G" = (
-/obj/machinery/light/small/red/dim/directional/north,
+/obj/machinery/computer/monitor{
+	dir = 4
+	},
 /turf/open/floor/iron,
 /area/shuttle/pirate)
 "H" = (
@@ -239,20 +226,18 @@
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "L" = (
-/obj/machinery/door/airlock/external/glass/ruin{
-	id_tag = "pirateshuttle"
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pirateshutter"
 	},
-/obj/structure/cable/layer3,
-/obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "M" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/shuttle/pirate)
 "N" = (
-/obj/machinery/computer/piratepad_control,
+/obj/machinery/light/small/red/dim/directional/north,
 /turf/open/floor/iron,
 /area/shuttle/pirate)
 "O" = (
@@ -271,6 +256,20 @@
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
+"R" = (
+/obj/machinery/door/airlock/external/glass/ruin{
+	id_tag = "pirateshuttle"
+	},
+/obj/docking_port/mobile/pirate{
+	dir = 2
+	},
+/obj/docking_port/stationary{
+	dir = 2
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/plating,
+/area/shuttle/pirate)
 "S" = (
 /obj/machinery/light/small/red/dim/directional/north,
 /turf/open/floor/plating,
@@ -283,8 +282,7 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "U" = (
-/obj/machinery/loot_locator,
-/turf/open/floor/iron,
+/turf/closed/wall/mineral/plastitanium/wall_fill,
 /area/shuttle/pirate)
 "V" = (
 /obj/structure/sign/warning/vacuum/external/directional/west,
@@ -295,14 +293,16 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "X" = (
-/turf/closed/wall/mineral/plastitanium/wall_fill,
+/obj/machinery/piratepad,
+/turf/open/floor/iron,
 /area/shuttle/pirate)
 "Y" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/pirate)
 "Z" = (
-/obj/machinery/piratepad,
-/turf/open/floor/iron,
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren/vocalist,
+/obj/effect/turf_decal/tile/dark_blue/fourcorners,
+/turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 
 (1,1,1) = {"
@@ -312,9 +312,9 @@ o
 o
 o
 o
-d
+L
 Y
-d
+L
 o
 o
 o
@@ -330,11 +330,11 @@ o
 o
 o
 o
-d
+L
 r
 c
 r
-d
+L
 o
 o
 o
@@ -369,9 +369,9 @@ o
 o
 o
 Y
-C
+q
 i
-C
+q
 Y
 o
 o
@@ -384,10 +384,10 @@ o
 (5,1,1) = {"
 o
 o
-d
+L
 Y
 Y
-X
+U
 Y
 b
 Y
@@ -402,21 +402,21 @@ o
 "}
 (6,1,1) = {"
 o
-d
+L
 r
 a
 a
 Y
-N
+B
 i
-U
+e
 Y
 Y
 Y
 W
-z
-z
-z
+k
+k
+k
 o
 "}
 (7,1,1) = {"
@@ -426,16 +426,16 @@ a
 a
 a
 Y
-G
-g
-g
-L
+N
+j
+j
+v
 P
 m
 W
-z
-z
-z
+k
+k
+k
 M
 "}
 (8,1,1) = {"
@@ -443,19 +443,19 @@ o
 Y
 S
 a
-u
+f
 Y
-Z
-g
+X
+j
 a
 Y
 Y
 Y
 W
-z
-z
-z
-z
+k
+k
+k
+k
 "}
 (9,1,1) = {"
 o
@@ -465,47 +465,47 @@ a
 a
 Y
 a
-g
+j
 a
 Y
 Y
-z
+k
 W
-z
-z
-z
-z
+k
+k
+k
+k
 "}
 (10,1,1) = {"
 o
-d
+L
 r
 a
 a
 s
 a
-g
-g
+j
+j
 K
 Y
-z
+k
 W
-z
-z
-z
+k
+k
+k
 n
 "}
 (11,1,1) = {"
 o
 o
-d
+L
 Y
-e
+C
 Y
 Y
 a
-g
-u
+j
+f
 Y
 Y
 W
@@ -520,10 +520,10 @@ o
 o
 Y
 i
-k
+G
 Y
 a
-g
+j
 a
 Y
 Y
@@ -538,9 +538,9 @@ o
 o
 o
 Y
-G
+N
 i
-e
+C
 a
 a
 a
@@ -573,11 +573,11 @@ I
 "}
 (15,1,1) = {"
 o
-l
+R
 V
-v
+z
 i
-q
+d
 Y
 h
 h
@@ -585,7 +585,7 @@ Y
 Y
 E
 J
-B
+Z
 Y
 o
 o
@@ -601,11 +601,11 @@ Y
 I
 I
 o
-d
+L
 r
-f
+l
 r
-d
+L
 o
 o
 "}
@@ -621,9 +621,9 @@ o
 o
 o
 o
-d
+L
 Y
-d
+L
 o
 o
 o
