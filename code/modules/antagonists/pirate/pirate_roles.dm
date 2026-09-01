@@ -262,8 +262,7 @@
 	var/datum/language_holder/language_holder = human_mob.get_language_holder()
 	language_holder.selected_language = /datum/language/common //sing
 	human_mob.add_personalities(list(/datum/personality/apathetic, /datum/personality/pessimistic, /datum/personality/brave)) //i'm not willing to die for this, but i'm willing to kill you
-	var/obj/item/organ/lungs/lungs = new human_mob.dna.species.mutantlungs(human_mob)
-	lungs.mob_insert(human_mob, TRUE, DELETE_IF_REPLACED) //updates the organ set bonus "appropriately", thanks to randomize_human_normie() earlier in the parent call
+	human_mob.set_resting(FALSE, TRUE, TRUE)
 	var/list/eyecolors = list("#ff0000", "#04ff58", "#ffe600", "#d400ff")
 	var/list/hairstyles = list(
 		/datum/sprite_accessory/hair/sadako::name,
@@ -295,15 +294,18 @@
 	human_mob.update_eyes()
 
 	var/its_not_actually_a_horn = human_mob.dna.species.mutant_organs[/obj/item/organ/horns]
-	var/obj/item/organ/horn = human_mob.get_organ_slot(ORGAN_SLOT_EXTERNAL_HORNS)
 	human_mob.dna.features[FEATURE_HORNS] = its_not_actually_a_horn
-	horn?.bodypart_overlay.draw_color = human_mob.dna.features[FEATURE_TAIL_FISH_COLOR]
-	horn?.simple_change_sprite(horn.bodypart_overlay.fetch_sprite_datum_from_name(its_not_actually_a_horn))
+	var/obj/item/organ/horn = human_mob.get_organ_slot(ORGAN_SLOT_EXTERNAL_HORNS)
+	if(isnull(horn)) //happens sometimes
+		horn = new /obj/item/organ/horns(human_mob)
+		horn.mob_insert(human_mob, TRUE, DELETE_IF_REPLACED)
+	horn.bodypart_overlay.draw_color = human_mob.dna.features[FEATURE_TAIL_FISH_COLOR]
+	horn.simple_change_sprite(horn.bodypart_overlay.fetch_sprite_datum_from_name(its_not_actually_a_horn))
+
+	var/obj/item/organ/lungs/lungs = new human_mob.dna.species.mutantlungs(human_mob)
+	lungs.mob_insert(human_mob, TRUE, DELETE_IF_REPLACED) //updates the organ set bonus "appropriately", thanks to randomize_human_normie() earlier in the parent call
 
 	human_mob.gender = (rand(0, 10) > 3) ? FEMALE : PLURAL //despite physique always she/her or they/them. why? because they're sisters of course. 🏳️‍⚧️
-
-	human_mob.set_resting(FALSE, TRUE, TRUE)
-	human_mob.refresh_gravity()
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren/vocalist
 	rank = "Vocalist"
