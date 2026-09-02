@@ -38,3 +38,7 @@
 /datum/map_template/shuttle/pirate/siren
 	suffix = "siren"
 	name = "pirate ship (Siren Sisters)"
+
+/datum/map_template/shuttle/pirate/siren/alt
+	suffix = "siren_alt"
+	name = "pirate ship (Siren Sisters Alt)"

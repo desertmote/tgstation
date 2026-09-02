@@ -251,8 +251,9 @@ GLOBAL_LIST_INIT(heavy_pirate_gangs, init_pirate_gangs(is_heavy = TRUE))
 		\u2669 Our next show is funded. Sayōnara! \u266B"
 	response_rejected = "\u2669 You must think you're so clever. \u266B \n\
 		\u266A [station_name()] seems like the perfect venue for us anyway!~ \u266B"
-	response_too_late = "\u266B Awh- don't worry, the autographs are free! \u266A"
-	response_not_enough = "\u266A This is hardly enough, baka! \u2669 \n\
+	response_too_late = "\u266B Surprise!~ \u266A \n\
+		\u266B ...Awh- don't worry, the autographs are free! \u266A"
+	response_not_enough = "\u266A Got you good!~ B-but this is hardly enough, baka! \u2669 \n\
 		\u2669 We'll discuss payment after the show. \u266B"
 	//reset ship_name to true name
 	ship_name = pick(strings(PIRATE_NAMES_FILE, ship_name_pool))

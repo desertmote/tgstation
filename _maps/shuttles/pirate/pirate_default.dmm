@@ -630,7 +630,6 @@
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "bX" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/terminal{
 	dir = 4
 	},
