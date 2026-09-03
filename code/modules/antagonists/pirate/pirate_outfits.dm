@@ -207,10 +207,8 @@
 
 	uniform = null
 	back = /obj/item/instrument/eguitar
-	l_hand = /obj/item/storage/backpack/duffelbag
 	glasses = null
 	suit = /obj/item/clothing/suit/jacket/leather/deadbeat
-	suit_store = /obj/item/gun/energy/laser/scatter/shotty/compact
 	gloves = /obj/item/clothing/gloves/fingerless
 	mask = /obj/item/clothing/mask/facescarf
 	head = null
@@ -236,6 +234,4 @@
 /datum/outfit/pirate/siren/vocalist
 	name = "Siren Sister Vocalist"
 
-	l_hand = null
-	back = /obj/item/storage/backpack
-	backpack_contents = list()
+	back = null

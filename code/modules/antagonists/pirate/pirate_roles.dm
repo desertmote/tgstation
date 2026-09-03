@@ -236,8 +236,8 @@
 	spawned_mob.dna.add_mutation(/datum/mutation/gigantism, MUTATION_SOURCE_GHOST_ROLE)
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren
-	name = "\improper Sleeper"
-//	desc = ""
+	name = /obj/machinery/experimental_cloner::name
+	desc = /obj/machinery/experimental_cloner::desc
 	density = TRUE
 	deletes_on_zero_uses_left = FALSE
 	mob_species = /datum/species/human/cerulean/abyssal

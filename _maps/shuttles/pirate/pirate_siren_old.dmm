@@ -1,0 +1,1081 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"af" = (
+/obj/structure/lattice,
+/obj/structure/platform,
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"aq" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"aF" = (
+/obj/structure/lattice,
+/obj/structure/platform,
+/obj/structure/railing,
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"aV" = (
+/obj/structure/lattice,
+/obj/structure/platform,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"bi" = (
+/obj/effect/turf_decal/siding/wideplating_new/corner{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/pirate/siren)
+"bM" = (
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren/vocalist,
+/obj/effect/turf_decal/tile/dark_blue/fourcorners,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/shuttle/pirate/siren)
+"dz" = (
+/obj/structure/closet{
+	anchored = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"eH" = (
+/obj/structure/cable,
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 4
+	},
+/obj/item/multitool,
+/obj/machinery/power/terminal{
+	cable_layer = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"fb" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pirateshutter";
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"fR" = (
+/obj/machinery/power/shuttle_engine/heater{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"fU" = (
+/obj/machinery/computer/piratepad_control,
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"gh" = (
+/obj/effect/turf_decal/tile/dark_blue/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/pirate/siren)
+"hB" = (
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"hE" = (
+/obj/effect/turf_decal/siding/wideplating_new/corner,
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"io" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/structure/table,
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"jh" = (
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 6
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"jw" = (
+/obj/machinery/duct,
+/obj/structure/cable,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"jN" = (
+/obj/machinery/power/shuttle_engine/propulsion{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"jV" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/structure/cable,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pirateshutter";
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"ky" = (
+/obj/machinery/power/shuttle_engine/propulsion{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"kH" = (
+/turf/closed/wall/mineral/plastitanium/wall_fill,
+/area/shuttle/pirate/siren)
+"kJ" = (
+/obj/machinery/door/airlock/external/glass/ruin{
+	id_tag = "pirateshuttle"
+	},
+/obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"lE" = (
+/obj/structure/cable,
+/turf/open/floor/iron/textured_large,
+/area/shuttle/pirate/siren)
+"lI" = (
+/obj/effect/turf_decal/siding/wideplating_new/corner{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"mD" = (
+/obj/structure/cable,
+/obj/machinery/power/smes/ship,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"nF" = (
+/turf/open/space/basic,
+/area/template_noop)
+"ol" = (
+/obj/effect/turf_decal/siding/wideplating_new/corner,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/pirate/siren)
+"oC" = (
+/obj/structure/platform,
+/obj/structure/railing/corner/end/flip,
+/obj/structure/railing/corner/end{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"oZ" = (
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"pD" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 1;
+	faction = list("pirate")
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/shuttle/pirate/siren)
+"pM" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pirateshutter";
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"pR" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/pirate/siren)
+"qO" = (
+/obj/structure/cable,
+/obj/machinery/light/floor,
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"rB" = (
+/obj/structure/cable,
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"rC" = (
+/obj/machinery/door/airlock/external/glass/ruin{
+	id_tag = "pirateshuttle"
+	},
+/obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"sz" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/effect/mapping_helpers/apc/cut_AI_wire,
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"sR" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"tG" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/pirate/siren)
+"tM" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"ug" = (
+/obj/structure/cable,
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"uz" = (
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/pirate/siren)
+"wh" = (
+/obj/structure/window/reinforced/spawner/directional/north{
+	dir = 2
+	},
+/obj/machinery/door/window/right/directional/north,
+/obj/machinery/shower/directional/north{
+	pixel_shift = 12
+	},
+/obj/structure/fluff/shower_drain{
+	pixel_x = -7;
+	pixel_y = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"wI" = (
+/obj/effect/turf_decal/tile/dark_blue/anticorner/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/pirate/siren)
+"wL" = (
+/obj/structure/reagent_dispensers/plumbed,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"wR" = (
+/obj/structure/platform,
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"wU" = (
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"xa" = (
+/obj/structure/cable,
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"xt" = (
+/obj/machinery/door/airlock/hatch{
+	id_tag = "pirateshuttle"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/turf_decal/siding/wideplating_new/corner{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"yr" = (
+/obj/machinery/duct,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"ys" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/porta_turret/syndicate/energy{
+	faction = list("pirate");
+	dir = 6
+	},
+/turf/open/space/basic,
+/area/shuttle/pirate/siren)
+"yv" = (
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"zC" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"Az" = (
+/obj/effect/turf_decal/siding/wideplating_new/corner{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"AB" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"Bo" = (
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/structure/cable,
+/obj/machinery/door/airlock/centcom{
+	id_tag = "pirateshuttle"
+	},
+/obj/effect/turf_decal/tile/dark/half/contrasted,
+/obj/effect/turf_decal/tile/dark/half/contrasted,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/textured,
+/area/shuttle/pirate/siren)
+"BQ" = (
+/obj/machinery/door/airlock/external/glass/ruin{
+	id_tag = "pirateshuttle"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/docking_port/stationary{
+	shuttle_id = "pirate_home";
+	name = "Deep Space";
+	dir = 2;
+	width = 17;
+	height = 18;
+	dwidth = 3
+	},
+/obj/docking_port/mobile/pirate{
+	dir = 2;
+	movement_force = list("KNOCKDOWN"=0,"THROW"=3);
+	port_direction = 4;
+	preferred_direction = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"Cd" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"Ct" = (
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"Cz" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 10;
+	faction = list("pirate")
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/shuttle/pirate/siren)
+"CX" = (
+/obj/machinery/power/shuttle_engine/heater{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/directional/north{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"Dd" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"Dx" = (
+/obj/machinery/light/floor,
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"DR" = (
+/obj/structure/platform,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"Fh" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "piratecockpit"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/structure/cable,
+/obj/machinery/door/airlock/centcom{
+	id_tag = "pirateshuttle"
+	},
+/turf/open/floor/iron/textured,
+/area/shuttle/pirate/siren)
+"Fu" = (
+/obj/structure/cable,
+/obj/machinery/light/floor,
+/turf/open/floor/iron/textured_edge{
+	dir = 8
+	},
+/area/shuttle/pirate/siren)
+"FI" = (
+/obj/machinery/atmospherics/components/binary/valve{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"FY" = (
+/obj/structure/steps{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"Gc" = (
+/obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/pirate{
+	x_offset = -4;
+	y_offset = -8
+	},
+/turf/open/floor/iron/large,
+/area/shuttle/pirate/siren)
+"Gi" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pirateshutter";
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"Gt" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/light/floor,
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"Gw" = (
+/obj/structure/platform,
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"GL" = (
+/obj/structure/platform,
+/obj/structure/railing/corner/end{
+	dir = 8
+	},
+/obj/structure/railing/corner/end/flip{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"JG" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/shuttle/pirate/siren)
+"Kb" = (
+/obj/structure/table,
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"KB" = (
+/obj/structure/lattice,
+/obj/structure/platform,
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"LN" = (
+/obj/structure/platform,
+/obj/effect/overlay/spotlight{
+	alpha = 155
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"LZ" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	id_tag = "pirateshuttle"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/structure/cable,
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"Md" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/pirate/siren)
+"Mi" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"Nt" = (
+/obj/effect/turf_decal/tile/dark_blue/anticorner/contrasted,
+/turf/open/floor/iron/dark,
+/area/shuttle/pirate/siren)
+"NW" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"Op" = (
+/obj/structure/lattice,
+/obj/structure/platform,
+/obj/structure/railing{
+	dir = 9
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"Oy" = (
+/obj/machinery/atmospherics/components/tank/air{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"OO" = (
+/obj/machinery/computer/monitor{
+	dir = 1
+	},
+/turf/open/floor/iron/large,
+/area/shuttle/pirate/siren)
+"QD" = (
+/obj/machinery/loot_locator,
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"QK" = (
+/obj/effect/turf_decal/tile/dark_blue/half/contrasted{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/pirate/siren)
+"QR" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	id_tag = "pirateshuttle"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/turf_decal/stripes/corner,
+/turf/open/floor/iron/textured,
+/area/shuttle/pirate/siren)
+"QU" = (
+/obj/machinery/button/door{
+	pixel_x = 38;
+	pixel_y = 6;
+	name = "Toggle All Airlocks";
+	id = "pirateshuttle";
+	normaldoorcontrol = 1
+	},
+/obj/machinery/button/door{
+	pixel_x = 38;
+	pixel_y = -7;
+	specialfunctions = 4;
+	name = "Bolt All Airlocks";
+	id = "pirateshuttle";
+	normaldoorcontrol = 1
+	},
+/obj/machinery/button/door{
+	pixel_x = 26;
+	pixel_y = -7;
+	id = "piratecockpit";
+	name = "Bridge Lockdown";
+	normaldoorcontrol = 1
+	},
+/obj/machinery/button/door{
+	id = "pirateshutter";
+	name = "Exterior Shutter Control";
+	pixel_y = 6;
+	pixel_x = 26
+	},
+/obj/structure/chair/comfy/shuttle/tactical{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"RI" = (
+/obj/machinery/airalarm/directional/south,
+/obj/effect/mapping_helpers/airalarm/all_access,
+/obj/effect/mapping_helpers/airalarm/unlocked,
+/obj/effect/mapping_helpers/airalarm/tlv_no_checks,
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"RP" = (
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"RX" = (
+/obj/effect/turf_decal/tile/dark_blue/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/pirate/siren)
+"Sb" = (
+/obj/structure/platform,
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"SO" = (
+/obj/effect/turf_decal/siding/wideplating_new/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"Uf" = (
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren,
+/obj/effect/turf_decal/tile/dark_blue/fourcorners,
+/obj/structure/cable,
+/obj/machinery/light/floor{
+	pixel_x = 16
+	},
+/turf/open/floor/iron/dark,
+/area/shuttle/pirate/siren)
+"US" = (
+/obj/machinery/computer/shuttle/pirate{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/large,
+/area/shuttle/pirate/siren)
+"Wx" = (
+/obj/structure/window/reinforced/spawner/directional/north{
+	dir = 8
+	},
+/obj/machinery/power/shuttle_engine/heater{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"Wy" = (
+/obj/effect/turf_decal/tile/dark_blue/half/contrasted{
+	dir = 8
+	},
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/shuttle/pirate/siren)
+"WN" = (
+/obj/structure/steps,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+"XF" = (
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"XN" = (
+/obj/machinery/light_switch/directional/north{
+	pixel_y = 30
+	},
+/obj/machinery/turretid{
+	lethal = 1;
+	locked = 0;
+	req_access = null;
+	pixel_x = 29
+	},
+/obj/structure/chair/comfy/shuttle/tactical,
+/turf/open/floor/iron,
+/area/shuttle/pirate/siren)
+"Yp" = (
+/obj/effect/turf_decal/siding/wideplating_new{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"Zu" = (
+/obj/machinery/door/airlock/external/glass/ruin{
+	id_tag = "pirateshuttle"
+	},
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/turf_decal/siding/wideplating_new,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"ZG" = (
+/obj/effect/spawner/structure/window/reinforced/plasma/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "pirateshutter"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/shuttle/pirate/siren)
+"ZO" = (
+/obj/structure/platform,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/pirate/siren)
+
+(1,1,1) = {"
+nF
+nF
+nF
+nF
+nF
+nF
+Md
+Gi
+Md
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+"}
+(2,1,1) = {"
+nF
+nF
+nF
+nF
+nF
+Md
+Md
+US
+Md
+Md
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+"}
+(3,1,1) = {"
+nF
+nF
+nF
+nF
+nF
+ZG
+Gc
+lE
+OO
+fb
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+"}
+(4,1,1) = {"
+nF
+nF
+nF
+nF
+nF
+Md
+XN
+Fu
+QU
+Md
+nF
+JG
+JG
+JG
+Op
+aV
+af
+JG
+"}
+(5,1,1) = {"
+nF
+nF
+Md
+Gi
+Md
+kH
+Md
+Fh
+Md
+Md
+Cz
+AB
+yv
+Gt
+DR
+LN
+wR
+af
+"}
+(6,1,1) = {"
+nF
+Md
+Md
+wU
+Kb
+Md
+fU
+wU
+Kb
+Md
+Gi
+Md
+yv
+WN
+GL
+Gw
+LN
+aF
+"}
+(7,1,1) = {"
+nF
+Md
+hB
+qO
+QD
+ug
+wU
+wU
+wU
+rC
+oZ
+kJ
+rB
+Gt
+Sb
+oC
+ZO
+KB
+"}
+(8,1,1) = {"
+nF
+Md
+hB
+hB
+wU
+Md
+Ct
+Dx
+Yp
+bi
+Md
+Md
+rB
+Cd
+sR
+FY
+sR
+JG
+"}
+(9,1,1) = {"
+nF
+Md
+uz
+XF
+zC
+xt
+Az
+hE
+SO
+lI
+fb
+rB
+rB
+rB
+yv
+yv
+yv
+JG
+"}
+(10,1,1) = {"
+nF
+tG
+Md
+Md
+LZ
+Md
+ol
+jh
+Dx
+RI
+Md
+Md
+Md
+jV
+Md
+Md
+AB
+JG
+"}
+(11,1,1) = {"
+nF
+pD
+ZG
+hB
+Mi
+io
+Md
+sz
+wU
+wU
+Md
+wL
+yr
+jw
+wh
+fR
+fR
+nF
+"}
+(12,1,1) = {"
+Md
+Md
+Md
+hB
+Dx
+tM
+QR
+aq
+aq
+Dd
+Bo
+pR
+QK
+pR
+tG
+ky
+ky
+nF
+"}
+(13,1,1) = {"
+BQ
+RP
+Zu
+hB
+hB
+tM
+Md
+xa
+eH
+mD
+Md
+Nt
+Uf
+RX
+Md
+nF
+nF
+nF
+"}
+(14,1,1) = {"
+Md
+dz
+Md
+NW
+NW
+FI
+Md
+CX
+CX
+pM
+Md
+wI
+bM
+gh
+Md
+nF
+nF
+nF
+"}
+(15,1,1) = {"
+Md
+Wx
+Md
+Md
+RP
+Oy
+Md
+ky
+ky
+ys
+tG
+Md
+Wy
+Md
+Md
+nF
+nF
+nF
+"}
+(16,1,1) = {"
+nF
+jN
+nF
+Md
+CX
+CX
+Md
+nF
+nF
+nF
+nF
+Md
+pM
+Md
+nF
+nF
+nF
+nF
+"}
+(17,1,1) = {"
+nF
+nF
+nF
+nF
+ky
+ky
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+nF
+"}
