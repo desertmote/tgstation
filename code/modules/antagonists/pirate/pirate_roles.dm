@@ -258,6 +258,7 @@
 
 #define COLOR_AMP_BRIGHT 1.5
 #define COLOR_AMP_BRIGHTER 3.5
+#define COLOR_AMP_DARKER 0.33
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren/special(mob/living/carbon/spawned_mob, mob/mob_possessor, apply_prefs)
 	. = ..()
@@ -268,42 +269,7 @@
 	load_features(spawned_mob)
 	load_identity(spawned_mob)
 
-/obj/effect/mob_spawn/ghost_role/human/pirate/siren/proc/load_identity(mob/living/carbon/human/siren)
-	var/list/eyecolors = list("#ff0000", "#04ff58", "#ffe600", "#d400ff")
-	var/list/hairstyles = list(
-		/datum/sprite_accessory/hair/sadako::name,
-		/datum/sprite_accessory/hair/moneypiece::name,
-		/datum/sprite_accessory/hair/frizzysidecut::name,
-		/datum/sprite_accessory/hair/coily::name,
-		/datum/sprite_accessory/hair/wolfcut::name,
-		/datum/sprite_accessory/hair/shortwavy::name,
-		/datum/sprite_accessory/hair/sidecutbang::name,
-		/datum/sprite_accessory/hair/shorterbangs::name,
-	)
-	var/hex_to_edit = copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2)
-	var/haircolor = sanitize_hexcolor(rgb(//returns a much brighter variation of the blorbo's tail color
-		min(255, hex2num(copytext(hex_to_edit, 1, 3)) * COLOR_AMP_BRIGHTER),
-		min(255, hex2num(copytext(hex_to_edit, 3, 5)) * COLOR_AMP_BRIGHTER),
-		min(255, hex2num(copytext(hex_to_edit, 5, 7)) * COLOR_AMP_BRIGHTER),
-	))
-	var/hairgradient_color = sanitize_hexcolor(rgb(//returns a slightly brighter variation of the blorbo's tail color
-		min(255, hex2num(copytext(hex_to_edit, 1, 3)) * COLOR_AMP_BRIGHT),
-		min(255, hex2num(copytext(hex_to_edit, 3, 5)) * COLOR_AMP_BRIGHT),
-		min(255, hex2num(copytext(hex_to_edit, 5, 7)) * COLOR_AMP_BRIGHT),
-	))
-	siren.set_facial_hairstyle(/datum/sprite_accessory/facial_hair/shaved::name)
-	siren.set_hairstyle(pick(hairstyles))
-	siren.set_haircolor(haircolor)
-	siren.set_hair_gradient_style(/datum/sprite_accessory/gradient/reflected_inverse::name)
-	siren.set_hair_gradient_color(hairgradient_color)
-	siren.set_eye_color(pick(eyecolors), pick(eyecolors))
-	siren.update_eyes()
-
-	siren.gender = (rand(0, 10) > 3) ? FEMALE : PLURAL //despite physique always she/her or they/them. why? because they're sisters of course. 🏳️‍⚧️
-	siren.set_resting(FALSE, TRUE, TRUE)
-
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren/proc/load_features(mob/living/carbon/human/siren)
-	var/list/body_colors = list(COLOR_CARP_DARK_BLUE, "#3F1735", "#1E3325")
 	var/list/special_organs = list(
 		/obj/item/organ/heart/carp,
 		/obj/item/organ/lungs/fish/amphibious,
@@ -318,12 +284,46 @@
 		/obj/item/organ/horns = /datum/sprite_accessory/horns/angler::name,
 		/obj/item/organ/frills = /datum/sprite_accessory/frills/aquatic::name,
 	)
-	siren.dna.features[FEATURE_TAIL_FISH_COLOR] = pick(body_colors)
+	siren.dna.features[FEATURE_TAIL_FISH_COLOR] = sanitize_hexcolor(rgb(
+		min(255, hex2num(copytext(copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2), 1, 3)) * COLOR_AMP_DARKER),
+		min(255, hex2num(copytext(copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2), 3, 5)) * COLOR_AMP_DARKER),
+		min(255, hex2num(copytext(copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2), 5, 7)) * COLOR_AMP_DARKER),
+	))
 	siren.dna.features[FEATURE_HORNS] = siren.dna.species.mutant_organs[/obj/item/organ/horns]
 	siren.dna.features[FEATURE_FRILLS] = siren.dna.species.mutant_organs[/obj/item/organ/frills]
 	for(var/obj/item/organ/special_organ as anything in special_organs)
 		special_organ = new special_organ.type
 		special_organ.Insert(siren, TRUE, DELETE_IF_REPLACED)
+
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren/proc/load_identity(mob/living/carbon/human/siren)
+	siren.set_facial_hairstyle(/datum/sprite_accessory/facial_hair/shaved::name)
+	siren.set_hairstyle(pick(list(
+		/datum/sprite_accessory/hair/sadako::name,
+		/datum/sprite_accessory/hair/moneypiece::name,
+		/datum/sprite_accessory/hair/frizzysidecut::name,
+		/datum/sprite_accessory/hair/coily::name,
+		/datum/sprite_accessory/hair/wolfcut::name,
+		/datum/sprite_accessory/hair/shortwavy::name,
+		/datum/sprite_accessory/hair/sidecutbang::name,
+		/datum/sprite_accessory/hair/shorterbangs::name,
+	)))
+	siren.set_haircolor(sanitize_hexcolor(rgb(
+		min(255, hex2num(copytext(copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2), 1, 3)) * COLOR_AMP_BRIGHTER),
+		min(255, hex2num(copytext(copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2), 3, 5)) * COLOR_AMP_BRIGHTER),
+		min(255, hex2num(copytext(copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2), 5, 7)) * COLOR_AMP_BRIGHTER),
+	)))
+	siren.set_hair_gradient_style(/datum/sprite_accessory/gradient/reflected_inverse::name)
+	siren.set_hair_gradient_color(sanitize_hexcolor(rgb(
+		min(255, hex2num(copytext(copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2), 1, 3)) * COLOR_AMP_BRIGHT),
+		min(255, hex2num(copytext(copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2), 3, 5)) * COLOR_AMP_BRIGHT),
+		min(255, hex2num(copytext(copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2), 5, 7)) * COLOR_AMP_BRIGHT),
+	)))
+	var/list/eyecolors = list("#ff0000", "#04ff58", "#ffe600", "#d400ff")
+	siren.set_eye_color(pick(eyecolors), pick(eyecolors))
+	siren.update_eyes()
+
+	siren.gender = (rand(0, 10) > 3) ? FEMALE : PLURAL //despite physique always she/her or they/them. why? because they're sisters of course. 🏳️‍⚧️
+	siren.set_resting(FALSE, TRUE, TRUE)
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren/vocalist
 	rank = "Vocalist"
@@ -331,3 +331,4 @@
 
 #undef COLOR_AMP_BRIGHT
 #undef COLOR_AMP_BRIGHTER
+#undef COLOR_AMP_DARKER

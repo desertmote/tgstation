@@ -1139,6 +1139,33 @@
 /mob/living/carbon/human/species/cerulean
 	race = /datum/species/human/cerulean
 
+#define COLOR_AMP_DARKER 0.33
+
+/mob/living/carbon/human/species/cerulean/true/set_species(datum/species/mrace, icon_update, pref_load, replace_missing)
+	. = ..()
+	dna.features[FEATURE_FRILLS] = /datum/sprite_accessory/frills/aquatic::name
+	dna.species.mutantlungs = /obj/item/organ/lungs/fish
+	dna.species.mutant_organs[/obj/item/organ/frills] = /datum/sprite_accessory/frills/aquatic::name
+	dna.species.regenerate_organs(src)
+
+/mob/living/carbon/human/species/cerulean/true/abyssal/set_species(datum/species/mrace, icon_update, pref_load, replace_missing)
+	. = ..()
+	dna.features[FEATURE_TAIL_FISH_COLOR] = sanitize_hexcolor(rgb(
+		min(255, hex2num(copytext(copytext(dna.features[FEATURE_TAIL_FISH_COLOR], 2), 1, 3)) * COLOR_AMP_DARKER),
+		min(255, hex2num(copytext(copytext(dna.features[FEATURE_TAIL_FISH_COLOR], 2), 3, 5)) * COLOR_AMP_DARKER),
+		min(255, hex2num(copytext(copytext(dna.features[FEATURE_TAIL_FISH_COLOR], 2), 5, 7)) * COLOR_AMP_DARKER),
+	))
+	dna.features[FEATURE_HORNS] = /datum/sprite_accessory/horns/angler::name
+	dna.species.mutantlungs = /obj/item/organ/lungs/fish/amphibious
+	dna.species.mutant_organs = list(
+		/obj/item/organ/tail/fish/cerulean/abyssal = /datum/sprite_accessory/tails/fish/cerulean::name,
+		/obj/item/organ/horns = /datum/sprite_accessory/horns/angler::name,
+		/obj/item/organ/frills = /datum/sprite_accessory/frills/aquatic::name,
+	)
+	dna.species.regenerate_organs(src)
+
+#undef COLOR_AMP_DARKER
+
 /mob/living/carbon/human/species/moth
 	race = /datum/species/moth
 
