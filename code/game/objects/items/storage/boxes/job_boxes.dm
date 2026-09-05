@@ -66,7 +66,7 @@
 			qdel(internals)
 			qdel(mask)
 			new /obj/item/tank/internals/plasmaman/belt(src)
-		if(SPECIES_CERULEAN, SPECIES_CERULEAN_ABYSSAL)
+		if(SPECIES_CERULEAN)
 			var/obj/item/organ/lungs/lungs = wearer.get_organ_slot(ORGAN_SLOT_LUNGS)
 			if (!(/datum/gas/water_vapor in lungs?.breathe_always))
 				return

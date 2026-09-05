@@ -240,7 +240,7 @@
 	desc = /obj/machinery/experimental_cloner::desc
 	density = TRUE
 	deletes_on_zero_uses_left = FALSE
-	mob_species = /datum/species/human/cerulean/abyssal
+	mob_species = /datum/species/human/cerulean
 	allow_custom_character = NONE
 	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "pod_1"
@@ -256,13 +256,19 @@
 	if(!uses)
 		icon_state = "pod_0"
 
+#define COLOR_AMP_BRIGHT 1.5
+#define COLOR_AMP_BRIGHTER 3.5
+
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren/special(mob/living/carbon/spawned_mob, mob/mob_possessor, apply_prefs)
 	. = ..()
-	var/mob/living/carbon/human/human_mob = spawned_mob
-	var/datum/language_holder/language_holder = human_mob.get_language_holder()
-	language_holder.selected_language = /datum/language/common //sing
-	human_mob.add_personalities(list(/datum/personality/apathetic, /datum/personality/pessimistic, /datum/personality/brave)) //i'm not willing to die for this, but i'm willing to kill you
-	human_mob.set_resting(FALSE, TRUE, TRUE)
+	var/datum/language_holder/language_holder = spawned_mob.get_language_holder()
+	language_holder.selected_language = /datum/language/common //sing for them
+	spawned_mob.add_personalities(list(/datum/personality/apathetic, /datum/personality/pessimistic, /datum/personality/brave)) //i'm not willing to die for this, but i'm willing to kill you
+	spawned_mob.add_traits(list(TRAIT_TRUE_NIGHT_VISION, TRAIT_LUMINESCENT_EYES), SPECIES_TRAIT)
+	load_features(spawned_mob)
+	load_identity(spawned_mob)
+
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren/proc/load_identity(mob/living/carbon/human/siren)
 	var/list/eyecolors = list("#ff0000", "#04ff58", "#ffe600", "#d400ff")
 	var/list/hairstyles = list(
 		/datum/sprite_accessory/hair/sadako::name,
@@ -274,39 +280,54 @@
 		/datum/sprite_accessory/hair/sidecutbang::name,
 		/datum/sprite_accessory/hair/shorterbangs::name,
 	)
-	var/hex_to_edit = copytext(human_mob.dna.features[FEATURE_TAIL_FISH_COLOR], 2)
+	var/hex_to_edit = copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2)
 	var/haircolor = sanitize_hexcolor(rgb(//returns a much brighter variation of the blorbo's tail color
-		min(255, hex2num(copytext(hex_to_edit, 1, 3)) * 3.5),
-		min(255, hex2num(copytext(hex_to_edit, 3, 5)) * 3.5),
-		min(255, hex2num(copytext(hex_to_edit, 5, 7)) * 3.5),
+		min(255, hex2num(copytext(hex_to_edit, 1, 3)) * COLOR_AMP_BRIGHTER),
+		min(255, hex2num(copytext(hex_to_edit, 3, 5)) * COLOR_AMP_BRIGHTER),
+		min(255, hex2num(copytext(hex_to_edit, 5, 7)) * COLOR_AMP_BRIGHTER),
 	))
 	var/hairgradient_color = sanitize_hexcolor(rgb(//returns a slightly brighter variation of the blorbo's tail color
-		min(255, hex2num(copytext(hex_to_edit, 1, 3)) * 1.5),
-		min(255, hex2num(copytext(hex_to_edit, 3, 5)) * 1.5),
-		min(255, hex2num(copytext(hex_to_edit, 5, 7)) * 1.5),
+		min(255, hex2num(copytext(hex_to_edit, 1, 3)) * COLOR_AMP_BRIGHT),
+		min(255, hex2num(copytext(hex_to_edit, 3, 5)) * COLOR_AMP_BRIGHT),
+		min(255, hex2num(copytext(hex_to_edit, 5, 7)) * COLOR_AMP_BRIGHT),
 	))
-	human_mob.set_facial_hairstyle(/datum/sprite_accessory/facial_hair/shaved::name)
-	human_mob.set_hairstyle(pick(hairstyles))
-	human_mob.set_haircolor(haircolor)
-	human_mob.set_hair_gradient_style(/datum/sprite_accessory/gradient/reflected_inverse::name)
-	human_mob.set_hair_gradient_color(hairgradient_color)
-	human_mob.set_eye_color(pick(eyecolors), pick(eyecolors))
-	human_mob.update_eyes()
+	siren.set_facial_hairstyle(/datum/sprite_accessory/facial_hair/shaved::name)
+	siren.set_hairstyle(pick(hairstyles))
+	siren.set_haircolor(haircolor)
+	siren.set_hair_gradient_style(/datum/sprite_accessory/gradient/reflected_inverse::name)
+	siren.set_hair_gradient_color(hairgradient_color)
+	siren.set_eye_color(pick(eyecolors), pick(eyecolors))
+	siren.update_eyes()
 
-	var/its_not_actually_a_horn = human_mob.dna.species.mutant_organs[/obj/item/organ/horns]
-	human_mob.dna.features[FEATURE_HORNS] = its_not_actually_a_horn
-	var/obj/item/organ/horn = human_mob.get_organ_slot(ORGAN_SLOT_EXTERNAL_HORNS)
-	if(isnull(horn)) //happens sometimes
-		horn = new /obj/item/organ/horns(human_mob)
-		horn.mob_insert(human_mob, TRUE, DELETE_IF_REPLACED)
-	horn.bodypart_overlay.draw_color = human_mob.dna.features[FEATURE_TAIL_FISH_COLOR]
-	horn.simple_change_sprite(horn.bodypart_overlay.fetch_sprite_datum_from_name(its_not_actually_a_horn))
+	siren.gender = (rand(0, 10) > 3) ? FEMALE : PLURAL //despite physique always she/her or they/them. why? because they're sisters of course. 🏳️‍⚧️
+	siren.set_resting(FALSE, TRUE, TRUE)
 
-	var/obj/item/organ/lungs/lungs = new human_mob.dna.species.mutantlungs(human_mob)
-	lungs.mob_insert(human_mob, TRUE, DELETE_IF_REPLACED) //updates the organ set bonus "appropriately", thanks to randomize_human_normie() earlier in the parent call
-
-	human_mob.gender = (rand(0, 10) > 3) ? FEMALE : PLURAL //despite physique always she/her or they/them. why? because they're sisters of course. 🏳️‍⚧️
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren/proc/load_features(mob/living/carbon/human/siren)
+	var/list/body_colors = list(COLOR_CARP_DARK_BLUE, "#3F1735", "#1E3325")
+	var/list/special_organs = list(
+		/obj/item/organ/heart/carp,
+		/obj/item/organ/lungs/fish/amphibious,
+		/obj/item/organ/tail/fish/cerulean/abyssal,
+		/obj/item/organ/horns,
+		/obj/item/organ/frills,
+	)
+	siren.dna.species.mutantheart = /obj/item/organ/heart/carp
+	siren.dna.species.mutantlungs = /obj/item/organ/lungs/fish/amphibious
+	siren.dna.species.mutant_organs = list(
+		/obj/item/organ/tail/fish/cerulean/abyssal = /datum/sprite_accessory/tails/fish/cerulean::name,
+		/obj/item/organ/horns = /datum/sprite_accessory/horns/angler::name,
+		/obj/item/organ/frills = /datum/sprite_accessory/frills/aquatic::name,
+	)
+	siren.dna.features[FEATURE_TAIL_FISH_COLOR] = pick(body_colors)
+	siren.dna.features[FEATURE_HORNS] = siren.dna.species.mutant_organs[/obj/item/organ/horns]
+	siren.dna.features[FEATURE_FRILLS] = siren.dna.species.mutant_organs[/obj/item/organ/frills]
+	for(var/obj/item/organ/special_organ as anything in special_organs)
+		special_organ = new special_organ.type
+		special_organ.Insert(siren, TRUE, DELETE_IF_REPLACED)
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren/vocalist
 	rank = "Vocalist"
 	outfit = /datum/outfit/pirate/siren/vocalist
+
+#undef COLOR_AMP_BRIGHT
+#undef COLOR_AMP_BRIGHTER

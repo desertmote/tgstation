@@ -1,8 +1,10 @@
 import {
+  CheckboxInput,
   type Feature,
   type FeatureChoiced,
   type FeatureChoicedServerData,
   FeatureColorInput,
+  type FeatureToggle,
   type FeatureValueProps,
 } from './base';
 import { FeatureDropdownInput } from './dropdowns';
@@ -132,4 +134,9 @@ export const feature_cerulean_respiration: Feature<string> = {
 export const feature_fish_tail_color: Feature<string> = {
   name: 'Fish tail color',
   component: FeatureColorInput,
+};
+
+export const feature_cerulean_frills: FeatureToggle = {
+  name: 'Fish frills',
+  component: CheckboxInput,
 };

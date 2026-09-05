@@ -219,7 +219,7 @@
 
 /datum/outfit/pirate/siren/pre_equip(mob/living/carbon/human/pre_equipped, visuals_only)
 	. = ..()
-	if(!isabyssal(pre_equipped)) //if youre not showing off your skeleton you should have some modesty
+	if(!(locate(/obj/item/organ/tail/fish/cerulean/abyssal) in pre_equipped.organs)) //if youre not showing off your skeleton you should have some modesty
 		uniform = /obj/item/clothing/under/color/jumpskirt/black
 
 /datum/outfit/pirate/siren/post_equip(mob/living/carbon/human/equipped)

@@ -4,27 +4,27 @@ GLOBAL_LIST_INIT(cerulean_respiration_variation, list(
 	))
 
 /// Whether or not a Cerulean has air-breathing lungs or water-breathing gills
-/datum/preference/choiced/lungs_choice
+/datum/preference/choiced/cerulean_lungs
 	savefile_key = "feature_cerulean_respiration"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	priority = PREFERENCE_PRIORITY_SPECIES
 	randomize_by_default = FALSE
 
-/datum/preference/choiced/lungs_choice/has_relevant_feature(datum/preferences/preferences)
+/datum/preference/choiced/cerulean_lungs/has_relevant_feature(datum/preferences/preferences)
 	return current_species_has_savekey(preferences)
 
-/datum/preference/choiced/lungs_choice/apply_to_human(mob/living/carbon/human/target, value)
+/datum/preference/choiced/cerulean_lungs/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.species.mutantlungs = GLOB.cerulean_respiration_variation[value]
 	target.dna.species.regenerate_organs(target, GLOB.species_prototypes[target.dna.species.type], FALSE, (GLOB.all_body_zones - BODY_ZONE_CHEST))
 
-/datum/preference/choiced/lungs_choice/init_possible_values()
+/datum/preference/choiced/cerulean_lungs/init_possible_values()
 	return GLOB.cerulean_respiration_variation
 
-/datum/preference/choiced/lungs_choice/create_default_value()
+/datum/preference/choiced/cerulean_lungs/create_default_value()
 	return "Oxygen"
 
-/datum/preference/choiced/lungs_choice/deserialize(value, datum/preferences/preferences)
+/datum/preference/choiced/cerulean_lungs/deserialize(value, datum/preferences/preferences)
 	if(!current_species_has_savekey(preferences))
 		return ..(create_default_value(), preferences)
 	return ..(value, preferences)
@@ -41,3 +41,24 @@ GLOBAL_LIST_INIT(cerulean_respiration_variation, list(
 
 /datum/preference/color/fish_tail_color/create_default_value()
 	return pick(GLOB.carp_colors - COLOR_CARP_SILVER)
+
+/// frilly frills
+/datum/preference/toggle/cerulean_frills
+	savefile_key = "feature_cerulean_frills"
+	savefile_identifier = PREFERENCE_CHARACTER
+	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	priority = PREFERENCE_PRIORITY_SPECIES
+	default_value = FALSE
+
+/datum/preference/toggle/cerulean_frills/is_accessible(datum/preferences/preferences)
+	if (!..())
+		return FALSE
+	return current_species_has_savekey(preferences)
+
+/datum/preference/toggle/cerulean_frills/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	if(!value)
+		return
+	target.dna.features[FEATURE_FRILLS] = /datum/sprite_accessory/frills/aquatic::name
+	target.dna.species.mutant_organs[/obj/item/organ/frills] = /datum/sprite_accessory/frills/aquatic::name
+	var/obj/item/organ/frills/aquatic_frills = new
+	aquatic_frills.Insert(target, TRUE, DELETE_IF_REPLACED)

@@ -151,9 +151,15 @@ Unlike normal organs, we're actually inside a persons limbs at all times
 	layers = list(EXTERNAL_ADJACENT = BODY_ADJ_LAYER)
 	feature_key = FEATURE_FRILLS
 	offset_location = UPPER_BODY
+	color_source = ORGAN_COLOR_OVERRIDE
 
 /datum/bodypart_overlay/mutant/frills/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner, mob/living/carbon/owner)
 	return ..() && !(bodypart_owner.owner?.obscured_slots & HIDEHAIR)
+
+/datum/bodypart_overlay/mutant/frills/override_color(obj/item/bodypart/bodypart_owner)
+	if(isnull(bodypart_owner.owner) || HAS_TRAIT(bodypart_owner.owner, TRAIT_MUTANT_COLORS))
+		return bodypart_owner.draw_color
+	return bodypart_owner.owner.dna.features[FEATURE_TAIL_FISH_COLOR]
 
 /datum/bodypart_overlay/mutant/frills/icon_render_key(obj/item/bodypart/limb)
 	. = ..()

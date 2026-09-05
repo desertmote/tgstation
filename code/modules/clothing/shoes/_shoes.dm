@@ -239,7 +239,7 @@
 	var/mob/living/carbon/human/our_guy = loc
 	if(!istype(our_guy)) // are they REALLY /our guy/?
 		return
-	if(slot_flags == ITEM_SLOT_HEAD) // ...why would you wear something which could make you trip?
+	if(slot_flags == ITEM_SLOT_HEAD) //where else would it go? on your feet? thats a trip hazard.
 		return
 
 	if(tied == SHOES_KNOTTED)

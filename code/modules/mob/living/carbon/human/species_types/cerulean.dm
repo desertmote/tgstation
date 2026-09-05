@@ -1,9 +1,7 @@
 /datum/species/human/cerulean
 	name = "\improper Cerulean"
 	id = SPECIES_CERULEAN
-	mutant_organs = list(
-		/obj/item/organ/tail/fish/cerulean = /datum/sprite_accessory/tails/fish/cerulean::name,
-	)
+	mutant_organs = list(/obj/item/organ/tail/fish/cerulean = /datum/sprite_accessory/tails/fish/cerulean::name)
 	mutanttongue = /obj/item/organ/tongue/fish
 	mutantstomach = /obj/item/organ/stomach/fish
 	mutantliver = /obj/item/organ/liver/fish
@@ -42,12 +40,14 @@
 	preview_human.set_hairstyle(/datum/sprite_accessory/hair/countryponytail::name, update = TRUE)
 	preview_human.dna.features[TRAIT_USES_SKINTONES] = "asian1"
 	preview_human.dna.features[FEATURE_TAIL_FISH_COLOR] = COLOR_CARP_TEAL
+	preview_human.dna.features[FEATURE_FRILLS] = mutant_organs[/obj/item/organ/frills]
 	regenerate_organs(preview_human)
 	preview_human.update_body(is_creating = TRUE)
 
 /datum/species/human/cerulean/get_features()
 	var/list/features = ..()
-	LAZYOR(features, /datum/preference/choiced/lungs_choice::savefile_key)
+	LAZYOR(features, /datum/preference/choiced/cerulean_lungs::savefile_key)
+	LAZYOR(features, /datum/preference/toggle/cerulean_frills::savefile_key)
 	LAZYOR(features, /datum/preference/color/fish_tail_color::savefile_key)
 	return features
 
@@ -63,7 +63,7 @@
 		return
 	if (cerulean.has_gravity())
 		cerulean.set_resting(TRUE, silent = TRUE, instant = TRUE)
-	// apply a free wet stack to prevent the choking screen alert to appear for a second on mob creation
+	//apply a free wet stack to prevent the choking screen alert to appear for a second on mob creation
 	cerulean.apply_status_effect(/datum/status_effect/fire_handler/wet_stacks, 1, FALSE)
 
 /// good guy nanotrasen provides a wheelchair to their employees
@@ -93,27 +93,6 @@
 		qdel_on_fail = FALSE,
 		indirect_action = TRUE,
 	)
-
-/*
- *
- */
-/datum/species/human/cerulean/abyssal
-	id = SPECIES_CERULEAN_ABYSSAL
-	mutant_organs = list(
-		/obj/item/organ/tail/fish/cerulean/abyssal = /datum/sprite_accessory/tails/fish/cerulean::name,
-		/obj/item/organ/horns = /datum/sprite_accessory/horns/angler::name,
-	)
-	mutantheart = /obj/item/organ/heart/carp
-	mutantlungs = /obj/item/organ/lungs/fish/amphibious
-
-/datum/species/human/cerulean/abyssal/randomize_features()
-	var/list/features = ..()
-	LAZYSET(features, FEATURE_TAIL_FISH_COLOR, pick(COLOR_CARP_DARK_BLUE, "#3F1735", "#1E3325"))
-	return features
-
-/datum/species/human/cerulean/abyssal/on_species_gain(mob/living/carbon/human/cerulean, datum/species/old_species, pref_load, regenerate_icons)
-	. = ..()
-	cerulean.add_traits(list(TRAIT_TRUE_NIGHT_VISION, TRAIT_LUMINESCENT_EYES), SPECIES_TRAIT)
 
 /*
  *

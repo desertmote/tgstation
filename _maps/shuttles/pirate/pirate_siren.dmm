@@ -665,6 +665,17 @@
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 1
 	},
+/obj/machinery/computer/security/telescreen/entertainment/directional/south{
+	pixel_y = -35
+	},
+/obj/machinery/recharger{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/machinery/recharger{
+	pixel_x = 6;
+	pixel_y = 6
+	},
 /obj/item/broadcast_camera/siren_pirates{
 	pixel_x = 1;
 	pixel_y = 12
@@ -676,9 +687,6 @@
 /obj/item/grenade/c4/x4{
 	pixel_x = 9;
 	pixel_y = 1
-	},
-/obj/machinery/computer/security/telescreen/entertainment/directional/south{
-	pixel_y = -35
 	},
 /turf/open/floor/plating,
 /area/shuttle/pirate/siren)
