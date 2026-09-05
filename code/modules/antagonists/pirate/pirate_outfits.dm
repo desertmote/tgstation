@@ -206,12 +206,11 @@
 	name = "Siren Sister Guitarist"
 
 	uniform = null
+	head = null
 	back = /obj/item/instrument/eguitar
 	glasses = null
-	suit = /obj/item/clothing/suit/jacket/leather/deadbeat
+	suit = /obj/item/clothing/suit/jacket/leather/armored
 	gloves = /obj/item/clothing/gloves/fingerless
-	mask = /obj/item/clothing/mask/facescarf
-	head = null
 	shoes = null
 	ears = /obj/item/radio/headset/syndicate/alt
 
@@ -219,19 +218,18 @@
 
 /datum/outfit/pirate/siren/pre_equip(mob/living/carbon/human/pre_equipped, visuals_only)
 	. = ..()
-	if(!(locate(/obj/item/organ/tail/fish/cerulean/abyssal) in pre_equipped.organs)) //if youre not showing off your skeleton you should have some modesty
-		uniform = /obj/item/clothing/under/color/jumpskirt/black
+	if(!(locate(/obj/item/organ/tail/fish/cerulean/abyssal) in pre_equipped.organs))//if youre not showing off your skeleton you should have some modesty
+		switch(pre_equipped.client?.prefs?.read_preference(/datum/preference/choiced/jumpsuit))
+			if(PREF_SKIRT)
+				uniform = /obj/item/clothing/under/color/jumpskirt/black
+			else
+				uniform = /obj/item/clothing/under/color/black
+	if(rand(0,3) == 1)
+		head = /obj/item/clothing/head/soft/black
 
 /datum/outfit/pirate/siren/post_equip(mob/living/carbon/human/equipped)
 	. = ..()
-	var/obj/item/clothing/mask/facescarf/scarf = equipped.get_item_by_slot(ITEM_SLOT_MASK)
-	if(scarf)
-		scarf.greyscale_colors = "#3e3e44"
-		scarf.update_greyscale()
-		scarf.adjust_visor(equipped)
-	equipped.update_lips("lipstick", COLOR_BLACK)
-
-/datum/outfit/pirate/siren/vocalist
-	name = "Siren Sister Vocalist"
-
-	back = null
+	var/obj/item/clothing/head/soft/cap = equipped.get_item_by_slot(ITEM_SLOT_HEAD)
+	if(cap && rand(0,1) == 1)
+		cap.flip(equipped)
+	equipped.update_lips("lipstick_lower", COLOR_BLACK)

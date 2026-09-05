@@ -216,11 +216,20 @@
 
 /obj/item/gun/energy/laser/scatter/shotty/compact
 	name = "compact laser shotgun"
-	desc = "i just want to kill you."
+	desc = "Equipped with a refraction kit for projectile seperation, and easy to carry and stow. Unfortunately, this is at the cost of trigger speed, accuracy and some damage. \n\
+		Shame, really, or it would be perfect..."
 	icon_state = "cshotgunc"
+	worn_icon = 'icons/mob/clothing/belt.dmi'
+	worn_icon_state = "compact_shotty"
 	w_class = WEIGHT_CLASS_NORMAL
 	pin = /obj/item/firing_pin
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
+	recoil = 1
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter/weak)
+
+/obj/item/gun/energy/laser/scatter/shotty/compact/shoot_live_shot(mob/living/user)
+	..()
+	sleep(2 DECISECONDS)
+	playsound(src, 'sound/items/weapons/gun/shotgun/rack.ogg', 30, TRUE)
 
 ///Laser Cannon
 

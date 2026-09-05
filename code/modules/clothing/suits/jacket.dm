@@ -139,16 +139,15 @@
 	desc = "You think I'm not even worth a single dollar, but I feel like a millionare."
 	icon_state = "leatherjacket_biker"
 
-/obj/item/clothing/suit/jacket/leather/deadbeat
-	name = "old leather jacket"
-	desc = ""
+/obj/item/clothing/suit/jacket/leather/armored
+	desc = "Its leather is so thick, you can hardly tell there's padding beneath it."
 	icon = /obj/item/clothing/suit/toggle/jacket/sweater::icon
 	icon_state = /obj/item/clothing/suit/toggle/jacket/sweater::icon_state
 	worn_icon = 'icons/mob/clothing/suits/jacket.dmi'
-	worn_icon_state = "leatherjacket_old"
+	worn_icon_state = "leatherjacket_p"
 	armor_type = /datum/armor/wintercoat_security
 
-/obj/item/clothing/suit/jacket/leather/deadbeat/Initialize(mapload)
+/obj/item/clothing/suit/jacket/leather/armored/Initialize(mapload)
 	. = ..()
 	allowed += GLOB.security_vest_allowed
 

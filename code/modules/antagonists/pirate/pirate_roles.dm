@@ -245,11 +245,14 @@
 	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "pod_1"
 	fluff_spawn = /obj/effect/decal/cleanable/greenglow
-//	you_are_text = ""
-//	flavour_text = ""
-//	prompt_name = ""
+	you_are_text = "You are a wanna-be idol getting by on gigs and criminality."
+	flavour_text = "Its time to put on an impromptu show! Lets raid the station in style, steal their resources with grace, and call it a great night!"
+	prompt_name = "a deadbeat musician"
 	outfit = /datum/outfit/pirate/siren
 	rank = "Guitarist"
+
+/obj/effect/mob_spawn/ghost_role/human/pirate/siren/vocalist
+	rank = "Vocalist"
 
 /obj/effect/mob_spawn/ghost_role/human/pirate/siren/check_uses()
 	. = ..()
@@ -305,7 +308,7 @@
 		/datum/sprite_accessory/hair/wolfcut::name,
 		/datum/sprite_accessory/hair/shortwavy::name,
 		/datum/sprite_accessory/hair/sidecutbang::name,
-		/datum/sprite_accessory/hair/shorterbangs::name,
+		//more when i think of it
 	)))
 	siren.set_haircolor(sanitize_hexcolor(rgb(
 		min(255, hex2num(copytext(copytext(siren.dna.features[FEATURE_TAIL_FISH_COLOR], 2), 1, 3)) * COLOR_AMP_BRIGHTER),
@@ -321,13 +324,8 @@
 	var/list/eyecolors = list("#ff0000", "#04ff58", "#ffe600", "#d400ff")
 	siren.set_eye_color(pick(eyecolors), pick(eyecolors))
 	siren.update_eyes()
-
 	siren.gender = (rand(0, 10) > 3) ? FEMALE : PLURAL //despite physique always she/her or they/them. why? because they're sisters of course. 🏳️‍⚧️
 	siren.set_resting(FALSE, TRUE, TRUE)
-
-/obj/effect/mob_spawn/ghost_role/human/pirate/siren/vocalist
-	rank = "Vocalist"
-	outfit = /datum/outfit/pirate/siren/vocalist
 
 #undef COLOR_AMP_BRIGHT
 #undef COLOR_AMP_BRIGHTER

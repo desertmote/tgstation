@@ -42,7 +42,7 @@ GLOBAL_LIST_INIT(cerulean_respiration_variation, list(
 /datum/preference/color/fish_tail_color/create_default_value()
 	return pick(GLOB.carp_colors - COLOR_CARP_SILVER)
 
-/// frilly frills
+/// cerulean frills. not a choice like lizard frills. just a toggle for yes or no, the accessory is aquatic
 /datum/preference/toggle/cerulean_frills
 	savefile_key = "feature_cerulean_frills"
 	savefile_identifier = PREFERENCE_CHARACTER
@@ -60,5 +60,4 @@ GLOBAL_LIST_INIT(cerulean_respiration_variation, list(
 		return
 	target.dna.features[FEATURE_FRILLS] = /datum/sprite_accessory/frills/aquatic::name
 	target.dna.species.mutant_organs[/obj/item/organ/frills] = /datum/sprite_accessory/frills/aquatic::name
-	var/obj/item/organ/frills/aquatic_frills = new
-	aquatic_frills.Insert(target, TRUE, DELETE_IF_REPLACED)
+	target.dna.species.regenerate_organs(target, GLOB.species_prototypes[target.dna.species.type], FALSE, (GLOB.all_body_zones - BODY_ZONE_HEAD))
