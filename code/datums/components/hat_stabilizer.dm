@@ -14,8 +14,12 @@
 	var/pixel_z_offset
 	/// Which way a loose hat is offset
 	var/head_angle = 1
+	/// Should the overlay appear beneath the source sprite?
+	var/layer_beneath = FALSE
+	/// Should the overlay include the y offset the source sprite has?
+	var/include_worn_y_offset = TRUE
 
-/datum/component/hat_stabilizer/Initialize(use_worn_icon = FALSE, pixel_z_offset = 0, loose_hat = FALSE)
+/datum/component/hat_stabilizer/Initialize(use_worn_icon = FALSE, pixel_z_offset = 0, loose_hat = FALSE, layer_beneath = FALSE, include_worn_y_offset = TRUE)
 	if(!ismovable(parent))
 		return COMPONENT_INCOMPATIBLE
 
@@ -25,6 +29,8 @@
 	src.use_worn_icon = use_worn_icon
 	src.pixel_z_offset = pixel_z_offset
 	src.loose_hat = loose_hat
+	src.layer_beneath = layer_beneath
+	src.include_worn_y_offset = include_worn_y_offset
 	// Examine signals
 	RegisterSignal(source, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
 	RegisterSignal(source, COMSIG_ATOM_REQUESTING_CONTEXT_FROM_ITEM, PROC_REF(on_requesting_context_from_item))
@@ -110,7 +116,7 @@
 		return
 	if(!attached_hat)
 		return
-	var/mutable_appearance/worn_overlay = attached_hat.build_worn_icon(default_layer = ABOVE_BODY_FRONT_HEAD_LAYER - 0.1, default_icon_file = 'icons/mob/clothing/head/default.dmi', bodyshape = bodyshape)
+	var/mutable_appearance/worn_overlay = attached_hat.build_worn_icon(default_layer = layer_beneath ? UNDER_HEAD_LAYER : ABOVE_BODY_FRONT_HEAD_LAYER - 0.1, default_icon_file = 'icons/mob/clothing/head/default.dmi', bodyshape = bodyshape)
 	worn_overlay.appearance_flags |= RESET_COLOR
 	// loose hats are slightly angled
 	if(loose_hat)
@@ -118,7 +124,8 @@
 		var/angle = 5
 		tilt_trix.Turn(angle * head_angle)
 		worn_overlay.transform = tilt_trix
-	worn_overlay.pixel_z = pixel_z_offset + attached_hat.worn_y_offset
+	var/obj/item/our_item = parent
+	worn_overlay.pixel_z = (pixel_z_offset + attached_hat.worn_y_offset - (include_worn_y_offset ? 0 : our_item?.worn_y_offset))
 	overlays += worn_overlay
 
 /datum/component/hat_stabilizer/proc/get_separate_worn_overlays(atom/movable/source, list/overlays, mutable_appearance/standing, mutable_appearance/draw_target, isinhands, icon_file, bodyshape = NONE)
@@ -127,16 +134,17 @@
 		return
 	if(!attached_hat)
 		return
-	var/mutable_appearance/worn_overlay = attached_hat.build_worn_icon(default_layer = ABOVE_BODY_FRONT_HEAD_LAYER - 0.1, default_icon_file = 'icons/mob/clothing/head/default.dmi', bodyshape = bodyshape)
+	var/mutable_appearance/worn_overlay = attached_hat.build_worn_icon(default_layer = layer_beneath ? UNDER_HEAD_LAYER : ABOVE_BODY_FRONT_HEAD_LAYER - 0.1, default_icon_file = 'icons/mob/clothing/head/default.dmi', bodyshape = bodyshape)
 	for (var/mutable_appearance/overlay in worn_overlay.overlays)
-		overlay.layer = -ABOVE_BODY_FRONT_HEAD_LAYER + 0.1
+		overlay.layer = layer_beneath ? -UNDER_HEAD_LAYER + 0.1 : -ABOVE_BODY_FRONT_HEAD_LAYER + 0.1
 	// loose hats are slightly angled
 	if(loose_hat)
 		var/matrix/tilt_trix = matrix(worn_overlay.transform)
 		var/angle = 5
 		tilt_trix.Turn(angle * head_angle)
 		worn_overlay.transform = tilt_trix
-	worn_overlay.pixel_z = pixel_z_offset + attached_hat.worn_y_offset
+	var/obj/item/our_item = parent
+	worn_overlay.pixel_z = (pixel_z_offset + attached_hat.worn_y_offset - (include_worn_y_offset ? 0 : our_item?.worn_y_offset))
 	overlays += worn_overlay
 
 /datum/component/hat_stabilizer/proc/on_qdel(atom/movable/source)
